@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			font-family: Verdana;
+			counter-reset: section;
+			font-size: 15px;
+			padding: 15px;
+		}
+		
+		h1 {counter-reset: subsection;
+			text-decoration: underline;
+		}
+		h1::before {
+			counter-increment: section;
+			content: counter(section) ". ";
+		}
+		h2::before{
+			counter-increment: subsection;
+			content: counter(section) "." counter(subsection)" ";
+		}
+
+		hr{
+			height: 0.5px
+			color: #f0f0f0;
+		}
+
+		p{
+			padding-left: 15px;
+		}
+		
+		span{
+			color: gray;
+		}
+
+		button {
+			background-color: darkgrey;
+			border:none;
+			color: white;
+			padding: 10px;
+			margin-left: 15px;
+			display:inline-block;
+			cursor:pointer;
+			border-radius: 4px;
+		}
+		pre {color: grey;}
+		
+	</style>
+</head>
+<body>
+	<h1>JS Arrays</h1>
+	<h2>JavaScript Arrays</h2>
+	<p>JS arrays  - used to STORE multiple values - in a SINGLE variable.</p>
+	<pre>
+		var cars = ["Saab", "Volvo", "BMW"];
+	</pre>
+
+	<h2>What is an Arrays?</h2>
+	<p>An ARRAY is a SPECIAL VARIABLE, which can hold - MORE than one VALUE - at the time.</p>
+	<pre>
+		var car1 = "Saab";
+		var car2 = "Volvo";
+		var car3 = "BMW";
+		*And what if you hat not 3 cars, but 300?
+		The solution is an array.
+		Hold many VARIABLES under a single NAME.
+		Accces the VALUES - by REFFERING by an INDEX number.
+	</pre>
+
+	<h2>CREATING an Array</h2>
+	<p>~using an array literal~ is the easiest way to create a JS array.</p>
+	<pre>
+		var cars = ["Saab", "Volvo", "BMW"];
+		document.getElementById("demo").innerHTML = cars; // Saab,Volvo,BMW
+	</pre>
+
+	<h2>Using the JavaScript Keyword "new"</h2>
+	<pre>
+		The following example also creates an Array, and assigns values to it:
+		
+		var cars = new Array("Saab", "Volvo", "BMW");
+		The two examples above do exactly the same. There is no need to use new Array().
+		For simplicity, readability and execution speed, use the first one (the array literal method).
+	</pre>
+
+	<h2>ACCESS the Elements of an Array</h2>
+	You can ACCESS element - by reffering to the - <b>index number.</b>
+	The statement accesses the VALUE of the I'st element in <b>cars</b>.
+	<pre>
+		var name = cars[0];
+	</pre>
+	<pre>
+		< p id="demo">< /p>
+		< script>
+			var cars = ["Saab", "Audi", "BMW"];
+			document.getElementById("demo").innerHTML = cars[0];
+		< /script>
+	</pre>
+	<p id="demo"></p>
+		<script>
+			var cars = ["Saab", "Audi", "BMW"];
+			document.getElementById("demo").innerHTML = cars[0];
+		</script>
+	<p><span>Arrays indexes are 0 based. Start with 0.</span></p>
+
+	<h2>CHANGING an Array Element</h2>	
+	<p>This STAMENT - changes the value of the I'st Element in <span>cars</span>.</p>
+	<pre>
+		< p id="demo1">< /p>
+		< script>
+			var cars = ["Saab", "Volvo", "BMW"];
+			cars[0] = "Opel";
+			document.getElementById("demo1").innerHTML = cars;
+		< /script>
+	</pre>
+	<p id="demo1"></p>
+		<script>
+			var cars = ["Saab", "Volvo", "BMW"];
+			cars[0] = "Opel";
+			document.getElementById("demo1").innerHTML = cars;
+		</script>
+
+	<h2>ACCES the FULL Array</h2>
+	<p>The full ARRAY can be ACCESSED by reffering to the <u>ARRAY NAME</u>.</p>
+	<pre>
+		var cars = ["Saab", "Volvo", "BMW"];
+		document.getElementById("demo").innerHTML = cars;
+	</pre>
+
+	<h2>Array are OBJECTS</h2>
+	<p>Arrays are SPECIAL type of OBJECTS. The <span>typeof operator</span> in JS returns "objects" for ARRAYS.<br>
+	But, <u>JS arrays</u> are best described as ARRAYS.<br>
+	<b>Arrays</b> use <b>numbers</b> to <u>access</u> its <b>"elements"</b>.<br>
+	<b>Objects</b> use <b>names</b> to <u>access</u> its <b>"members"</b>. In this example <span>person.firstName</span> returns John.</p>
+	<pre>
+		var person = {fName:"John", lName:"Doe", age:39};
+		document.getElementById("demo").innerHTML = person.fName; // John
+	</pre>
+
+	<h2>Array can be OBJECTS</h2>
+	<p><b>JavaScript variables can be OBJECTS.</b> Arrays are special <u>kinds</u> of objects.<br>
+	Because of this - you can have <u>variables of different types</u> - <b>in the same array</b>.
+	You can have:
+	<ul>
+		<li>OBJECTS in ARRAY</li>
+		<li>Functions in ARRAY</li>
+		<li>ARRAY in ARRAY</li>
+	</ul>
+	</p>
+	
+	<h2>Array Property and Methods</h2>
+	<p><span><b>... arrays are BUILT-in(încorporate) ARRAY <u>properties</u> and <u>methods</u>.</b></span></p>
+	<pre>
+		var x = cars.length;   // The length property returns the number of elements
+		var y = cars.sort();   // The sort() method sorts arrays
+	</pre>
+	
+	<h2>The LENGTH property</h2>
+	<p>The <span>length property</span> of an ARRAY - returns the length of an array (the number of elements).</p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		doc.getElemById().inner = <mark>fruits.length;</mark>
+	</pre>
+
+	<h2>Accesing the First Array Element</h2>
+	<pre>
+		var fruits= ["Banana", "Orange", "Apple", "Mango"];
+		<mark>var first = fruits[0];</mark>
+	</pre>
+	<p id="demo2"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		var first = fruits[0];
+		document.getElementById("demo2").innerHTML = first;
+	</script>
+
+	<h2>Accesing the Last Array Element</h2>
+	<pre>
+		var fruits = ["Banana","Orange", "Apple", "Mango"];
+		<mark>var last = fruits [fruits.length - 1];</mark>.
+	</pre>
+
+	<p id="demo3"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		var last = fruits[fruits.length - 1];
+		document.getElementById("demo3").innerHTML = last;
+	</script>
+
+	<h2>Adding Array Elements</h2>
+	<p>...using <span>push()</span> method.</p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		<mark>fruits.push("Lemon");</mark>
+	</pre>
+	<pre>
+		2.
+		< p id="demo">< /p>
+		< button onclick="myFuntion()">Try It!< /button>
+
+		< script>
+			var fruits=["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo").innerHTML = fruits;
+			function myFuntion(){
+				fruits.push("Lemon");
+				document.getElementById("demo").innerHTML = fruits;
+			}
+		< /script>
+
+	</pre>
+
+	<p id="demo4"></p>
+	<button onclick="myFuntion()">Try Me!</button>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo4").innerHTML = fruits;
+
+		function myFuntion(){
+			fruits.push("Lemon");
+			document.getElementById("demo4").innerHTML = fruits;
+		}
+	</script>
+
+	<p>New element can also be ADDED to an array - using the <span>length</span> property:</p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		fruits[fruits.length] = "Lemon";
+	</pre>
+	<p><span>Adding elements with HIGHT INDEXES can create undefined "holes" in an array:</span></p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		fruits[6] = "Lemon"; // adds a new element (Lemon) to fruits
+	Banana
+	Orange
+	Apple
+	Mango
+	undefined
+	undefined
+	Lemon
+	</pre>
+
+	<h2>Associative Arrays</h2>
+	<p>Many programming languages support arrays with <b><span>named indexes</span></b>.<br>
+	<b><span>Arrays</span></b> with <b><span>named indexes</span></b> are called <b>associative arrays</b>.<br>
+	JavaScript does <b>not</b> support arrays with <span>named indexes</span>.<br>
+	In JS, <b>arrays</b> always use <b>numbered indexes.</b></p>
+
+	<pre>
+		< p id="demo5">< /p>
+		< script>
+			var person = [];
+			person[0] = "John";
+			person[1] = "Doe";
+			person[2] = 46;
+			document.getElementById("demo5").innerHTML = 
+			person[0] + " " + person.length;
+		< /script>
+	</pre>
+
+	<p id="demo5"></p>
+	<script>
+		var person = [];
+		person[0] = "John";
+		person[1] = "Doe";
+		person[2] = 46;
+		document.getElementById("demo5").innerHTML = 
+		person[0] + " " + person.length;
+	</script>
+	<p><span>Do not use <b>named indexes</b> JS will REDEFINE as a standard OBJECT.<br>
+		Some array METHODS and PROPERTIES - will produce <b>incorrect results</b>.</span>
+	</p>
+	<h3>The Difference Between Arrays and Objects</h3>
+	<p>In JS, <b>arrays</b> use <b>numbers indexes.</b></p>
+	<p>In JS, <b>objects</b> use <b>named indexes.</b></p>
+
+	<h3>When to Use Arrays. When to use Objects.</h3>
+	<ul>
+		<li>JS does NOT SUPPORT <b>associative arrays</b>.</li>
+		<li>You should use <b>objects</b> when you want the <mark>element names</mark> to be <b>strings(text)</b>.</li>
+		<li>You should use <b>arrays</b> when you want the <mark>element names</mark> to be <b>numbers</b>.</li>
+	</ul>
+
+	<h3>Avoid new Array()</h3>
+	<p>There is no need to use JS -built-in array constructor <span>new</span> Array().<br>
+	...complicates the code - produce unexpected results.<br>
+	<b>Use <span>[]</span> instead.</b></p>
+	<pre>
+		var points = new Array(40, 100, 1, 5, 25, 10); // Bad
+		var points = [40, 100, 1, 5, 25, 10];          // Good
+	</pre>
+
+	<h3>How to RECOGNIZE an Array</h3>
+	<p>How do I know if a <b>variable</b> is an <b>array</b>?</p>
+	<p>the problem is that the JS operator <span>typeof</span> returns <span>object</span>:</p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		typeof fruits;    // returns object
+	</pre>
+	<p>To solve this problem ECMAScript 5 defines a new method <span>Array.isArray()</span>:</p>
+	<pre>
+		< p id="demo6">< /p>
+		< script>
+			var fruits = ["Banana", "Apple", "Mango", "Orange"];
+			document.getElementById("demo6").innerHTML = Array.isArray(fruits); //true
+			document.getElementById("demo6").innerHTML = Array.isArray(); //false
+		< /script>
+	</pre>
+	<p id="demo6"></p>
+		<script>
+			var fruits = ["Banana", "Apple", "Mango", "Orange"];
+			document.getElementById("demo6").innerHTML = Array.isArray(fruits);
+		</script>
+	<h3>Or</h3>	
+	<p>The <span>instanceof</span> operator <b>returns</b> true if an object is created by a <b>given constructor:</b></p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"]
+		fruits <mark>instanceof</mark> Arrray; // returns true
+	</pre>
+
+	<p id="demo7"></p>
+	<script>
+		var fruits = ["Apple", "Banana", "Mango", "Lemon"];
+		document.getElementById("demo7").innerHTML = fruits instanceof Array;
+	</script>
+<hr>
+
+	<h1>Javascript Array Methods</h1>
+	<h2>Converting Arrays to Strings</h2>
+	<p>The JS <b>method</b> <span>toString()</span> converts an ARRAY to a STRING.</p>
+	<pre>
+		var fruits = ["Banana", "Mango", "Apple", "Lemon"];
+		document.getElementById("demo").innerHTML = <mark>fruits.toString();</mark>
+	</pre>
+	<p id="demo8"></p>
+	<script>
+		var fruits = ["Apple", "Banana", "Lemon", "Mango"];
+		document.getElementById("demo8").innerHTML = fruits.toString();
+	</script>
+
+	<p>The <span>join()</span> <b>method</b> also joins all ARRAY elements into a STRING.<br>
+	It behaves like <span>toString()</span>, but in addition you can specify the SEPARATOR(*):</p>
+	<pre>
+		var fruits = ["Banana", "Lemon", "Apple", "Mango"];
+		doc.getElById("demo").innnerHTML = <mark>fruits.join(*);</mark>
+	</pre>
+	<p id="demo9"></p>
+	<script>
+		var fruits = ["Mango", "Banana", "Apple", "Lemon"]
+		document.getElementById("demo9").innerHTML = fruits.join(*);
+	</script>
+
+	<h2>Popping and Pushing</h2>
+	<p>When you work with arrays, it is easy to remove elements and add new elements.</p>
+	<p>Thi is what "popping" and "pushing" is:</p>
+	<p>Popping items <b>out</b> of an array, or pushing items <b>into</b> an array.</p>
+
+	<h2>Popping</h2>
+	<p>The <span>pop()</span> <b>method</b> removes the LAST element from an array:</p>
+	<pre>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		<mark>fruits.pop();</mark> //Removes the LAST element ("Mango") from fruits
+	</pre>
+	<pre>
+	< p id = "demo10">< /p>
+	< p id="demo11"></p>
+	< script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo10").innerHTML = fruits.pop();
+		document.getElementById("demo11").innerHTML = fruits;
+	< /script>
+	</pre>
+	<p id = "demo10"></p>
+	<p id="demo11"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo10").innerHTML = fruits.pop();
+		document.getElementById("demo11").innerHTML = fruits;
+	</script>
+	<p>2.The <span>pop()</span> method returns <mark>the value that was "popped out"</mark>:</p>
+	<pre>
+		< p id="demo12">< /p>
+		< p id="demo13">< /p>
+		< p id="demno14">< /p>
+		< script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo12").innerHTML = fruits;
+		document.getElementById("demo13").innerHTML = fruits.pop();
+		document.getElementById("demo14").innerHTML = fruits;
+		< /script>
+	</pre>
+	<p id="demo12"></p>
+	<p id="demo13"></p>
+	<p id="demo14"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo12").innerHTML = fruits;
+		document.getElementById("demo13").innerHTML = fruits.pop();
+		document.getElementById("demo14").innerHTML = fruits;
+	</script>
+	
+	<h2>Pushing</h2>
+	<p>The <span>push()</span> method ADDS new element to an array (at the END):</p>
+	<pre>
+		< button onclick="myFunction()">Try It!< /button>
+		< p id="demo15">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo15").innerHTML = fruits;
+			function myFunction(){
+				<mark>fruits.push("Kiwi");</mark>
+				document.getElementById("demo15").innerHTML = fruits;
+			}
+		< /script>
+	</pre>
+	<button onclick="myFunction1()">Try It!</button>
+	<p id="demo15"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo15").innerHTML = fruits;
+		function myFunction1(){
+			fruits.push("Kiwi");
+			document.getElementById("demo15").innerHTML = fruits;
+		}
+	</script>
+	<p>2.The <span>push()</span> <b>method</b> returns the NEW ARRAY LENGTH</p>
+	<p id="demo16"></p>
+	<p id="demo17"></p>
+	<button onclick="myFunction2()">Try Me!</button>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo16").innerHTML = fruits;
+		function myFunction2() {
+			document.getElementById("demo17").innerHTML = fruits.push("Kiwi");
+			document.getElementById("demo16").innerHTML = fruits;
+		}
+	</script>
+
+	<h2>Shifting Elements</h2>
+	<p>Shifting is equivalent to <span>popping</span>, working on the <mark>FIRST ELEMENT</mark> instead of the LAST</p>
+	<p><span><b>The <mark>shift()</mark> method - removes the FIRTS ARRAY ELEMENT - and "shifts" all other elements to a lower index.</b></span></p>
+	<pre>
+		< p id="demo18">< /p>
+		< p id="demo19">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo18").innerHTML = <mark>fruits; fruits.shift();</mark>
+			document.getElementById("demo19").innerHTML = fruits;
+		< /script>
+	</pre>
+	<p id="demo18"></p>
+	<p id="demo19"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo18").innerHTML = fruits; fruits.shift(); 
+		document.getElementById("demo19").innerHTML = fruits; 
+	</script>
+	<p>The <span>shift()</span> method returns the <mark>string that was</mark> "shifted out":</p>
+	<pre>
+		< p id="demo20">< /p>
+		< p id="demo21">< /p>
+		< p id="demo22">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo20").innerHTML = fruits;
+			document.getElementById("demo21").innerHTML = fruits.shift();
+			document.getElementById("demo22").innerHTML = fruits;
+		< /script>
+	</pre>
+	<p id="demo20"></p>
+	<p id="demo21"></p>
+	<p id="demo22"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo20").innerHTML = fruits;
+		document.getElementById("demo21").innerHTML = fruits.shift();
+		document.getElementById("demo22").innerHTML = fruits;
+	</script>
+	<p>The <span>unshift()</span> <b>method</b> adds a new element ARRAY <mark>at the beginning</mark>, <span><b>and "unshifts" older elements</b></span>:</p>
+	<pre>
+		< p id="demo23">< /p>
+		< button onclick="myFunction()">Try Me< /button>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo23").innerHTML = fruits;
+			function myFunction() {
+				fruits.unshift("Lemon");
+				document.getElementById("demo23").innerHTML = fruits;
+			}
+		< /script>
+	</pre>
+	<p id="demo23"></p>
+		<button onclick="myFunction3()">Try Me</button>
+		<script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo23").innerHTML = fruits;
+			function myFunction3() {
+				fruits.unshift("Lemon");
+				document.getElementById("demo23").innerHTML = fruits;
+			}
+		</script>
+	<p>The <span>unshift()</span> <b>element</b> returns the new <mark>array length</mark></p>
+	<pre>
+		< p id="demo1">< /p>
+		< p id="demo2">< /p>
+		< p id="demo3">< /p>
+
+	< script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo1").innerHTML = fruits;
+		document.getElementById("demo2").innerHTML = fruits.unshift("Lemon");
+		document.getElementById("demo3").innerHTML = fruits;
+	< /script>
+	</pre>
+	<p id="demo24"></p>
+	<p id="demo25"></p>
+	<p id="demo26"></p>
+
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo1").innerHTML = fruits;
+		document.getElementById("demo2").innerHTML = fruits.unshift("Lemon");
+		document.getElementById("demo3").innerHTML = fruits;
+	</script>
+
+	<h2>Changeing Elements</h2>
+	<p>Array elements are accesed using their <b>index number</b>:</p>
+	<p><span>Array <b>indexes</b> start with 0. [0] is the first array element, [1] is the second, [2] is the third ...</span></p>
+	<pre>
+		< p id="demo27">< /p>
+		< p id="demo28">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo27").innerHTML = <mark>fruits; fruits[0] = "Kiwi";</mark>
+			document.getElementById("demo28").innerHTML = fruits;
+		< /script>
+	</pre>
+	<p id="demo27"></p>
+	<p id="demo28"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo27").innerHTML = fruits; fruits[0] = "Kiwi";
+		document.getElementById("demo28").innerHTML = fruits;
+	</script>
+	<p>The <span>length</span> <b>property</b> provides an easy way to <mark>append</mark> a new ELEMENT to an ARRAY:</p>
+	<pre>
+		< p id="demo29">< /p>
+		< button onclick="myFunction()">Try me!< /button>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo29").innerHTML = fruits;
+
+			function myFunction(){
+				<mark>fruits[fruits.length] = "Kiwi";</mark> // similat to <mark>fruits.push("Kiwi");</mark>
+				document.getElementById("demo29").innerHTML = fruits;
+			}
+		< /script>
+	</pre>
+	<p id="demo29"></p>
+	<button onclick="myFunction4()">Try me!</button>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo29").innerHTML = fruits;
+		function myFunction4(){
+			fruits[fruits.length] = "Kiwi";
+			document.getElementById("demo29").innerHTML = fruits;
+		}
+	</script>
+
+	<h2>Deleting Elements</h2>
+	<p>Since JS ARRAYS are <u>OBJECTS</u>, elements can be DELETED - BY USING <b>JS operator</b> <span>delete</span>:</p>
+	<pre>
+		< p id="demo30">< /p>
+		< p id="demo31">< /p>
+		< p id="demo32">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo30").innerHTML = "The first fruit is: " + <mark>fruits[0]; delete fruits[0];</mark>
+			document.getElementById("demo31").innerHTML = "The first fruit is :" + fruits[0];
+			document.getElementById("demo30").innerHTML = fruits;
+		< /script>
+	</pre>
+	<p id="demo30"></p>
+	<p id="demo31"></p>
+	<p id="demo32"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo30").innerHTML = "The first fruit is: " + fruits[0]; delete fruits[0];
+		document.getElementById("demo31").innerHTML = "The first fruit is :" + fruits[0];
+		document.getElementById("demo32").innerHTML = fruits;
+	</script>
+
+	<h2>Splicing an Array</h2>
+	<p>The <span>splice()</span> <b>method</b> can be used to ADD new ITEMS to an ARRAY:</p>
+	<pre>
+		< p id="demo33">< /p>
+		< p id="demo34">< /p>
+		< button onclick="myFunction5()">Try It< /button>
+
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo33").innerHTML = "Original Array: " + fruits;
+			function myFunction5() {
+				<mark>fruits.splice(2, 0, "Lemon", "Kiwi");</mark>
+			}
+		< /script>
+	</pre>
+	<p id="demo33"></p>
+	<p id="demo34"></p>
+	<button onclick="myFunction5()">Try It</button>
+
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo33").innerHTML = "Original Array: " + fruits;
+		function myFunction5() {
+			fruits.splice(2, 0, "Lemon", "Kiwi");
+			document.getElementById("demo34").innerHTML = "New Array: " + fruits;
+		}
+	</script>
+	<p>The fisrt parameter (2) - <span><b>defines the position</b></span> <b>where</b> NEW ELEMENTS should be <b>added</b>(spliced in).<br>
+	The second paramneter (0) - <span><b>defines</b></span> <b>how many</b> elements SHOULD BE <b>removed</b>.<br>
+	The rest of the parameters ("Lemon", "Kiwi") - defines the new elements to be <b>added</b>.</p>
+
+	<p>The <span>splice()</span> <b>method</b> returns an ARRAY with the DELETED items:</p>
+	<pre>
+		< button onclick="myFunction6()">Try it</button>
+
+		< p id="demo1">< /p>
+		< p id="demo2">< /p>
+		< p id="demo3">< /p>
+
+		< script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo1").innerHTML = "Original Array: " + fruits;
+
+		function myFunction6() {
+		  var removed = <mark>fruits.splice(2, 2, "Lemon", "Kiwi"); </mark>
+		  document.getElementById("demo2").innerHTML = "New Array: " + fruits;
+		  document.getElementById("demo3").innerHTML = "Removed Items: " + removed; 
+		}
+		< /script>
+	</pre>
+	
+	<p id="demo34"></p>
+	<p id="demo35"></p>
+	<p id="demo36"></p>
+
+	<button onclick="myFunction6()">Try it</button>
+
+	<script>
+	  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	  document.getElementById("demo34").innerHTML = "Original Array: " + fruits;
+
+	function myFunction6() {
+	  var removed = fruits.splice(2, 2, "Lemon", "Kiwi"); 
+	  document.getElementById("demo35").innerHTML = "New Array: " + fruits;
+	  document.getElementById("demo36").innerHTML = "Removed Items: " + removed; 
+	}
+	</script>
+
+	<h2>Using splice() to Remove Elements</h2>
+	<p>You can use <span>splice()</span> - to REMOVE elements - without leaving "holes" in the array:</p>
+	<pre>
+		< button onclick="myFunction7()">Try it< /button>
+		< p id="demo37">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo37").innerHTML = fruits;
+			function myFunction7(){
+				<mark>fruit.splice(0 ,1);</mark>
+				document.getElementById("demo37").innerHTML = fruits;
+			}
+		< /script>
+		The first parameter (0) defines the position where new elements should be added (spliced in).
+		The second parameter (1) defines how many elements should be removed.
+	</pre>
+	<button onclick="myFunction7()">Try it</button>
+	<p id="demo37"></p>
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById("demo37").innerHTML = fruits;
+		function myFunction 7(){
+			fruit.splice(0 ,1);
+			document.getElementById("demo37").innerHTML = fruits;
+		}
+	</script>
+
+	<h2>Merging (CONCATENATING) Arrays</h2>
+	<p>The <span>concat()</span> <b>method</b> creates a NEW ARRAY by merginc (concatenating) - existing arrays:</p>
+	<pre>
+		< p id="demo38">< /p>
+		< script>
+			var myGirls = ["Cecilie", "Lone"];
+			var myBoys = ["Emil", "Tobias", "Linus"];
+			var myChildren = <mark>myGirls.concat(myBoys);</mark>
+			document.getElementById("demo38").innerHTML = myChildren;
+		< /script>
+	</pre>
+	<p id="demo38"></p>
+	<script>
+		var myGirls = ["Cecilie", "Lone"];
+		var myBoys = ["Emil", "Tobias", "Linus"];
+		var myChildren = myGirls.concat(myBoys);
+		document.getElementById("demo38").innerHTML = myChildren;
+	</script>
+	<h3>Example (Merging Three Arrays)</h3>
+	<pre>
+		var arr1 = ["Cecilie", "Lone"];
+		var arr2 = ["Emil", "Tobias", "Linus"];
+		var arr3 = ["Robin", "Morgan"];
+		var myChildren = <mark>arr1.concat(arr2, arr3);</mark>   // Concatenates arr1 with arr2 and arr3
+		document.getElementById("demo").innerHTML = myChildren;
+	</pre>
+	<p>The <span>concat()</span> method can also take STRINGS as ARGUMENTS:</p>
+	<pre>
+		< p id="demo39">< /p>
+		< script>
+			var arr1 = ["Emil", "Tobias", "Linus"];
+			var myChildren = <mark>arr1.concat("Petter");</mark>
+			document.getElementById("demo39").innerHTML = myChildren;
+		< /script>
+	</pre>
+	<p id="demo39"></p>
+		<script>
+			var arr1 = ["Emil", "Tobias", "Linus"];
+			var myChildren = arr1.concat("Petter");
+			document.getElementById("demo39").innerHTML = myChildren;
+		</script>
+
+	<h2>Sclicing an Array</h2>
+	<p>The <span>slice()</span> method - slice out a piece of an array INTO a NEW array.</p>
+	<pre>
+		< p id="demo39">< /p>
+		< script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango", "Lemon"];
+			var citrus = fruits.slice(1);
+			document.getElementById("demo39").innerHTML = fruits + "< br>< br>" + citrus;
+		< /script>
+	</pre>
+	<p id="demo40"></p>
+		<script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango", "Lemon"];
+			var citrus = fruits.slice(1);
+			document.getElementById("demo40").innerHTML = fruits + "<br><br>" + citrus;
+		</script>
+	<pre>
+		var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+		var citrus = fruits.slice(3); //Apple,Mango
+
+		var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+		var citrus = fruits.slice(2); // Lemon, Apple, Mango
+	</pre>
+<hr>
+
+<h1>JavaScript Sorting Arrays</h1>
+
+<h2>Sorting an Array</h2>
+<p>The <span>sort() method</span> sorts an array alphabetically:</p>
+<pre>
+	< p id="demo41">< /p>
+	< button onclick="myFunction()">Click Me< /button>
+	< script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		document.getElementById('demo41').innerHTML = fruits;
+		function myFunction() {
+			<mark>fruits.sort();</mark>
+		document.getElementById("demo41").innerHTML = fruits;
+		}
+	< /script>
+</pre>
+<p id="demo41"></p>
+<button onclick="myFunction8()">Try Me!</button>
+
+<script>
+	var fruits = ["Banana", "Apple", "Orange", "Mango"];
+	document.getElementById("demo41").innerHTML = fruits;
+	function myFunction8() {
+		fruits.sort();
+		document.getElementById("demo41").innerHTML = fruits;
+	}
+</script>
+
+<h2>Reversing an Array</h2>
+<p>The <span>reverse()</span> method REVERSES the ELEMENTS in an array.</p>
+<pre>
+	< p id="demo42">< /p>
+	< button onclick="myFunction9()">Try Me!< /button>
+	< script>
+		var fruits = ["Banana", "Apple", "Orange", "Mango"];
+		document.getElementById("demo42").innerHTML = fruits;
+		<mark>function myFunction9() {
+			fruits.reverse();</mark>
+		document.getElementById("demo43").innerHTML = fruits;
+		}
+	< /script>
+</pre>
+	<button onclick="myFunction9()">Try it</button>
+
+<p id="demo42"></p>
+
+<script>
+// Create and display an array:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo42").innerHTML = fruits;
+
+function myFunction9() {
+  // First sort the array
+  fruits.sort();
+  // Then reverse it:
+  fruits.reverse();
+  document.getElementById("demo42").innerHTML = fruits;
+}
+</script>
+
+<h2>Numeric Sort</h2>
+<p>By default, the <span>sort()</span> function sorts values as <b>strings</b>.</p>
+<p>This wors well for strings ("Apple" comes before "Banana").<br>
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".</p>
+<p>Because of this, the <span>sort()</span> method - <b>will produce incorrect result</b> - when sorting numbers.</p>
+<pre>
+	< p id="demo43">< /p>
+	< button onclick="myFunction10()">Click Me!< /button>
+
+	< script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo44").innerHTML =points;
+		function myFunction10(){
+			<mark>points.sort(function(a ,b){return a - b});</mark>
+		document.getElementById("demo44").innerHTML = points;
+		}
+	< /script>
+</pre>
+<p id="demo43"></p>
+<button onclick="myFunction10()">Click Me!</button>
+
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo43").innerHTML =points;
+		function myFunction10(){
+			points.sort(function(a, b){return a - b});
+		document.getElementById("demo43").innerHTML = points;
+		}
+	</script>
+<p>Use the same TRICK to SORT an arrays DESCENDING:</p>
+<pre>
+	var points = [40, 100, 1, 5, 25, 10];
+	points.sort(function(a, b){return b - a});
+	// 100, 40, 25, 10, 5, 1
+</pre>
+
+<h2>The Compare Function</h2>
+<p>The PURPOSE of the <u>compare function</u> is - <b>to define</b> - an alternative sort order.<br>
+The compare function should return a NEGATIVE ZERO, or POSITIVE VALUE, depending on the arguments.</p>
+<p>When the <span>sort()</span>function compares two values, <span>it sends the values to the compare function</span>, and sorts the values according to the returned (NEGATIVE, ZERO, POSITIVE) value.</p>
+<p>If the result is NEGATIVE <span>a</span> is sorted before <span>b</span>.<br>
+If the result is positive <span>b</span> is sorted before <span>a</span>.<br>
+If the result is 0 no changes are done with the sort order of the two values.</p>
+<h5>Example:</h5>
+<p>The compare function compares all the values in the ARRAY, <b>two values at the time</b><span>(a, b)</span>.<br>
+When comparing 40 and 100, the <span>sort()</span> method calls the compare function (40,100).<br>
+The function calculates 40 and 100,<span>(a - b)</span>, and since the result is negative (-60), the sort function will sort 40 as a value LOWER than 100.<br>
+..use this code snipped to experiment with numerically and alphabetically sorting:
+</p>
+<pre>
+	< p id="demo45">< /p>
+	< button onclick="myFunction11()">Click Me!< /button>
+	< button onclick="myFunction12()">Click Me!< /button>
+	< script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo45").innerHTML = points;
+
+		function myFunction11() {
+			<mark>points.sort();</mark>
+			document.getElementById("demo45").innerHTML = points;
+		}
+		function myFunction12() {
+			<mark>points.sort(function(a, b){return a - b});</mark>
+			document.getElementById("demo45").innerHTML = points;
+		}
+	< /script>
+</pre>
+	<button onclick="myFunction11()">Click Me!</button>
+	<button onclick="myFunction12()">Click Me!</button>
+	<p id="demo44"></p>
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo44").innerHTML = points;
+
+		function myFunction11() {
+			points.sort();
+			document.getElementById("demo44").innerHTML = points;
+		}
+		function myFunction12() {
+			points.sort(function(a, b){return a - b});
+			document.getElementById("demo44").innerHTML = points;
+		}
+	</script>
+
+	<h5>Youtube Example</h5>
+<pre>
+	The array SORT METHOD - sorts the ELEMENTS of the array by manipulating the array.
+	The DEFAULT sort ORDER is ASCENDING. It will CONVERT the ELEMENTS from the ARRAY - TO STRINGS - and then it will COMPARE their sequences of utf-16 ODE UNIT values. 
+	How the sort() method - work on the strings. We have an array of names - and we want to SORT them.
+
+	const names = ["Florin", "Liam", "Jai", "Ivan"];
+	names.sort();
+	sonsole.log(names);
+
+	<mark>names.sort()</mark> will modify the names array. console.log(names);
+	["Florin", Ivan, Jai, Liam];
+	---------------------------------------------------------------------------
+	What happens if you want to sort an array of numbers.
+	const numbers = [74, 18, 10, 5 84, 24 105];
+	By sorting the array - we expecting that "5" will be the first element. 
+
+	const numbers = [74, 18, 10, 5, 84, 24, 105];
+	numbers.sort();
+	console.log(numbers); //[10,105,18,24,5,74,84];
+	> the sort convert the "elements" to "strings" and in a numeric sort... string will "read the order in this way." (just read the I'st element).
+
+	We can provide a <mark>COMPARE function</mark> and we can decide what's the algorithm we want to sort with.
+	For that - we going to create - a <b>COMPARE FUNCTION.</b> - which takes two parameters (a,b) - meaning the elements will be compared.
+	The <mark>return a - b; b -a;</mark> will <mark>DECIDE</mark> WHICH ELEMENT COMES FIRST.
+	We have 3 scenarios: 
+	the number is < than 0 - a comes first.
+	the number is > than 0 - b comes first.
+	the number is = to 0 - nothing will be changed.
+
+	const numbers = [74, 18, 10, 5 84, 24, 105];
+	numbers.sort<mark>(comparedFunction);</mark>
+	console.log(numbers); // [10,105,18,24,5,74,84];
+
+	function compareFunction(a, b) {
+		return a - b;
+	}; // [5, 10, 18, 24, 74, 84, 105]
+	-----------------------------------------------------------------------------------
+	sort() method  - can work even with an array of objects.
+
+	const products = [
+		{name: 'laptop', price: 1000},
+		{name: 'desktop', price: 1500},
+		{name: 'phone', price: 500}		
+	];
+
+	<mark>An array of PRODUCTS - which have 3 OBJECTS,</mark> containing the <b>name of the products</b> and <b>the price</b>. We want to SORT this array - depending on the "price". (for example - in ascending order).
+	1. let's see what happen if we use <mark>the sort() method</mark> as is product:
+	const products = [
+		{name: 'laptop', price: 1000},
+		{name: 'desktop', price: 1500},
+		{name: 'phone', price: 500}		
+	];
+	<mark>products.sort();</mark>
+	console.log(products); // the array remains UNCHANGED.
+
+	1.1 But if we create a variable:
+	const sorted = products.sort();
+	console.log(sorted); // we "received" an alphabetical order of the PRODUCTS.
+
+	2.As we did previously - we can PROVIDE  a COMPARE function.
+	const products = [
+		{name: 'laptop', price: 1000},
+		{name: 'desktop', price: 1500},
+		{name: 'phone', price: 500}		
+	];
+	<mark>products.sort((a, b) => {
+			return a.price - b.price;
+	});</mark>
+	console.log(products)
+	3. we can compare the prices of the objects - because -now for the "a" and "b" we have acces to the price.
+	You can see that - the array CHANGED - from lower to higher.
+	
+	{name: 'phone', price: 500}
+	{name: 'laptop', price: 1000},
+	{name: 'desktop', price: 1500},
+</pre>
+
+<h5>Another Example:</h5>
+<pre>
+	const numbers = [1, 4, 5, 69];
+	numbers.sort(compareNumbers);
+	function compareNumbers(a,b) {
+	return b-a; 
+	}
+</pre>
+<h3>Another Example</h3>
+https://www.youtube.com/watch?v=BbuLjEqFlw0
+	<pre>
+		const a = ["dom", "apple", "bottle"];
+		const sorted = a.sort();
+		console.log(sorted); // ['apple', 'bottle', 'dom'] - it gets sorted by alphabetical order.
+		(this was the BASIC usage of "sort()" method).
+
+		2. const people = [
+			{name: "Dom",
+			 age: 55
+			},
+			{name: "Sophie",
+			 age: 96
+			},
+			{name: "Mark",
+			 age: 27
+			}
+		];
+
+		2. Now, we use the sort() method  - to sort these people by their actual age.
+
+		const sortedByAge = <mark>people.sort</mark>(function(a, b) {
+			<mark>return a.age - b.age;</mark>
+		});
+		console.log(sortedByAge);
+
+		This time we gonna pass in a "COMPARE FUNCTION". This function(a, b) - takes two arguments. Tipically "a" and "b". "a" and "b" can be TWO of "these objects".<br>
+		That's just the way that the actual sorting algorithm works. It get "two object" - to actually work with it.
+		When this "function()" - returns a negative value => "a" is before "b".
+		If it get positive number (outside of this <b>callback function()</b> - "b" will be in front/ above "a".
+		It depends of the RETURN VALUE of this COMPARE FUNCTION.
+		"0" - MEANS their both the same.
+
+		return a.age - b.age; - sort these people BY THEIR age.
+
+	</pre>
+	<button onclick="displayPeople()">Sort</button>
+	<p id="demo99"></p>
+	<script>
+		const people = [{name:'Dom', age:55}, {name:'Sophie', age:96}, {name:'Mark', age:27}];
+		
+	   
+		
+		function sortPeople() {
+			people.sort(function(a, b) {return a.age - b.age});
+			document.getElementById("demo99").innerHTML = sortpeople();
+		}
+		
+		function displayPeople() {
+			document.getElementById("demo99").innerHTML = sortPeople();
+			
+		};
+		
+	</script>
+	
+
+
+<h2>Sorting an Array in Random Order</h2>
+<pre>
+	< button onclick="sortFunction13()">Try Me!< /button>
+	< p id="demo45">< /p>
+
+	< script>
+	  var points = [40, 100, 1, 5, 25, 10];
+	  document.getElementById("demo45").innerHTML = points;
+	  function sortFunction13(){
+	  	<mark>points.sort(function(a, b){Math.random()});</mark>
+	  	document.getElementById("demo45").innerHTML = points;
+	  }
+	< /script>
+</pre>
+
+<button onclick="sortFunction13()">Try Me!</button>
+<p id="demo45"></p>
+
+	<script>
+	  var points = [40, 100, 1, 5, 25, 10];
+	  document.getElementById("demo45").innerHTML = points;
+	  function sortFunction13(){
+	  	points.sort(function(a, b){return 0.5 - Math.random()});
+	  	document.getElementById("demo45").innerHTML = points;
+	  }
+	</script>
+<h3>Youtube Example:</h3>
+<pre>
+	< button onclick="shuffleUsingSortFunction(array)">Shuffle Using Random Swaping</button>
+	< div id="numberList"></div>
+	< script>
+	var numberStrings = ["One","Two", "Three", "Four", "Five", "Six"];
+	function shuffleUsingSortFunction(array) {
+		<mark>numberStrings.sort(function(a, b){
+			return 0.5-Math.random();</mark>
+		});
+		document.getElementById("numberList").innerHTML = numberStrings;
+	}
+
+	< /script>
+</pre>
+<button onclick="shuffleUsingSortFunction()">Shuffle Using Random Swaping</button>
+	<div id="numberList"></div>
+	<script>
+	var numberStrings = ["One","Two", "Three", "Four", "Five", "Six"];
+	function shuffleUsingSortFunction() {
+		numberStrings.sort(function(){
+			return 0.5-Math.random();
+		});
+		document.getElementById("numberList").innerHTML = numberStrings;
+	}
+
+	</script>
+
+<h2>The Fisher Yates Method</h2>
+<p>?___?</p>
+
+<h2>Find the Highest (or Lowest) Array Value</h2>
+<p>There are no BUITL-IN functions - for finding the max or min value in an array.<br>
+However, after you have sorted an array, you can use the <span>index</span> to obtain the highest and lowest values.</p>
+
+<p><span><b><u>Sorting ascending:</u></b></span></p>
+<pre>
+	< p>The lowest number is: < span id="demo46">< /span>< /p>
+	< script>
+		var points = [40,100,1,5,25,10];
+		<mark>points.sort(function(a, b) {return a - b});</mark>
+		document.getElementById("demo46").innerHTML =<mark>points[0];</mark>
+	< /script>
+</pre>
+
+<p>The lowest number is: <span id="demo46"></span></p>
+	<script>
+		var points = [40,100,1,5,25,10];
+		points.sort(function(a, b) {return a - b});
+		document.getElementById("demo46").innerHTML = points[0];
+	</script>
+
+<p><span><b><u>Sorting descending:</u></b></span></p>
+<pre>
+	< p>The highest number is: < span id="demo47">< /span>< /p>
+	< script>
+		var points = [40, 100, 1, 5, 25, 10];
+		<mark>points.sort(function(a, b) {return b - a});</mark>
+		document.getElementById("demo46").innerHTML = <mark>points[0];</mark>
+	< /script>
+</pre>
+<p>The highest number is: <span id="demo47"></span></p>
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		points.sort(function(a, b) {return b - a});
+		document.getElementById("demo47").innerHTML = points[0];
+	</script>
+
+<h2>Using Math.max() on an Array</h2>
+<p>You can use <span>Math.max.apply</span> to find the HIGHEST number in an array:</p>
+<pre>
+	< p>The highest number is: < span id="demo48">< /span>< /p>
+	< script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo48").innerHTML = <mark>myArrayMax(points);</mark>
+		function myArrayMax(arr) {
+			<mark>return Math.max.apply(null, arr);</mark>
+		}
+	< /script>
+</pre>
+<p>The highest number is: <span id="demo48"></span></p>
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo48").innerHTML = myArrayMax(points);
+		function myArrayMax(arr) {
+			return Math.max.apply(null, arr);
+		}
+	</script>
+
+<h2>Using Math.min() on an Array</h2>
+<p>You can use <span>Math.min.apply</span> to find the lowest number in an array:</p>
+<pre>
+	< p>The lowest number is: < span id="demo49">< /span>< /p>
+	< script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo49").innerHTML = <mark>myArrayMax(points);</mark>
+		function myArrayMin(arr) {
+			<mark>return Math.min.apply(null, arr);</mark>
+		}
+	< /script>
+</pre>
+<p>The lowest number is: <span id="demo49"></span></p>
+	<script>
+		var points = [40, 100, 1, 5, 25, 10];
+		document.getElementById("demo49").innerHTML = myArrayMin(points);
+		function myArrayMin(arr) {
+			return Math.min.apply(null, arr);
+		}
+	</script>
+<p><span>Math.max.apply(null, [1, 2, 3])</span> is equivalent to <span>Math.max(1, 2, 3).</span><br>
+<span>Math.min.apply(null, [1, 2, 3])</span> is equivalent to <span>Math.min(1, 2, 3).</span>
+</p>
+<pre>
+	Math.max(12, 23, 100, 99, 1); //100
+	Math.min(12, 23, 100, 99, 1); //1
+</pre>
+
+<h2>Sorting Object Arrays</h2>
+<p>JS arrays often contain objects:</p>
+<p>Even if objects have properties of different data types, the <span>sort()</span> method can be used to sort the array.<br>
+The solution - si to WRITE - a compare function - to compare the property values:</p>
+<pre>
+	< button onclick="myFunction14()">Click ME!< /button>
+	< p id="demo50">< /p>
+
+	< script>
+		var cars = [
+		{type:"Volvo", year: 2016},
+		{type:"Saab", year: 2001},
+		{type:"BMW", year: 2010}
+		];
+		
+		displayCars();
+	
+	function myFunction14() {
+		<mark>cars.sort</mark>(function(a, b){return a.year - b.year});
+		displayCars();
+	}
+
+	 function displayCars() {
+	 	document.getElementById("demo50").innerHTML = 
+	 	cars[0].type + " " + cars[0].year + "< br>"
+	 	cars[1].type + " " + cars[1].year + "< br>" // [1] - number index, .type - name index
+	 	cars[2].type + " " + cars[2].year;
+	 }
+	< /script>
+</pre>
+<button onclick="myFunction14()">Sort</button>
+
+<p id="demo50"></p>
+
+	<script>
+		var cars = [
+		{name:"Volvo", year:2016},
+		{name:"Saab", year:2001},
+		{name:"BMW", year:2010}
+		];
+		
+		displayCars();
+	
+	function myFunction14() {
+		cars.sort(function(a, b){return a.year - b.year});
+		displayCars();
+	}
+
+	 function displayCars() {
+
+	 	document.getElementById("demo50").innerHTML = 
+	 	cars[0].name + " " + cars[0].year + "<br>" +
+	 	cars[1].name + " " + cars[1].year + "<br>" +// [1] - number index, .type - name index
+	 	cars[2].name + " " + cars[2].year;
+	 }
+	</script>
+<p>Or:</p>
+<pre>
+	< button onclick="myFunction15()">Sort!< /button>
+	< p id="demo51">< /p>
+
+	< script>
+		var cars = [
+		{type:"Volvo", year: 2016},
+		{type:"Saab", year: 2001},
+		{type: "BMW", year: 2010}
+		];
+		displayCars();
+
+		function myFunction15() {
+			<mark>cars.sort</mark>(function(a, b){
+				var x = a.type.toLowerCase();
+				var y = a.type.toLowerCase();
+				if (x < y) {return -1;}
+				if (x > y) {return 1;}
+				return 0;
+			});
+			displayCars();
+		}
+
+		function displayCars() {
+
+	 	document.getElementById("demo50").innerHTML = 
+	 	cars[0].type + " " + cars[0].year + "< br>" +
+	 	cars[1].type + " " + cars[1].year + "< br>" +// [1] - number index, .type - name index
+	 	cars[2].type + " " + cars[2].year;
+	 }
+	< /script>
+</pre>
+<button onclick="myFunction15()">Sort!</button>
+<p id="demo51"></p>
+
+	<script>
+		var cars = [
+		{type:"Volvo", year:2016},
+		{type:"Saab", year:2001},
+		{type:"BMW", year:2010}
+		];
+		
+		displayCars();
+
+		function myFunction15() {
+			cars.sort(function(a, b){
+				var x = a.type.toLowerCase();
+				var y = b.type.toLowerCase();
+				if (x < y) {return -1;}
+				if (x > y) {return 1;}
+				return 0;
+			});
+			displayCars();
+		}
+
+		function displayCars() {
+
+	 	document.getElementById("demo51").innerHTML = 
+	 	cars[0].type + " " + cars[0].year + "<br>" +
+	 	cars[1].type + " " + cars[1].year + "<br>" +// [1] - number index, .type - name index
+	 	cars[2].type + " " + cars[2].year;
+	 }
+	</script>
+<h3>Youtube Examples:</h3>
+
+<p>besides sort() method - you can use a LOOP to sort an array - which is probably a difficult aproach. Math object in JS has a MIN and MAX method - that is used to get the MINIMUM or MAXIMUM number from a list of NUMBERS.</p>
+<h4>I. Math Object</h4>
+<p>This is  - how we acces the min method: - and then  you can determine the MINIMUM number from a LIST of NUMBERS.</p>
+<p><mark>Math.min(1, 2);</mark> <span>//1</span></p>
+<p><mark>Math.max(34, 56, 78, 90, 1, 5);</mark> <span>//90</span></p>
+<p>now, if we trying to do with an array - we have the sam ething  - except THE LIST OF NUMBERS - are PART of the array.</p>
+<p>Math.max([34, 56, 78, 90, 1, 5]);<span>NaN</span><br>
+NaN - because the max or min method -look at the data that's passed in - and they say - (well this isn't a number)- (this is an array).<br>(since it's not a number (NaN) I can't do anything.)</p>
+
+<h4>II. Spread Operator</h4>
+<p>The <span>spread operator [...]</span> converts an ARRAY - <span>to a list of value</span>.. (it spreads the array out - into its individual values).<br>
+The spread operator is simply <span><b>three periods</b></span> <span>(...[---]);</span></p>
+<mark>Math.max(...[34, 56, 78, 90, 1, 5]);</mark> <span>//90</span>
+<h5>B.</h5>
+<p>let arr = [34, 56, 78, 90, 1, 5];<br>
+Math.min(arr); <span>//NaN</span></p>
+<p>...but If we use "the spread Operator</p>
+<p>let arr = (...[34, 56, 78, 90, 1, 5]);<br>
+Math.min(arr); <span>//1</span></p>
+
+<h4>Apply Method</h4>
+<p>Another way to invoke a function. We can use <span>apply</span> to invoke the MIN or the MAX method of the math object.<br>
+Advantages: Using apply to invoke a function - allows us TO PASS - ALL THE ARGUMENTS into that FUNCTION or METHOD  as an array.</p>
+<p>let arr = [34, 56, 78, 90, 1, 5];<br>
+Math.min.apply(null,arr);</p>
+<hr>
+
+<h1>JavaScript Array Iteration Methods</h1>
+<p>Array iteration methods -operate- on every array item.</p>
+
+<h2>Array.forEach()</h2>
+<p>The <span>forEach()</span> method - calls a function (a callback function) - ONCE - for each element.</p>
+<pre>
+	< p id="demo52">< /p>
+	< script>
+		var txt = "";
+		var numbers = [45, 4, 9, 16, 25];
+		numbers.forEach(myFunction);
+		document.getElementById("demo52").innerHTML = txt;
+
+		function myFunction16(value, index, array) {
+			<mark>txt = txt + value + "< br>";</mark>
+		}
+		//Calls a function for each array element.
+	< /script>
+</pre>
+<p id="demo52"></p>
+
+<script>
+	var txt = "";
+	var numbers = [45, 4, 9, 16, 25];
+	numbers.forEach(myFunction16);
+	document.getElementById("demo52").innerHTML = txt;
+
+	function myFunction16(value, index, array) {
+	  txt = txt + value + "<br>"; 
+	}
+</script>
+		//Calls a function for each array element.
+	</script>
+<p>Example 2: tha izi uan:</p>
+<pre>
+	< p id="demo53">< /p>
+	< script>
+		const numbers = [1, 4, 5, 68];
+		numbers.forEach(function (item) {
+			document.getElementById("demo53").innerHTML = item;
+		}); 
+		numa in console.log(item) - merge...
+	< /script>
+	..it's used to loop through an array - giving you the acces to the element ITSELF - and also the INDEX of the element.
+	- a "NEAT"(ingrijit) way of doing  a FULL LOOP through an array.
+	- now - use <mark>forEach()</mark> method - on this array - to <mark>print out</mark>, all the numbers in the console.
+	- type <mark>numbers.forEach()</mark> <- this, take a function as a parameter.
+	- type the function () ('inside') - and the function() - takes multiple parameters. (but we take 1).[numbers.forEach(function (item)) sau numbers.forEach(function (e));]
+	- this -> <mark>function()</mark> - gets call - for every element in the array | and <mark>"e"</mark> is each individual element [1, 4, 5, 68];
+	- console.log(e) - to print out "[1, 4, 5, 68]" to the console.
+	Recap: this function -> function (item){console.log(item);});
+	< script>
+		const numbers = [1, 4, 5, 68];
+		numbers.forEach<mark>(function (item){
+			console.log(item);
+		});</mark>
+	< /script>
+	IS BEEING CALLED FOR EVERY ELEMENT IN THE ARRAY and <mark>"item/e"</mark> is the value of that element.(???) [1, 4, 5, 68];
+</pre>
+	<script>
+		const numbers = [1, 4, 5, 68];
+		numbers.forEach(function (item) {
+			document.write(item);
+		}); 
+	</script>
+
+<pre>
+	Now we can simple ACCES the INDEX of these elements. Make a new array called: "name" - = to an ARRAY of STRINGS.
+	We're going to LOOP through an ARRAY and PPRINT OUT - <mark>the name</mark> as wel <mark>the INDEX of the ARRAY.</mark>
+	Obviously we have index 0, index 1, index 2.
+	<mark>const names = ["Dom", "Bob", "Mary"];</mark>	
+	names.forEach(function (e, i) {
+	console.log (e + " " + i);
+	});
+
+	i - is the INDEX of the ELEMENT - that you're currently on.
+	i - is the INDEX of each ELEMENT as it GOES through it.
+
+      Dom 0
+      Bob 1
+      Mary 2
+</pre>
+<script>
+	const names = ["Dom", "Bob", "Mary"];
+	names.forEach(function(e, index){
+		document.write(e + " " + index);
+	});
+</script>
+
+<h2>Array.map()</h2>
+<p>The <span>map() method</span> - creates a NEW ARRAY - by performing a function on - each array element.<br>
+The <span>map() method</span> - does not EXECUTE the Function - for the array elements - without values.<br>
+The <span>map() method</span> - does not CHANGE the ORIGINAL array.</p>
+<pre>
+	< p id="demo53">< /p>
+	< script>
+		var numbers1 = [45, 4, 9 ,16, 25];
+		var numbers2 = numbers1.map(myFunction17);
+		document.getElementById("demo53").innerHTML = numbers2;
+
+		function myFunction17(value, index, array) {
+			return value * 2;
+		}
+	< /script>
+</pre>
+<p id="demo53"></p>
+	<script>
+		var numbers1 = [45, 4, 9 ,16, 25];
+		var numbers2 = numbers1.map(myFunction17);
+		document.getElementById("demo53").innerHTML = numbers2;
+
+		function myFunction17(value, index, array) {
+			return value * 2;
+		}
+	</script>
+<p>The function takes 3 ARGUMENTS (value, item, array). When <b>a callback function</b> uses only the (value) parameter - the -index- and -array- parameters can be ommited.</p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var numbers1 = [45, 4, 9, 16, 25];
+	var numbers2 = numbers1.map(myFunction);
+
+	document.getElementById("demo").innerHTML = numbers2;
+
+	function myFunction(value) {
+	  return value * 2;
+	}
+	< /script>
+	// 90, 8, 18, 32, 50
+
+	<mark> de ce (value)???</mark>
+</pre>
+<h3>Example 2:</h3>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var numbers1 = [45, 4, 9, 16, 25];
+	var numbers2 = numbers1.map(myFunction);
+
+	document.getElementById("demo").innerHTML = numbers2;
+
+	function myFunction(value, index, array) {
+	  <mark>return numbers1;</mark>
+	}
+	< /script>
+	// 45,4,9,16,25,45,4,9,16,25,45,4,9,16,25,45,4,9,16,25,45,4,9,16,25
+</pre>
+<h4>Youtube Examples:</h4>
+<p>https://www.youtube.com/watch?v=djiHm61y8P4</p>
+<h5>Example 1:</h5>
+<pre>
+	< script>
+	let dwarves = ['Bifur', 'Bofur', 'Bombur', 'Fili', 'Kili', 'Oin', 'Gloin', 'Thorin', 'Dwalin', 'Nori', 'Dori'];
+	//determine the LENGTH of each name - and save it in an Array
+	let nameLenghts = dwarves.map(function(item, index, array){
+
+	});
+	< /script>
+	The sintax is very similar to "forEach()";
+	<b>map</b> will do the same thing as the "forEach()" 
+	It will call this -><mark>function (item, index, array)</mark> - once for every element inside the array. (The deifference betwen forEach() and map() - is that the "forEach() method" - 
+	doesn't return anything to us....? It just goes through and lets us do something do - to each element in the array.)
+	The "map() method" - will give us back a NEW ARRAY. So, it lets us go through the array, looking at each one of the ITEMS, we'll have acces to the ITEM, the INDEX, and the entire ARRAY -
+	 we can do things with each element in the array.
+	Inside of the function - we need to have a "return statement" - and whatever we return "let nameLengths" - BECOMES the content of the new array.
+	So - this function - it's gonna RUN 12 TIMES (it's gonna call <mark>return</mark> 12 TIMES). This ARRAY have 12 elements/dwarves in it.
+
+	return 12;
+	});
+	console.log(nameLengths); //[12 12 12 12 12 12 12 12 12 12 12 12];
+
+	*here is our new Array- it has 12 - 12's in it. It ran "12 times" - and every single time - it put the number "12 in."
+
+	If we replace with "index":
+
+	return index; //[0,1,2,3,4,5,6,7,8,9,10,11]; - the index from the old array.
+	)};
+	console.log(nameLengths);
+
+	return item; // ['Bifur', 'Bofur' ... 'Dori']; // we have the items.
+	)};
+	console.log(nameLengths);
+
+	Let's determine the LENGTH of each one of these names:
+	To do that - we have to STORE in the new ARRAY:
+
+	let len = item.length
+	return len; [5, 5, 6, 4, 4, 3, 5, 6, 5, 6, 4, 4]
+	)};
+	console.log(nameLengths);
+	OR:
+	return item.length; )};
+	There is the NEW ARRAY NOW. The array "nameLength" - now contains the length of each of these strings
+</pre>
+
+<h4>Example 2:</h4>
+<pre>
+	The map() method - is basically going to run - on an array - and for each element INSIDE your ARRAY - it's gonna RUN a FUNCTION. 
+	That return value of that function - it's gonna be a new ELEMENT inside a NEW ARRAY - which is in place of the OLD ELEMENT.
+	Let's define a NEW ARRAY - and call it "const" - and call this one "existingArray" - which is equal to AN ARRAY of 3 STRINGS:
+	< script>
+		const existingArray = ['dcede', 'dom', 'javascript'];
+	< /script>
+	Using the map() method - we're going to RETURN a NEW ARRAY - OF 3 Elements - <b>based on the VALUE inside THIS array</b>
+
+	< script>
+		const existingArray = ['dcode', 'dom', 'javascript'];
+		const newArray = existingArray.map(function(value){
+
+		});
+	< /script>
+	Declare new var "const newArray = existingArray.map()". This will take a single <b>callback function()</b> - and take a single argument. This is going to be a single string / element inside ...for example (value).
+	For each one of array elements['-','-','-'] is going to run this<mark>function()</mark>.
+	<mark>value</mark> is a parameter.
+	So, from this function() let's return:
+	< script>
+		const existingArray = ['dcode', 'dom', 'javascript'];
+		const newArray = existingArray.map(function(value){
+			return value + "!";	//it's gonn be an EXLAMATION mark - after EACH of these strings.
+		});
+		console.log(newArray); // ['dcode!', 'dom!', 'javascript!']
+	< /script>
+
+	2. The second Argument "index" - the first was "value".
+	The second argument  - to the actual <b>callback function()</b> is "index".
+	"index" of the CURRENT ELEMENT inside the ARRAY. So, let's accept a second argument (value, <mark>index</mark>), and let's simply console.log(index);
+	< script>
+		const existingArray = ['dcode', 'dom', 'javascript'];
+		<mark>console.log(index);</mark>
+		const newArray = existingArray.map(function(value, <mark>index</mark>){			
+		});	
+		console.log(newArray); 
+	< /script>
+	0
+	1 
+	2
+	- we can see how will actually LOOP through EACH ONE of the ARRAY element.
+
+	< script>
+		const existingArray = ['dcode', 'dom', 'javascript'];
+		const newArray = existingArray.map(function(value, <mark>index</mark>){			
+		return <mark>index + ": " + value + "!";</mark> // now we have the <u>INDEX</u>, the <u>VALUE</u> and the <u>EXCLAMATION point</u>.
+	});	
+	< /script>
+	0: "0: dcode!"
+	1: "1: dom!"
+	2: "2: javascript!"
+
+	3. III'rd argument: "array" parameter.
+	This is the actual array - that the map method is caught on...
+	< script>
+		const existingArray = ['dcode', 'dom', 'javascript'];
+		const newArray = existingArray.map(function(value, <mark>index</mark> <mark>array</mark>){	
+		<mark>console.log(array)</mark>
+		return index + ": " + value + "!";	
+		
+	});	
+		<mark>console.log(newArray);</mark>
+	< /script>
+
+	['dcode', 'dom', 'javascript']
+	['dcode', 'dom', 'javascript']
+	['dcode', 'dom', 'javascript']
+	I have the array printed three times -  one for each element (before we get the final result).
+</pre>
+
+<h2>Array.filter()</h2>
+<p>The <span>filter() method</span> creates an array with array elements that <span>PASSES</span> a test.</p>
+<p>This example creates a NEW ARRAY - from elements with a VALUE larger THAN 18:</p>
+<pre>
+	< p id="demo54">< /p>
+	< script>
+		var numbers = [45, 4, 9, 16, 25];
+		var over18 = numbers.filter(myFunction18);
+
+		document.getElementById("demo54").innerHTML = over18;
+		function myFunction18(value, index, array){
+			return value > 18;
+		} 
+	< /script>
+</pre>
+<p id="demo54"></p>
+	<script>
+		var numbers = [45, 4, 9, 16, 25];
+		var over18 = numbers.filter(myFunction18);
+
+		document.getElementById("demo54").innerHTML = over18;
+		function myFunction18(value, index, array){
+			return value > 18;
+		} 
+	</script>
+
+<h3>1.Youtube Example</h3>
+<pre>
+	How to filter an array bassed on search criteria.
+	Let's say we want to return, only the positive numbers.
+	...use filter() method like this, where we need to PASS a ><b>callback function</b>, with 3 parameters (value, index, array).
+	We care about only the "value" cause I just wanna see if the number (of the value) is positive.
+	
+	const numbers = [1, -1, 2, 3];
+	numbers.filter(function(value){
+		return value >= 0; // a simple expression like this: ( value >= 0; )
+	});
+
+	*Let me call the filter() method - the method will look through this array - and EXECUTE this <b>callback function - function(value)</b> - for each element. [1, -1, 2, 3];
+
+	If the "ELEMENT" matches this criteria - it will add this elelemnt ( value>= 0;) and ... we can get a new array here.
+
+	const numbers = [1, -1, 2, 3];
+	const filtered = numbers.filter(function(value){
+		return value >= 0;
+	});
+
+	console.log(filtered);
+
+	...so in our filtered array - we have only [1, 2, 3].
+</pre>
+<pre>
+	The Arrow Function ( =>);
+	-get rid of the "function" keyword.
+	- put a fat arrow "=>" betwen the (parameter) and the (body) of this function.
+	-we don't need <u>parantheses</u> because we simply returning a <u>value</u>
+	-as well, get rid of curly breaces. {}
+	- put everyhting on the same line.
+
+	const numbers = [ 1, -1, 2, 3];
+	const filtered = numbers.filter<mark>(value => value >= 0);</mark>
+
+	b. A little bit shorter- in this case using abbreviation like "v" from value - or "n" from "number".
+
+	const numbers = [ 1, -1, 2, 3];
+	const filtered = numbers.filter<mark>(v => v >= 0);</mark>
+	c.log(filtered);
+
+	const numbers = [ 1, -1, 2, 3];
+	const filtered = numbers.filter<mark>(n => n >= 0);</mark>
+	c.log(filtered);
+
+	const filtered = numbers.filter(value => value >= 0);
+	numbers - it is obviuous that we working with the (numbers array).
+	filter - we get <u>numbers</u> "n", <mark>where "=>"</mark>, <u>numbers</u> "n" is greater than or equal ">=" to 0.
+</pre>
+<pre>
+	c.
+	Here we dealng with an array of numbers, but in a real world application - you'le be using an ARRAY of OBJECTS.
+	For example, in a website... you can click a button to find only restaurants THAT ARE OPEN NOW. This is some kind of FILTER.
+	If you wan to implement something like this - instead of an ARRAY of NUMBERS you would have an <mark>array of restaurants</mark> - and each restaurants has opening hours.
+	So you can filter restaurants that are currently OPEN and return them.
+</pre>
+<h3>Example 2</h3>
+<pre>
+	https://www.youtube.com/watch?v=WrB_--bVbbs
+	Smilar to array.map() method - took an array, and call a function ONCE - FOR EACH element in the ARRAY.
+	<mark>array.filter()</mark> does a similar thing. 
+	A. Creates a NEW ARRAY from another array - by RUNNING through (LOOKING OF EACH ONE IF THE ITEMS IN THE ARRAY.)
+	B.Call a FUNCTION ONCE for each those items in the ARRAY.
+
+	let numbers = [23, 45, 14, 66, 94, 33, 4, 9]; // a var called "numbers". It is an array containing these 8 numbers.
+	let breakpoint = 30;
+
+	Now, i'm gonna call  - the array FILTRED METHOD, 3 times.
+	console.log ('\n Smaller than 30:', smallNumbers);
+	console.log('\n Larger than 30:', bigNumbers);
+	console.log('\n Odd Numbers:', oddNumbers);
+-------------------------------------------------------------------
+	let numbers = [23, 45, 14, 66, 94, 33, 4, 9];
+	let breakpoint = 30;
+
+	let smallNumbers
+
+	let bigNumbers
+
+	let oddNumbers
+
+	console.log ('\n Smaller than 30:', smallNumbers);
+	console.log('\n Larger than 30:', bigNumbers);
+	console.log('\n Odd Numbers:', oddNumbers);
+-------------------------------------------------------------------
+	I'm gonna call the filter() - method.
+	The filter() method - take an argument - a function() to call.
+	When the function() is called - filter() will PASS TO IT - 3 things. <mark>(number, index, array)</mark>
+	I - the ELEMENT itself.
+	II - it's INDEX / it's positioned
+	III - a COPY of the ENTIRE array.
+	I just put(num). 
+	(num) is - [23, 45, 14, 66, 94, 33, 4, 9];
+	Each time the function() is called - (num) - represents each element in the ARRAY.
+
+	let numbers = [23, 45, 14, 66, 94, 33, 4, 9];
+	let breakpoint = 30;
+
+	let smallNumbers = <mark>numbers.filter(function(num){
+		return true; </mark> // will return an entire ARRAY. [.....];
+		return false; // will return an EMPTY array.
+		<mark>return num < breakPoint;</mark> 
+		// the number that's being passed in - is it smaller thant the BREAKPOINT? [23, 14, 4, 9];
+		//these ar the actual (4) numbers (from these eight) that are actually less/smaler than...<mark>30</mark>.
+	});
+
+	let bigNumbers = numbers.filter(function(num){
+		return num > breakPoint; //[...];
+});
+	OR:
+
+	let bigNumbers = numbers.filter<u>(checkBig)</u>;
+	function <u>checkBig(num)</u>{
+		return num >breakPoint;
+}
+
+	let oddNumbers
+
+	console.log ('\n Smaller than 30:', smallNumbers);
+	console.log('\n Larger than 30:', bigNumbers);
+	console.log('\n Odd Numbers:', oddNumbers);
+
+</pre>
+<pre>
+	odd numbers. Let's say we wanna extract ODD numbers - from this ARRAY.
+	We can use the <b>filter() function</b>
+
+	let oddNumbers = numbers.filters(function(num){
+
+});
+	* we gonna to determine which numbers is going to be ODD or EVEN.
+	1. Use modulus (%) operator.
+	If you took , any number - <b>you DIVIDED by 2</b>. If the <b>remainder</b> is <b>0</b> it's an <b>even Number</b>. If the <b>reminder</b> is <b>1</b> then it's an<b>ODD number</b>.
+
+	let oddNumbers = number.filter(function(num){
+		<mark>var reminder = num % 2;</mark> 
+		// 0, 1, 1001, 100, 101, 110, 111, 1000
+		<mark>return num & 1;</mark>
+});
+
+	2. Another way to do this - use BITWISE operator (&);
+	&(the bitwise operator) - <b>it looks at the individual bits inside of the NUMBER.</b>
+	So - if you count into binarry...(0 1 1001 100 101 110 111 1000) - that's the equivalet of 1, 2, 3, 4, 5, 6, 7, 8
+	If you look closely to the binary number yoou've notice that - the las digit/the last BIT is (0 or 1).
+	iF it's 0 - it's an EVEN NUMBER.
+	IF it's 1 - it's an ODD NUMBER.
+
+	<mark>return num & 1;</mark> - Whatevar number passed In - and (%) 1 with it --- mean - bsaically - lok at the very last BIT.
+	If the las BIT is a "1" - than this is going to return "1".
+	"1" beeing a non-zero number. (1 is not 0).
+	<mark>"1"</mark> is the <mark>EQUIVALENT of TRUE</mark>.
+	<mark>"TRUE"</mark> meaning it's <mark>ODD.</mark>
+</pre>
+
+<h2>Array.reduce()</h2>
+<p>The <span>reduce()</span> method RUNS a function - on each array - to produce it (REDUCE it) to a SINGLE value.<br>
+The <span>reduce()</span> method WORKS from <span style="color:red;"><b>left-to-right</b></span> in the array.<br>
+The <span>reduce()</span> method does not reduce the original array.</p>
+<p>The example FINDS the SUM of all numbers in the array:</p>
+<pre>
+	< p id="demo55">< /p>
+	< script>
+		var numbers = [45, 4, 9, 16, 25];
+		var sum = numbers.reduce(myFunction19);
+		document.getElementById("demo55").innerHTML = 'The sum is ' + sum;
+
+		function myFunction19(total, value, index, array) {
+			return total + value;
+		}
+	< /script>
+</pre>
+<p id="demo55"></p>
+	<script>
+		var numbers = [45, 4, 9, 16, 25];
+		var sum = numbers.reduce(myFunction19);
+		document.getElementById("demo55").innerHTML = 'The sum is ' + sum;
+
+		function myFunction19(total, value, index, array) {
+			return total + value;
+		}
+	</script>
+<h3>Youtube Example</h3>
+<pre>
+	const numbers = [1, -1, 2, 3];
+	let sum = 0;
+
+	With reduce() method - we can REDUCE all these elements [1, -1, 2, 3] - in an array - INTO a SINGLE value/number.
+	That single value can be a: number, string, object...
+	It's the SUM of alt these numbers - from this array.
+
+	This method takes a <b>callback function</b> with <b>two parameters</b>. (acuumulator, currentValue);
+	I'm using an arrow function.
+	const numbers = [1, -1, 2, 3];
+	let sum = 0;
+	numbers.reduce((accumulator, currentValue) =>{
+
+}); //accumulartor (parameter) is "let sum = 0" (something that we'll initialize.) 
+This <b>callback</b> function "(accumulator, currentValue) =>{}" - IS EXECUTED multiple times - EACH TIME this "currentValue" - will be SET to one element from this array. [...];
+Each call - we want to get this "currentValue" and ADD IT TO "accumulator". 
+We simply "return"the sum of "accumulator" + "currentValue"; This <mark>"reduce""method</mark> - will get this result <mark>return "accumulator" + "currentValue"</mark> and STORED in the "accumulator".
+4.Initialize this "accumulator" to "0".
+
+const numbers = [1, -1, 2, 3];
+	let sum = 0;
+	numbers.reduce((accumulator, currentValue) =>{
+		<mark>return accumulator + currentValue</mark>;
+}<mark>,0</mark>);
+
+This reduce() method - <mark>has two arguments</mark>: 1. <b>the callback function:</b> reduce((accumulator, currentValue) =>{return acumulator + currentValue;}
+2. the second argument - is <b>the initial value</b> - for the "accumulator". <mark>,0);</mark>
+
+Finally - we get the result of a SINGLE VALUE - in this case "sum".
+
+const numbers = [1, -1, 2, 3];
+<mark>const sum</mark> = numbers.reduce((accumulator, currentValue) =>{
+		return accumulator + currentValue;
+},0);
+	console.log(sum);
+
+Example Explained:
+We initilize "accumulator" - to "0".
+a = 0
+"currentValue" is se to first number/index. (in our case "1"). So:
+a = 0, c = 1
+Now - we add this together <b>accumulator + currentValue;</b> aka a + c = 1. So we get <mark>1</mark>.
+<b><mark>"a" will be set to "1" - after this callback function is executed</mark></b>
+a = 0, c = 1 => a = 1;
+
+In the <b>second round</b> a = 1. a is 1. currentValue will be set "-1" (c = -1); As a result: (a = 0)
+
+a = 1, c = -1 => a = 0. (adding this together "a" will be "0").
+a = 0, c = 2, => a = 2;
+a = 2, c = 3, => a = 5; //the result will be "5".
+Conclusion: Essential - with this <b>reduce() method</b> we start with an "accumulator", then we LOOP through THIS ARRAY - and CONVERT all this elements [1, -1, 2, 3] into a SINGLE VALUE (in this case "accumulator").
+Or - the SUM of all these numbers - from this array. 
+
+MAKE THIS CODE SHORTER:
+Exclude initialization - of the "accumulator": <mark>,0</mark>)}; and <b>1</b> will be first element instead <b>0</b>.
+So, a = 1. a is 1. currentValue will be set "-1". As a result: (a = 0).
+*a = 0. a is 0. currentValue will be set "2". As a result: (a = 2).
+a = 1, c = -1 => a = 0. 
+a = 0, c = 2, => a = 2;
+a = 2, c = 3, => a = 5;
+
+2. Get rid of "return" keyword, then ")", then "}".
+3. Put everything on a single line:
+
+const sum = numbers.reduce (
+	<mark>(accumulator, currentValue) => accumulator + currentValue</mark>
+	);
+	console.log(sum);
+</pre>
+<pre>It's far CLEANER and more ELEGANT than..declaring a sum "let sum = 0"; and then LOOPING this ARRAY like...: "for(let n of numbers)";
+and then ADD: "sum += n;</pre>
+
+<h2>Array.reduceRight()</h2>
+<p>The <span>reduceRight()</span> method runs a function on EACH ARRAY ELEMENT to produce(reduce it to) a single value.<br>
+The <span>reduceRight()</span> works from <span style="color:red;"><b>right-to-left</b></span>.</p>
+<pre>
+	< p id="demo56">< /p>
+	< script>
+		var numbers = ['a', 'b', 'c', 'd', 'e'];
+		var sum = numbers.reduce(myFunction19);
+		document.getElementById("demo56").innerHTML = 'The sum is ' + sum;
+
+		function myFunction19(total, value, index, array) {
+			return total + value;
+		}
+	< /script>
+</pre>
+<p id="demo56"></p>
+	<script>
+		var numbers = ['a', 'b', 'c', 'd', 'e'];
+		var sum = numbers.reduce(myFunction20);
+		document.getElementById("demo56").innerHTML = 'The order is ' + sum;
+
+		function myFunction20(total, value, index, array) {
+			return total + value;
+		}
+	</script>
+
+<h2>Array.every()</h2>
+<p>The <span>every()</span> method check if ALL ARRAY VALUES - pass a test.</p>
+<p>Check is the array values are larger than 18.</p>
+<pre>
+	< p id="demo"></p>
+
+	< script>
+	var numbers = [45, 4, 9, 16, 25];
+	var allOver18 = numbers.every(myFunction);
+
+	document.getElementById("demo").innerHTML = "All over 18 is " + allOver18;
+
+	function myFunction(value, index, array) {
+	  return value > 18;
+	}
+	< /script>
+</pre>
+<p><span>....SIMILAR TO <b>filter()</b>?</span></p>
+<h3>Youtube Example:</h3>
+<pre>
+	https://www.youtube.com/watch?v=uSBrDZ8pRLI
+
+	<mark>every() method</mark> - checks if <b>all</b> elements in the array -  meet a certain condition. It RETURNS - true or false.
+	<mark>some() method</mark> - checks if at least <b>one</b> element  in the array - meets the/that condition.
+
+	Define an array - and put some NUMBERS.
+	If at least one ELEMENT in this ARRAY is over the VLAUE of "100" - we can do this using "the sum() method".
+	But First - we need to define a function() - that will test our condition.  
+
+	< script>
+		const numbers = [10, 50, 75, 102];
+		function isBiggerThan100 (n) {
+			return n > 100;
+		}
+		console.log(numbers.some(isBiggerThan100)); //true
+	< /script>
+	This function() takes ONE parameter - and that will be one of these numbers(and AKA ((n)): 10, 50, 75, 102.
+	We gonna <mark>return n > 100</mark>.
+	This function(n) - will TEST if "n" is larger than "100". - and then return TRUE or FALSE. (wheter or not that is true);
+
+	Now, we gonna pass this function <mark>isBiggerThan100</mark> - INTO the <mark>some() method.</mark> and console.log().
+	And this will check wheter or NOt  - one of these elements [...] in this array - is GREATER than "100".
+
+	const numbers = [10, 50, 75, 60]; // false
+</pre>
+<h3>Example 3</h3>
+<pre>
+	https://www.youtube.com/watch?v=l155liDxty8
+
+	let movies = ['Star Wars', 'Star Trek', 'Jaws', 'Jurassic Park', 'Gross Pointe Blank', 'Eternal Sunshine of the Spotless Mind', 'Memento', 'Dog Soldiers', 'The Host', 'Gran Torino', 'Close Encounters of the Third Kind', 'Good Will Hunting', 'Layer Cake', 'Casino Royale', 'Almost Famous'];
+
+let keyword1 = 'Star';  //appears more than once
+let keyword2 = 'Cake';  //appears once
+let keyword3 = 'Max';   //not in list
+
+let test1 = movies.some(function(title, index){
+    console.log(index, title);
+    return  title.indexOf(keyword1) > -1  ;
+});
+let test2 = movies.some(function(title, index){
+    console.log(index, title);
+    return  title.indexOf(keyword2) > -1  ;
+});
+let test3 = movies.some(function(title, index){
+    console.log(index, title);
+    return  title.indexOf(keyword3) > -1  ;
+});
+</pre>
+<pre>
+	0 "Star Wars"
+	1 "Star Trek"
+	2 "Jaws"
+	3 "Jurassic Park"
+ 	4 "Gross Pointe Blank"
+	5 "Eternal Sunshine of the Spotless Mind"
+	6 "Memento"
+ 	7 "Dog Soldiers"
+	8 "The Host"
+ 	9 "Gran Torino"
+	10 "Close Encounters of the Third Kind"
+ 	11 "Good Will Hunting"
+ 	12 "Layer Cake"
+	13 "Casino Royale"
+	14 "Almost Famous"
+	-- That MEAns  -it goes through the entire array. It will TOPT as soon as it gets a TRUE ANSWER - if it keeps getting FALSE as the answer it will CONTINUE to LOOP THROUGH to the entire array.
+</pre>
+<pre>
+	return  <mark>title.</mark>indexOf(<mark>keyword1</mark>) > -1  ;
+	3. ...SEARCH if WHETHER or NOT <mark>keyword1</mark> EXISTS inside the TITLE.
+	<mark>indexOf()</mark> - it's gonna give me back - the POSSITION of that "keyword".
+	If it's not found  (indexOf() it's gonna give me back the answer of negative 1. (-1)).
+	So...if it's > than "-1" - it means - it did find "that string" - inside of the other string...
+	("keyword" WAS FIND inside of "title") - if anything is GREATER (>) than "-1".
+	..if it's greater than (-1) - i'm goning to be getting a TRUE answer.
+	..if I'm gonna GET  a TRUE answer back - <mark>the LOOPING it's gonna STOP</mark>.
+
+	// 0 'Star Wars'
+</pre>
+<pre>
+	test 2:
+	I'm gonna SEARCHING for "keyword2". Going loop through the same thing.
+	So - "movies  - is my ENTIRE ARRAY"
+	I'm going to callo the "some() method" - on the array, a.k.a. (this "function()" - it's going to RUN for EACH element FROM the ARRAY).
+	
+	It's gonna give me the "tittles" - of all these: "Star Wars", "Star Trek"... - if "keywor2" os found - inside of this title.
+	This will continue to LOOP - until - <mark>'Cake'</mark> is found.
+
+	<mark>0 "Star Wars"
+	1 "Star Trek"
+	2 "Jaws"
+	3 "Jurassic Park"
+ 	4 "Gross Pointe Blank"
+	5 "Eternal Sunshine of the Spotless Mind"
+	6 "Memento"
+ 	7 "Dog Soldiers"
+	8 "The Host"
+ 	9 "Gran Torino"
+	10 "Close Encounters of the Third Kind"
+ 	11 "Good Will Hunting"
+ 	12 "Layer Cake"</mark>
+
+ 	As you can see it - STOPPED at the layer 'Cake';
+
+	13 "Casino Royale"
+	14 "Almost Famous"
+</pre>
+
+<pre>
+	test 3:
+	Looking for a "keyword" - "number3" - which is 'Max';
+
+	0 "Star Wars"
+	1 "Star Trek"
+	2 "Jaws"
+	3 "Jurassic Park"
+ 	4 "Gross Pointe Blank"
+	5 "Eternal Sunshine of the Spotless Mind"
+	6 "Memento"
+ 	7 "Dog Soldiers"
+	8 "The Host"
+ 	9 "Gran Torino"
+	10 "Close Encounters of the Third Kind"
+ 	11 "Good Will Hunting"
+ 	12 "Layer Cake"
+	13 "Casino Royale"
+	14 "Almost Famous"
+
+	We got all the way through the VERY END.
+	'Max' - was NEVER FOUND.
+</pre>
+
+<h2>Array.some()</h2>
+
+<h2>Array.indexOf()</h2>
+
+<h2>Array.lastIndexOf()</h2>
+
+<h2>Array.find()</h2>
+<p>The <span>find() method</span> returns the value of the FIRST ARRAY ELEMENT - that passes a test function.</p>
+<pre>
+	< p id="demo57">< /p>
+	< script>
+		var numbers1 = [4, 9, 16, 25, 29];
+		var first = numbers1.find(myFunction21);
+
+		document.getElementById('demo57').innerHTML = 
+		"First number over 18 is " + first;
+
+		function myFunction21(value, index, array) {
+			return value > 18;
+		}
+	< /script>
+</pre>
+<p id="demo57"></p>
+	<script>
+		var numbers1 = [4, 9, 16, 25, 29];
+		var first = numbers1.find(myFunction21);
+
+		document.getElementById('demo57').innerHTML = 
+		"First number over 18 is " + '<b>' + first + '</b>' + '.';
+
+		function myFunction21(value, index, array) {
+			return value > 18;
+		}
+	</script>
+
+<h2>Array.findIndex()</h2>
+<p>The <span>findIndex()</span> method returns the INDEX of the FIRST ARRAY element - that passes a test function.<br>
+Find the INDEX of the FIRST element - that is LARGER than 18.</p>
+<pre>
+	< p id="demo58">< /p>
+	< script>
+		var numbers2 = [4, 9, 16, 25, 29];
+		var first = numbers1.findIndex(myFunction22);
+
+		function myFunction22(value, index, array) {
+			return value > 18;
+		}
+	< /script>
+</pre>
+<p id="demo58"></p>
+	<script>
+		var numbers2 = [4, 9, 16, 25, 29];
+		var first = numbers1.findIndex(myFunction22);
+
+		function myFunction22(value, index, array) {
+			return value > 18;
+		}
+	</script>
+<hr>
+
+<h1>JavaScript Date Objects</h1>
+<hr>
+
+<h1>JavaScript Get Date Methods</h1>
+<hr>
+
+<h1>JavaScript Set Date Methods</h1>
+<hr>
+
+<h1>JavaScript Math</h1>
+<p>Allows you to perform mathematical tasks on numbers.</p>
+<pre>
+	math.PI; // returns 3.141592653589973
+</pre>
+<p id="demo59"></p>
+<script>
+	document.getElementById('demo59').innerHTML = math.PI;
+</script>
+
+<h2>Math Object</h2>
+<p>Unlike other objects, the Math object has no <b>constructor</b>.<br>
+The Math object is static.<br>
+All <b>methods</b> and <b>properties</b> can be used without creating a Math object first.</p>
+
+<h2>Math <mark>Propperties (Constants)</mark></h2>
+<pre>
+< p id="demo60">< /p>
+< script>
+	document.getElementById('demo60').innerHTML = 
+	"< p>< b>Math.E:< /b> " + Math.E + "< 0/p>" +
+	"< p>< b>Math.PI:< /b>" + Math.PI + "< /p>" +
+	"< p>< b>Math.SQRT2:< /b>" + Math.SQRT2 + "< /p>" +
+	"< p>< b>Math.SQRT1_2:< /b>" + Math.SQRT1_2 + "< /p>" +
+	"< p>< b>Math.LN2:< /b>" + Math.LN2 + "< /p>" +
+	"< p>< b>Math.LN10:< /b>" + Math.LN10 + "< /p>" +
+	"< p>< b>Math.LOG2E:< /b>" + Math.LOG2E + "< /p>" +
+	"< p>< b>Math.Log10E:< /b>" + Math.LOG10E + "< /p>" 
+< /script>
+
+Math.E        // returns Euler's number
+Math.PI       // returns PI
+Math.SQRT2    // returns the square root of 2
+Math.SQRT1_2  // returns the square root of 1/2
+Math.LN2      // returns the natural logarithm of 2
+Math.LN10     // returns the natural logarithm of 10
+Math.LOG2E    // returns base 2 logarithm of E
+Math.LOG10E   // returns base 10 logarithm of E
+</pre>
+<p id="demo60"></p>
+<script>
+	document.getElementById('demo60').innerHTML = 
+	"<p><b>Math.E:</b> " + Math.E + "</p>" +
+	"<p><b>Math.PI:</b>" + Math.PI + "</p>" +
+	"<p><b>Math.SQRT2:</b>" + Math.SQRT2 + "</p>" +
+	"<p><b>Math.SQRT1_2:</b>" + Math.SQRT1_2 + "</p>" +
+	"<p><b>Math.LN2:</b>" + Math.LN2 + "</p>" +
+	"<p><b>Math.LN10:</b>" + Math.LN10 + "</p>" +
+	"<p><b>Math.LOG2E:</b>" + Math.LOG2E + "</p>" +
+	"<p><b>Math.Log10E:</b>" + Math.LOG10E + "</p>" 
+</script>
+<pre>
+	Youtube Examples:
+	https://www.youtube.com/watch?v=F30jLIqGQpo
+
+	document.write(Math.E) - E. - Euler's constant. // 2.71828182...
+
+	The property of the math objects in JS - are basically - VALUES that have MATHEMATICAL MEANING.
+
+	In order to FIND the SQUARE ROOT of a NUMBER - WE CAN MAKE A FUNCTION FOR IT - but it's easier to use methods.
+	(METHODS are BUILT IN - FUNCTIONS)
+</pre>
+
+<h2>Math <mark>Methods</mark></h2>
+<p>The syntax for Math any methods is: <span>Math.method(number)</span></p>
+
+<h2>Number to Integer</h2>
+<p>There are 4 common methods to ROUND a number to an INTEGER.</p>
+
+<h3>1.Math.round()</h3>
+<p>Returns "(x)" rounded to its nearest integer.</p>
+<pre>
+	Math.round(4.9);    // returns 5
+	Math.round(4.7);    // returns 5
+	
+	Math.round(4.4);    // returns 4
+	Math.round(4.2);    // returns 4
+	Math.round(-4.2);   // returns -4
+</pre>
+<p id="demo61"></p>
+	<script>
+		document.getElementById("demo61").innerHTML = Math.round(4.4);
+	</script>
+
+<h3>2.Math.ceil()</h3>
+<p><span>Math.ceil(x)</span> returns the value of "x" rounded <b>UP</b> to the <b>nearest</b> INTEGER.</p>
+<pre>
+	Math.ceil(4.9) // return 5
+	Math.ceil(4.7) // return 5
+	Math.ceil(4.4) // return 5
+	Math.ceil(4.2) // return 5
+	<mark>Math.ceil(-4.2)// return -4</mark>
+</pre>
+
+<h3>3.Math.floor()</h3>
+<p><span>Math.floor()</span> returns the value of "x" rounded <b>down</b> to its <b>nearest</b> INTEGER.</p>
+<pre>
+	Math.floor(4.9); // returns 4
+	Math.floor(4.7); // returns 4
+	Math.floor(4.4); // returns 4
+	Math.floor(4.2); // returns 4
+	<mark>Math.floor(-4.2);// returns -5</mark>
+</pre>
+
+<h3>4.Math.trunc()</h3>
+<p><mark>Math.trunc(x)</mark> returns the integer part of "x":</p>
+<pre>
+	Math.trunc(4.9); // return 4
+	Math.trunc(4.7); // return 4
+	Math.trunc(4.4); // return 4
+	Math.trunc(4.2); // return 4
+	Math.trunc(-4.2);// return -4
+</pre>
+<pre>
+	Rounding VS Truncating
+	Rounding
+	3.14159 ≈ 3.1416
+
+	Truncating
+	3.14159 ≈ 3.1415
+</pre>
+
+<h2>Math.sign()</h2>
+<p><span>Math.sign(x)</span> returns if "x" is negative, NULL, or POSITIVE.</p>
+<pre>
+	Math.sign(-4); // returns -1
+	Math.sign(0); // returns 0
+	Math.sign(4); // reutrns 1
+	Math.sign(2); // 1
+	Math.sign(9); // 1
+	Math.sign(1); // 1
+	Math.sign(-9);// -1
+</pre>
+
+<h2>Math.pow()</h2>
+<p><span>Math.pow(x, y)</span> - <u>returns the value of</u> <b>x</b> to the power of <b>y</b>.</p>
+<pre>
+	< p id="demo62">< /p>
+	< script>
+		document.getElementById("demo62").innerHTML = Math.pow(8,2);
+	< /script>
+</pre>
+	<p id="demo62"></p>
+	<script>
+		document.getElementById("demo62").innerHTML = Math.pow(8,2);
+	</script>
+
+<h2>Math.sqrt()</h2>
+<p><span>Math.sqrt(x)</span> returns the square root of x:</p>
+<pre>
+	Math.sqrt(64); // returns 8
+</pre>
+
+<h2>Math.abs()</h2>
+<p><span>Math.abs(x)</span> - returns the absolute <b>(positive)</b> value of "x".</p>
+<pre>
+	Math.abs(-4.7); // returns 4.7
+</pre>
+
+<h2>Math.sin()</h2>
+<p><span>Math.sin()</span> returns the <b>sine</b> (sinusul);<br>
+(a value between -1 and 1) of the angle x (give in radians)(radiani).</p>
+<p>If you want to use degrees instead radians, you have to converts degrees to radians:<br>
+Angle in radians = Angle in degrees x PI / 180.</p>
+<pre>
+	Math.sin(90 * Math.PI / 180); // returns 1 (the sine of 90 degrees).
+</pre>
+
+<h2>Math.cos()</h2>
+<p><span>Math.cos(x)</span> returns the <b>cosine</b> (a value between -1 and 1) of the angle "x" (given in radians).<br>
+If you want to use degrees instead of radians, you have to <b>convert</b> <mark>degrees to radians:</mark></p>
+<p>Angle in radians = Angle in degrees x PI /180.</p>
+
+<pre>
+	Math.cos(0 * Math.PI / 180); //returns 1 (the cos of 0 degrees).
+</pre>
+
+<h2>Math.min() and Math.max()</h2>
+<p><span>Math.min()</span> and <span>Math.max()</span> can be used to FIND the LOWEST or the HIGHEST value in a list of arguments.</p>
+<pre>
+	Math.min(0, 150, 20. -8, -200); //-200
+	Math.max(0, 150, 20. -8, -200); // 150
+</pre>
+
+<h2>Math.random()</h2>
+<p><span>Math.random()</span> return a RANDOM number between <b>0</b>(inclusive) and <b>1</b> (exclusive):</p>
+<pre>
+	Math.random(); // Returns a RANDOM number.
+</pre>
+
+<h2>The Math.log() Method</h2>
+<p><span>Math.log()</span> returns the NATURAL ALGORITHM of "x".<br>
+Math.E and Math.log() are twins.<br>
+How many times must we muliply Math.E to get 10?
+</p>
+
+<h2>The Math.log2() Method</h2>
+<p><span>Math.log2(x)</span> returns the BASE 2 logarithm of "x".<br>
+<b>How many times multiply 2 - to get 8?</b></p>
+<pre>
+Math.log2(8); returns 3 | 2*2 = 4. 4 * 2 = 8 | => (3)
+Math.log2(16); returns 4 | 2*2*2*2 = 16 
+</pre>
+
+<h2>The Math.log10() Method</h2>
+<p><span>Math.log10()</span> returns the base 10 logaeithm of "x".<br> How many times must we multiply 10 to get 1000?</p>
+<pre>
+	Math.log10(1000); // returns 3
+</pre>
+<hr>
+
+<h1>JavaScript Random</h1>
+<h2>Math.random()</h2>
+<p><span>Math.random()</span> returns a random number between 0 <b>(inclussive)</b>, and 1 <b>(excplusive)</b>:</p>
+<pre>
+	Math.random() // returns a random NUMBER.
+</pre>
+<p><span>Math.random()</span> always returns a number LOWER than 1.</p>
+
+<h2>JavaScript Random Integers</h2>
+<p><span>Math.random()</span> used with <span>Math.floor()</span> can be used to RETURN - <mark>RANDOM INTEGERS.</mark></p>
+<pre>
+	< p><mark>Math.floor(Math.random() * 10</mark> returns a random integer btween 0 and 9 <b>(both included)</b>.
+	< /p>
+	< p id="demo63">< /p>
+	< script>
+		document.getElementById("demo63").innerHTML = <mark>Math.floor(Math.random() * 10);</mark>
+	< /script>
+</pre>
+<p><mark>Math.floor(Math.random() * 10</mark> returns a random integer btween 0 and 9 <b>(both included)</b>.
+	</p>
+	<p id="demo63"></p>
+	<script>
+		document.getElementById("demo63").innerHTML = Math.floor(Math.random() * 10);
+	</script>
+<pre>
+	Math.floor(Math.random() * <mark>11</mark>);      // returns a random integer from 0 to 10
+
+	Math.floor(Math.random() * <mark>100</mark>);     // returns a random integer from 0 to 99
+
+	Math.floor(Math.random() * <mark>101</mark>);     // returns a random integer from 0 to 99
+</pre>
+
+<pre>
+	B.
+	Math.floor(Math.random() * 10) <mark>+ 1;</mark>  // returns a random integer from 1 to 10
+
+	Math.floor(Math.random() * <mark>100) + 1;</mark>  // returns a random integer from 1 to 100
+</pre>
+
+<h2>A Proper Random Function</h2>
+<p>...create a PROPER RANDOM FUNCITON to use - for all RANDOM INTEGER PURPOSES.</p>
+<pre>
+	< p>Every time you click the button, getRndInteger(min,max) returns a random number between 0 and 9 <b>(both included)</b>< /p>
+	< button onclick="document.getElementById('demo64').innerHTML = <<mark>getRndInteger(0,10)"</mark>> Try Me!
+	< /button>
+	< p id="demo64">< /p>
+	< script>
+		function getRndInteger(min, max) {
+			return Math.floor(Math.random() * <mark>(max - min)) + min;</mark>
+		}
+	< /script>
+</pre>
+<p>Every time you click the button, getRndInteger(min,max) returns a random number between 0 and 9 <b>(both included)</b></p>
+	<button onclick="document.getElementById('demo64').innerHTML = getRndInteger(0,10)"> Try Me!
+	</button>
+	<p id="demo64"></p>
+	<script>
+		function getRndInteger(min, max) {
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
+	</script>
+<hr>
+
+<h1>JavaScript Booleans</h1>
+	<p>A JS Boolean - represents - <b>one of two values</b> - true or false.</p>
+	<h3>Boolean Values</h3>
+	<p>Very often, in programming you'll need a data type that can only have <b>one</b> of <b>two</b> values - like - YES/NO, ON/OFF, TRUE/FALSE.</p>
+	<p>For this - JS has a <b>Boolean</b> DATA TYPE. It can only take the values <b>true</b> of <b>false</b>.</p>
+
+	<h2>The Boolean Function</h2>
+	<p>You can use the <span>Boolean()</span> function to find out if an EXPRESSION (or a VARIABLE) is true.</p>
+	<pre>
+		< button onclick="myFunction50()">Click Me< /button>
+		< p id="demo50"></p>
+		< script>
+			function myFunction50() {
+				document.getElementById('demo50').innerHTML = Boolean(10 > 9);
+			}
+		< /script>
+	</pre>
+	<button onclick="myFunction23()">Click Me</button>
+		<p id="demo65"></p>
+		<script>
+			function myFunction23() {
+				document.getElementById('demo65').innerHTML = Boolean(10 > 9);
+			}
+		</script>
+	<p>Or even Easier:</p>
+	<pre>
+		document.getElementById('demo').innerHTML = 10 > 9; // returns true
+	</pre>
+
+	<h2>Comparisson and Conditions</h2>
+	<p><mark>Comparisson OPERATORS</mark> and <mark>conditional STATEMENTS</mark></p>
+	<pre>
+		OPERATOR 	DESCRIPTION		EXAMPLE
+		<mark>==</mark>		<mark>equal to</mark>		<mark>if(day == "Monday")</mark>
+		>		greater than		if(salary>9000)
+		< 		less than		if(age < 18)
+	</pre>
+
+	<span>The Boolean value of an expression - is the bassis for all JS COMPARISONS and CONDITIONS.</span>
+
+	<h2><mark>Everything With a "VALUE" is TRUE</mark></h2>
+	<pre>
+		< p id="demo51">< /p>
+		< script>
+			var b1 = Boolean(100);
+			var b2 = Boolean(3.14);
+			var b3 = Boolean(-15);
+			var b4 = Boolean("Hello");
+			var b5 = Boolean('false');
+			var b6 = Boolean(1 + 7 + 3.14);
+
+			document.getElementById('demo51').innerHTML = 
+			"100 is " + b1 + "< br>" + 
+			"3.14 is " + b2 + "< br>" + 
+			"-15 is " + b3 + "< br>" + 
+			"Any (NOT empty) string is " + b4 + "< br>" +
+			"Even the string 'false' is " + b5 + "< br>" + 
+			"Any EXPRESSION (except zero) is " + b6;
+		< /script>
+	</pre>
+	<p id="demo66"></p>
+		<script>
+			var b1 = Boolean(100);
+			var b2 = Boolean(3.14);
+			var b3 = Boolean(-15);
+			var b4 = Boolean("Hello");
+			var b5 = Boolean('false');
+			var b6 = Boolean(1 + 7 + 3.14);
+
+			document.getElementById('demo51').innerHTML = 
+			"100 is " + b1 + "<br>" + 
+			"3.14 is " + b2 + "<br>" + 
+			"-15 is " + b3 + "<br>" + 
+			"Any (NOT empty) string is " + b4 + "<br>" +
+			"Even the string 'false' is " + b5 + "<br>" + 
+			"Any EXPRESSION (except zero) is " + b6;
+		</script>
+	<h2><mark>Everything WITHOUT a "Value" - is FALSE</mark></h2>
+	<p>The BOOLEAN value of 0 - is FALSE</p>
+	<pre>
+		x = 0;
+		Boolean(x);
+	</pre>
+	<pre>
+		< button onclick="myFunction51()">Click< /button>
+		< p id="demo52"></p>
+		< script>
+			function myFunction51(){
+				var x = 0;
+				document.getElementById('demo52').innerHTML = 
+				Boolean(x);
+			}
+		< /script>
+	</pre>
+	<button onclick="myFunction24()">Click</button>
+		<p id="demo67"></p>
+		<script>
+			function myFunction24(){
+				var x = 0;
+				document.getElementById('demo67').innerHTML = 
+				Boolean(x);
+			}
+		</script>
+	
+	<p>The Boolean value of <b>-0</b> is <b>false</b>:</p>
+	<pre>
+		var x = 0;
+		Boolean(x);
+	</pre>
+
+	<p>The Boolean value of <b>""</b>(empty string) - is <b>false:</b></p>
+	<pre>
+		var x = "";
+		Boolean(x);
+	</pre>
+	<p>The Boolean value of <b>undefined</b> - is <b>false</b>:</p>
+	<pre>
+		var x;
+		Boolean(x);
+	</pre>
+	<p>The Boolean value of <b>null</b> is <b>false</b>:</p>
+	<pre>
+		var x = null;
+		Boolean(x);
+	</pre>
+	<p>The Boolean of <b>false</b> is (you guess it) - is <b>false</b>:</p>
+	<p>The Boolean of <b>NaN</b> is <b>false</b>:</p>
+	<pre>
+		var x = 10 / "H";
+		Boolean(x);
+	</pre>
+
+	<h2>Boolean can Be OBJECTS</h2>
+	<p>Normally JS BOOLEANS are <b>primitive values</b> - created from literals:</p>
+	<p><span>var x = false;</span></p>
+	<p>But booleans can also be <mark>defined</mark> as <mark>OBJECTS</mark> with the <b>keyword</b> <span>new</span>.</p>
+	<p><span>var y = new Boolean(false);</span></p>
+	<pre>
+		< p id="demo53">< /p>
+		< script>
+			var x = false; // x is a BOOLEAN
+			var y = new Boolean(false); // y is an object
+			document.getElementById('demo53').innerHTML = typeof x + "<br>" + typeof y;
+		< /script>
+	</pre>
+	<p id="demo68"></p>
+		<script>
+			var x = false; // x is a BOOLEAN
+			var y = new Boolean(false); // y is an object
+			document.getElementById('demo68').innerHTML = typeof x + "<br>" + typeof y;
+		</script>
+	<p>Do not create Boolean OBJECTS. It slows down the execution speed; complicates the code; unexpected results.</p>
+	<p>When using the <span>==</span> OPERATOR - equal booleans are equal:</p>
+	<pre>
+		var x = false;
+		var y = new Boolean(false);
+		// (x == y) is TRUE because x and y have EQUAL VALUES;
+	</pre>
+
+	<p>When using the <span>===</span> operator, EQUAL BOOLEANS - are NOT EQUAL, because the <span>===</span> operatpr expects quality in both, <b>type</b> and <b>value</b>.</p>
+	<pre>
+		var x = false;
+		var y = new Boolean(false);
+		(x === y) - false - because x and y are have different types.
+	</pre>
+	<pre>
+		Youtube: 
+		A boolean is a VALUE that either represents TRUE or FALSE. We use them in prety much every proigramming language. The reason we use them - is to evaluate certain circumstances:
+		Example: You may have a website - wher a user is required to login.
+		They login using a WRONG PASSWORD.
+		We evaluate that password and - if it returns false - then we say to the USER (look you need to enter the password again) - [so we execute the CODE that DOES that.]
+		2.If we evaluate that passsword and returns TRUE - then we're going to execute some different portion of code which is going to log the user in. 
+
+		We use "them" to check conditions of certain scenarios.
+		So, the way we decide and BUILD into a variable - it's the same way of any onther variable.
+
+		var iLikeMeat = true;
+		iLikeMeat //true
+
+		!Important: true - is not a STRING.
+		iLikeMeat = "true". (it's not the same)
+
+		true - this is a KEYWORD. It's a BOOLEAN
+		"true" - this is a STRING.
+
+		So, I can also RE-assign it to  - FALSE (if I want to be a vegetarian - te he).
+
+		iLikeMeat = false; 
+		//false
+
+		We use this in an "if" STATEMENT. I could checking whether someone is vegetarian or not.
+		If they Do - I give them a "meat" menu - if they don't  - I give them a "vegetarian" menu.
+
+		III. < >.
+		There is other values that kind evaluate to "true" or "false". "< >".
+		We can evaluate THESE EXPRESSIONS  - to give us an answer.
+		Example: 7 > 8; //false
+		>  - this is a <mark>comparison operator</mark>.
+		Evaluates if 7 is greater than 8.
+
+		7 = 7 - it gives us an Error. because "=" is a ASSIGNMENT operator. It doesn't make sense, because 7 is 7.
+
+		The CONTEXT - we wanna check if these two VALUES are EQUAL we have to use "=="; (double equal sign). Or in some cases triple. "==="
+		7 == 7 // true
+		7 == 5 // false
+
+		IV. However - we can check the TRUE or FALSE thing - of certain kind of elements - or values within JS by using the <mark>Boolean KEYWORD</mark>.
+		That's a BUILT-IN function of JS. "Boolean()". [with capital "B" and the "()"].
+		We pass the EXPRESSION into this "(...)":
+		Boolean(7 > 5); - and 'your code' - is going to CHECK WHETHER thatt's TRUE or FALSE.
+
+		Boolean(5); //true
+		Boolean(-5); //true
+
+		But if I PASSING "0" or "-0";
+		Boolean(0); //false
+		Boolean(-0); //false
+		Both are FALSE within JavaScrip.
+
+		V. If I evaluate a string:
+		Boolean("hello"); //true
+
+		If I evlaluate an EMPTY string:
+		Boolean(""); //false
+
+		So... there is many different truthy and falsy values in JS
+
+
+	</pre>
+
+</body>
+</html>

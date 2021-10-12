@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			font-family: Verdana;
+			counter-reset: section;
+			font-size: 15px;
+			padding: 15px;
+		}
+		
+		h1 {counter-reset: subsection;
+			text-decoration: underline;
+		}
+		h1::before {
+			counter-increment: section;
+			content: counter(section) ". ";
+		}
+		h2::before{
+			counter-increment: subsection;
+			content: counter(section) "." counter(subsection)" ";
+		}
+
+		hr{
+			height: 0.5px
+			color: #f0f0f0;
+		}
+
+		p{
+			padding-left: 15px;
+		}
+		
+		span{
+			color: gray;
+		}
+
+		button {
+			background-color: darkgrey;
+			border:none;
+			color: white;
+			padding: 10px;
+			margin-left: 15px;
+			display:inline-block;
+			cursor:pointer;
+			border-radius: 4px;
+		}
+		pre {color: grey;}
+		
+	</style>
+</head>
+<body>
+
+<h1>JavaScript Assignment</h1>
+<h2>JavaScript Assignment Operators</h2>
+<p>Assignment OPERATORS - assign - VAKUES to JS VARIABLES.</p>
+<pre>
+	OPERATOR 				EXAMPLE 			Same AS
+	=					x = y 				x = y
+	+=					x += y 				x = x + y
+	-=					x -= y 				x = x - y
+	*=					x *= y 				x = x * y
+	/=					x /= y 				x = x / y
+	%=					x %= y 				x = x % y
+	**= 					x **= y 			x = x ** y
+</pre>
+<pre>
+	OPERATOR 				EXAMPLE 			Same AS
+	<=					x <<= y				x = x << y
+	>>=					x >>= y				x = x >> y
+	>>>=					x >>>= y			x = x >>> y
+	&=					x &= y				x = x & y
+	^=					x ^= y				x = x ^ y
+	|=					x |= y				x = x | y
+</pre>
+
+<h2>Assignment Examples</h2>
+<p>The <span>=</span> assignment operator - ASINGS a VALUE to a VARIABLE. </p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var x = 10;
+	document.getElementById("demo").innerHTML = x;
+	< /script>
+</pre>
+
+<p id="demo"></p>
+
+<script>
+var x = 10;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+<h2>Asignment 1</h2>
+<p>The <span> +=</span> assignment operator - ADDS a VALUE to a VARIABLE.</p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var x = 10;
+	x += 5;
+	document.getElementById("demo").innerHTML = x;
+< /script>
+</pre>
+
+<p id="demo"></p>
+<script>
+var x = 10;
+x += 5;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+<h2>Assignment 2</h2>
+<p>The <span>-=</span> assignment operator - SUBSTRACTS a VALUE from a VARIABLE.</p>
+<pre>
+	< p id="demo1">< /p>
+	< script>
+		var x = 10;
+		x -= 5;
+		document.getElementById('demo1').innerHTML = x;
+	< /script>
+</pre>
+	<p id="demo1"></p>
+	<script>
+		var x = 10;
+		x -= 5;
+		document.getElementById('demo1').innerHTML = x;
+	</script>
+
+<h2>Assignment 3</h2>
+<p>The <span>*=</span> assignment operator - MULTIPLIES a VARIABLE.</p>
+<pre>
+	< p id="demo3"></p>
+
+	< script>
+		var x = 10;
+		x *= 5;
+		document.getElementById('demo3').innerHTML = x;
+	< /script>
+</pre>
+<p id="demo3"></p>
+
+	<script>
+		var x = 10;
+		x *= 5;
+		document.getElementById('demo3').innerHTML = x;
+	</script>
+
+<h2>Assgnment 4</h2>
+<p>The <span>/=</span> assignment operator - DIVIDES a VARIABLE.</p>
+<pre>
+	< p id="demo4">< /p>
+	< script>
+		var x = 10;
+		x /= 5;
+		document.getElementById('demo4').innerHTML = x;
+	< /script>
+</pre>
+	<p id="demo4"></p>
+	<script>
+		var x = 10;
+		x /= 5;
+		document.getElementById('demo4').innerHTML = x;
+	</script>
+
+<h2>Assignment 5</h2>
+<p>The <span>%=</span> assignment operator - ASSIGNS a REMINDER to a VARIABLE.</p>
+
+<h1>JavaScript Data Types</h1>
+
+<h2>JS Data Types</h2>
+<p>JS <span>variables</span> can hold many <b>data types</b>: numbers, strings, objects... and more:</p>
+<pre>
+	var length = 16;					//Number	
+	var lastName = "Johnson";				//String
+	var x = {firstName:"John", lastName:"Doe"};		//Object
+</pre>
+
+<h2>The Concept of DATA Types</h2>
+<p>To be ABLE to operate with <span>variables</span>, it is important to know something <u>about type</u>.<br>
+Without DATA TYPES - a computer CANNOT safety solve this:</p>
+<pre>
+	var x = "16 + "Volvo"
+</pre>
+<p>Does it make any sense to add "Volvo" to sixteen? Will produce an <b>error</b> or will produce a <b>result</b>?<br>
+<span>When adding a NUMBER and a STRING, JS will treat <b>the number</b> as a <b>string</b>.</span></p>
+
+<h3>Example:</h3>
+<pre>
+	< p id="demo5">< /p>
+	< script>
+		var x = 16 + "Volvo";
+		document.getElementById('demo5').innerHTML = x;
+	< /script>
+</pre>
+<p id="demo5"></p>
+	<script>
+		var x = 16 + "Volvo";
+		document.getElementById('demo5').innerHTML = x;
+	</script>
+
+<h3>Example:</h3>
+	<pre>
+	< p id="demo6">< /p>
+	< script>
+		var x = "Volvo" + 16;
+		document.getElementById('demo6').innerHTML = x;
+	< /script>
+	</pre>
+<p id="demo6"></p>
+	<script>
+		var x = "Volvo" + 16;
+		document.getElementById('demo6').innerHTML = x;
+	</script>
+<p>JS EVALUATES - expressions from LEFT to RIGHT. Different SEQUENCES can produce different RESULT:</p>
+<pre>
+	var x = 16 + 4 + "Volvo"; // Result: 20Volvo
+	var x = "Volvo" + 16 + 4; //Result: Volvo164
+
+	In the I'st Example - JS treats 16 an 4 as numbers, UNTIL IT REACHES "Volvo".
+	In the II'nd Example - SINCE the first OPERAND is a STRING - all OPERANDS are TREATED as STRINGS.
+</pre>
+
+<h2>JavaScript Strings</h2>
+<p>A string (or a txt string) is A SERIES of CHARACTERS like "John Doe".<br>
+Strings are written with quotes. Single or Double quotes.</p>
+<p>You can USE quotes inside a string, as long as the don't MATCH the quotes surrounding the strings:</p>
+<pre>
+	var answer1 = "It's a STRING"; 			// Single Quoute inside DOUBLE QUOTES
+	var answer2 = "He is called 'Johhny'";  // Single quotes inside DOUBLE quotes
+	var answer3 = 'He is called "Johnny"';	// Double quotes inside single quotes
+</pre>
+
+<h2>JavaScript NUMBERS</h2>
+<p>JS has only ONE TYPE of NUMBERS.<br>
+Numbers can be written <b>with</b> or <b>without</b> decimals.</p>
+<pre>
+	< p id="demo7">< /p>
+	< script>
+	var x1 = 34.00; //Written with DECIMALS
+	var x2 = 34;	//Written WITHOUT decimals	
+	var x3 = 3.14;
+	document.getElementById('demo7').innerHTML = 
+	x1 + "< br>" + x2 + "< br>" + x3;
+ 	< script>
+</pre>
+<p id="demo7"></p>
+	<script>
+		var x1 = 34.00; 
+		var x2 = 34;
+		var x3 = 3.14;
+		document.getElementById('demo7').innerHTML = 
+		x1 + "<br>" + x2 + "<br>" + x3;
+ 	</script>
+
+<p>Extra LARGE or extra SMALL numbers can be written with scientific <b>(EXPONENTIAL)</b> notation:</p>
+<pre>
+	< p id="demo8">< /p> 
+	< script>
+		var y = 123e5; //12300000
+		var z = 123e-5;//0.00123
+	< /script>		
+</pre>
+<p id="demo8"></p> 
+	<script>
+		var y = 123e5; //12300000
+		var z = 123e-5;//0.00123
+		document.getElementById("demo8") = 
+		y + "<br>" + z;
+	</script>
+
+<h2>JavaScript BOOLEANS</h2>		
+<p><b>Booleans</b> can have TWO VALUES: <span style="color:red">true</span> or <span style="color:red">false</span>.</p>
+<pre>
+	< p id="demo8">< /p>
+	< script>
+		var x = 5;
+		var y = 5;
+		var z = 6;
+		document.getElementById('demo8').innerHTML = 
+		(x == y) + "< br>" + (x == z);
+	</script>
+</pre>
+	<p id="demo9"></p>
+	<script>
+		var x = 5;
+		var y = 5;
+		var z = 6;
+		document.getElementById('demo9').innerHTML = 
+		(x == y) + "<br>" + (x == z);
+	</script>
+<p>Booleans are often used in CONDITIONAL TESTING.</p>
+
+<h2>JavaScript Arrays</h2>
+<p>JS ARRAYS - are written withs <span>square brackets</span>.<br>
+Array <b>ITEMS</b> are separated by <span>commas</span>.<br>
+The following CODE <b>declares</b> (creates) an ARRAY called <span style="color:red">cars</span>, containing three <b>items</b> (car names):</p>
+<pre>
+	< p id="demo9">< /p>
+	< script>
+		var cars = ["Saab", "Volvo", "BMW"]
+		document.getElementById('demo9').innerHTML = cars[0]; // Array INDEXES are ZERO-BASED, which means the first item is [0];
+	< /script>
+</pre>
+<p id="demo10"></p>
+	<script>
+		var cars = ["Saab", "Volvo", "BMW"]
+		document.getElementById('demo10').innerHTML = cars[0]; // Array INDEXES are ZERO-BASED, which means the first item is [0];
+	</script>
+<p>Array INDEXES are ZERO-BASED, which means the I'st item is [0], second is [1], and so on.</p>
+
+<h2>JavaScript OBJECTS</h2>
+<p>JS OBJECTS are written with <b>curly braces</b> <span>{}</span>.<br>
+<b>Object properties</b> are WRITTEN as: <span><b>value pairs</b></span> separated by <span><b>commas</b></span>.</p>
+<pre>
+	< p id="demo10">< /p>
+	< script>
+		var person {
+			firstName: "John",
+			lastName: "Doe",
+			age: 53,
+			eyeColor: "blue"
+		};
+		document.getElementById('demo10').innerHTML = 
+		person.firstName + "is" + person.age + "years old."
+	< /script>
+	
+	The <b>object</b> (person) in the example abive has 4 PROPERTIES: <b>firstName, lastName, age, eyeColor</b>.
+</pre>
+<p id="demo11"></p>
+	<script>
+		var person = {
+			firstName : "John",
+			lastName : "Doe",
+			age : 53,
+			eyeColor : "blue"
+		};
+		document.getElementById("demo11").innerHTML = 
+		person.firstName + " is " + person.age + " years old."
+	</script>
+
+<h2>The typeof Operator</h2>
+<p>You can use the JS <span style="color:red">typeof</span> operator to FIND the TYPE of <b>JS variable</b>.<br>
+The <span>typeof</span> operator returns the <b>type of an variable</b> or an <b>expression</b>:</p>
+<pre>
+	< p id="demo11">< /p>
+	< script>
+		document.getElementById("demo11").innerHTML = 
+		typeof "" + "< br>" + 
+		typeof "John" + "< br>" + 
+		typeof "John Doe";
+	< /script>
+</pre>
+<p id="demo12"></p>
+	<script>
+		document.getElementById("demo12").innerHTML = 
+		typeof "" + "<br>" + 
+		typeof "John" + "<br>" + 
+		typeof "John Doe";
+	</script>
+<pre>
+	typeof 0              // Returns "number"
+	typeof 314            // Returns "number"
+	typeof 3.14           // Returns "number"
+	typeof (3)            // Returns "number"
+	typeof (3 + 4)        // Returns "number"
+</pre>
+
+<h2>Undefined</h2>
+<p>In JavaScript <b>a variable without a value</b> has the value <span><b>undefined</b></span>. The type is also <span><b>undefined</b></span>.</p>
+<pre>
+	< p id="demo12">< /p>
+	< script>
+		var car; // Value is undefined, type is undefined
+		document.getElementById("demo12").innerHTML = 
+		car  + "< br>" + typeof car;
+	< /script>
+</pre>
+<p id="demo13"></p>
+	<script>
+		var car;
+		document.getElementById("demo13").innerHTML = 
+		car  + "<br>" + typeof car;
+	</script>
+
+<p>Any variable can be <b>emptied</b> by setting the value to <span><b>undefined</b></span>. The <b>type</b> will also be <span><b>undefined</b></span>.</p>
+<pre>
+	< p id="demo13">< /p>
+	< script>
+		var car = "Volvo";
+		car = undefined;
+		document.getElementById("demo13").innerHTML =
+		car + "< br>" + typeof car;
+	< /script>
+</pre>
+<p id="demo14"></p>
+
+<script>
+	var car = "Volvo";
+	car = undefined;
+	document.getElementById("demo14").innerHTML =
+	car + "<br>" + typeof car;
+</script>
+
+<h2>Empty VALUES</h2>
+<p>An EMTPY VALUE has nothing to do with <span><b>undefined</b></span>.<br>
+An <b><span>empty</span></b> value has both a legal <span>value and type</span>.</p>
+<pre>
+	< p id="demo">< /p>
+	< script>
+		var car = "";
+		document.getElementById("demo").innerHTML =   // The value is "", the typeof is "string"
+		"The value is: " +
+		car + "< br>" +
+		"The type is: " + typeof car;
+	< /script>    
+</pre>
+
+<h2>Null</h2>
+<p>In JS <span>null</span> is "nothing". It is supposed to be something that DOESN'T EXIST.<br>
+Unfortunately, in JS, the data type <span>NULL</span> is an <b>object</b>.<br>
+<span>You can consider it A BUG in JS that <b>typeof null</b> is an object. It should be <b>null</b>.</span></p>
+
+<h3><span>Empty OBJECT</span></h3>
+<p><span><b>You can empty an object by setting it to <u>null</u>.</b></span></p>
+<pre>
+	< p id="demo15">< /p>
+	< script>
+		var person = {firstName:"John", lastName:"Doe", age="50", eyeColor="blue"};
+		person = null;
+		document.getElementById("demo15").innerHTML = typeof person;
+	< /script>
+</pre>
+<p id="demo15"></p>
+	<script>
+		var person = {firstName:"John", lastName:"Doe", age="50", eyeColor="blue"};
+		person = null;
+		document.getElementById("demo15").innerHTML = typeof person;
+	</script>
+<p>object</p>
+<p><span><b>You can also empty an object using <u>undefined</u></b>:</span></p>
+<pre>
+	< p id="demo16">< /p>
+	< script>
+		var person = {firstName:"John", lastName:"Doe", age="50", eyeColor="blue"};
+		person = undefined;
+		document.getElementById("demo15").innerHTML = typeof person;
+	< /script>
+</pre>
+<p id="demo16"></p>
+	<script>
+		var person = {firstName:"John", lastName:"Doe", age="50", eyeColor="blue"};
+		person = undefined;
+		document.getElementById("demo16").innerHTML = typeof person;
+	</script>
+<p>undefined</p>
+
+<h2>Difference Betwen Undefined and NULL</h2>
+<p><span>undefined</span> and <span>null</span> are <b>equal</b> in <b>value</b> but <b>different</b> in <b>type</b>:</p>
+<pre>
+	< p id="demo17">< /p>
+	< script>
+		document.getElementById("demo17").innerHTML = 
+		typeof undefined + "< br>" + 
+		typeof null  + "< br>< br>" + 
+		(null === undefined) + "< br>" + 
+		(null == undefined);
+	< /script>
+</pre>
+<p id="demo17"></p>
+	<script>
+		document.getElementById("demo17").innerHTML = 
+		typeof undefined + "<br>" + 
+		typeof null  + "<br><br>" + 
+		(null === undefined) + "<br>" + 
+		(null == undefined);
+	</script>
+
+<h2>Primitive Data</h2>
+<p>A primitive data value is a single SIMPLE DATA VALUE with <b>no additional <u>prperties</u> and <u>methods</u></b>.</p>
+<p>The <span>typeof</span> operator can return one of these primitve TYPES:</p>
+<ul>
+	<li>string</li>
+	<li>number</li>
+	<li>boolean</li>
+	<li>undefined</li>
+</ul>
+<pre>
+	< p id = "demo18">< /p>
+	< script>
+		document.getElementById("demo18").innerHTML = 
+		typeof "John" + "< br>" + 
+		typeof 3.14 + "< br>" + 
+		typeof true + "< br>" + 
+		typeof false + "< br>" + 
+		typeof x;
+	< /script>
+</pre>
+<p id = "demo18"></p>
+	<script>
+		document.getElementById("demo18").innerHTML = 
+		typeof "John" + "<br>" + 
+		typeof 3.14 + "<br>" + 
+		typeof true + "<br>" + 
+		typeof false + "<br>" + 
+		typeof x;
+	</script>
+
+<h2>Complex Data</h2>
+<p>The <span><b>typeof</b></span> <b>operator</b> can RETURN <b>two complex <u>types</u></b>:</p>
+<ul>
+	<li>function</li>
+	<li>object</li>
+</ul>
+<p>The <span><b>typeof</b></span> <b>operator</b> returns <b><u>object</u></b> for <b>objects, arrays</b> and <b>null</b>.</p>
+<pre>
+	< p id="demo19">< /p>
+	< script>
+		document.getElementById("demo19").innerHTML = 
+		typeof {name:'John', age:34} + "< br>" +
+		typeof [1,2,3,4] + "< br>" + 
+		typeof null + "< br>" + 
+		typeof funtion myFun(){};
+	< /script>	
+
+</pre>
+
+<p id="demo19"></p>
+<script>
+	document.getElementById("demo19").innerHTML = 
+	typeof {name:'John', age:34} + "<br>" +
+	typeof [1,2,3,4] + "<br>" + 
+	typeof null + "<br>" + 
+	typeof function myFunc(){};
+</script>
+<hr>
+
+<h1>JavaScript Functions</h1>
+<p>A JS <span>function</span> is a <b>block of code</b> designed to <b>perform</b> a particular task.<br>
+A JS <span>function</span> is EXECUTED when SOMETHING <b>invokes</b> it. <b>(calls it)</b>.</p>
+<p>This example CALLS  a functions <u>which</u> <b>performs</b> a CALCULATION, and <b>returns</b> the result:</p>
+<pre>
+	< p id="demo20">< /p>
+	< script>
+		function myFunction(p1, p2){
+			return p1 * p2
+		}
+		document.getElementById("demo20").innerHTML = myFunction(4, 3);
+	< /script>
+</pre>
+<p id="demo20"></p>
+	<script>
+		function myFunction(p1, p2){
+			return p1 * p2
+		}
+		document.getElementById("demo20").innerHTML = myFunction(4, 3);
+	</script>
+
+<h2>JavaScript FUNCTION Syntax</h2>
+<p>A JS function is <b>defined</b> with the <span>function keyword</span>, <u>followed</u> by a <b>name</b>, <u>followed</u> by parantheses <b>()</b>.<br>
+<span>Functions names</span> can contain <b>letters, digits, underscores</b> and <b>dollar signs</b> (same rules as VARIABLES).<br>
+The parameters may include <u>parameter names</u> separated by commas: <b>(p1, p2)</b>.</p>
+
+<p>Functions <b>parameters</b> are LISTED <u>inside the parantheses ()</u> in the funciton DEFINITION.<br>
+Function <b>arguments</b> are the <b>values</b> received by the FUNCTION when it is invoked.<br>
+Inside the function, <span>the arguments</span> (the parameters) behave as LOCAL VARIABLES.</p>
+
+<h2>Function Invocation</h2>
+<p>The code inside the function <span>will execute</span> when "something" - <b>invokes (calls)</b> the <span>function</span>.</p>
+<ul>
+	<li>When an event occurs (when a user CLICKS a BUTTON)</li>
+	<li>When it is INVOKED (called) from <b>JavaScript code</b></li>
+	<li>Automatically (self invoked)</li>
+</ul>
+
+<h2>Function RETURN</h2>
+<p><mark>When JS reaches a <span>return</span> statement, the FUNCTION will <b>stop executing</b>.</mark><br>
+If <u>the function</u> was invoked from a <span><b>stetement</b></span>, JS will "RETURN" to execute <u>the code</u> after the invoking <span><b>statement</b></span>.<br>
+Functions often <span>compute</span> a <b>return value</b>.</p>
+<pre>
+	< p id="demo21">< /p>
+	< script>
+		var x = myFunction(4, 3); 	// Function is called, RETURNED VALUE will END UP in x
+		document.getElementById("demo21").innerHTML = x;
+
+		function myFunction(a, b){
+			return a * b;			//Function returns the product of a and b
+		}
+	< /script>
+</pre>
+<p id="demo21"></p>
+	<script>
+		var x = myFunction(4, 3); 							// Function is called, RETURNED VALUE will END UP in x
+		document.getElementById("demo21").innerHTML = x;
+
+		function myFunction(a, b){
+			return a * b;			//Function returns the product of a and b
+		}
+	</script>
+
+<h2>Why Functions?</h2>
+<p><span><b>You can reuse the code:</b> Define the code <b>once</b> and USE IT <b>many times</b>.</span><br>
+You can use <b>the same code</b> many times, with <span><b>different arguments</b></span> to produce <span><b>different results</b></span>.</p>
+<pre>
+	< p id="demo22">< /p>
+	< script>
+		function toCelsius(f){
+			return (5/9) * (f-32);
+		document.getElementById("demo22").innerHTML = toCelsius(77);
+		}
+	< /script>
+</pre>
+<p id="demo22"></p>
+	<script>
+		function toCelsius(f){
+			return (5/9) * (f-32);
+		document.getElementById("demo22").innerHTML = toCelsius(77);
+		}
+	</script>
+
+<h2>The "()" OPERATOR Invokes the FUNCTION</h2>
+<p><mark>Using the example above, <span><u>toCelsius</u></span> refers <span><b>to the function OBJECT</b></span> and <span>toCelsius()</span> refers to the <b>function result</b>.</mark><br>
+<mark>Accesing a function without "()" <span>will return the <b>function object</b></span> instead of the <b>function result</b>.</mark></p>
+<pre>
+	< p id="demo23"></p>
+	< script>
+		function toCelsius(f) {
+			return (5/9) * (f-32);
+		}
+		document.getElementById("demo23").innerHTML = toCelsius;
+	< /script>
+</pre>
+<p id="demo23"></p>
+	<script>
+		function toCelsius(f) {
+			return (5/9) * (f-32);
+		}
+		document.getElementById("demo23").innerHTML = toCelsius;
+	</script>
+
+<h2>Functions Used as VARIABLES Values</h2>
+<p>Functions <span>can be used <b>the same way</b></span> as you use <b>variables</b>, all types of <span> FORMULAS, ASSIGNMENTS and CALCULATIONS</span>.</p>
+<h3>Example</h3>
+<p>Instead of using a variable <b>to store</b> <span>the return value os a function</span>:</p>
+<pre>
+	var x  = toCelsius(77);
+	var text = "The temperature is " + x + " Celsius";
+</pre>
+<p>You can use <span>the function directly <b>as a variable value</b>:</span></p>
+<pre>
+	<p id="demo24"></p>
+	<script>
+		document.getElementById("demo24").innerHTML = 
+		"The temperature is " + toCelsius(77) + " Celsius";
+
+		function toCelsius(fahrenheit) {
+			return (5/9) * (fahrenheit-32);
+		}
+	</script>
+</pre>
+
+<h2>LOCAL Variables</h2>
+<p>Variables declared with JS <b>function</b>, become <b>LOCAL</b> to the function.<br>
+Local variables - can only be accesed - from within the function.</p>
+<pre>
+	< p id="demo25">< /p>
+	< p id="demo26">< /p>
+	< script>
+		myFunction();
+
+		function myFunction(){
+			var carName = "Volvo"
+			document.getElementById("demo25").innerHTML = 
+			typeof carName + " " + carName;
+		}
+		document.getElementById("demo26").innerHTML = 
+		typeof carName;
+	< /script>
+</pre>
+<p>Outside <span>myFunction()</span>, carName is undefined.</p>
+<p id="demo25"></p>
+<p id="demo26"></p>
+	<script>
+		myFunction();
+
+		function myFunction(){
+			var carName = "Volvo"
+			document.getElementById("demo25").innerHTML = 
+			typeof carName + " " + carName;
+		}
+		document.getElementById("demo26").innerHTML = 
+		typeof carName;
+	</script>
+<p>Since LOCAL VARIABLES - are ONLY recognized inside therir funcitons, VARIABLES with the same name  - <b>can be used in different functions</b>.</p>
+<hr>
+
+<h1>JavaScript Objects</h1>
+<h2>Real Life Objects, Properties and Methods</h2>
+<h2>JavaScript Objects</h2>
+<p>JS variables - are containers for DATA VALUES.<br>
+The code <b>assigns</b> a simple value (Fiat) - to a <b>variable</b> named car:</p>
+<pre>
+	//CREATE and DISPLAY a variable:
+	var car = "Fiat";
+	document.getElementById('demo1').innnerHTML = car;
+</pre>
+<p><b>Objects</b> are <b>variables</b> too.<br>
+This code assigns <b>many values</b> (Fiat, 500, white) to a <b>variable</b> named car:</p>
+<pre>
+	< p id="demo27">< /p>
+	< script>
+		//CREATE an OBJECT:
+		var car = {type:"Fiat", model:"500", color: "white"};
+		//DISPLAY some DATA from the OBJECT:
+		document.getElementById("demo27").innerHTML = 
+		"The car type is " + car.type;
+	< /script>	
+</pre>
+<p id="demo27"></p>
+	<script>
+		//CREATE an OBJECT:
+		var car = {type:"Fiat", model:"500", color: "white"};
+		//DISPLAY some DATA from the OBJECT:
+		document.getElementById("demo27").innerHTML = 
+		"The car type is " + car.type; 
+	</script>
+<p>the values are written as <b>name:value pairs</b> (name and value separated by a colon).<br>
+<span>JS OBJECTS are CONTAINERS for <b>named values</b> called <b>prperties</b> or <b>methods</b>.</span></p>
+
+<h2>Object Definition</h2>
+<p>You define (and create) a JS OBJECT with an <b>object literal</b>:</p>
+<pre>
+	< p id="demo28">< /p>
+	< script>
+		//Create an OBJECT
+		var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+		//Display SOME DATA from the OBJECT:
+		document.getElementById("demo29").innerHTML = 
+		person.firstName + "is " + person.age + " years old.";
+	< /script>
+</pre>
+<p id="demo28"></p>
+	<script>
+		//Create an OBJECT
+		var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+		//Display SOME DATA from the OBJECT:
+		document.getElementById("demo29").innerHTML = 
+		person.firstName + "is " + person.age + " years old.";
+	</script>
+<p><u>Spaces</u> and <u>line breaks</u> are <b>not important</b>. An <b>object</b> can <b>span</b> multiple lines:</p>
+<pre>
+	var person = {
+	firstName = "John",
+	lastName = "Doe",
+	age:"50",
+	eyeColor: "blue"
+};
+</pre>
+
+<h2>Object Properties</h2>
+<p>The <b>name:values pairs</b> in JS - are called <b>properties</b>.</p>
+<pre>
+	PROPERTY			PROPERTY VALUE
+	
+	firstName 			John
+	lastName 			Doe
+	age 				50
+	eyeColor			blue
+</pre>
+
+<h2>Accesing Object PROPERTIES</h2>
+<p>You can ACCES -object properties- in <b>two ways</b>:</p>
+<p><span>objectName.propertyName</span></p>
+<p>or</p>
+<p><span>objectName["propertyName"]</span></p>
+<h3>Example:</h3>
+<pre>
+	< p id="demo30">< /p>
+	< script>
+		var person = {firstName:"John", lastName:"Doe", id:5566};
+		//Display some DATA from the OBJECT
+		document.getElementById("demo30").innerHTML = 
+		person.firstName + " " + person.lastName;
+	< /script>
+</pre>
+<p id="demo30"></p>
+	<script>
+		var person = {firstName:"John", lastName:"Doe", id:5566};
+		//Display some DATA from the OBJECT
+		document.getElementById("demo30").innerHTML = 
+		person.firstName + " " + person.lastName;
+	</script>
+<h3>Example</h3>
+<pre>
+	< p id="demo31">< /p>
+	< script>
+		var person = {
+			firstName:"John",
+			lastName:"Doe",
+			id: 5566
+		};
+	//Display oms Data from the OBJECT
+	document.getElementById("demo31").innerHTML = 
+	person["firstName"] + " " + person["lastName"];
+	< /script>
+</pre>
+<p id="demo31"></p>
+	<script>
+		var person = {
+			firstName:"John",
+			lastName:"Doe",
+			id: 5566
+		};
+	//Display some Data from the OBJECT
+	document.getElementById("demo31").innerHTML = 
+	person["firstName"] + " " + person["lastName"];
+	</script>
+
+<h2>Object Methods</h2>
+<p><b>Objects</b> can also have <b>methods</b>.<br>
+<b>Methods</b> are <b>actions</b> that <u>can be perfomed</u> - ON OBJECTS.<br>
+<b>Methods</b> <span>are stored</span> in PROPERTIES <b>function definitions</b>.</p>
+<pre>
+	YOUTUBE
+	Important things about PROPERTIES and METHODS:
+	PROPERTIES and METHODS are built into the JS language - meaning that: [we DON'T NEED to CREATE them FIRST, in order to use them inside our code].
+	PROPERTIES - is just BASIC INFORMATIONS about the OBJECT.
+	A METHOD - is a FUNCTION that actually does something to the ACTUAL OBJECT. [A function is basicly a block of code - that does something specific. A function is something we CAN create OURSELVES as a user].
+	When it comes to METHODS - is actually JUST A FUNCTION that RELATED to the ACTUAL OBJECT - but when we create our own functions - we just call them FUNCTIONS - and these are what we also call used to define FUNCTIONS,
+	and PROPERTIES and METHODS - of what we could call BUILDING FUNCTIONS.
+</pre>
+<pre>
+	PROPERTY 			PROPERTY VALUE
+	
+	firstName			John
+	lastName			Doe
+	age 				50
+	eyeColor 			blue
+	fullName 			function() {return this.firstName + " " + this.lastName;}
+</pre>
+<p><span>A <b>method</b> is a <b>function - stored as a property</b>.</span></p>
+<h3>Example:</h3>
+<pre>
+	var person = {
+	firstName: "John",
+	lastName: "Doe",
+	id:  5566,
+	fullName: function(){
+	return this.firstName + " " + this.lasName;
+}
+}
+</pre>
+
+<h2>The <b>this</b> keyword</h2>
+<p>In a <b>functiond efinition</b> <span>this</span> refers to the "OWNER" of the function.<br>
+In the example above - <span>this</span> is the <b>person object</b> that "ONWS" the <span>fullName</span> function.<br>
+In the other words<span>this.firstName</span> means - the <span>firstName</span> property is <b>this object</b>.</p>
+
+<h2>Accesing Object Methods</h2>
+<p>You acces an OBJECT METHOD with the following <b>syntax</b>:</p>
+<pre> objectName.methodName()</pre>
+<h3>Example:</h3>
+<pre>name = person.fullName();</pre>
+<pre>
+	< p id="demo32">< /p>
+	< script>
+		var person = {
+			firstName: "John",
+			lastName: "Doe",
+			id: 5566,
+			fullName: function(){
+				return this.firstName + " " + this.lastName; // "this"  - is the PERSON OBJECT - that "owns" the fullName function.
+			}
+		};
+	// Display DATA from the OBJECT:
+	document.getElementById("demo32").innerHTML = person.fullName();
+	< /script>
+</pre>
+<p id="demo32"></p>
+	<script>
+		var person = {
+			firstName: "John",
+			lastName: "Doe",
+			id: 5566,
+			fullName: function(){
+				return this.firstName + " " + this.lastName; // "this"  - is the PERSON OBJECT - that "owns" the fullName function.
+			}
+		};
+	// Display DATA from the OBJECT:
+	document.getElementById("demo32").innerHTML = person.fullName();
+	</script>
+<p>If you ACCES a method <b>without</b> the () parantheses, it will RETURN the <b>function definition</b>:</p>
+<pre>
+	document.getElementById("demoX").innerHTML = person.fullName;
+	//function(){return this.firstName + " " + this.lastName; }
+</pre>
+
+<h2>Do Not declare STRING, NUMBERS, and BOOLEANS as OBJECTS!</h2>
+<p>When a JS VARIABLE is declared with the <b>keyword</b> <span>"new"</span>, the variables - IS CREATED as an OBJECT:</p>
+<pre>
+	var x = new String(); 	//Declares x as a STRING object
+	var y = new Number(); 	//Declares y as a NUMBER object
+	var z = new Boolean();	//Declares z as a BOOLEAN object
+</pre>
+<p>Avoid <span>String, Number</span> and <span>Boolean</span> objects. They COMPLICATE your CODE - and SLOW DOWN execution speed.</p>
+<hr>
+
+<h1>JavaScript Events</h1>
+<p>HTML events are <b>"things</b> that happen to <b>HTML elements</b>.<br>
+When JavaScript is used <u>in HTML pages</u>, JS can <b>"react"</b> on these events.</p>
+
+<h2>HTML Events</h2>
+<p>An HTML event can be SOMETHING the BROWSER DOES or SOMETHING a USER DOES.<br>
+Some examples of HTML events:</p>
+<ul>
+	<li>An HTML <u>web page</u> - HAS FINISHED LOADING</li>
+	<li>An HTML <u>input field</u> - WAS CHANGED</li>
+	<li>An HTML <u>button</u> was - CLICKED</li>
+</ul>
+<p>Often, when EVENTS HAPPEN, you may WANT TO DO something.<br>
+JS LETS you EXECUTE CODE - when EVENTS are DETECTED.<br>
+HTML ALLOWS - event handler  attributes - <b>with JS code</b>. to be ADDED to HTML elements.</p>
+<p>In the following example, an <span>onclick ATTRIBUTE</span> (with code), is ADDED  - to a <b>< button ></b> ELEMENT.</p>
+<pre>
+	< button onclick="document.getElementById('demo33').innerHTML=Date()">The time is?< /button>
+	< p id="demo33">< /p>	
+</pre>
+<button onclick="document.getElementById('demo33').innerHTML=Date()">The time is?</button>
+	<p id="demo33"></p>
+<p>In the example above - the JS CODE - changes THE CONTENT OF THE ELEMENT - with id "demo".</p>
+<p>In the next example - THE CODE - changes THE CONTENT OF its OWN ELEMENT - (using this.innerHTML):</p>
+<pre>
+	< button onclick="this.innerHTML=Date()">The time is?< /button>
+</pre>
+<button onclick="this.innerHTML=Date()">The time is?</button>
+<p><span>JavaScript code is often several lines long. It is more common to see <u>event attributes</u> - CALLING FUNCTIONS:</span></p>
+<pre>
+	< button onclick="displayDate()">The time is?< /button>
+	< script>
+		function displayDate() {
+			document.getElementById("demo34").innerHTML = Date();
+		}
+	< /script>
+	< p id="demo34"></p>
+</pre>
+<p>Click the button to display the date.</p>
+<button onclick="displayDate()">The time is?</button>
+	<script>
+		function displayDate() {
+			document.getElementById("demo34").innerHTML = Date();
+		}
+	</script>
+	<p id="demo34"></p>
+
+<h2>Common HTML Events</h2>
+A list of <u>some common</u> events:
+<pre>
+	EVENT 			DESCRIPTION
+
+	onchange		An HTML element - has BEEN changed
+	onclick			The USER <u>clicks</u> - an HTML ELEMENT
+	onmouseover		The USER <u>moves the mouse</u> - OVER an HTML ELEMENT
+	onmouseout		The USER <u>moves the mouse</u> - AWAY from an HTML ELEMENT
+	onkeydown		The USER <u>pushes</u> - a KEYBOARD key
+	onload 			The BROWSER <u>has finished LOADING</u> the PAGE
+</pre>
+
+<h2>What can JavaScript Do?</h2>
+<p>Event handlers can be used <b>to handle</b> and <b>verify</b> <u>USER INPUT, USER ACTION</u> and <u>BROWSER ACTIONS</u>:</p>
+<ul>
+	<li>Things that should be done - <b>everytime a page LOADS</b></li>
+	<li>Things that should be DONE - <b>when THE PAGE is CLOSED</b></li>
+	<li><u>Actions</u> that should be PERFORMED - <b>when A USER clicks a BUTTON</b></li>
+	<li><u>Content</u> that should be VERIFIED - <b>when A USER inputs DATA</b></li>
+</ul>
+<p>Many different METHODS can be USED to let JS WORK with EVENTS:</p>
+<ul>
+	<li>HTML <u>events attributes</u> - <b>can execute JS code DIRECTLY</b></li>
+	<li>HTML <u>events attributes</u> - <b>can CALL JS functions</b></li>
+	<li>You can <u>assign</u> your OWN EVENT HANDLER functions - <b>to HTML elements</b>.</li>
+	<li>You can <u>prevent EVENTS</u> - from being <b>sent</b> or being <b>handled</b></li>
+</ul>
+
+<h1>JavaScript Strings</h1>
+	<p>JS STRINS  are used for  STORING and MANIPULATING text.</p>
+	
+	<h2>JS Strings</h2>
+	<p>A JS string is ZERO or MORE characters written inside quotes.</p>
+	<pre>
+		var x  = "John Doe"
+	</pre>
+	<p>You can use SINGLE or DOUBLE quotes:</p>
+	<pre>
+		var carName = "Volvo XC60"
+		var carName = 'Volvo XC60'
+
+		You can use quotes INSIDE  a STRING as long as they DON'T MATCH the quotes surrounding the string:
+		var answer1 = "It's alright";
+		var answer2 = "He is called 'Johnny'";
+		var answer3 = 'He is called "Johnny"';
+	</pre>
+
+	<h2>String LENGTH</h2>
+	<p>Tho <span>find</span> the LENGTH of a STRING - use the built-in <span>length</span> property:</p>
+	<pre>
+		< p id="demo35">< /p>
+		< script>
+			var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			var sln = txt.length;
+			document.getElementById("demo35").innerHTML = sln;
+		< /script>
+	</pre>
+<p id="demo35"></p>
+	<script>
+		var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		var sln = txt.length;
+		document.getElementById("demo35").innerHTML = sln;
+	</script>
+<h2>Escape Character</h2>
+<p>Because strings must be written within quotes, JS will misunderstand this string:</p>
+<pre>
+	var x = "We are so called "Vikings" from the north."
+
+	The STRING will be chopped to - "We are so called".
+	The solution to avoid this problem, is to use <b>backslash escape character</b>.
+	The backslash (\) - escape character - turns special characters into string character:
+
+	CODE 			RESULT 			DESCRIPTION
+
+	\'				'				Single quote
+	\"				"				Double quote
+	\\				\				Backslash
+</pre>	
+<p>The sequence (\"), inserts a DOUBLE QUOTE in a STRING:</p>
+<pre>
+	< p id="demo36">< /p>
+	< script>
+		var x  = "We are so called \"Wikings\" from the north.";
+		document.getElementById("demo36").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo36"></p>
+	<script>
+		var x  = "We are so called \"Wikings\" from the north.";
+		document.getElementById("demo36").innerHTML = x;
+	</script>
+<p>The sequence <span>\'</span> inserts a SINGLE QUOTE in a STRING:</p>
+<pre>
+	var x = 'It\'s alright.';
+</pre>
+<p>The sequence <span>\\</span> insers a backslash in a string:</p>
+<pre>
+	< p id="demo37">< /p>
+	< script>
+		var x = "The character \\ is called backslash.";
+		document.getElementById("demo38").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo37"></p>
+	<script>
+		var x = "The character \\ is called backslash.";
+		document.getElementById("demo38").innerHTML = x;
+	</script> 
+
+<h2>Breaking Long Code Lines</h2>
+<p>For best readability, programmers often like to avoid code lines longer than 80 characters.<br>
+In JS statement does not fit on one line, the best place to BREAK is is after an OPERATOR:</p>
+<h3>Example</h3>
+<pre>
+	document.getElemById("demo").innerHTML = 
+	"Hello Dolly!"
+
+	You can also break up a code line <b>wthin a TEXT string</b> with a single backslash:
+
+	document.getElemById("demo").innerHTML = "Hello \ 
+	Dolly!";
+</pre>	
+<p><span>The method \  - is not the preferred method. It might not have UNIVERSAL SUPPORT.<<br>
+Some BROWSERS do not allow spaces  - BEHIND THE "\" character.</span>
+</p>
+<p>A safer way to break up a STRING - is to use string addition:</p>
+<pre>
+	< p id="demo39">< /p>
+	< script>
+		document.getElementById("demo39").innerHTML = "Hello " +
+		"Dolly!";
+	< /script>
+</pre>
+<p id="demo39"></p>
+	<script>
+		document.getElementById("demo39").innerHTML = "Hello " +
+		"Dolly!";
+	</script>
+
+<h2>Strings Can Be Objects</h2>
+<p>Normally, JS strings are PRIMITIVE VALUES - created from literals:
+<pre>
+	var firstName = "John";
+</pre>
+</p>
+<p>But STRINGS can also be defined as OBJECTS with the keyword <span>new</span>:
+<pre>
+	var firstName = new String("John");
+</pre>
+</p>
+<pre>
+	< p id = "demo40">< /p>
+	< script>
+		var x = "John"; // x is a STRING
+		var y = new String("John"); // y is an OBJECT
+		document.getElementById("demo40").innerHTML = 
+		typeof x + "< br>" + typeof y;
+	< /script>
+</pre>
+<p id = "demo40"></p>
+	<script>
+		var x = "John"; // x is a STRING
+		var y = new String("John"); // y is an OBJECT
+		document.getElementById("demo40").innerHTML = 
+		typeof x + "<br>" + typeof y;
+	</script>
+<p><span>Don't CREATE <b>strings</b> as <b>objects</b>. It SLOWS DOWN <b>the execution speed</b>.<br>
+The "new" keyword complicates the CODE. Can produce som unexpected results:
+</span></p>
+<p>When using the <span>==</span> operator, equal strings are equal:</p>
+<pre>
+	< p id="demo 41">< /p>
+	< script>
+		var x = "John";
+		var y = new String("John");
+		document.getElementById("demo41").innerHTML = 
+		(x == y);// (x==y) is TRUE because x and y have equal VALUES
+	< /script>
+	Strings cannot be safety compared.
+</pre>
+<p id="demo 41"></p>
+	<script>
+		var x = "John";
+		var y = new String("John");
+		document.getElementById("demo41").innerHTML = 
+		(x == y); 
+	</script>
+<p>When using the <span>===</span> operator, equal VALUES may not be EQUAL, because the <span>===</span> operator - <b>expects equality in both - <br>
+DATA Type</b> and <b>VALUE</b>.</p>
+<pre>
+	< p id="demo42">< /p>
+	< script>
+		var x = "John";
+		var y = new String("John");
+		document.getElementById("demo42").innerHTML = 
+		(x === y); // (X === Y) is FALSE because x and y have DIFFERENT TYPES (STRING and OBJECT)
+	< /script>
+</pre>
+	<p id="demo42"></p>
+	<script>
+		var x = "John";
+		var y = new String("John");
+		document.getElementById("demo42").innerHTML = 
+		(x === y); // (X === Y) is FALSE because x and y have DIFFERENT TYPES (STRING and OBJECT)
+	</script>
+<p>Or even worse. Object CANNOT be compared.</p>
+<pre>
+	var x = new String("John");
+	var y = new String("John");
+	// (x == y) is FALSE because x and y are OBJECTS.
+	Also:
+	//(x === y) is FALSE because x and y are OBJECTS.
+</pre>
+<hr>
+
+<h1>JavaScript String Methods</h1>
+<h2>StringMethods and Properties</h2>
+<p><span>Primitive values</span> like "John Doe" CANNOT have - PROPERTIES or METHODS (because they are not objects).<br>
+But with JS - methods and properties - are also available to <span>primitive values</span> because JS <b>treats primitive values - as objects</b> - when executing METHODS and PROPERTIES.</p>
+
+<h2>String Length</h2>
+<pre>
+	< p id="demo43">
+	< script>
+		var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		var sln = text.length;
+		document.getElementById("demo43").innerHTML = sln;
+		The property length returns the length of a SRTRING.
+	< /script>
+</pre>
+<p id="demo43">
+	<script>
+		var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		var sln = text.length;
+		document.getElementById("demo43").innerHTML = sln;
+	</script>
+
+<h2>Finding a String in a String</h2>
+<p>The <span>indexOf()</span> method returns the INDEX of /(the POSITION of) the <b>first occurence</b>  of a specified text in a string.</p>
+<pre>
+	< p id="demo44">< /p>
+	< script>
+		var str = "Please locate where 'locate' occurs!"
+		var pos = str.indexOf("locate");
+		document.getElementById("demo44").innerHTML = pos;
+	< /script>
+	The indexOF() method - returns the POSITION of the FIRTS occurence of a specified text:
+</pre>
+<p id="demo44"></p>
+	<script>
+		var str = "Please locate where 'locate' occurs!"
+		var pos = str.indexOf("locate");
+		document.getElementById("demo44").innerHTML = pos;
+	</script>
+<p><span>JS COUNTS positions from zero.<br>
+0 is the FIRST position in a STRING, 1 is the SECOND, 2 is the THIRD...</span></p>
+<p>The <span>lastIndexOf()</span> methods - returns the idex/position of the <b>last occurence</b>  of a specified text in a string:</p>
+<pre>
+	< p id="demo45">< /p>
+	< script>
+		var str = "Please locate where 'locate' occurs!";
+		var pos = str.lastIndexOf("locate");
+		document.getElementById("demo45").innerHTML = pos;
+	< /script>
+</pre>
+<p id="demo45"></p>
+	<script>
+		var str = "Please locate where 'locate' occurs!";
+		var pos = str.lastIndexOf("locate");
+		document.getElementById("demo45").innerHTML = pos;
+	</script>
+<p>Both <span>indexOf()</span> and <span>lastIndexOf()</span> return -1 - if the text is NOT FOUND.</p>
+<pre>
+	< p id="demo46">< /p>
+	< script>
+		var str = "Please locate where 'locate' occurs!";
+		var pos = str.lastIndexOf("John");
+		document.getElementById("demo46").innerHTML = pos;
+	< /script>
+</pre>
+<p id="demo46"></p>
+	<script>
+		var str = "Please locate where 'locate' occurs!";
+		var pos = str.lastIndexOf("John");
+		document.getElementById("demo46").innerHTML = pos;
+	</script>
+<pre>
+	var str = "Please locate where 'locate' occurs!";
+	var pos = str.indexOf("John")
+</pre>
+
+<p>Both methods accept a SECOND PARAMETER as the starting position for the search.</p>
+<pre>
+	var str = "Please locate where 'locate' occurs!";
+	var pos = str.indexOf("locate", 15)
+</pre>
+
+<p>The <span>lastIndexOf() <b>methods</b></span> searches backwards (from THE END to THE BEGINNING), meaning: if the second parameter is <span>15</span>, the search starts at POSITION 15, and SEARCHES to the BEGINNING  of the STRING.</p>
+<pre>
+	var str = "Please locate where 'locate' occurs!";
+	var pos = str.indexOf("locate", 15);
+</pre>
+<h2>Searching for a String in a String</h2>
+<p>The <span>search()</span> method searches a string  for a specified value and returns the position of the match:</p>
+<pre>
+	< p id="demo47">< /p>
+	< script>
+		var str = "Please locate where 'locate' occurs!";
+		var pos = str.search("locate");
+		document.getElementById("demo47").innerHTML = pos;
+	< /script>
+</pre>
+	<p id="demo47"></p>
+	<script>
+		var str = "Please locate where 'locate' occurs!";
+		var pos = str.search("locate");
+		document.getElementById("demo47").innerHTML = pos;
+	</script>
+
+<h2>Did you notice?</h2>
+<p>The two methods, <span>indexOf()</span> and <span>search()</span>, are <b>equal?</b><br>
+But...They accept the same arguments (parameters), and return the same value?</p>
+<p>The two methods are <b>NOT</b> equal. These are the differences:</p>
+<ul>
+	<li>The <span>search()</span> method CANNOT TAKE a SECOND start position argument.</li>
+	<li>The <span>indexOf()</span> method CANNOT TAKE powerful SEARCH VALUES. (regular expressions)</li>
+</ul>
+
+<h2>Extracting String Parts</h2>
+<p>There are 3 METHODS for extracting a PART of a STRING:</p>
+<ul><span>
+	<li>slice (start, END)</li>
+	<li>substring (start, END)</li>
+	<li>substr (start, length)</li>
+</span></ul>
+
+<h2>The slice() Method</h2>
+<p><span>slice()</span> extracts a PART of a STRING - and returns PART in a NEW STRING.<br>
+The method - takes 2 parameters: the START POSITION, and the END POSITION (end not included).<br>
+This example SLICES OUT <u>a portion of a string</u> - from POSITION 7 to POSITION 12 (13-1):</p>
+<pre>
+	< p id="demo48">< /p>
+	< script>
+		var str = "Apple, Banana, Kiwi";
+		var res = str.slice(7, 13);
+		document.getElementById("demo48").innerHTML = res;
+	< /script>
+</pre>
+	<p id="demo48"></p>
+	<script>
+		var str = "Apple, Banana, Kiwi";
+		var res = str.slice(7, 13);
+		document.getElementById("demo48").innerHTML = res;
+	</script>
+<p><span>Remember! - JS counts positions from zero. Firts position is 0.</span>
+</p>
+<p>If a parameter is NEGATIVE, the POSITION is COUNTED from the END of the STRING.<br>
+This example SLICES OUT a portion of a string from POSITION -12 to POSITION -6:</p>
+<pre>
+	var str = "Apple, Banana, Kiwi";
+	var res = str.slice(-12, -6);
+	//Banana
+</pre>
+<p>If you omit the second parameter, the METHOD will SLICE OUT the REST of the STRING:</p>
+<pre>
+	var str = "Apple, Banana, Kiwi";
+	var res = str.slice(7);
+	document.getElementById("demo").innerHTML = res;
+	// Banana, Kiwi
+</pre>
+<p>Or counting from the END:</p>
+<pre>
+	var res = str.slice(-12);
+	// Banana, Kiwi
+</pre>
+
+<h2>The substring() METHOD</h2>
+<p><span>substring()</span> is SIMILAR to <span>slice().</span><br>
+<p>The difference is that <span>substring()</span> CANNOT accept NEGATIVE INDEXES.</p>
+<pre>
+	var str = "Apple, Banana, Kiwi";
+	var res = str.subtring(7, 13);
+	//Banana
+	If you OMIT the SECOND parameter, <u>substring()</u> will slice out THE REST of the STRING.
+</pre>
+
+<h2>The substr() METHOD</h2>
+<p><span>substr()</span> is SIMILAR to <span>slice()</span>.<br>
+<p>The difference is that <b>the second parameter</b> specifies the <b>length</b> of the EXTRACTED PART.</p>
+<pre>
+	var str = "Apple, Banana, Kiwi";
+	var res = str.substr(7, 6);
+	//Banana
+If you omit the SECOND parameter <u>substr()</u> will slice out the rest of the string.
+	var str = "Apple, Banana, Kiwi";
+	var res = str.substr(7);
+	//Banana, Kiwi
+</pre>
+<p>If teh FIRST parameter is NEGATIVE, the POSITION COUNTS from the END of the STRING.</p>
+<pre>
+	var string = "Apple, Banana, Kiwi";
+	var res = str.substr(-4);
+	//Kiwi
+</pre>
+
+<h2>Replacing String Content</h2>
+<p>The <span>replace</span> string METHOD replaces a SPECIFIED VALUE with another VALUE in a string:</p>
+<pre>
+	Replace "Microsoft" with "W3Schools - in the paragraph below:
+	< button onclick="myFunction()">Try It< /button>
+
+	< p id="demo49">Please visit Microsoft!</p>
+	< script>
+	function myFunction() {
+		var str = document.getElementById("demo49").innerHTML;
+		var txt = str.replace("Microsoft", "W3Schools");
+		document.getElementById("demo49").innerHTML = txt;
+	}
+	< /script>
+</pre>
+<p>Replace "Microsoft" with "W3Schools - in the paragraph below:</p>
+	<button onclick="myFunction()">Try It</button>
+
+	<p id="demo49">Please visit Microsoft!</p>
+	<script>
+	function myFunction() {
+		var str = document.getElementById("demo49").innerHTML;
+		var txt = str.replace("Microsoft", "W3Schools");
+		document.getElementById("demo49").innerHTML = txt;
+	}
+	</script>
+<p>The <span>replace()</span> method ODES NOT CHANGE THE STRING - it is called on. It returns a NEW STRING.</p>
+<p>By default, the <span>replace()</span> METHOD - replaces <b>only the first match</b>:</p>
+<pre>
+	Replace "Microsoft" with "W3Schools" in the paragraph below:
+	< button onclick="myFunction2()">Try it!< /button>
+	< p id="demo50">Please visit Microsoft and Microsoft!< /p>
+	< script>
+		function myFunction2() {
+			var str = document,getElementById("demo50").innerHTML;
+			var txt = str.replace("Microsoft", "W3Schools");
+			document.getElementById("demo50").innerHTML = txt;
+		}
+	< /script>	
+</pre>
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+	<button onclick="myFunction2()">Try it!</button>
+	<p id="demo50">Please visit Microsoft and Microsoft!</p>
+	<script>
+		function myFunction2() {
+			var str = document,getElementById("demo50").innerHTML;
+			var txt = str.replace("Microsoft", "W3Schools");
+			document.getElementById("demo50").innerHTML = txt;
+		}
+	</script>	
+<p>By default, the <span>replace()</span> METHOD is <u>case sensitive</u>.<br>
+Writting MICROSOFT with (upper-case) will NOT WORK:</p>
+<pre>
+	function myFuntion() {
+	var str = document.getElementById("demo").innnerHTML;
+	var txt = str.replace("MICROSOFT", "W3Schools");
+	document.getElementById("demo").innerHTML = txt;
+}
+</pre>
+
+<h2>Converting to Upper and Lower Case</h2>
+<p>A string is CONVERTED to UPPER CASE with <span>toUpperCase()</span>:</p>
+<pre>
+	< p id="demo51">< /p>
+	< button onclick="myFunction3()">Try Me!< /button>
+	< script>
+		function myFunction3() {
+			var text = document.getElementById("demo51").innerHTML;
+			document.getElementById("demo51").innerHTML = toUpperCase();
+		}
+	< /script>
+</pre>
+<p id="demo51">Hello World!</p>
+<button onclick="myFunction3()">Try Me!</button>
+	<script>
+		function myFunction3() {
+			var text = document.getElementById("demo51").innerHTML;
+			document.getElementById("demo51").innerHTML = toUpperCase();
+		}
+	</script>
+<p>A string is converted to lower case with <span>toLowerCase()</span>:</p>
+<pre>
+	< p id="demo52">Hello World!< /p>
+	< button onclick="myFunction4()">Try Me!< /button>
+	< script>
+		function myFunction4() {
+			var text = document.getElementById("demo52").innerHTML;
+			document.getElementById("demo52").innerHTML = toLowerCase();
+		}
+	< /script>
+</pre>
+<p id="demo52">Hello World!</p>
+	<button onclick="myFunction4()">Try Me!</button>
+	<script>
+		function myFunction4() {
+			var text = document.getElementById("demo52").innerHTML;
+			document.getElementById("demo52").innerHTML = toLowerCase();
+		}
+	</script>
+
+<h2>The concat() Method</h2>
+<p><span>concat()</span> joins TWO or MORE strings:</p>
+<pre>
+	< p id="demo53">< /p>
+	< script>
+		var text1 = "Hello";
+		var text2 = "World!"
+		var text3 = text1.concat(" ", text2);
+		document.getElementById("demo53").innerHTML = text3;
+	< /script>
+</pre>
+<p id="demo53"></p>
+	<script>
+		var text1 = "Hello";
+		var text2 = "World!"
+		var text3 = text1.concat(" ", text2);
+		document.getElementById("demo53").innerHTML = text3;
+	</script>
+<p>The <span>concat()</span> METHOD - can be used insead of the PLUS OPERATOR. It does the same thing:</p>
+<pre>
+	var text = "Hello" + " " + "World!";
+	var text = "Hello".concat(" ", "World!");
+</pre>
+<p><span><b>All string methods return a NEW STRING. They don't modify the ORIGINAL string. <br>
+Formally said: Strings are IMMUTABLE: Strins cannot be CHANGED, only REPLACED.</b></span></p>
+
+<h2>String trim()</h2>
+The <span>trim()</span> METHOD - removes the <u>whitespace</u> from both sides of a string:
+<pre>
+	< button onclick="myFunction5()">Try Me!< /button>
+	< p id="demo55"></p>
+	< script>
+		function myFunction5() {
+			var str = "		Hello World!"
+			document.getElementById("demo55").innerHTML = str.trim();
+		}
+	< /script>
+</pre>
+<button onclick="myFunction5()">Try Me!</button>
+	<p id="demo55"></p>
+	<script>
+		function myFunction5() {
+			var str = "		Hello World!"
+			document.getElementById("demo55").innerHTML = str.trim();
+		}
+	</script>
+<h2>JavaScript String Padding</h2>
+ECMAScript 2017 added TWO string METHODS: <span>padStart</span> and <span>padEnd</span> to support padding at the beginning and the nd of the string.
+<pre>
+< p id="demo56">< /p>
+< script>
+	let/var str = "5";
+	str = str.padStart(4,0);
+	document.getElementById("demo56").innerHTML = str;
+< /script>
+</pre>
+<p id="demo56"></p>
+<script>
+	var str = "5";
+	str = str.padStart(4,0);
+	document.getElementById("demo56").innerHTML = str;
+</script>
+<pre>
+	let str = "5";
+	str = str.padEnd(4,0);
+	// result is 5000
+</pre>
+
+<h2>Extracting String Characters:</h2>
+<p>There are 3 methods for extracting string characters:</p>
+<ul>
+	<li>charAt(position)</li>
+	<li>charCodeAt(position)</li>
+	<li>Property acces [ ]</li>
+</ul>
+
+<h2>The charAt() Method</h2>
+<p>The <span>charAt()</span> METHODS  - return THE CHARACTER at a SPECIFIED INDEX(position) - in a STRING:</p>
+<pre>
+	< p id="demo57">< /p>
+	< script>
+		var str = "HELLO WORLD";
+		document.getElementById("demo57").innerHTML = 
+		str.charAt(0);
+	< /script>
+The charAt METHOD - returns the character <u>at a given position</u> in a STRING:
+</pre>
+<p id="demo57"></p>
+	<script>
+		var str = "HELLO WORLD";
+		document.getElementById("demo57").innerHTML = 
+		str.charAt(0);
+	</script>
+
+<h2>The charCodeAt() Method</h2>
+<p>The method returns a UTF-16 code (an integer [nr. intreg] between 0 and 65525).<br>	
+The <span>charAt()</span> METHOD  retunrs the UNICODE of the CHARACTER - at a SPECIFIED INDEX in a STRING:</p>
+<pre>
+	< p id="demo58">< /p>
+	< script>
+		var txt = "HELLO WORLD";
+		document.getElementById("demo58").innerHTML = 
+		str.charCodeAt(0);
+	< /script>
+The charCodeAt() METHOD - returns the UNICODE of a CHARACTER at a <u>given position</u> in a string:
+</pre>
+<p id="demo58"></p>
+	<script>
+		var txt = "HELLO WORLD";
+		document.getElementById("demo58").innerHTML = 
+		str.charCodeAt(0);
+	</script>
+
+<h2>Property Access</h2>
+ECMAScript5 (2009) allows <u>property acces []</u> on STRINGS:
+<pre>
+	< p id="demo59">< /p>
+	< script>
+		var txt = "HELLO WORLD";
+		document.getElementById("dmeo59").innerHTML = str[0];
+	< /script>
+</pre>
+<p id="demo59"></p>
+	<script>
+		var txt = "HELLO WORLD";
+		document.getElementById("dmeo59").innerHTML = str[0];
+	</script>
+<p><span>Property acces might be a little <b>unpredictible</b></span></p>
+<ul>
+	<li>It does not work in IE 7 or EARLIER</li>
+	<li>It makes STRINGS look like ARRAYS (but they are not)</li>
+	<li>If no character is found, [] returns undefined - while charAt()  - returns an EMPTY STRNG.</li>
+	<li>It is read only.str[0] = "A" gives no error (but does work!)</li>
+</ul>
+<pre>
+	< p id="demo60">< /p>
+	< script>
+		var str = "HELLO WORLD";
+		str[0] = "A"; // does not work
+		document.getElementById("demo60"). innerHTML = str[0];
+	< /script>
+</pre>
+<p id="demo60"></p>
+	<script>
+		var str = "HELLO WORLD";
+		str[0] = "A"; // does not work
+		document.getElementById("demo60"). innerHTML = str[0];
+	</script>
+<p>If you want to work with a STRING as an ARRAY, you can CONVERT IT to an array.</p>
+
+<h2>Converting a String to an Array</h2>
+<p>A string can be CONVERTED to an ARRAY - with the <span>split()</span> METHOD:</p>
+<pre>
+	< p id="demo61">< /p>
+	< button onclick="myFunction6()">Try It!< /button>
+	< script>
+		var str = "a, b, c, d, e, f";
+		var arr = str.split(",");
+		document.getElementById("demo61").innerHTML = arr[0];
+	< /script>
+</pre>
+<p id="demo61"></p>
+	<button onclick="myFunction6()">Try It!</button>
+	<script>
+		var str = "a, b, c, d, e, f";
+		var arr = str.split(",");
+		document.getElementById("demo61").innerHTML = arr[0];
+	</script>
+<pre>
+	var txt = "a, b, c, d, e, f";   		// String
+	txt.split(",");					// Split on commas
+	txt.split(" ");					// Split on spaces
+	txt.split("|");					// Split on pipe
+</pre>
+<p>If the SEPARATOR ( , " " | ), the returned array will contain the whole string in index [0].<br>If the SEPARATOR is "", the returned array will be an ARRAY of single characters:</p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+		var str = "Hello";
+		var arr = str.split("");
+		var text = "";
+		var i;
+		for (i = 0; i < arr.length; i++) {
+	  	text += arr[i] + "< br>"
+		}
+		document.getElementById("demo").innerHTML = text;
+	< /script>
+	//
+	H
+	e
+	l
+	l
+	o
+</pre>
+<pre>
+	https://www.youtube.com/watch?v=XIh2vwAc0-Q
+
+	< script>
+	var a = "Anthony";
+	b = a.split(''); //using this param. SPLITS on every character
+	 dcoument.write("a is a " + typeof a + '< br>'); // a is a STRING.
+	 document.write(a + '< br> < br>');	//Anthony
+	 document.write("b is an" + typeof b + '< br>'); //b is an OBJECT.
+	 document.write(b + '< br>< br>'); // A,n,t,h,o,n,y 
+	< /script>
+
+	a is a STRING.
+	Anthony
+	b is an OBJECT.
+	A,n,t,h,o,n,y
+
+	I have my name here. Take my name "Anthony" - use split() function to it...
+	Take each one of these characters(A,n,t,h,o,n,y) and break it into an ARRAY.
+	2. I gave this empty string (''). What it did: Every characther got put into an array.
+	3. If you put a..for example "l" here -> ('l') - it will separate the array in two parts by a comma.
+	//An,honi.
+
+	if you want the maximum amount of the array put a second parameter, (4)
+	b = split.('', 4) // A,n,t,h
+	It split on every character - but we want a maximum of 4 returned.
+
+	4.If we want to transform into a string (AGAIN) use b.join('') - function? /method.
+	var c = b.join('');
+	document.write(c + '< br>'); //Anthony
+	document.write(typeof c); // string
+
+	5.var c = b.join('+');
+	document.write(c + '< br>'); //Anthony
+	document.write(typeof c); // string
+	It separate on a "+" sign - but it's still a STRING.
+</pre>
+<hr>
+
+<h1>JS Numbers</h1>
+<p>Numbers- writtten WITH or WITHOUT <u>decimals</u>.</p>
+<pre>
+	< p id="demo72"></p>
+	< script>
+		var x = 3.14; //decimals
+		var y = 3; //without decimals
+		document.getElementById("demo72").innerHTML = x + "<br>" + y;
+	< /script>
+</pre>
+<p id="demo72"></p>
+	<script>
+		var x = 3.14; //decimals
+		var y = 3; //without decimals
+		document.getElementById("demo72").innerHTML = x + "<br>" + y;
+	</script>
+<p>XL numbers can be written scientific/<span><b>exponent</b></span> notation:</p>
+<pre>
+	var x = 123e5;	//12300000
+	var y = 123e-5; //0.00123
+</pre>
+
+<h1>JavaScript Numbers are always 64-bit FLOATING POINT</h1>
+<p>...format that stores numbers in 64 bits - where the number (the fraction) - is stored in bits 0 to 51 | the exponent bits 52 to 62 | the sign bit 63: ?!?!?!</p>
+
+<h2>Precision</h2>
+<p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits:</p>
+<pre>
+	var x = 999999999999999;   // x will be 999999999999999
+	var y = 9999999999999999;  // y will be 10000000000000000
+</pre>
+<p>The maximum number of decimals is 17 - but floating point arithmetic is not always 100% accurate:</p>
+<pre>
+	< p id="demo73">< /p>
+	< script>
+		var x = 0.2 + 0.1;
+		document.getElementById("demo73").innerHTML = "0.2 + 0.1 = " + x;
+	< /script>
+</pre>
+<p id="demo73"></p>
+	<script>
+		var x = 0.2 + 0.1;
+		document.getElementById("demo73").innerHTML = "0.2 + 0.1 = " + x;
+	</script>
+
+<h2>Adding Numbers and Strings</h2>
+<pre>
+	var x = 10;
+	var y = 20;
+	var z = x + y;           // z will be 30 (a number)
+	----------------------------------------------------
+	*add TWO STRINGS => STRING CONCATENATION
+	var x = "10";
+	var y = "20";
+	var z = x + y;           // z will be 1020 (a string)
+	-----------------------------------------------------
+	*a NUMBER and a STRING => STRING CONCATENATION
+	var x = 10;
+	var y = "20";
+	var z = x + y;           // z will be 1020 (a string)
+	------------------------------------------------------
+	*a STRING and a NUMBER => STRING CONCATENATION
+	var x = "10";
+	var y = 20;
+	var z = x + y;           // z will be 1020 (a string)
+	-----------------------------------------------------
+	-----------------------------------------------------
+	* a COMMON mistakeis to expect this result to be 30:
+	var x = 10;
+	var y = 20;
+	var z = "The result is: " + x + y;
+	-----------------------------------------------------
+	* a COMMON mistakeis to expect this result to be 102030:
+	var x = 10;
+	var y = 20;
+	var z = "30";
+	var result = x + y + z;
+</pre>
+
+<h2>Numeric Strings</h2>
+<p><span><b>JS can have numeric content:</b></span></p>
+<p><span>JS - will try to CONVERT - STRINGS to NUMBERS - in all numeric operations:</span></p>
+<pre>
+	< p id="demo74">< /p>
+	< script>
+		var x = "100";
+		var y = "10";
+		var z = x / y;
+		document.getElementById("demo74").innerHTML = z;
+	< /script>
+</pre>
+<p id="demo74"></p>
+	<script>
+		var x = "100";
+		var y = "10";
+		var z = x / y;
+		document.getElementById("demo74").innerHTML = z;
+	</script>
+<p>This will also work:</p>
+<pre>
+	var x = "100";
+	var y = "10";
+	var z = x * y;       // z will be 1000
+	---------------------------------------
+	var x = "100";
+	var y = "10";
+	var z = x - y;       // z will be 90
+</pre>
+<p>But this will not work:</p>
+<pre>
+	var x = "100";
+	var y = "10";
+	var z = x + y;       // z will not be 110 (It will be 10010)
+</pre>
+
+<h2>NaN - Not a Number</h2>
+<p><span>NaN</span> is a JS RESERVED WORD - indicating that  <b>a number is not a LEGAL number:</b></p>
+<p>Trying to do arithmetic with a non-numeric STRING - will result in <span>NaN</span> (Not a Number):</p>
+<pre>
+	< p id="demo75">< /p>
+	< script>
+		document.getElementById("demo75").innerHTML = 100 / "Apple";
+	< /script>
+</pre>
+<p id="demo75"></p>
+	<script>
+		document.getElementById("demo75").innerHTML = 100 / "Apple";
+	</script>
+<p>However, if the string contains a numeric value , the result will be a number:</p>
+<pre>
+	var x = 100 / "10";     // x will be 10
+</pre>
+<p>You can use  - <span>isNaN()</span> to find if a VALUE is a NUMBER:</p>
+<pre>
+	< p id="demo76">< /p>
+	< script>
+		var x = 100 / "Apple";
+		document.getElementById("demo76").innerHTML = isNaN(x);
+	< /script>
+</pre>
+<p id="demo76"></p>
+<script>
+	var x = 100 / "Apple";
+	document.getElementById("demo76").innerHTML = isNaN(x);
+</script>
+
+<p><span><b>If you use NaN in a mathematical operation, the result will also be NaN:</b></span></p>
+<pre>
+	< p id="demo77">< /p>
+	< script>
+		var x = NaN;
+		var y = 5;
+		document.getElementById("demo77").innerHTML = x + y;
+	< /script>
+</pre>
+<p id="demo77"></p>
+	<script>
+		var x = NaN;
+		var y = 5;
+		document.getElementById("demo77").innerHTML = x + y;
+	</script>
+
+<p>Or the result might be a concatenation:</p>
+<pre>
+	var x = NaN;
+	var y = "5";
+	var z = x + y;         // z will be NaN5
+</pre>
+
+<p><span>NaN</span> is a number: <span><b>typeof NaN</b></span> returns <span>number</span>:</p>
+<pre>
+	< p id="demo78">< /p>
+	< script>
+		var x = NaN;
+		document.getElementById("demo77").innerHTML = typeof x;
+	< /script>
+</pre>
+<p id="demo78"></p>
+	<script>
+		var x = NaN;
+		document.getElementById("demo78").innerHTML = typeof x;
+	</script>
+
+<h2>Infinity</h2>
+<p><span>Infinity</span>(or <span>- Infinity</span>) is the value JS will return if you calculate a number OUTSIDE the LARGEST POSSIBLE number.</p>
+<pre>
+	< p id="demo78">< /p>
+	< script>
+		var myNumber = 2;
+		var txt = "";
+		while (myNumber != Infinity) {
+			myNumber = myNumber * myNumber;
+			txt = txt + myNumber + "< br>";
+		}
+		document.getElementById("demo78").innerHTML = txt;
+	< /script>
+	?!?!?!?!?!?!?!?!
+</pre>
+<p><span>Infinity</span> is a number: <span>typeof Infinity</span> returns <span>number</span>.</p>
+<pre>
+	< p id="demo79">< /p>
+	< script>
+		var x = Infinity;
+		document.getElementById("demo79").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo79"></p>
+	<script>
+		var x = Infinity;
+		document.getElementById("demo79").innerHTML = x;
+	</script>
+
+<h2>Hexadecimal</h2>
+<p>JS interprets <b>numeric constants</b> as <u>HEXADECIMAL</u> if they are preceded by <span><b>0x</b></span></p>
+<pre>
+	< p id="demo80">< /p>
+	< script>
+		var x = 0xFF;
+		document.getElementById("demo80").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo80"></p>
+	<script>
+		var x = 0xFF;
+		document.getElementById("demo80").innerHTML = x;
+	</script>
+.........................................................
+
+<h2>Numbers Can be OBJECTS</h2>
+<p>JS NUmbers  - are primitive values  - created from literals:</p>
+<p><span>var x  = 123;</span></p>
+<p>But NUMBERS can also be defined as OBJECTS with the keyword <span>new</span>:</p>
+<pre>
+	var x = 123;
+	var y = <span style="color:red">new Number(123)</span>;
+	*Do not create Number objects. It slows down execution speed.
+</pre>
+
+<p>When using the <span>==</span> equal NUMBERS are EQUAL.</p>
+<pre>
+< p id="demo81">< /p>
+< script>
+	var x = 123;
+	var y = new Number(123);
+	document.getElementById("demo81").innerHTML = (x == y);
+	// (x == y) is true because x and y have equal values
+< /script>
+</pre>
+<p id="demo81"></p>
+<script>
+	var x = 123;
+	var y = new Number(123);
+	document.getElementById("demo81").innerHTML = (x == y);
+</script>
+<pre>
+	var x = 500;             
+	var y = new Number(500);
+
+	// (x === y) is false because x and y have different types
+</pre>
+<pre>
+	var x = new Number(500);             
+	var y = new Number(500);
+
+	// (x === y) is false because OBJECTS cannotbe COMPARED.
+</pre>
+
+<h1>JavaScript Number Methods</h1>
+<p><u>Number Methods</u> help you to work with NUMBERS.</p>
+
+<h2>Number Methods and PROPERTIES</h2>
+<p><span style="color:red">Primitive values</span> (like 3.14 or 2014), cannot have <b>properties</b> and <b>methods</b> - because <b>they</b> are not <span style="color:red">OBJECTS</span>.</p>
+<p>But with JS, <b>methods</b> and <b>properties</b> are also available to PRIMITIVE VALUES, because JS <b>treats primitive values as OBJECTS</b> - when executing METHODS and PROPERTIES.
+</p>
+<p>But, the <span>valueOf() METHOD - IS USED internally in JS - to convert <u>Number Objects</u> to <u>PRIMITIVE Values</u>. <br>
+There is no reason to use it in your code.</span></p>
+
+<h2>The toString() Method</h2>
+<p>The <span>toString()</span> method returns a NUMBER as a STRING.</p>
+<pre>
+	< p id="demo82">
+	< script>
+		var x = 123;					
+		x.toString() + "< br>" + 		//returns 123 from variable x	
+		(123).toString() + "< br>" +		//returns 123 from literal 123	
+		(100 + 23).toString();					//returns 123 from expression 100 +23
+	< /script>
+</pre>
+<p id="demo82">
+	<script>
+		var x = 123;
+		x.toString() + "<br>" + 
+		(123).toString() + "<br>" +
+		(100 + 23).toString();
+	</script>
+
+<h2>The toExponential() Method</h2>
+<p><span>toExponential()</span> - return a STRING with a number ROUNDED and WRITTEN using exponential notation.<br>
+Parametrul defineste numarul de caractere...dupa decimal point.
+<pre>
+	< script>
+	var x = 9.656;
+	document.getElementById("demo").innerHTML = 
+	.toExponential() + "< br>" +	
+	.toExponential(2) + "< br>" +	// returns 9.66e+0
+	.toExponential(4) + "< br>" +	// returns 9.6560e+0
+	.toExponential(6) 				// returns 9.656000e+0
+	< /script>
+</pre>
+<p><span>The parameter</span> is optional. If you don't specify it, JS will NOT ROUND the NUMBER.</p>
+
+<h2>The toFixed() Method</h2>
+<p><span>toFixed()</span> RETURNS a STRING - with the number written with a specified number of decimals: </p>
+<pre>
+< p id="demo">< /p>
+
+< script>
+var x = 9.656;
+document.getElementById("demo").innerHTML =
+  x.toFixed(0) + "< br>" +	//returns 10
+  x.toFixed(2) + "< br>" +	//returns 9.66
+  x.toFixed(4) + "< br>" +	//returns 9.6560
+  x.toFixed(6);				//returns 9.656000
+< /script>	
+</pre>
+
+<h2>The toPrecision() Method</h2>
+<p><span>toPrecision()</span> returns a STRING - with a NUMBER written <u>with a specified length</u>:</p>
+<pre>
+	var x = 9.656;
+	x.toPrecision();        // returns 9.656
+	x.toPrecision(2);       // returns 9.7
+	x.toPrecision(4);       // returns 9.656
+	x.toPrecision(6);       // returns 9.65600
+</pre>
+
+<h2>The valueOf() Method</h2>
+<p><span>valueOf()</span> RETURNS a NUMBER as a NUMBER.</p>
+<pre>
+	var x = 123;
+	x.valueOf();            // returns 123 from variable x
+	(123).valueOf();        // returns 123 from literal 123
+	(100 + 23).valueOf();   // returns 123 from expression 100 + 23
+</pre>
+
+<h2>Converting Variables to Numbers ???</h2>
+<p>There are 3 JS METHODS - that can be used to convert VARIABLES to NUMBERS.</p>
+<ul>
+	<li>The <span>Number()</span> method</li>
+	<li>The <span>parseInt()</span> method</li>
+	<li>The <span>parseFloat()</span> method</li>
+</ul>
+<p><span>! These are <b>global</b> JS <b>methods</b>.</span><br>
+to <b>parse</b> - a analiza </p>
+<pre>
+	<b>Method</b>			<b>Description</b>
+	Number()				Returns a number, CONVERTED from its ARGUMENT.
+	parseFloat()			Parses its argument and RETUNRS a FLOATING POINT number.
+	parseInt()				Parses its argument and RETURNS an INTEGER.
+</pre>
+
+
+
+<pre>
+	Intro:
+	JS NUMBER METHODS - return the formatted value to us , as a STRING - and not a NUMBER.
+	1.The First Method "toFixed()"
+	add a variable: (and we gonna call it PI)
+	const PI = 3.141596254;
+	-so, if this is a NUMBER - we can acces number METHODS.
+
+	const PI = 3.141596254;
+	const num =  PI.toFixed(); 
+	
+	-- we DO paranthesses at the END because this is a METHOD.
+	-so, toFixed() - takes a NUMBER - and it ROUNDS IT to the amount of decimal places, that we specify.
+	- so inside the paranthesses I want to say (2):
+
+	console.log(num.toFixed(2)) //3.14
+	-the console.log RETURNS 3.14 - because we use toFixed() METHOD - on our number and we specified  - how many numbers we want to show after DECIMAL POINT.
+	- IF WE SAID (3), this RETURNS 3.142 - because toFixed() ROUND OUR number UP or DOWN ...and because it's a "5" - rounds UP to "2"... basic maths.
+
+	2. toPrecision() Method
+	let PI = 3.141596254;
+	let num =  PI.toPrecision();
+	(let - because we can actually re-initialized).
+	toPrecision() - returns a PRECISE NUMBER of DIGITS - regardless of where decimal point is.
+	- lets say - we want to display PI - with a total of 5 numbers:
+
+	let PI = 3.141596254;
+	num =  PI.toPrecision(5); 
+	console.log(num);// 3.1416 - we have a total of 5 numbers.
+
+	3. toExponential() Method
+	It RETURNS the exponential notation version - of a NUMBER.
+	let mill = 1000000;
+	num = mill.toExponentioal();      // I redeclared my var - this time using "mill"
+	console.log(num);//1e+6
+	-enable us to write very LARGE or very SMALL numbers  - in a much QUICKER WAY. (1E+6 - IS a lot quicker THAN - writting 1 with six "0").
+
+	https://www.youtube.com/watch?v=DUV73ireecw&t=196s
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+II. parseInt() ~ AS Number() - method
+What "they"do - is basically TAKE  a string  - and TRY to CONVERT into a NUMBER.
+
+let x = 5;
+let y = "10";
+console.log(x + y); // you get a 510. - ptr ca e constrans de un "string" an then they're concatinated.
+
+- we gonna create a New VAR - let yInt = Number.parseInt(y);
+let x = 5;
+let y = "10";
+let yInt = Number.parseInt(y); // this is gonna make it a NUMBER  - which means we can use that INSIDE of our code.
+console.log(x + yInt); //15
+
+For example we might have something like:
+let yInt = Number.parseInt("10.999999 is may fav number");
+This will actually work because it's gonna gonna CROP anything after the DECIMAL "10." So use "parseFloat()".
+
+let x = 5;
+let y = "10";
+let yInt = Number.parseFloat("10.999999 is may fav number");
+console.log(x + yInt); //15.999999 
+
+III. valueOf() Method:
+ - declaring some var call: "number" and declaring a "Number()" - OBJECT.
+ - in this "Number()" OBJECT - I will be giving some RANDOM number. 789
+ < script type="text/javascript">
+ 	var number = new Number(789.9);
+
+ 	//then console.log(number);  - to verify that. We got "the object".
+ 	console.log(number); // you've got THE OBJECT. //Number{789.9}
+ 	 < /script>.
+ 	}
+ 
+ - ok, what this "valueOf()" do - it will exatrct all the primitve value "789.9" - inside this "Number()". Si in this "Number(789.9)"- OBJECT we have "789.9". It will extract this value "789.9" and return in the FORM of the STRING: It will EXTRACT the NUMBER inside the "Number() OBJECT"
+
+ var number = new Number(789.9);
+ console.log(number.valueOf(789.9)); // 
+
+
+</pre>
+
+<h2>The Number() Method</h2>
+<p><span>Number()</span> cand be used to convert JS VARIABLES to numbers:</p>
+<pre>
+	const myNumber = 42; (an integer - is a whole number)
+
+	const myString= "42";
+	console.log(Number(myString));
+
+	We can change a STRING data type - to a NUMBER data type -- by using the "Number Function".
+	Now we add "3" to the CONVERTED data  - we get the result of the equation.
+	const myString = "42";
+	console.log(Number(myString) + 3); //45
+
+	console.log((Number(myString) === myNumber); //true
+</pre>
+<pre>
+	B. parseInt() | parseFloat()
+	The difference betwen an INTEGER and a FLOAT.
+	An INTEGER is simply a number "123;" - a number that DOES NOT HAVE  a DECIMAL PLACE. 123 - there is no NUMBER coming after it.
+	A FLOAT is a DECIMAL - or a NUMBER that has a DECIMAL and DIGITS that come after it. 123.456.
+
+	parseInt()/parseFloat() - these are METHOD that exist @ the GLOBAL lvl - within the JS.
+	So - we can call parseInt() to take any string "123" (like this) - or a number that HAS a DECIMAL (like this) 123.456.
+	Take a "float" or a "string" and EXTRACT the INTEGER part of it.
+
+	let myStrInt = "456";
+	console.log(parseInt(myStrInt)); //456
+
+	456 is NOW a NUMBER. (When you receive a string number from a ..idk user has typed someplace else "that value" ... you need to deal with it as if it were a NUMBER; but the value you get it is a STRING.) We need to convert it from the STRING into a NUMBER - what the "PARSE " methods are doing.
+	parseInt() - takes the STRING and turns it into a NUMBER .
+
+	ANOTHER Example:
+	let address = "456 Main Ave."
+	console.log(parseInt(address)); //456;
+	It looks at this string - starts at the beginning - yeap, that's a number, that's a number, that's a number - OH ok...SPACE - that's not a number. I will STOP here.
+	
+	IF we do:
+	console.log(parseFloat(address)); // 456.
+	we get the same VALUE. iT DOESN'T force TO BE a DECIMAL. parseFloat() will give you back an INTEGER. (YOU NEED TO HAVE a DECIMAL for "me" to work!)
+	let myStrFloat = "345.567.789.345";
+	console.log(parseFloat(myStrFloat)); //345.567
+	we exctract 345.567 and that's where it stops - because you cannot have a MULTIPLE DECIMALS within a number.
+	...
+	Remember these methods when you were working with USER INPUT - when you getting something out of a user...if a number does not have "quotation marks" - treat them as if it does. run parseInt()/parseFloat() - get the VALUE back as a NUMBER.
+
+	to parse = a ANALIZA.
+</pre>
+
+<h2>Number Properties</h2>
+<h2>JavaScript MIN_VALUE and MAX_VALUE</h2>
+<p><span>MAX_VALUE</span> <b>returns</b> the LARGEST POSSIBLE number in JS.</p>
+<pre>
+	< p id ="demo83">< /p>
+	< script>
+		var x = Number.MAX_VALUE;
+		document.getElementById("demo83").innerHTML = x;
+	< /script>
+</pre>
+<p id ="demo83"></p>
+	<script>
+		var x = Number.MAX_VALUE;
+		document.getElementById("demo83").innerHTML = x;
+	</script>
+
+<p><span>Min_VALUE</span> <b>returns</b> the LOWEST POSSIBLE number in JS.</p>
+<pre>
+	< p id ="demo84">< /p>
+	< script>
+		var x = Number.NIN_VALUE;
+		document.getElementById("demo83").innerHTML = x;
+	< /script>
+</pre>
+<p id ="demo84"></p>
+	<script>
+		var x = Number.MIN_VALUE;
+		document.getElementById("demo84").innerHTML = x;
+	</script>
+
+<h2>JS POSITIVE_INFINITY</h2>	
+<p><span>POSITIVE_INFINITY</span> is RETURNED ON <u>overflow</u>.</p>
+<pre>
+	overflow - debordat = a iesii din lbia raului, a da pe din afara.
+</pre>
+<pre>
+	< p id="demo85">< /p>
+	< script>
+		var x = Number.POSITIVE_INFINITY;
+		document.getElementById("demo85").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo85"></p>
+	<script>
+		var x = Number.POSITIVE_INFINITY;
+		document.getElementById("demo85").innerHTML = x;
+	</script>
+<pre>
+	< p id="demo86">< /p>
+	< script>
+		<mark>var x = 1 / 0;</mark>
+		document.getElementById("demo86").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo86"></p>
+	<script>
+		var x = 1 / 0;
+		document.getElementById("demo86").innerHTML = x;
+	</script>
+
+</body>
+</html>
+
+
+

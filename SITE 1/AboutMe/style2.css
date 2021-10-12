@@ -1,0 +1,278 @@
+*{
+	margin: 0px;
+	padding:  0px;
+	box-sizing: border-box;
+}
+
+/*navBAR*/
+nav{
+	display:  flex;
+	justify-content:  space-around;
+	align-items: center;
+	min-height:  8vh;		 /* 8% of the height of viewport */
+	background-color: #5d4954;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.logo{
+	color: rgb(226, 226, 226);
+	text-transoform: uppercase;
+	letter-spacing: 5px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.logo-image img{
+	height: 55px;
+	width: 55px;
+	border-radius: 100%;
+	overflow: hidden;
+	margin-top: 10px;
+	object-fit: cover;			 	
+	}
+
+.nav-links{
+	display: flex;
+	background-color:;
+	justify-content:  space-around; /* nothing happen - cause it doesn't have any space. */
+	/*you can add display: flex - to JUSTIFY -content SPACE-AROUND,and yocan just PLAY around with the "WIDTH"*/
+	width: 30%;
+}
+.nav-links li{
+	list-style: none;
+}
+
+.nav-links a{
+	color: rgb(226, 226, 226);
+	text-decoration:  none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.burger{
+	display: none;
+	cursor:  pointer;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: rgb(226, 226, 226);
+	margin:  5px;
+}
+
+/*Body*/
+body {
+      	 
+}
+
+h3{
+	font-family: Montserrat, sans-serif;
+	text-align:  center;
+	font-style: bold;
+	color: #d6c4b2;
+	margin-top: 70px;
+	margin-bottom: -10px;
+}
+
+.introduction{
+	font-family: Montserrat, sans-serif;
+	text-align:  center;
+	font-style: bold;
+	color: #e6dbd0;
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+/*
+.transbox-wrap{
+  position: relative;
+}
+
+.transbox-wrap:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-image: url('../Me_Pictures/248_n1.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0; 
+  background-size: cover; 
+}
+
+.trans-box{
+	position: relative;
+}
+*/
+article {
+  float: left;
+  padding: 20px;
+  color:  #5d4954;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 50px; 
+  z-index: 1;  
+}
+
+hr{
+	color: #754f5b;	
+	margin: 20px;
+}
+p {
+ 	font-size: 14px;
+}
+
+.section{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;	
+} 
+.sectionButton{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;	
+} 
+
+/*Button*/
+
+.button {
+	position: relative;
+  background-color: #ffffff;
+  border: 2px solid #d6c4b2;
+  font-size: 15px;
+  color: #e6dbd0;
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer; 
+ 	bottom: -70px;  	
+ 	border-radius: 4px;	
+ 	margin: auto; 	
+}
+
+/*.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}*/
+
+/*Icons*/
+.icons{
+ 	text-align: center;
+ 	width: 100%;
+ 	font-size: 35px;
+ 	align-self: flex-end; 		 	
+}
+
+.icons a {
+ 	display: inline-block;
+ 	position: relative;
+ 	bottom: -110px;	
+}
+
+.dotsBottom{
+	display: inline-block;
+ 	position: relative;
+ 	bottom: -100px;
+ 	text-align: center;
+ 	width: 100%;
+ 	font-size: 35px;
+ 	align-self: flex-end;
+ 	color: #886b7b;
+}
+
+
+/*@Media Screens*/
+
+/*INCREASE the "width"(!!!in"%"!!!) of the ".nav-links at "this breakpoint" (around 1000-something pixels) - ca sa dea bine atunci cand dai strech la window-browser*/
+@media screen and (max-width:1024px) {
+	.nav-links {
+		width: 60%;
+
+	}
+}
+
+@media screen and (max-width:768px) {
+	body { 
+		overflow-x: hidden; /* |^ | <- | ->*/		
+	}
+	
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		height: 92vh;/*because I have "8vh" UP-HERE + 92vh = that's gonna give us ~FULL-SCREEN~*/
+		top: 8vh;/*...it's gonna be right UNDER our NAV bar*/
+		background-color: #5d4954;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width:  50%;
+		/*we don't want "this (w: 50%) to e here - we use: */
+		transform:  translateX(100%); /*the nav links "dissapear (transform + body{overlof-x: hidden};*/
+		transition: transform 0.5s ease-in;/*because - we don't wanna POP-UP like that*/
+	}
+	/*we want to - click on the BURGER - and FADE-IN nicely.*/
+	.nav-links li {
+		/*opacity: 0;*/
+	}
+	.burger{
+		display: block; /*||| - the burger is displayed*/
+	}
+/*When we click on this "BURGER" we want the navigation to SHOW. (think in CSS for a moment)*/
+/* the only way to do that is to take the "transform" and - put it back to "0" */
+/*when we clikc on the BURGER - the nav should get to "0" transform*/	
+}
+
+	.nav-active{
+		transform:  translateX(0%);
+	}
+
+/* Now - let's animate these (nav-slides) - ONE by ONE.*/
+@keyframes navLinkFade {
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opcity: 1;
+		transform: translateX(0px);
+	}
+}
+ /*Change the BURGER: we add "line1", "line2", "line3" */
+ /*Add a "Toggle Class"*/
+
+	 .toggle .line1{
+	 	transform: rotate(-45deg) translate(-5px,6px);
+	 }
+
+	.toggle .line2{
+	 	opacity: 0;
+	 }
+	.toggle .line3{
+	 	transform: rotate(45deg) translate(-5px,-6px);
+	 }  
+
+/*Now- go to js file - Burger Animation in nav.classList*/
+}
+
+/*I've made a another css file - because the CSS SPECIFICITY doesn't work*/

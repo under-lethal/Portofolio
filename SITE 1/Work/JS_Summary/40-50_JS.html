@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			font-family: Verdana;
+			counter-reset: section;
+			font-size: 15px;
+			padding: 15px;
+		}
+		
+		h1 {counter-reset: subsection;
+			text-decoration: underline;
+		}
+		h1::before {
+			counter-increment: section;
+			content: counter(section) ". ";
+		}
+		h2::before{
+			counter-increment: subsection;
+			content: counter(section) "." counter(subsection)" ";
+		}
+
+		hr{
+			height: 0.5px
+			color: #f0f0f0;
+		}
+
+		p{
+			padding-left: 15px;
+		}
+		
+		span{
+			color: gray;
+		}
+
+		button {
+			background-color: darkgrey;
+			border:none;
+			color: white;
+			padding: 10px;
+			margin-left: 15px;
+			display:inline-block;
+			cursor:pointer;
+			border-radius: 4px;
+		}
+		pre {color: grey;}
+		
+	</style>
+</head>
+<body>
+	<h1>Javascript Errors - Throw and Try to Catch</h1>
+<p>The <span>try</span> STATEMENT lets you <u>test a block of code</u> <b>for errors</b>.</p>
+<p>The <span>catch</span> STATEMENT lets you <u>handle</u> <b>the error</b>.</p>
+<p>The <span>throw</span> STATEMENT lets you <u>create</u> <b>costum errors.</b></p>
+<p>The <span>finally</span> STATEMENT lets you <u>execute code</u>, after try and catch, regardless (indiferent) of the result.</p>
+
+<h2>Errors Will Happen!</h2>
+<p>When executing JS code, different errors can occur.<br>
+Errors can be coding - errors made by the programmer, errors doe wrong input, and other unforeseeable things.</p>
+
+<h3>Example</h3>
+<p>In this example we misspelled "alert" as "addlert" to deliberately produce an error:</p>
+<pre>
+	< p>How to use "catch" to display an error:< /p>
+	< p id="demo112">< /p>
+	< script>
+		try {
+			adddlert ("Welcome Guest!");
+		}
+		catch(err) {
+			document.getElementById("demo112").innerHTML = 
+			err.message;
+		}
+	< /script>
+</pre>
+<p>How to use "catch" to display an error:</p>
+	<p id="demo1"></p>
+	<script>
+		try {
+			adddlert ("Welcome Guest!");
+		}
+		catch(err) {
+			document.getElementById("demo1").innerHTML = 
+			err.message;
+		}
+	</script>
+<p><span>JavaScript cathces <b>adddlert</b> as an error, and executes the catch code to handle it.</span></p>
+
+<h2>JavaScript try and catch</h2>
+<p>The <span>try</span> STATEMENT - allows you to DEFINE a BLOCK of CODE - to be tested for errors - while it is being executed.</p>
+<p>The <span>catch</span> STATEMENT allows you to DEFINE a BLOCK of CODE - to be executed, if an error occurs in the TRY BLOCK.</p>
+<p>The JS statements <span>try</span> and <span>catch</span> come in pairs:</p>
+<pre>
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+</pre>
+
+<h2>The throw Statement</h2>
+<p>The <span>throw</span> statement alllows you to CREATE a COSTUM error.<br>
+Tehnically - you can <b>throw an exception (throw an error)</b>.</p>
+<p>The exeption can be JS: "String", a "Number", a"Boolean" or an "Object"</p>
+<pre>
+	throw "Too big";	// throw a text
+	throw 500;			// throw a number
+</pre>
+<p>! If you use <span>throw</span> together with <span>try</span> and <span>catch</span>, you can control program flow and generate <u>costum error messages.</u></p>
+
+<h2>Input Validation Example</h2>
+<p>This example <b>examines</b> input. If the value is wrong, an exception (err) is thrown.<br>
+The exeption (err) is caught by the catch statement and a costum error message is displayed:</p>
+<pre>
+	< p>Please input a number between 5 and 10:< /p>
+
+	< input type="text" id="demo113">
+	< button type="button" onclick="myFunction100()">Test Input< /button>
+	< p id="p01">< /p>
+
+	< script>
+		function myFunction100() {
+			const message = document.getElementById("p01");
+			message.innerHTML = "";
+			let x = document.getElementById("demo113").value;
+			try {
+			if (x == "") throw "empty";
+			if (isNaN(x)) throw "not a number";
+			x = Number(x);
+			if(x < 5) throw "too low";
+			if(x > 10) throw "too high";
+		}
+		catch(err) {
+			message.innerHTML = "Input is " + err;
+		}
+	}
+	< /script>
+	???????????--------????????---------????????
+</pre>
+
+<p>HTML Validation</p>
+<p>The code above is just an example.<br>
+Modern browsers will often use a combination of JS and built in HTML validation, using predefined validation rules defined in HTML attributes:</p>
+<pre>
+	< input id= "demo" type="number" min="5" max="10" step = "1">
+</pre>
+
+<p>The finally Statement</p>
+<p>The <span>finally</span> statement lets you execute code, after TRY and CATCH regardless of the result.</p>
+<pre>
+	try {
+	  Block of code to try
+	}
+	catch(err) {
+	  Block of code to handle errors
+	}
+	finally {
+	  Block of code to be executed regardless of the try / catch result
+	}
+</pre>
+
+<h2>The Error Object</h2>
+<p>JS has a BUILT IN error that provides error information when an error OCCURS.<br>
+The error object provides two useful properties: name and message.</p>
+<h2>Error Object Properties</h2>
+<pre>
+	<b>Property</b>				<b>Description</b>
+	name 					Sets or RETURNS an ERROR NAME.
+	messages 				Sets or RETURNS an ERROR MESSAGE (a string)
+</pre>
+
+<h2>Error Name Values (6)</h2>
+<h2>Eval Error</h2>
+<p>An <span>EvalError</span> indicates an error in the <b>eval()</b> function.<br>
+An error has occured - in the eval function.</p>
+
+<h2>Range Error</h2>
+<p>A <span>RangeError</span> is thrown if you use a NUMBER that is outside the RANGE of legal values.<br>
+For example: You cannot set the number of significand digits of a number to 500.</p>
+<pre>
+	< p>You cannot set the number of significant digits of a number to 500:< /p>
+	< p id="demo2">< /p>
+	< script>
+		let num  = 1;
+		try {
+			num.toPrecision(5); <mark>(500) //RangeError</mark> // a number cannot have 500 significant digits
+		}
+		catch(err) {
+			document.getElementById("demo2").innerHTML = err.name;
+		}
+	< /script>
+</pre>
+<p>You cannot set the number of significant digits of a number to 500:</p>
+	<p id="demo2"></p>
+	<script>
+		let num  = 1;
+		try {
+			num.toPrecision(5);
+		}
+		catch(err) {
+			document.getElementById("demo2").innerHTML = err.name;
+		}
+	</script>
+
+<h2>Reference Error</h2>
+<p>A <span>ReferecneError</span> is thrown if you use (reference) a variable that has not been declared:</p>
+<pre>
+	< p><mark>You cannot use the variable of a non-existing variable:</mark>< /p>
+	< p id="demo3">< /p>
+	< script>
+		let x = 5;
+		try{
+			x = y + 1; //y cannot be used/referenced
+		}
+		catch(err) {
+			document.getElementById("demo3").innerHTML = err.name;
+		}
+	< /script>
+</pre>
+<p>You cannot use the variable of a non-existing variable:</p>
+	<p id="demo3"></p>
+	<script>
+		let x = 5;
+		try{
+			x = y + 1;
+		}
+		catch(err) {
+			document.getElementById("demo3").innerHTML = err.name;
+		}
+	</script>
+
+<h2>Syntax Error</h2>
+<p>A <span>SyntaxError</span> is thrown if you try to EVALUATE code with a SYNTAX ERROR.</p>
+<pre>
+	< p>You cannot evalauate code that contains a syntax error:< /p>
+	< p id="demo4">< /p>
+	< script>
+		try {
+			eval("alert('Hello)"); // ('Hello') - missing ' will produce error
+		}
+		catch(err) {
+			document.getElementById("demo4").innerHTML = err.name;
+		}
+	< /script>
+</pre>
+<p>You cannot evalauate code that contains a syntax error:</p>
+	<p id="demo4"></p>
+	<script>
+		try {
+			eval("alert('Hello)");
+		}
+		catch(err) {
+			document.getElementById("demo4").innerHTML = err.name;
+		}
+	</script>
+
+<h2>Type Error</h2>
+<p>A <span>TypeError</span> is thrown if you use a value that is outside the range of expected types:</p>
+<pre>
+	< p>You cannot convert a NUMBER to UPPERCase:< /p>
+	< p id="demo5">< /p>
+
+	< script>
+		let num = 1;
+		try {
+			num.toUpperCase();
+		}
+		catch(err) {
+			document.getElementById("demo5").innerHTML = err.name;
+		}
+	< /script>
+</pre>
+<p>You cannot convert a NUMBER to UPPERCase:</p>
+	<p id="demo5"></p>
+
+	<script>
+		let num = 1;
+		try {
+			num.toUpperCase();
+		}
+		catch(err) {
+			document.getElementById("demo5").innerHTML = err.name;
+		}
+	</script>
+
+<h2>URI (Uniform Resource Identifier) Error</h2>
+<p>A <span>URIError</span> is <u>thrown</u> if you use ILLEGAL characters in a URI function:</p>
+<pre>
+	< p>Some characters cannot be decoded with decodeURI():< /p>	
+	< p id="demo6">< /p>
+	< script>
+		try {
+			decodeURI("%%%");
+		}
+		catch(err) {
+			document.getElementById("demo6").innerHTML = err.name;
+		}
+	< /script>
+	?????????????--------------------??????????????--------------
+</pre>
+<p>Some characters cannot be decoded with decodeURI():</p>	
+	<p id="demo6"></p>
+	<script>
+		try {
+			decodeURI("%%%");
+		}
+		catch(err) {
+			document.getElementById("demo6").innerHTML = err.name;
+		}
+	</script>
+<hr>
+
+<h1>JavaScript Scope</h1>
+<p><span>Scope determines the accessibility (visivbility of variables. <br></span></p>
+<p>JS has <b>3 types of scope:</b></p>
+<ul>
+	<li>Block scope</li>
+	<li>Function scope</li>
+	<li>Global scope</li>
+</ul>
+
+<h2>Block Scope</h2>
+<p>Before ES (2015), JS had only <b>Global Scope</b> and <b>Function Scope</b>.</p>
+<p>JS introduced two JS keywords: <span>let</span> and <span>const</span>.<br>
+These two keywords provide <b>Block Scope</b> in JS.</p>
+<p>variables declared inside {_} block cannot be accessed from outside the block:</p>
+<pre>
+	{let x = 2;}
+	// x can NOT be used here
+</pre>
+<p>Variables declared with the <span>var</span> keyword can NOT have block SCOPE.<br>
+VARIABLES declared inside a <u>{ } block</u> CAN BE ACCESSED from outside the BLOCK.</p>
+<pre>
+	{var x = 2;}
+	// x CAN be USED here
+</pre>
+
+<h2>Redeclaring Variables</h2>
+<p>Redeclaring a variable using <span>var keyword</span> can impose problems. <br>
+Redeclaring a variable INSIDE  a BLOCK will also REDECLARE the VARIABLE - outside the block:</p>
+<pre>
+	< p id="demo7">< /p>
+	< script>
+		var x = 10; // Here x is 10
+
+		{var x = 2; // Here x is 2} 
+		
+		// Here x is 2
+		document.getElementById("demo7").innerHTML = x;
+	< /script>
+</pre>
+	<p id="demo7"></p>
+	<script>
+		var x = 10; // Here x is 10
+
+		{var x = 2; // Here x is 2} 
+		
+		// Here x is 2
+		document.getElementById("demo7").innerHTML = x;
+	</script>
+---------------------------------------------------------------------------------------------
+<p>Redeclaring a variable using <span>let</span> keyword - can solve this problem.</p>
+<pre>
+	< p id="demo"></p>
+
+	< script>
+	<mark>let  x = 10;</mark>
+	// Here x is 10
+
+	{  
+	  let x = 2;
+	  // Here x is 2
+	}
+
+	// Here x is 10
+	document.getElementById("demo").innerHTML = x;
+	< /script>
+</pre>
+
+<h2>Redeclaring</h2>
+<p>Redeclaring a JS variable with <span>var</span> is allowed anywhere in a program:</p>
+<pre>
+		var x = 2;
+	<mark>// Now x is 2</mark>
+
+	var x = 3;
+	<mark>// Now x is 3</mark>
+
+	document.getElementById("demo").innerHTML = x;
+</pre>
+-------------------------------------------------------------------------------------------------
+<h2>Local Scope</h2>
+<p>Variables declared within a JS function, BECOME <b>local</b> to the function.</p>
+<pre>
+	< p id="demo8">< /p>
+	< p id="demo9">< /p>
+
+	< script>
+		myFunction1(); 
+		<mark>// code here can NOT use carName</mark>
+
+		function myFunction1() {
+			let carName = "Volvo";
+			document.getElementById("demo8").innerHTML = typeof carName + " " + carName;
+			<mark>// code here CAN use carName</mark>
+		}	
+		document.getElementById("demo9").innerHTML = typeof carName;
+		<mark>//code here can NOT use carName</mark>
+	< /script>
+</pre>
+<p id="demo8"></p>
+<p id="demo9"></p>
+
+	<script>
+		myFunction1(); 
+		// code here can NOT use carName
+
+		function myFunction1() {
+			let carName = "Volvo";
+			document.getElementById("demo8").innerHTML = typeof carName + " " + carName;
+			// code here CAN use carName
+		}	
+		document.getElementById("demo9").innerHTML = typeof carName;
+		//code here can NOT use carName
+	</script>
+<p><span>Local variables have <b>Function Scope:</b></span> <br>
+They can only be accessed from WITHIN the FUNCTION.</p>
+<p>Since local variables are only RECONIGZED inside THEIR functions, variables with the same name can be used in DIFFERENT FUNCTIONS.<br>
+Local variables are created when a function starts , and deleted when the function is completed.</p>
+
+<h2>Function Scope</h2>
+<p>JS has function scope: Each function creates a new scope.<br>
+Variables defined inside a function are NOT ACCESSIBLE (visible) from outside the function.<br>
+Variables declared with <span>var</span>, <span>let</span> and <span>const</span> are quite similar when declared inside a function.<br>
+They both(?) have <b>Function Scope</b>:</p>
+<pre>
+	function myFunction() {
+  <mark>var</mark> carName = "Volvo";   // Function Scope
+}
+
+function myFunction() {
+  <mark>let</mark> carName = "Volvo";   // Function Scope
+}
+
+function myFunction() {
+  <mark>const</mark> carName = "Volvo";   // Function Scope
+}
+</pre>
+
+<h2>Global JavaScript Variables</h2>
+<p>A var declared OUTSIDE  a FUNCTION - becomes <b>GLOBAL</b>.</p>
+<p>A GLOBAL variable CAN BE ACCESSED from any scrip OR function.</p>
+<pre>
+	< p id="demo10">< /p>
+	< script>
+		<mark>let</mark> carName = "Volvo"; // code here can use carName
+		myFunction2();
+
+		function myFunction2() {
+			document.getElementById("demo10").innerHTML = "I can display " + carName;
+			<mark>// code here can also use carName</mark>
+		}
+	< /script>
+</pre>
+<p id="demo10"></p>
+	<script>
+		let carName = "Volvo"; // code here can use carName
+		myFunction2();
+
+		function myFunction2() {
+			document.getElementById("demo10").innerHTML = "I can display " + carName;
+		}
+	</script>
+<p>A global variable has <b>Global Scope:</b><br>
+All scripts and functions on a web page can acces it.</p>
+
+<h2>GLobal Scope</h2>
+<p>Variables declared "Globally" (outside any function) have <b>Global Scope</b>.<br>
+<b>Global</b> variables can be ACCESSED from anywhere in a JS program.<br>
+<span>var, let</span> and <span>const</span> are quite similar when declared OUTSIDE a BLOCK.</p>
+<pre>
+	var x = 2;       // Global scope
+	let x = 2;       // Global scope
+	const x = 2;       // Global scope
+</pre>
+
+<h2>JavaScript Variables</h2>
+<h3>In JS, objects and FUNCTIONS <b>are</b><b><u> also variables</u></b>.</h3>
+
+<h4>Scope determines the accessibility of variables, OBJECTS, and FUNCTIONS from different parts of the code.</h4>
+
+<h2>Automatically Global</h2>
+<p>If you assign a VALUE to a VARIABLE - that has not been declared, it will automatically become a <b>GLOBAL</b> variable.</p>
+<p>This code example - will declare a global variable <span>carName</span>, even if the VALUE is ASSIGNED inside the FUNCTION.</p>
+<pre>
+	< p id="demo12">< /p>
+	< script>
+		myFunction5();
+		//code here can use carName as a global variable
+		document.getElementById("demo12").innerHTML = "I can display " + carName;
+
+		function myFunction5() {
+			<mark>carName = "Volvo";</mark>
+		}
+	< /script>
+	
+	OR
+
+	< p id="demo">< /p>
+
+	< script>
+	<mark>let carName = "Volvo";</mark>
+	myFunction();
+
+	function myFunction() {
+	  document.getElementById("demo").innerHTML = "I can display " + carName;
+	}
+	< /script>
+
+	OR
+
+	< p id="demo1">< /p>
+
+	< p id="demo2">< /p>
+
+	< script>
+	myFunction();
+
+	function myFunction() {
+	  <mark>let carName = "Volvo";</mark>
+	  document.getElementById("demo1").innerHTML = typeof carName + " " + carName;
+	}
+
+	document.getElementById("demo2").innerHTML = typeof carName;
+	< /script>
+</pre>
+
+<p id="demo12"></p>
+	<script>
+		myFunction5();
+		//code here can use carName as a global variable
+		document.getElementById("demo12").innerHTML = "I can display " + carName;
+
+		function myFunction5() {
+			carName = "Volvo";
+		}
+	</script>
+,<h2>Strict Mode</h2>
+<p>All modern browsers support running JS in "Strict Mode".<br>
+In <b>"Strict Mode"</b> - UNDECLARED VARIABLES - <b>are not automatically global</b>.</p>
+
+<h2>Global Variables In HTML</h2>
+<p>With JS - the global SCOPE is the JS ENVIORNMENT.<br>
+</p>
+<p>In HTML the GLOBAL SCOPE is the WINDOW OBJECT.</p>
+<p>GLOBAL VARIABLES DEFINED WITH THE <span>var</span> - belong to the WINDOW OBJECT.</p>
+<pre>
+	var carName = "Volvo";
+// code here can use window.carName
+</pre>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var carName = "Volvo";
+
+	<mark>// code here can use window.carName</mark>
+	document.getElementById("demo").innerHTML = "I can display " + window.carName;
+	< /script>
+</pre>
+<p>Global variables defined with tah <span>let keyword</span> DO NOT BELONG <b>to the window object</b>:</p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	let carName = "Volvo";
+
+	<mark>// code here can not use window.carName</mark>
+	document.getElementById("demo").innerHTML = "I can not display " + window.carName;
+	< /script>
+</pre>
+
+<h2>Warning</h2>
+<p><span>Do NOT create global variables unless you intend to.<br>
+Your GLOBAL VARIABLES (or functions) can overwrite - WINDOW VARIABLES(???) (or functions).</span></p>
+<p><span>Any <u>function</u>, including the WINDOW OBJECT, <u>can OVERWRITE</u> your <b>GLOBAL VARIABLES</b> and FUNCTIONS.</span></p>
+
+<h2>The Lifetime of JavaScript Variables</h2>
+<p>The lifetime of a JS var - STARTS WHEN it is DECLARED.<br>
+Function (local) variables are DELETED - <u>when the function is COMPLETED.</u><br>
+In a web browser, GLOBAL VARIABLES are DELETED - <u>when you CLOSE (x) THE browser window</u>.</p>
+
+<h3>Function Arguments</h3>
+<p> Function arguments (parameters) - work as local variables - inside functions.</p>
+<hr>
+
+<h1>JavaScript Hoisting</h1>
+<p>Hoisting in JS's default behaviour of <u>moving declarations</u> to the TOP.</p>
+
+<h2>JavaScript Declarations are Hoisted</h2>
+<p>In JS, a variable can be declared - after it has been used.<br>
+In other words; a var can be used before it has been declared.</p>
+<p>Example 1 gives the same RESULT as Example 2:</p>
+<pre>
+	< p id="demo13">< /p>
+	< script>
+		x = 5; // assign 5 to x
+		elem = document.getElementById("demo13"); // find an element
+		elem.innerHTML = x; //DISPLAY x in the ELEMENT
+
+		var x; // Declare x;
+	< /script> 
+</pre>
+<p id="demo13"></p>
+	<script>
+		x = 5; // assign 5 to x
+		elem = document.getElementById("demo13"); // find an element
+		elem.innerHTML = x; //DISPLAY x in the ELEMENT
+
+		var x; // Declare x;
+	</script> 
+<pre>
+	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Youtube:
+	A. Named Functions.
+	B. ANONYMUS Functions
+
+	A. Named Functions
+	1. You Don't need to assign a VALUE to a VARIABLE - IMMEDIATELY. (yOU COULD JUST DECLARE THE var - AND THEN LATER - assign a value).
+
+	var a; a= "First";
+
+	2. Declaring the VAR and ASSIGN  a value TO It - It's <mark>going to AFFECT hoisting</mark> - because when you log this code inside the BROWSER - what hoisting is - 
+	<mark>Is:The BROWSER takes all the declarations</mark> (such as variables "a,b,c") 
+	<mark>it takes it OUT of the CODE and before shows anything inside the BROWSER it takes these DECLARATIONS and put them at the TOP of the website or the TOP of the FILE.</mark> 
+	You CAN acces THEM at any point inside the code that you have in here. 
+</pre>
+<pre>
+	var a  = "First";
+	var b = "Second";
+	var c = "Third";
+
+	console.log();
+</pre>
+<pre>
+	console.log(d); //undefined
+
+	var d;
+
+	Undefined - logically, the console.log - should know - that is a variable (d) - inside the code -
+	<mark>because the console.log is before "var d" - so inside the BROWSER we shouldn't get "Undefined".</mark> - because that MEANS  - it can't find a VAR - and it's NO value ASSIGNED to it.
+	Instead what we should be getting logically: "Oh, I don't know what this variable is... we know that is an error" - but instead we get undefined. (which means we have a variable declared -
+	inside our document [but there is no VALUE assign ot IT]).
+
+2. When I declare a variable [taken out of the CODE - and placed at the TOP of the DOCUMENT] - the console.log - can't find it because <mark>the variable GET HOISTED - at the top of the Document;</mark>
+pulled up to the TOP - so the console.log knows that there is a variable "d".
+</pre>
+
+<pre>
+	III.
+	console.log(d);
+	 var d = "Fourth";
+
+	 we get undefined - because we hoisted (move them to the TOP of the document) - but we don't take the values.
+</pre>
+<pre>
+	IV.
+	d = "Fourth";
+
+	console.log(d);
+
+	var d; //Fourth
+
+	// var d BELOW (after) the console.log || the ASSIGN the VALUE ABOVE(before) the console.log
+	It still gets the value inside the BROWSER.
+
+	When we declare a variable it gets highest it to the TOP - and because I assigned the value BEFORE - the console.log().
+	THIS IS WHAT WE CALL  - HOISTING.
+</pre>
+
+<pre>
+	V. NAMED FUNCTIONS and ANONYMUS FUNCTIONS. 
+	Named Function:
+
+	function example() {
+		var a = 10;
+		return a;
+	}
+
+console.log(example()); // 10
+
+*we get "10" inside the console. (as in BROWSER console)
+
+V.1 (Reverse)
+1. Undefined - (inside the console)? (BROWSER console)
+2. 10?
+3. Reference Error?
+
+
+console.log(example());
+
+	function example() {
+		var a = 10;
+		return a;
+	}
+
+	// 10 - because  A NAMED FUNCTION - in the same way as a VARIABLE gets taken out the code - and placed 
+	on the TOP or HOISTED (to the TOP of the FILE/Document).
+	So' we can use it at any point inside our code - we can use it whenever we want inside the CODE - because it's been hoisted.
+
+	HOISTING:
+	When you hoist anything (any sort of data INSIDE OUT JavaScript - it is going to TAKE UP SPACE INSIDE the BROWSER - which means that's gonna SLOW DOWN THE CODE(a little bit) (when get loaded inside the BROWSER).
+	Because it's SAVE SPACE for the FUNCTIONS and the VARIABLES inside the BROWSER.
+	As a general RULE - you don't want to hoist any code - inside the BROWSER unless you have a very specific reason to do so. (it's going to SLOW DOWN the BROWSER when it LOADS the CODE).
+
+	So - HOW DO WE AVOID HOISTING?
+	What some people Do? - is that they don't create VARIABLES out in the root of the FILE.
+	 <mark>var a = 50;</mark>
+
+	console.log(example());
+
+	function example() {
+		var a = 10;
+		return a;
+	}
+	//10
+
+	It's better to put "var" inside the FUNCTIONS. (there is no reason to declare them outside the function)
+------------------
+V.2 How do we avoid Functions beeing HOISTED?
+"Using" ANONYMUS Functions.
+A NAMED Function - always get HOISTED into the BROWSER.
+An ANONYMUS Function is a Function - <mark>without a NAME attached</mark>. 
+If we want to call a function - we just basically call on the NAME - INSIDE the "console.log()".
+An ANONYMUS Function - <mark>doesn't have a NAME attacehd to IT</mark>.
+
+So:
+
+function () {
+	var a = 10;
+	return a;
+}
+
+console.log();
+
+When we want to call "this" function - we can't do so - because it doesnt have a name attached to it.
+The way we do it IS - BY CREATING  a VARIABLE and ASSIGNING IT to the function
+ var a = function () {
+ 	var a = 10;
+ 	return a;
+}
+
+console.log (<mark>a()</mark>)
+
+I can just reference to variable "a" - and then add "()" after/behind it - <mark>to say that THERE  IS A FUNCTION INSIDE variable "a"</mark> - and then save.
+-------
+V.3 What's the Difference between  an ANONYMUS Function and a NAMED Function - because they behave the exact same way - the only difference is - 
+WE DON'T GIVE The Function a NAME - but INSTEAD - <mark>WE JUST ASSIGN IT to a VARIABLE</mark> - and we call it down "console.log(a())";
+</pre> 
+<pre>
+	RECAP:
+	I'st - We have the NAME Function and I placed below the "console.log()" :
+
+	<mark>console.log(example());</mark>
+
+	function example() {
+		var a = 10;
+		return a;
+	}
+ ... -> still worked because the Function GIVES HOISTED to the TOP of the DOCUMENT.
+
+ But if we do This:
+
+console.log (<mark>a()</mark>)
+
+  var a = function () {
+ 	var a = 10;
+ 	return a;
+}
+ // uncaught TypeError - because  - IT DOESN'T KNOW - WHERE THE Function IS.
+ It doesn't even know that the function exist - inside the CODE - because we HAVEN'T HOISTED the Function to the TOP of the CODE - so that the console.log() - can actually see it - and output it into the CONSOLE.
+
+Use ANONYMUS Functions over/instead NAMED Functions in most cases - because ritgh now we don't HOIST the Function to the TOP of the WEBSITE - (which means that <u>we don't take up</u> a LOT of SPACE inside the WEBSITE)<br>
+- So often an ANONYMUS Function is better used inside the code - at least if you don't want to
+TAKE UP A LOT OF SPACE inside the BROWSER.
+</pre>
+<hr>
+
+<h1>JavaScript Use Strict</h1>
+
+<p><span>"use strict";</span> - defines the JS code - SHOULD be EXECUTED in "strict mode".</p>
+
+<h2>The " use strict" Directive</h2> 
+<p>The purpose of <span>"use strict"</span> is to indicate that the code should be executed in "strict mode".</p>
+<p><span><b>In strict mode - you cannot use (for example) - use undeclared variables.
+You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using - UNDECLARED VARIABLES.</b></span></p>
+<p><span>"use strict"</span> is just a STRING. IE9 - will not throw an error even if it does - not understand it.</p>
+
+<h2>Declaring Strict Mode</h2>
+<p>Strict mode is declared by adding <span>"use strict";</span> to the begining of a script of a function.</p>
+<p>Declared at the BEGINING of a SCRIPT, it has - GLOBAL SCOPE - (all code in the script will execute in STRICT MODE):</p>
+<pre>
+	Using a VARIABLE without declaring it - is NOT ALLOWED.
+
+	< script>
+		<mark>"use strict";
+		x = 3.14; // this will cause an error (x is not defined) </mark>
+	< /script>
+</pre>
+<pre>
+	GLOBAL "use strict" declaration.
+	< script>
+		"use strict";
+		myFunction();
+
+		function myFunction() {
+			y = 3.14; // This will -also-cause an error (y is not defined)
+		}
+	< /script>
+</pre>
+
+<p>Declared INSIDE a FUNCTION - it has local scope <mark>(only the code inside the Function is in STRICT MODE)</mark></p>
+<pre>
+<mark>"use strict" - in a Function - will only cause ERRORS in a function.</mark>
+< script>
+	x = 3.14; <mark>// this will NOT cause an error.</mark>
+	myFunction();
+
+	function myFunction() {
+		"use strict";
+		y = 3.14; // This will cause an error (y is not defined).
+	}
+< /script>
+</pre>
+
+<h2>The "use strict"; Syntax</h2>
+<p>The syntax, for declaring strict mode, was designed to be compatible with older versions of JS.<br>
+Compiling a numeric literal (4 + 5<mark>;</mark>) or a string literal (John Doe<mark>;</mark>) is an JavaScript program has no side effects.<br>
+<span>It simply compiles to a non existing variables and dies.</span></p>
+<p>So <span>"use strict";</span> only matters to new compilers that understand the meaning of it.</p>
+
+<h2>Why Strict Mode?</h2>
+<p>Strict mode make it EASIER to write "SECURE" JavaScript.<br>
+Strict mode - CHANGES previously accepted <span><b>"bad syntax"</b></span> into <span><b>real errors</b></span>.</p>
+
+<p>As an example - in normal JS - mistyping a variable names creates a new global variables.<br>
+In STRICT MODE - this will THROW an ERROR - making it impossible to accidentally <span><b>create a GLOBAL VARIABLE</b></span>.</p>
+
+<p>In <span>normal</span> JavaScript - a developer will not receive any error feedback - ASSIGNing values to NON-WRITABLE properties.<br>
+In <span>strict mode</span> - any ASSIGNMENT to a NON-WRITABLE property, <span>a getter-only PROPERTY,
+a non-existing PROPERTY, a non-existing VARIABLE, or a non-existing OBJECT</span> - will throw an error.</p>
+
+<h2>Not Allowed in Strict Mode</h2>
+<p>USING a variable - without DECLARING it, is not allowed:</p>
+<pre>
+	"use strict";
+	x = 3.14; // This will cause an error
+</pre>
+<p><span>Objects are variables too.</span></p>
+
+<p>Using an object, without declaring it, is not allowed:</p>
+<pre>
+	"use strict";
+	x = {p1:10, p2:20}; //...error (x is not defined).
+</pre>
+
+<p>Deleting a variable (or object) is not allowed:</p>
+<pre>
+	"use strict"
+	let x = 3.14; // This will cause an error 
+	delete x;
+</pre>
+
+<p>Deleting a function is not allowed:</p>
+<pre>
+	"use strict"
+	function x(p1, p2) {};
+		delete x; 	// This will cause an error 	
+</pre>
+
+<p>DUPLICATING a parameter name is not allowed:</p>
+<pre>
+	"use strict"
+	function x(<mark>p1, p2</mark>) {};
+</pre>
+
+<p>Writing to a read-only property - is not allowed:</p>
+<pre>
+	"use strict";
+	const obj = {};
+	Object.defineProperty(obj, "X", {value:0, writable:false}); (???)
+
+	obj.x = 3.14; // This will cause an error 
+</pre>
+
+<p>The wird <span>eval</span> cannot be used as a variable:</p>
+<pre>
+	"use strict"
+	let <mark>eval</mark> = 3.14;	 // This will cause an error 
+</pre>
+
+<p>For security reasons, <span>eval()</span> is not allowed to create VARIABLES in the SCOPE from which it was called:</p>
+<pre>
+	"use strict";
+	eval ("let x = 2");
+	alert (x);             // This will cause an error
+</pre>
+------------------------------------------------------------------------------------------------------------
+<pre>
+	Youtube:
+	A "strict mode" in JS - tightens the RULES for certain behaviours.
+	These restrictions keep code safer and sometimes - <mark>helps JS engines perform optimizations</mark>.
+	You can execute JS code in strict mode by using "<mark>the use strict DIRECTIVE</mark>".
+
+	two ways to use "strict mode".
+	1. You can apply it to your entire file - by putting you strict as the FIRST LINE in your FILE:
+
+	<mark>"use strict";</mark> (in the top of the file/page).
+	*now this entire file will be run in "strict mode".
+
+	2. You can also apply "strict mode" to - INDIVIDUAL FUNCTIONS - by putting "use strict" at the first line function:
+
+	function myFunction() {
+		<mark>"use strict";</mark>
+		y = 3.14;
+	}
+
+II. CONVERTING MISTAKES INTO ERRORS
+"strict mode"; is going to CONVERT mistakes or bad syntax into real ERRORS.
+In normal JS - mistyping a variable name - creates a new global variable.
+In "strict mode" - this will throw -> an ERROR - making it impossible to accidentally create a GLOBAL VARIABLE.
+In this example: 
+function myFunction() {
+		"use strict";
+---><mark>y = 3.14;</mark><------------ 
+	}
+this y = 3.14; - it's going to create an error in "strict mode";
+In "strict mode" - you have to DECLARE a variable with "var, const or let" - before you can ASSIGN a VALUE to it.
+
+function myFunction() {
+		"use strict";
+		<mark>var</mark> y = 3.14;
+	}
+
+	Now this will not create an ERROR.
+
+B. Also, in strict mode - DELETING a VARIABLE is not allowed. It is allowed in NORMAL MODE.
+
+var x  = 3.14;
+<mark>delete x;</mark>
+</pre>
+
+<pre>
+	II.A
+	In normal JS -  a DEVELOPER will NOT RECEIVE any error feedback assigning values to non-writable properties.
+	In "strict mode"; in the assignment to a non-writable porperty / a non-existing property, a non-existing variable or a non-existing OBJECT - will throw an error.
+
+	B. In strict mode - function PARAMETER names must be unique.
+	If we have a function - and use "strict mode" in the function - or even the whole file - is using strict - you can't have two "a's" as parameters.
+
+	function sum(a, a, c) {
+		"use strict";
+		return a + b + c;
+	}
+//Syntax Error.
+</pre>
+<pre>
+III. Eval
+
+In strict mode - EVAL does not introduce new VARIABLES into the surrounding SCOPE.
+IN NORMAL code - if you have:
+
+<mark>eval("var x;")</mark> - that's going to introduce a variable "x" into the surrounding function or the GLOBAL SCOPE.
+In "strict mode" - EVAL creates variables only for the code - being evaluated - CAN'T affect WHETHER a name REFERS TO AN outer variable or some local variable.
+Or some local variable ("var x;").
+("var x;") - is going to exist in this section here: <mark>eval("var x;")</mark> - so OUTSIDE of that there will not be any of our "x".
+
+Another Example of that:
+
+var x = 17;
+var evalX = eval("'use strict'; var x = 42; x;");
+console.assert( x === 17);
+console.assert(evalX === 42);
+
+a. we gonna set x = 17.
+b. for <mark>evalX</mark> - we're goning to "eval()" - all the code ("'use strict'; var x = 42; x;"); (from within here). If we EVALUATE the CODE - we can see it's a [strictmode, a var x = 42, and x].
+<mark>x</mark> - we'RE GONNA PASS BACK x TO <mark>evalX</mark>.
+
+In NORMAL MODE. putting <mark>var x = 42;</mark> within eval() statement - IS going TO CHANGE <mark>var x = 17;</mark>.
+IN STRICT MODE - x is STILL GONNA be "17". (var x = 17); - and <mark>(evalX === 42);</mark> - because 
+this "x" (from var <mark>x</mark> = 42;) - we're passing back to <mark>var evalX</mark> - it's completely different thatn <mark>var x = 17;</mark>
+
+IV.(5:33) https://www.youtube.com/watch?v=uqUYNqZx0qY
+</pre>
+
+<hr>
+
+<h1>JavaScript "this" Keyword</h1>
+<pre>
+	< p id="demo14">< /p>
+	< script>
+		//Create an OBJECT
+		const person = {
+			firstName: "John",
+			lastName: "Doe",
+			id: 5566,
+			fullName: function() {
+				return <mark>this</mark>.firstName + " " + <mark>this</mark>.lastName;
+			}
+		};
+		document.getElementById("demo20").innerHTML = <mark>person.fullName();</mark>
+	< /script>
+</pre>
+
+<h2>What is "this"?</h2>
+<p>The JavaScript <span>this</span> keyword refers to the OBJECT beongs TO.</p>
+<p>It has different values - depending on where it is used:</p>
+<p>In a METHOD, <span>this</span> - refers to the <b>owner object.</b><br>
+ALONE, <span>this</span> - refers to the <b>global object.</b><br>
+In a FUNCTION, <span>this</span> - refers tothe <b>global object.</b><br>
+In a FUNCTION - in STRICT MODE - <span>this</span> is <b>undefined</b><br>
+In an EVENT, <span>this</span> refers to the <b>element</b> that - RECEIVED the EVENT.<br>
+Methods like <span>call()</span> and <span>apply()</span> can refer <span>this</span> to - <b>any object.</b>
+</p>
+
+<h2>"this" in a Method</h2>
+<p>In an object method, <span>this</span> refer to the <b>"owner"</b> of the method.<br>
+IN the EXAMPLE on the TOP - <span>this</span> refers to the <b>person</b> object.<br>
+The <b>person object</b> is the <b>owner</b> of the <b>fullName</b> method.</p>
+<pre>
+	< p id="demo15">< /p>
+
+	< script>
+	// Create an object:
+	const person = {
+	  firstName: "John",
+	  lastName: "Doe",
+	  id: 5566,
+	  fullName : function() {
+	    return this.firstName + " " + this.lastName;
+	  }
+	};
+
+	// Display data from the object:
+	document.getElementById("demo").innerHTML = person.fullName();
+	< /script>	
+
+In this example, this represents the person object.
+Because the person object "owns" the fullName method.
+
+John Doe
+</pre>
+
+<h2>"this" Alone</h2>
+<p>When used alone - the <b>owner</b> is the <u>Global OBJECT</u>, so <span>this</span> refers to the GLOBAL OBJECT.</p>
+<p>In a browser window - the Global object is <span>[object Window]</span>:</p>
+<pre>
+	< p id="demo16">< /p>
+
+	< script>
+		let x = this;
+		document.getElementById("dmeo21").innerHTML = x; 
+	< /script>
+
+	//[object Window]
+</pre>
+
+<p>In <b>strict mode</b>, when USED ALONE, <span>this</span> also refers to the GLOBAL OBJECT <span>[object Window];</span></p>
+<pre>
+	< p id="demo17">< /p>
+
+	< script>
+		"use strict";
+		let x = this;
+		document.getElementById("demo22").innerHTML = x;
+	< /script>
+
+	//[object Window]
+</pre>
+
+<h2>"this" in a Function (Default)</h2>
+<p>In JS function, the OWNER  of the FUNCTION - is the <b>default binding</b> for <span>this</span>.</p>
+<p>So - in a FUNCTION - <span>this</span> referes to the GLOBAL OBJECT <span>[object Window]</span>.</p>
+<pre>
+	< p id="demo18">< /p>
+	< script>
+		document.getElementById("demo23").innerHTML = 
+		myFunction();
+		function myFunction() {
+			<mark>return this;</mark>
+		}
+	< /script>
+	//[object Window]
+</pre>
+
+<h2>"this" in a Function (Strict)</h2>
+<p>JavaScript <b>strict mode</b> does not allow default binding.<br>
+So, when used in a function, in strict mode, <span>this</span> is <span>undefined</span>.</p>
+<pre>
+	< p id="demo19">< /p>
+
+	< script>
+		<mark>"use strict";</mark>
+		document.getElementById("demo24").innerHTML = myFunction();
+		function myFunction() {
+			return this;
+		}
+	< /script>
+	// undefined
+</pre>
+<p id="demo19"></p>
+
+	<script>
+		"use strict";
+		document.getElementById("demo24").innerHTML = myFunction();
+		function myFunction() {
+			return this;
+		}
+	</script>
+
+<h2>"this" in Event Handlers</h2>
+<p>In HTML event handlers, <span>this</span> refers to the HTML element that received the event:</p>
+<pre>
+	< button onclick="this.style.display='none'">Click to Remove Me!< /button>
+</pre>
+<button onclick="this.style.display='none'">Click to Remove Me!</button>
+
+<h2>Object Method Binding</h2>
+<p>In these exeamples <span>this</span>is the <b>person object</b> (The person object is the "owner" of the function):</p>
+<pre>
+	< p id="demo20"></p>
+
+	< script>
+	// Create an object:
+	const person = {
+	  firstName  : "John",
+	  lastName   : "Doe",
+	  id     : 5566,
+	  myFunction : function() {
+	    return this;
+	  }
+	};
+
+	// Display data from the object:
+	document.getElementById("demo20").innerHTML = person.myFunction();
+	< /script>
+	// [object Object]
+
+In this example "this" represents the person object that "owns" the myFunction method.
+
+									VS
+
+myFunction : function() {
+	return this.firstName + " " + this.lastName;
+}
+
+document.getElementById("demo").innerHTML = person.fullName();
+
+//John Doe
+</pre>
+<p>In other words: <b>this.firstName</b> means the <b>firstName</b> property of <b>this</b> (person) object.</p>
+
+<h2>Explicit Function Binding</h2>
+<p>The <span>call()</span> and <span>apply()</span> methods are predefined JS methods.<br>
+They can both be used to call an object method with another object as argument.</p>
+<p>In the example below - when calling <i>person1.fullName</i> with <i>person2</i> as argument, <span>this</span> will refer to <i>person2</i> even if a method of <u>person1</u>.</p>
+<pre>
+	< p id="demo21">< /p>
+	< script>
+		const person1 = {
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		}
+		const person2 = {
+			firstName:"John",
+			lastName:"Doe",
+		}
+		let x = person1.fullName.call(person2);
+		document.getElementById("demo21").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo22"></p>
+	<script>
+		const person1 = {
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		}
+		const person2 = {
+			firstName:"John",
+			lastName:"Doe",
+		}
+		let x = person1.fullName.call(person2);
+		document.getElementById("demo22").innerHTML = x;
+	</script>
+<hr>
+
+<h1>JavaScript Arrow Function</h1>
+<p>Arrow functions are allow us to write shorter function SYNTAX:</p>
+<pre>
+	Example - that SHOWS the SYNTAX of a FUNCTION  - without the use of arrow function syntax.
+	< p id="demo23">< /p>
+	< script>
+		var hello;
+		hello = function() {
+			return "Hello World!";
+		}
+		document.getElementById("demo26").innerHTML = hello();
+	< /script>
+</pre>
+<p id="demo23"></p>
+	<script>
+		var hello;
+		hello = function() {
+			return "Hello World!";
+		}
+		document.getElementById("demo23").innerHTML = hello();
+	</script>
+<h3>With Arrow Function:</h3>
+<pre>
+	< p id="demo23">< /p>
+	< script>
+		var hello;	//HOISTING (meaning that <mark>THE BLOCK OF CODE</mark> is <mark>AWARE</mark> of the VARIABLE - BUT IT cannot BE used - UNTIL has been DECLARED).
+		<mark>hello = () => {
+			return "Hello World!";
+		}</mark>
+		document.getElementById("demo23").innerHTML = hello();
+	< /script>
+</pre>
+<p id="demo24"></p>
+	<script>
+		var hello;
+		hello = () => {
+			return "Hello World!";
+		}
+		document.getElementById("demo24").innerHTML = hello();
+	</script>
+
+<h3>Or Shorter</h3>
+<p>It gets SHORTER! If the function has only ONE STATEMENT, and the STATEMENT returns a VALUE, you can REMOVE the BRACKETS and the <span>return</span> keyword:</p>
+<pre>
+	< p id="demo28">< /p>
+	< script>
+		var hello;
+		<mark>hello = () => "Hello World!";</mark>
+		document.getElementById("demo28").innerHTML = hello();
+	< /script>
+</pre>
+<p id="demo25"></p>
+	<script>
+		var hello;
+		hello = () => "Hello World!";
+		document.getElementById("demo25").innerHTML = hello();
+	</script>
+
+<p><span><b>This works only if the function has only ONE STATEMENT.</b></span></p>
+
+<p>I you have parameters, you pass them inside the parantheses:</p>
+
+<pre>
+	< p id="demo29">< /p>
+
+	< script>
+		var hello;
+		<mark>hello = (val) => "Hello" + val;</mark>
+
+		document.getElementById("demo29").innerHTML = <mark>hello("Universe!");</mark>
+	< /script>
+</pre>
+<p id="demo26"></p>
+
+	<script>
+		var hello;
+		hello = (val) => "Hello" + val;
+
+		document.getElementById("demo26").innerHTML = hello("Universe!");
+	</script>
+
+<h2>What about "this"?</h2>
+
+<p>The handing of <span>this</span> is also different in arrow functions compared to REGULAR functions.<br>
+In short, with ARROW functions there are no BINDING of <span>this</span>.<br>
+In regular functions the <span>this keyword</span> represents - the OBJECT that called the functions, which could be the window, the DOCUMENT, a BUTTON etc.</p>
+<p>With arrow functions the <span>this keyword</span> - always represents the object that DEFINED the ARROW function.</p>
+<pre>
+	Youtube:
+	
+	function sum(a,b) {
+		return a + b;
+}
+
+function isPositive() {
+	return number >= 0
+}
+
+function randomNumber() {
+	return Math.random
+}
+
+document.addEventListener('click'. function() {
+	console.log('click')
+})
+
+We have 4 examples of functions to HELP us to understand the differences between the SYNTAX fir NORMAL functions and ARROW FUNCTIONS.
+(we have NORMAL functions and we're going to CONVERT them to ARROW functions).
+
+a.We have a NAMED function with MULTIPLE parameters.
+b.We have a NAMED function with ONE parameter.
+c.We have a NAMED function with NO parameter.
+d.An ANONYMUS function with NO NAME.
+
+a.
+
+	function sum(a,b) {
+		return a + b;
+}
+
+1.First thing we need to do (to convert an arrow function) - is - completely remove the "function KEYWORD".
+- because (with an arrow function) this function keyword is assumed.(?)
+
+sum (a,b) {return a + b};
+
+2.We need to assign "this function" here - to a VARIABLE.
+
+let sum2 = (a, b) {
+	return a + b
+};
+
+<mark>let sum2 = (a, b)</mark> - is the BEGINING of the SYNTAX for OUR AROW function. The reason we have to do (that assignment) - to a variable,
+is because NORMAL functions - already create a variable of the name "sum" (in this case  - with the function keyword). 
+But - we no longer have the function keyword - we now need to create our own variable  - to STORE this function.
+The only change we need to make is to convert "this function syntax" function<mark>sum</mark>(a, b){...}; - to an ARROW function.
+
+let sum2 = (a, b) <mark>=></mark> {
+	return a + b
+};
+
+Now, our "sum2" and "sum" - are both the exact same function. (just one uses the ARROW syntax and the other uses a NORMAL function syntax).
+We can go  - further - to reduce this code  slighty more.
+As you can see we have ONE LINE of CODE <mark>return a + b</mark>.
+This ARROW function can REMOVE "this" <mark>return</mark>(a, b); - completely / and also CURLY BRACES <mark>{}</mark> - and putting on ONE LINE.
+
+let sum2 = (a,b) => a + b;
+
+*After the "arrow" is ASSUMED to be "return". This <mark>a + b</mark> is going to be RETURNED (BECAUSE THERE IS NO brackets {} - and there is NO "return - statement"),
+so it just assumes that what ever comes after the arrow <mark>=></mark> - is going to be RETURNED from the FUNCTION.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+b. Let's do the same thing to "isPositive(number)" - function:
+
+function isPositive() {
+	return number >= 0
+}
+1. get rid of "function keyword".
+2. change "isPositive()" to isPositive2()
+3. we add an ARROW.
+
+<mark>let</mark> isPositive2 <mark>=</mark> (number) <mark>=></mark> {
+	return number >= 0
+}
+
+We can REDUCE this further - by getting rid of those {}, - and we have THE EXACT SAME arrow function. "isPositive2" - is now the exactly the same as "isPositive".
+
+<mark>let isPositive2 = (number) => number >= 0</mark>
+
+But, we only have ONE single parameter. We can remove these parantheses () - around the "number".
+
+<mark>let isPositive2 = number => number >= 0</mark>
+(The function saying: "If the argument of your function is "this 'number'" - the arrow says (=>) - WE'RE RETURNING everything after IT - SINCE - there is no CURLY BRACES afterwards.)
+
+c.
+
+function randomNumber() {
+	return Math.random
+}
+
+We do exact the same thing.
+1. We can REMOVE "function".
+2. Replace with a variable ASSIGNMENT.
+3. Puttin' our ARROW (=>).
+
+let randomNumber2 = () => {
+	return Math.random
+}
+
+...this is the CORRECT SYNTAX for a function with "0" ARGUMENTS. ()
+
+let randomNumber2 = () => Math.random
+
+*Arrow Functions aren't that useful when it comes to NARROWING down the amount of words tht you have to write - any amount of code you have to write when you creating functions - (the arrow functions "really shine" when you createing ANONYMUS FUNCTION). 
+
+d.
+document.addEventListener('click', function() {
+	console.log('click')
+})
+
+If we wanna change this to an arrow function:
+1. We remove the keyword "function" and then we add an ARROW (=>);
+
+document.addEventListener('click', <mark>() =></mark> {
+	console.log('click')
+})
+
+2. We don't actually have to sign it to a variable.
+3. We can make it a more CONCISE by putting it on ONE LINE. (REMOVE the CURLY braces {} ).
+
+document.addEventListener('click', () => console.log('click'))
+
+*Ok, but that's really not what makes ARROW FUNCTION - so great. It's nice that they have a MORE CONCISE SYNTAX, <mark>but what really makes ARROW FUNCTIONS IMPORTANT - is the fact that they REDEFINE the "this" keyword - INSIDE of THEM.</mark> (They use "this" keyword - much differently).
+</pre>
+
+<hr>
+
+<h1>JavaScript Classes</h1>
+<p>JS Classes - are - TEMPLATES for JavaScript OBJECTS.</p>
+
+<h2>JavaScript Class Syntax</h2>
+<p>Use the keyword <span>class</span> to create a CLASS.<br>
+Always add a method named <span>constructor()</span>:</p>
+<pre>
+	class ClassName {
+		constructor() {...}
+	}
+</pre>
+<h3>Example</h3>
+<pre>
+	class car {
+		constructor(name, year){
+			this.name = name;
+			this.year = year;
+		}
+	}
+</pre>
+<p>The example creates a class named "Car".<br>
+The class has TWO initial properties: "name" and 'year".</p>
+
+<p><span>A JavaScript class is <b>not</b> an OBJECT.<br>
+It is a <b>template</b>(model) for JavaScript OBJECTS.</span></p>
+
+<h2>Using a Class</h2>
+<p>When you have aclass, you can use the class to create - OBJECTS:</p>
+<pre>
+	< p id="demo27">< /p>
+
+	< script>
+		class Car {
+			<mark>constructor(name, year)</mark> {
+				this.name = name;
+				this.year = year;
+			}
+		}
+
+		<mark>const myCar = newCar("Ford", 2014);</mark>
+		document.getElementById("demo27").innerHTML = myCar.name + " " + myCar.year;
+	< /script>
+	// Ford 2014
+</pre>
+<p id="demo27"></p>
+
+	<script>
+		class Car {
+			constructor(name, year) {
+				this.name = name;
+				this.year = year;
+			}
+		}
+
+		const myCar = newCar("Ford", 2014);
+		document.getElementById("demo27").innerHTML = myCar.name + " " + myCar.year;
+	</script>
+<p><span>The constructor METHOD is CALLED automatically - when an OBJECT is CREATED.</span></p>
+
+<h2>The Constructor Method</h2>
+<p>The constructor method is a special method:</p>
+<ul>
+	<li>It has to have the exact name "constructor"</li>
+	<li>It is executed automatically - when a new object us created</li>
+	<li>It is used to initialize object properties</li>
+</ul>
+
+<p>If you do not define a CONTRUCTOR METHOD, JS will add an <u>empty constructor - method</u>.</p>
+
+<h2>Class Methods</h2>
+<p>Class methods are created with the same syntax as object methods.<br>
+Use the keyword <span>class</span> to create a CLASS.<br>
+Always add a <span>constructor()</span> METHOD.</p>
+<p>Then add any number of methods.</p>
+<h3>Syntax</h3>
+<pre>
+	class ClassName {
+		cosnstructor() {...}
+		method_1() {...}
+		method_2() {...}
+		method_3() {...}
+	}
+</pre>
+
+<p>Create a Class method named "age", that returns the Car age:</p>
+<pre>
+	
+	< p id="demo28">< /p>
+	
+	class Car {
+		constructor(name, year) {
+			this.name = name;
+			this.year = year;
+		}
+		age() {
+			let date = new Date();
+			return date.getFullYear() - this.year;
+		}
+	}
+
+	let mycar = new Car ("Ford", 2014);
+	document.getElementById("demo28").innerHTML = "My car is " + myCar.age() + " years old.";
+</pre>
+<pre>
+	CLASSES IN JAVASCRIPT.
+
+	A CLASS is used to CREATE - one - or MORE objects. | Class => Object.
+	You can think of an OBJECT as been a "CREATION" from a "CLASS" definiton.
+	These CLASSES - are not actually used directly by YOUR - "program logic" - but the're used to create OBJECTS. These <mark>OBJECTS</mark> are actually used by your PROGRAM 
+	- to achieve different things.
+
+	That beeing said - you can define TWO MAIN AREAS with a Class definition.
+	Class = > Object.
+	You can define what an OBJECT {...} will have:
+
+	<*1. Instance PROPERTIES: What they <mark>HAVE</mark>.
+		- name - age - height -
+
+	<*2. Instance METHODS: What they <mark>DO</mark>.
+		- talk - run - jump -  
+
+1. With Instance Properties - describes the <mark>current STATE</mark> - of THAT OBJECT. (iT'S bascially just DATA about that - OBJECT).
+These <mark>Instance Properties</mark> - are UNIQUE - to every <mark>OBJECT</mark> - which is CREATED - from that Class Definition.
+Class = > Object.
+
+2.Instance METHODS - this reffers for what they actually do...
+ACTIONS and THEIR behaviour.
+Tipically an INSTANCE METHOD - will use the INSTANCE PROPERTY - to ACHIEVE their results.
+
+A. Let's create a CLASS in JS. (using the "class - keyword"). (followed by the name of your class).
+(By convention - use "capital letter" "Rectangle" - at the begining of your class name - followed by two "{..}").
+
+Every class also has what's called a CONSTRUCTOR.
+A CONSTRUCTOR is basically (just) a METHOD - which is RAN only ONCE - DURRING the LIFE of the OBJECTS.
+So, this CONSTRUCTOR is RUN once - and it's RUN when the OBJECT IS being created.
+Let's define the "constructor" - followed by two parantheses and your normal curly braces.
+
+class Rectangle {
+	constructor () {
+		console.log("The rectagle is beeing created!");
+	}
+}
+
+The CONSTRUCTOR is used to <mark>SET UP your object</mark>.
+It behave like a NORMAL Method or a NORMAL Function.
+Which means if we type "console.log()" - inside {}.
+
+Now, "this method - CONSTRUCTOR" - is RAN - when the OBJECT is being CREATED.
+
+class Rectangle {
+	constructor () {
+		console.log("The rectagle is beeing created!");
+	}
+}
+----------------------------------------------------------------------
+
+B. We have a Class. | Class = > Object.
+
+Let's create an OBJECT -from- that Class.
+2. Let's create a new VARIABLE (myRectangle1) = to - a NEW OBJECT - based - on "this Class".
+() - these two parantheses is to call that CONSTRUCTOR METHOD.
+"new Rectangle()" - is CALLED - <mark>The Constructor Method</mark>.
+
+class Rectangle {
+	constructor () {
+		console.log("The rectagle is beeing created!");
+	}
+}
+let myRectangle1 = new Rectangle();
+
+//The rectangle is beeing created!
+
+If we put:
+let myRectangle1 = new Rectangle();
+let myRectangle2 = new Rectangle();
+
+We get:
+ //The rectangle is beeing created!
+ //The rectangle is beeing created!
+
+ The CONSTRUCTOR is used to actually - to SET UP the actual OBJECT.
+
+The <mark>Instance Properties</mark> beeing defined - INSIDE <mark>the CONSTRUCTOR</mark>.
+So, we have "The Rectangle". "The Rectangle" might have a Widht, a Height and a Color.
+Let's define these 3 INSTANCES PROPERTIES  - within - the CONSTRUCTOR:
+
+class Rectangle {
+	constructor () {
+		console.log("The rectagle is beeing created!");
+	---let's define these INSTANCE property---
+		<mark>this.width</mark> = 5;
+
+
+	}
+}
+let myRectangle1 = new Rectangle();
+
+*we can do this using "this." - and the PROPERTY NAME - "width".
+*we can do the SAME thing - forother TWO properties.
+
+class Rectangle {
+	constructor () {
+		console.log("The rectagle is beeing created!");
+	---let's define these INSTANCE property---
+		<mark>this.width</mark> = 5;
+		<mark>this.height</mark> = 3;
+		<mark>this.color</mark> = blue;
+	}
+}
+let myRectangle1 = new Rectangle();
+
+*<mark>"this"</mark> is a KEYOWORD which reffers to the - CURRENT OBJECT.
+When I say <mark>"this"</mark> - i'm talking about the OBJECTS which is BEING CREATED - BY the CLASS. (class Rectangle {...}).
+So, we have 3 INSTANCE PROPERTIES - inside - the CONSTRUCTOR.
+
+Save and "call it" in the Browser: myRectangle1 - we get (the object itself).(These 3 properties which describe the current Rectangle).
+These PROPERTIES are UNIQUE to THIS "Rectangle".
+In most CASES you actually define - "INSTANCE PROPERTIES", -WHEN you construct the OBJECT.
+
+So, you'll type in "= new Rectangle (3, 5, 'blue');"
+You wanna make these (3,5,'blue') - to be INSTANCE for "this" PROPERTY OBJECT (let myRectangular)....???
+
+(7:50) - https://www.youtube.com/watch?v=2ZphE5HcQPQ&t=896s
+</pre>
+<hr>
+
+<h1>JavaScript JSON</h1>
+<p>JSON is a FORMAT for STORING and TRANSPORTING data.<br>
+JSON is often USED when DAT is SENT from a SERVER to a -> WEB PAGE.</p>
+
+<h2>What is JSON?</h2>
+<ul>
+	<li>JSON stands for - JAVASCRIPT Object Notation</li>
+	<li>JSOn is a Lightweight data Interchange Format. (firmat usor de shimb de date)</li>
+	<li>JSON is Language Independent* (?)</li>
+	<li>JSON is "self -describing" and easy to understant</li>
+</ul>
+
+<p>The JSOn SYNTAX derived from JS OBJECT NOTATION Syntax, but the JSON format is <b>text only</b>.<br>
+Code for reading and generating JSON DATA - can be written in any programing language.
+</p>
+
+<h3>JSON Example</h3>
+<pre>
+	{
+		"employees":[
+			{"firstName":"John", "lastName":"Doe"},
+			{"firstName":"Anna", "lastName":"Smith"},
+			{"firstName":"Peter", "lastName":"Jones"}
+		]
+	}
+</pre>
+
+<h2>The JSON FOrmat Evaluates to JavaScript Objects</h2>
+<p>The JSON format is syntactically identical to the code for creating <u>JS Objects</u>.<br>
+BEcause of this similarity, a JS program can easily convert JSON data into NATIVE JS Objects.</p>
+
+<h2>JSON Syntax Rules</h2>
+<ul>
+	<li>DATA is in name/vale PAIRS</li>
+	<li>DATA is <u>separated</u> by COMMAS</li>
+	<li>Curly braces hold OBJECTS</li>
+	<li>Square brackets hold ARRAYS</li>
+</ul>
+
+<h2>JSON Data - A Name and a Value</h2>
+<p>JSON data is written as name/value pairs - just like JS OBJECT Properties.<br>
+A name/value PAIR consist of a FIELD NAME (in double quotes), followed by a COLON, followed by a VALUE</p>
+
+<p><span>"firstName":"John"</span></p>
+<p><span><b>JSON names require DOUBLE QUOTES. JS names DO NOT.</b></span></p>
+
+<h2>JSON Objects</h2>
+<p>JSON objects - are written inside the "{.}"<br>
+Just like in JS - objects can contain MULTIPLE name/value - pairs.</p>
+<pre>
+	{"firstName":"John", "lastName":"Doe"}
+</pre>
+
+<h2>JSON Arrays</h2>
+<p>JSON arrays are written inside [] (square brackets.<br>
+Just like in JS - an ARRAY can contain OBJECTS:</p>
+<pre>
+	"employees":[
+  {"firstName":"John", "lastName":"Doe"},
+  {"firstName":"Anna", "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+	]
+</pre>
+
+<p>In the example above, the object "employes" IS AN ARRAY. [It contains 3 OBJECTS].<br>
+Each OBJECT is a RECORD of a PERSON.(with a fName and a lNname).</p>
+
+<h2>Converting a JSON Text to a JavaScript Object</h2>
+<p><u>A common use of JSON</u> <mark>is to read data from a web server</mark> - and DISPLAY data in a WEB PAGE.</p>
+<p>This can be demonnstrate using a a STRING as INPUT.</p>
+<p>First, create a JS string containing JSON SYNTAX:</p>
+<pre>
+	<mark>let text</mark> = '{	"employees" : [' + 
+		'{"..."},' +
+		'{"..."},' +
+		'{"..."} 					---> why is it <mark>'</mark> missing?
+		]
+	}'
+</pre>
+<pre>
+	let text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+</pre>
+<p>Then, use the JS BUILT-IN function <span>JSON.parse()</span> to convert the STRING into a JS OBJECT:</p>
+<p><span>const obj = JSON.parse(text);</span></p>
+<p>Finally, use the new JavaScript object in your page:</p>
+<pre>
+	< p id="demo28">< /p>
+	< script>
+		let text = '{"employees" : [' +
+		'{"firstName":"John","lastName":"Doe" },' + 
+		'{"firstName":"Anna","lastName":"Smith" }, ' +
+		'{"firstName":"Peter","lastName":"Jones" }]}';
+
+		const onbj = JSON.parse(text);
+		document.getElementById("demo28").innerHTML = 
+		obj.emplyees[1].firstName + " " +
+		obj.emplyees[1].lastName;
+	< /script>
+
+	//Anna Smith | obj.emplyees<mark>[0]</mark>.lastName; // Anna Doe :))
+</pre>
+<p id="demo28"></p>
+	<script>
+		let text = '{"employees" : [' +
+		'{"firstName":"John","lastName":"Doe" },' + 
+		'{"firstName":"Anna","lastName":"Smith" }, ' +
+		'{"firstName":"Peter","lastName":"Jones" }]}';
+
+		const obj = JSON.parse(text);
+		document.getElementById("demo28").innerHTML = 
+		obj.emplyees[1].firstName + " " +
+		obj.emplyees[1].lastName;
+	</script>
+<h1>JavaScript Debugging</h1>
+<p>Errors can/will happen, everytime you wrote some new computer CODE.</p>
+
+<h2>Code Debugging</h2>
+<p>Programing code might cotain SYNTAX errors, or LOGICAL errors.<br>
+Many of these ERRORS are difficult to DIAGNOSE. <br>
+Often, when prgramming code contains errors, nothing will happen.<br>
+There are no error messages, and you'll get no indications where to search for errors.<br>
+<mark>Searching for (AND FIXING) errors</mark> in programming is calling <mark>code debugging.</mark>
+</p>
+
+<h2>JavaScript Debuggers</h2>
+<p>Modern browsers have BUILT-IN JS Debugger.</p>
+<p>Built-In DEBUGGERS can be turned ON and OFF, forcing errors to be reported to the USER.</p>
+<p>With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.</p>
+<p>Normally, otherwise follow the steps at the bottom of this page, you can activate debugging in your browser (F12 key) - and select "Console" in the debugger menu.</p>
+
+<h2>The console.log() Method</h2>
+<p>If your BROWSER support debugging, you cn use <span>console.log()</span> to display JS values in the debugger window:</p>
+<pre>
+	< p>Activate debugging in your browser (Chrome, IE, Firefox) with F12, and select "Console" in the debugger menu.< /p>
+
+	< script>
+	a = 5;
+	b = 6;
+	c = a + b;
+	console.log(c);
+	< /script>
+</pre>
+
+<h2>HTML DOM console.log() Method</h2>
+<pre>
+	< p>Press F12 on your keyboard to view the message in the console view.< /p>
+
+	< script>
+
+	console.log("Hello world!");
+
+	< /script>
+</pre>
+<p>The <mark>console.log() method</mark> WRITES a MESSAGE to the CONSOLE. <br>
+The console is useful for - <mark>TESTING PURPOSES</mark>.</p>
+
+<h2>More Examples</h2>
+<p>Write an OBJECT to the CONSOLE:</p>
+<pre>
+	This example demonstrates how an OBJECT is DISPLAYED in the CONSOLE VIEW.
+	< script>
+		var myObj = {firstname: "John",
+		lastname: "Doe",
+		age: 35
+		};
+		console.log(myObj);
+	< /script>
+</pre>
+<p>Write an Array to the console:</p>
+<pre>
+	< p>This example demonstrates how an Array is displayed in the console view.< /p>
+
+	< script>
+	var myArr = ["Orange", "Banana", "Mango", "Kiwi" ];
+	console.log(myArr);
+	< /script>
+</pre>
+
+<h2>Setting Breakpoints</h2>
+<p>In the debugger window, ou can set beakpoints in the JS code.<br>
+At each breakpoint, JS - will STOP EXECUTING - and let you examine JS VALUES.</p>
+<p>After examining values, you can resume the EXECUTION of CODE (typically with a play button).</p>
+
+<h2>The debugger Keyword</h2>
+<p>The <span>debugger</span> keyword stops the execution of JS, and calls (if available) the debugging function.</p>
+<p>This has the same function as setting a breakpoint in the debugger.<br>
+If no debugging is available, the debugger statement has no effect.<br>
+With the debugger turned on, this code will STOP EXECUTING - before it executes the third line.</p>
+<pre>
+	< p id="demo29">< /p>
+	< p>With the debugger turned on, the code below should STOP executing, before it executes the THIRD line.< /p>
+
+	< script>
+		let x = 15 * 5;
+		<mark>debugger;</mark>
+		document.getElementById("demo29").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo29"></p>
+	<p>With the debugger turned on, the code below should STOP executing, before it executes the THIRD line.</p>
+
+	<script>
+		let x = 15 * 5;
+		debugger;
+		document.getElementById("demo29").innerHTML = x;
+	</script>
+<hr>
+
+<h1>JavaScript Style Guide</h1>
+<h2>Use Lower Case File Names</h2>
+<p>Most WEB SERVERS (Apache, Unix) are case sensitive about file names: <br>
+<span>london.jpg</span> cannot be accesed as <span>London.jpg</span></p>
+
+<p>Other web servers (Microsoft, IIS) are not case sensitive:<br>
+<span>london.jpg</span> can be accessed as <span>London.jpg</span>.</p>
+
+<p>If you use a mix of UPPER and lower case, you have to be extremely CONSISTENT.(in concordanta cu*)</p>
+<p>If you move from a case INSENSITIVE, to ca case SENSITIVE server, even small errors can break your web site.</p>
+<p><b>To avoid these problem, always use LOWER case FILE names</b>(if possible).</p>
+
+<h2>Performance</h2>
+<p>Coding conventions are not used by computer. Most rules have little impact on the execution of programs.</p>
+<p>Indentation and extra spaces are not <u>significant</u> in SMALL SCRIPTS.</p>
+<p>FOr cod in development, readability should be preferred. Larger production scripts should be minified.</p>
+<hr>
+
+<h1>JavaScript Best Practicies</h1>
+
+<p>Avoid global variables. Avoid <span>new</span>, avoid <span>==</span>, avoid <span>eval()</span>.</p>
+
+<h2>Avoid Global Variables</h2>
+<p>MINIMIZE the use of GLOBAL VARIABLES.<br>
+This includes all data types, objects and FUNCTIONS.</p>
+<p>Global variables and functions can be OVERWRITTEN by other scripts.</p>
+<p>Use local VARIABLES instead, and learn how to use <u>closures</u>.</p>
+
+<h3>JavaScript Functions</h3>
+
+<h4>Function Declaration</h4>
+<h4>Funtion Expressions</h4>
+<h4>The Function() Constructor</h4>
+<h4>Function Hoisting</h4>
+<h4>Self-Invoking Functions</h4>
+<h4>Functions can be use as Values/Expressions</h4>
+<h4>Functions are Objects</h4>
+<h4>Arrow Functions</h4>
+
+<h4>JS Function Parameters</h4>
+<h5>Functions Parameters and Arguments</h5>
+<h5>The Arguments Object</h5>
+<p>JS Functions have built-in OBJECT called the arguments object.</p>
+ <p>The ARGUMENT OBJECT contains an <u>array of the arguments</u> used when the functions was called.</p>
+ <p>This way you can simply use a function to FIND  - the HIGHEST value in a list of numbers.</p>
+<pre>
+	< p>Find the LARGEST number:< /p>
+	< p id="demo30">< /p>
+	< script>
+		function findMax() {
+			let max = -Infinity;
+			for (let i = 0; i < arguments.length; i++) {
+				if (arguments[i] > max) {
+					max = arguments[i];
+				}
+			}
+			return max;
+		}
+		document.getElementById('demo40').innerHTML = findMax(4,5,6);
+	< /script>
+</pre>
+<p>Find the LARGEST number:</p>
+	<p id="demo30"></p>
+	<script>
+		function findMax() {
+			let max = -Infinity;
+			for (let i = 0; i <arguments.length; i++) {
+				if (arguments[i] > max) {
+					max = arguments[i];
+				}
+			}
+			return max;
+		}
+		document.getElementById('demo30').innerHTML = findMax(4,5,6);
+	</script>
+<p>Or create a function to sum all input values:</p>
+< pre>
+	< p id="demo31">< /p>
+	< script>
+		function sumAll() {
+			let sum = 0;
+			for (let i = 0; i < arguments.length; i++) {
+				sum += arguments[i];
+			}
+			return sum;
+		}
+		document.getElementById("demo31").innerHTML = sumAll(1, 123, 115, 44, 88);
+	< /script>
+</pre>
+<p>Sum of ALL arguments:</p>
+<p id="demo31"></p>
+	<script>
+		function sumAll() {
+			let sum = 0;
+			for (let i = 0; i < arguments.length; i++) {
+				sum += arguments[i];
+			}
+			return sum;
+		}
+		document.getElementById("demo31").innerHTML = sumAll(1, 123, 115, 44, 88);
+	</script>
+
+<pre>
+	Youtube Example: for/array/if...
+	
+	var arr = [70, 65, 3, 21, 58, 93, 12, 82];
+	var max  = arr[0]; 
+
+
+
+	1. Create an algorithm and find the LARGEST NUMBER in the array; (without using PRE-BUILT functions - like Math.max()).
+	So, I created a variable called "arr" and I set it EQUAL to this array[] of randomly selected NUMEBRS.
+	We gonna take this array - we looak at each number - we wanna try to figure it out , which is the largest value in this array.
+
+	1.A. The very first thing - I'm gonna create a variable called "max", and i'm gonna set it = to the very FIRST ELEMENT of the ARRAY. [0];
+	Arrays starts from "0". Are "0" based. (Our "max=arr[0]" is set to "70").
+	1.B I need to LOOP through EACH ELEMENT OF THIS ARRAY, and compare it to
+	whatever the current value of "max" is. If i FIND a value LARGER > than "max" I wana set that VALUE to "max".
+	A "for loop" will be pretty handy.
+
+		var arr = [70, 65, 3, 21, 58, 93, 12, 82];
+	  var max  = arr[0];
+	  for(var i = 0; i < array.length; i++) 
+	  {}
+
+	2. Inside the parantheses of "for loop" - we need to create a COUNTER VARIABLE: <mark>var i = 0;</mark>
+  2.A.We initializing a counter variable "i" - and set it = to "0".
+  3.A.Then we telling JAvaScript to RUN this "for loop" so long - as "i" is LESS < than the length of the array <mark>i < arr.length</mark>.
+  4.A. For every ITERATION of "this loop" - we want to increment "i" by "1". <mark>i++;</mark>
+  5.A. Everytime the LOOP runs - <b>we gonna increase "i" by 1</b>.
+
+  var arr = [70, 65, 3, 21, 58, 93, 12, 82];
+	var max  = arr[0];
+	for(var i = 0; i < array.length; i++) {
+		if(arr[i] >= max) {
+			max = arr[i];
+		}
+	}
+
+	3. Now we can go and write THE CONDITIONAL STATEMENTS:
+	if (arr[i] >= max)
+	(whatevar the current value of the "max" is.)
+	Then - I want it to set:
+	max = array[i]; - to that value in the array.
+	So, what this is DOING is - for each ITERATION of the LOOP we gonna look at "arr[i];".
+	If "i" is "0" - we gonna look at the first elem. in the array.
+	If "i" is "1" - we gonna look at the second elem.
+	If "i" is [2] - we gonna look at the third elem...
+
+	<mark>if (arr[i] >= max)</mark> - we gonna compare every single one of these values to "max".
+	f the "value" in the "array" is > than or = to "max" -  we gonna set "max" equal to that "value".
+
+ var arr = [70, 65, 3, 21, 58, 93, 12, 82];
+ var max  = arr[0];
+ for(var i = 0; i < array.length; i++) {
+		if(arr[i] >= max) {
+			max = arr[i];
+		}
+	}
+	console.log(max);	//93
+
+	or:
+
+ var arr = [70, 65, 3, 21, 58, 93, 12, 82];
+ var max  = arr[0];
+ for(var i = 0; i < array.length; i++) {
+		if(arr[i] >= max) {
+			max = arr[i];
+			console.log("The max value is: " + max);
+		}
+	}
+	console.log(max);	//93
+
+	If i = [0] we comparing "70" to "max" - then we put "70" in the "max".
+	When var i = 1; we comparing "65" to "max".
+	"65" is less then our current values - which is "70".
+	Then we gonna keep ITERATING until it gets to this "93" which is in fact greater than any other numbers in the array.
+	Then it;s gonna check the rest of the values - But it's already found the maximum value - so at the end of the "for loop" - JS it's gonna SPIT out "max".
+</pre>
+
+<h5>Arguments are Passed by Value</h5>
+<p>The parameters, in a function call, are the function's arguments.<br>
+JS arguments are passed by value. The function only gets to know the values, not the argument's location.<br>
+If a function changes an argument's value, it does not change the parameter's original value.</p>
+
+<h5>Objects are Passed by Reference</h5>
+<p>In JS, object references are values.<br>
+Because of this, objects will behave like they are passed by reference:<br>
+If a function changes an OBJECT property, it changes THE original VALUE.</p>
+<p><b>Changes to object properties are VISIBILE (reflected) outside the function.</b></p>
+
+<h4>Function Invocation</h4>
+<h5>Invoking a Function as a Function</h5>
+<pre>
+	< p id="demo32">< /p>
+	< p>The <mark>GLOBAL FUNCTION</mark> myFunction(10, 2) returns the product of the ARGUMENTS (a,b):</p>
+	< script>
+		function myFunction(a,b) {
+			return a * b;
+					}
+		<mark>document.getElementById("demo32").innerHTML = myFunction(10, 2);</mark>
+	< /script>
+</pre>
+<p id="demo32"></p>
+	<p>The <mark>GLOBAL FUNCTION</mark> myFunction(10, 2) returns the product of the ARGUMENTS (a,b):</p>
+	<script>
+		function myFunction(a,b) {
+			return a * b;
+					}
+		document.getElementById("demo32").innerHTML = myFunction(10, 2);
+	</script>
+	<p><span>The function above does not belong to ANY OBJECT. But in JS there is always a default global OBJECT.<br>
+	In HTML the <b>default global object</b> is the HTML page itself - so function above, "belongs" to the HTML page.<br>
+	In a browser the page is the browser window. The function above automatically becomes a window function.</span></p>
+	<p><span><b>myFunction()</b> and <b>window.myFunction() is the <u>same</u> function:</b></span></p>
+	<pre>
+		< p id="demo43">< /p>
+		< script>
+			function myFunction(a, b) {
+				return a * b;
+			}
+			document.getElementById("demo43").innerHTML = <mark>window.myFunction(10, 2);</mark>
+		< /script>
+	</pre>
+<p id="demo33"></p>
+		<script>
+			function myFunction(a, b) {
+				return a * b;
+			}
+			document.getElementById("demo33").innerHTML = window.myFunction(10, 2);
+		</script>
+<p><span style = "color: blue">This is a common way to invoke a JS Function, but not very good PRACTICE.<br>
+Global variables, methods, or functions can easily create name conflicts and bugs in the global object.</span></p>
+
+<h5>The Global Object</h5>
+<p>When a function is called without an owner object, the value of <span>this</span> becomes global object.<br>
+In a web browser the global onject is the browser window.</p>
+<pre>
+	<p>In HTML the value of <b>this</b>, in a global function, is the <b>window object</b>.</p>
+
+	< p id="demo34">< /p>
+
+	< script>
+		let x = myFunction();
+		function myFunction() {
+			return this;
+		}
+		document.getElementById("demo34").innerHTML = x;
+	< /script>
+	// [object Window]
+</pre>
+
+<h5>Invoking a function as a method</h5>
+<p>In JS you can define FUNCTIONS as OBJECTS METHODS.</p>
+<p>Create an OBJECT <b>myObject</b>, with two properties (<b>firstName</b> and <b>lastName</b>) and a METHOD (<b>fullName</b>):</p>
+<pre>
+	< p id="demo35">< /p>
+	< script>
+		const myObject {
+			firstName:"John",
+			lastName: "Doe",
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		}
+		document.getElementById("demo35").innerHTML = myObject.fullName();
+	< /script>
+
+	//John Doe
+</pre>
+<p>The <b>fullName</b> <span><b>method</b></span> is a function. <br>
+The functions BELONGS to the OBJECT <b>myObject</b> is the owner of the function.</p>
+
+<p>The thing called <span>this</span>, is the object "owns" the JS code. In this case the value of <span>this</span> is <b>myObject</b>.</p>
+<pre>
+	< p id="demo45">< /p>
+	< script>
+		const myObject {
+			firstName:"John",
+			lastName: "Doe",
+			fullName: function() {
+				return this;
+			}
+		}
+		document.getElementById("demo45").innerHTML = myObject.fullName();
+	< /script>
+
+	[object Object]
+</pre>
+
+<h5>Invoking a Function with a Function CONSTRUCTOR</h5>
+<p>If a function invocation is prceded with the <span>new keyword</span>, it is a CONSTRUCTOR INVOCATION.</p>
+<p>iT LOOKS LIKE YOU CREATE A new function, BUT SINCE js fuNCTIONS ARE objects - YOU ACTUALLY CREATE A new object:</p>
+<pre>
+	<p>In this example, myFunction is a function constructor:</p>
+	< p id="demo36">< /p>
+	< script>
+		function myFunction(arg1, arg2) {
+			this.firstName = arg1;
+			this.lastName = arg2;
+		}
+		<mark>const myObj = new myFunction("John", "Doe")</mark>
+		document.getElementById("demo36").innerHTML = <mark>myObj.firstName;</mark>
+		// John
+	< /script>
+</pre>
+<p id="demo36"></p>
+	<script>
+		function myFunction(arg1, arg2) {
+			this.firstName = arg1;
+			this.lastName = arg2;
+		}
+		const myObj = new myFunction("John", "Doe")
+		document.getElementById("demo36").innerHTML = myObj.firstName;
+	</script>
+
+<p><span>A constructor invocation creates NEW OBJECT. The NEW OBJECT - inherits the <b>properties</b> and <b>methods</b> from its constructor.</span></p>
+<p><span>The value of "this" will be the new object created when the function is invoked.</span></p>
+
+<h4>JavaScript Function Call</h4>
+<p>With the <span>call()</span> method - you can write a METHOD that can be used on DIFFERENT OBJECTS.</p>
+
+<h5>The JavaScript call() Method</h5>
+<p>The <span>call() method</span> is a PRE'DEFINED.<br>
+It can be used to INVOKE/(call) a METHOD - with an OWNER OBJECT as an ARGUMENT(parameter).</p>
+<p><span>With "call()", an object can use a METHOD - belonging to another OBJECT.</span></p>
+<p>This example call <b>fullName</b> method of person, using it on <b>person1</b>:</p>
+<pre>
+	< p id="demo37">< /p>
+
+	< script>
+		const person = {
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		}
+		const person1 = {
+			firstName: "John",
+			lastName: "Doe",
+		}
+		const person2 = {
+			firstName: "Mary",
+			lastName: "Doe"
+		}
+		document.getElementById("demo37").innerHTML = person.fullName.<mark>call(person1)</mark>;
+	< /script>
+	// John Doe
+</pre>
+<p id="demo37"></p>
+
+	<script>
+		const person = {
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		}
+		const person1 = {
+			firstName: "John",
+			lastName: "Doe",
+		}
+		const person2 = {
+			firstName: "Mary",
+			lastName: "Doe"
+		}
+		document.getElementById("demo37").innerHTML = person.fullName.call(person1);
+	</script>
+<p>This example calls the <b>fullName method</b> of person - using it on <b>person2</b>:</p>
+<pre>
+	< p id="demo38">< /p>
+	< script>
+		const person = {
+			fullName: function() {
+				return this.firstName + " " + this.lastName;
+			}
+		}
+		const person1 = {
+			firstName: "John",
+			lastName: "Doe"
+		}
+		const person2 = {
+			firstName: "Mary",
+			lastName: "Doe"
+		}
+		document.getElementById("demo38").innerHTML = person.fullName.call(person2);
+	< /script>
+</pre>
+
+<h5>The call() Method with Arguments</h5>
+<p>The <span>call()</span> method can accept arguments:</p>
+<pre>
+	<p id="demo39"></p>
+	<script>
+		const person = {
+			fullName: function(city, country) {
+				return this.firstName + " " + this.lastName + "," + city + "," + country;
+			}
+		}
+
+		const person1 = {
+			firstName: "John",
+			lastName: "Doe"
+		}
+
+		const person2 = {
+			firstName: "Mary",
+			lastName: "Doe"
+		}
+		document.getElementById("demo39").innerHTML = person.fullName().call(person1, "Oslo", "Norway");
+	</script>
+</pre>
+
+<h4>JavaScript Closures</h4>
+<p>JS variables can belong to the <b>local</b> or <b>global</b> scope.<br>
+Global variables can be made LOCAL / PRIVATE with <b>closures</b></p>
+
+<h5>Global Variables</h5>
+<p>A <span>function</span> can ACCES all variables defined <b>INSIDE</b> the function:</p>
+<pre>
+	function myFunction() {
+	  <mark>let a = 4;</mark>
+	  return a * a;
+	}
+</pre>
+
+<p>But a <span>function</span> can <b>also acces</b> variables defined <b>ouside</b> the function:</p>
+<pre>
+	<mark>let a = 4;</mark>
+	function myFunction() {
+	  return a * a;
+	}
+</pre>
+<pre>
+	In this |^| example - <b>a</b> is <b>global</b> variable.
+	In a WEB PAGE - GLOBAL variables - belong to the WINDOW OBJECT.
+
+	GLOBAL variables - can be used(and changed) by all scripts in the page.(and in the WINDOW)
+
+	In the first example, <b>a</b> is a <b>local</b> variable.
+	A <b>local VARIABLE</b> can only be used INSIDE the function, where it is defined.
+	It is HIDDEN from other functions and other scripting code.
+	Global and LOCAL VARIABLES with the same name are different variables.
+	<b>Modifying one, does not modify the other.</b>
+
+	Variables created <b>without</b> a declaration keyword - (var, let, const) are always global, <b>EVEN IF THEY ARE CREATED inside the function.</b>
+
+	< p id="demo">< /p>
+
+	< script>
+	myFunction();
+	document.getElementById("demo").innerHTML = a * a;
+
+	function myFunction() {
+	  <mark>a = 4;</mark>
+	} 
+	< /script>
+</pre>
+<h2>Variable Lifetime</h2>
+<p><b>Global variables live until the page is DISCARDED, like when you navigate to another page - OR CLOSE the WINDOW.</b></p>
+<p><b>Local variables have short lives. They are CREATED when the function is INVOKED - and DELETED, when the function is FINISHED.</b></p>
+
+<h2>JavaScript Nested Functions</h2>
+<p>ALL FUNCTIONS have ACCES to the GLOBAL SCOPE.</p>
+<p>In fact, in JS, all FUNCTIONS - have acces to the scope "above" them.<br>
+*JS supports nested functions. NESTED functions HAVE ACCES to the SCOPE "above" them.</p>
+<p>...the inner function <span>plus()</span> has acces to the <span>counter</span> variable in the parent function:</p>
+<pre>
+	< p id="demo">0< /p>
+
+< script>
+document.getElementById("demo").innerHTML = add();
+function add() {
+  let counter = 0;
+  	function plus() {counter += 1;}
+  	<mark>plus();</mark>  
+  return counter; 
+}
+< /script>
+</pre>
+<p id="demo40">0</p>
+
+<script>
+document.getElementById("demo40").innerHTML = add();
+function add() {
+  let counter = 0;
+  function plus() {counter += 1;}
+  plus();  
+  return counter; 
+}
+</script>
+
+<h2>Always declare Local Variables</h2>
+<p>All variables use in a FUNCTION, <u>should be declared</u> as <b>local</b> avriables.<br>
+<u>Local variables</u> <b>must</b> be declared with the <span>var</span> or the <span>let</span> keyword, otherwise they will become <u>GLOBAL VARIABLES</u>.</p>
+<p><span><u>Strict mode</u> does not allow UNDECLARED variables.</span></p>
+
+<h2>Declaration on the TOP</h2>
+<p>It is a good codin practice - to put all declaration at the top - of each script or function.</p>
+<p>This will:</p>
+<ul>
+	<li>Give cleaner code</li>
+  <li>Provide a SINGLE place to look FOR LOCAL variables</li>
+  <li>Make it easier to avoid unwanted (implied) global variables</li>
+  <li>Reduce the possibility of unwanted RE-declarations</li>
+</ul>
+
+<pre>
+	<mark>//Declare at the beginning</mark>
+	let firstName, lastName, price, discount, fullPrice;
+
+	<mark>//Use later</mark>
+	firstName = "John";
+	lastName = "Doe";
+
+	price = 19.80;
+	discount = 0.10;
+
+	fullPrice = price - discount;
+</pre>
+
+<h2>Initialize Variables</h2>
+<p>It is a good coding practice to initialize variables vhen you declare them</p>
+<p>This will:</p>
+<ul>
+	<li>Give CLEANER code</li>
+	<li>Provide a SINGLE place to initialize variables</li>
+	<li>Avoid undefined values</li>
+</ul>
+<pre>
+	// Declare and initiate at the beginning
+	let firstName = "",
+	let lastName = "",
+	let price = 0,
+	let discount = 0,
+	let fullPrice = 0,
+	const myArray = [],
+	const myObject = {};
+</pre>
+<p><span>Initializing variables provides an ideea of the intended use (and ntented data type).(???)</span></p>
+
+<h2>Declare Objects with "const"</h2>
+<pre>
+	let car = {type: "Fiat", model:"500", color: "white"};
+	car = "Fiat"; <mark>// Changes OBJECT to a STRING</mark>
+
+	const car = {type: "Fiat", model:"500", color: "white"};
+	car = "Fiat"; <mark>// Not Possible</mark>
+	*verificat in consola - (works) all Good.
+</pre>
+
+<h2>Declare Arrays with "const"</h2>
+<p>Declaring arrays with const will prevent any accidental change of type:</p>
+<pre>
+	let cars = ["Volvo", "Audi", "BMW"];
+	cars = 3; <mark>// Changes ARRAY to NUMBER</mark>
+
+	const car = ["Volvo", "Audi", "BMW"];
+	cars 3 = <mark>//Not Possible</mark>
+</pre>
+
+<h2>Don't Use new Object()</h2>
+<pre>
+	Use <mark>""</mark> instead of <mark>new String()</mark>
+	Use <mark>0</mark> instead of <mark>new Number()</mark>
+	Use <mark>false</mark> instead of <mark>new Boolean()</mark>
+	Use <mark>{}</mark> instead of <mark>new Object()</mark>
+	Use <mark>[]</mark> instead of <mark>new Array()</mark>
+	Use <mark>function () {}</mark> instead of <mark>new Function()</mark>
+</pre>
+
+<h3>Example</h3>
+<pre>
+	let x1 = "";		// new PRIMITIVE string
+	let x2 = 0;			// new PRIMITIVE number
+	let x3 = false	// new PRIMITIVE boolean
+	const x4 = {};	// new OBJECT
+	const x5 = [];	// new ARRAY object
+	const x6 = /()/;// new <mark>regexp object</mark>
+	const x7 = function() {}; // new FUNCTION object
+</pre>
+<pre>
+	< h2>JavaScript Literal Constructors< /h2>
+	< p id="demo"></p>
+
+	< script>
+	let x1 = "";
+	let x2 = 0;
+	let x3 = false;
+	const x4 = {};
+	const x5 = [];
+	const x6 = /()/;
+	const x7 = function(){};
+
+	document.getElementById("demo").innerHTML = 
+	"x1:" + typeof x1 + "<br>" + 
+	"x2:" + typeof x2 + "<br>" +
+	"x3:" + typeof x3 + "<br>" + 
+	"x4:" + typeof x4 + "<br>" + 
+	"x5:" + typeof x5 + "<br>" +
+	"x6:" + typeof x6 + "<br>" + 
+	"x7:" + typeof x7 + "<br>";
+	< /script>
+</pre>
+	<h2>JavaScript Literal Constructors</h2>
+	<p id="demo41"></p>
+
+	<script>
+	let x1 = "";
+	let x2 = 0;
+	let x3 = false;
+	const x4 = {};
+	const x5 = [];
+	const x6 = /()/;
+	const x7 = function(){};
+
+	document.getElementById("demo41").innerHTML = 
+	"x1:" + typeof x1 + "<br>" + 
+	"x2:" + typeof x2 + "<br>" +
+	"x3:" + typeof x3 + "<br>" + 
+	"x4:" + typeof x4 + "<br>" + 
+	"x5:" + typeof x5 + "<br>" +
+	"x6:" + typeof x6 + "<br>" + 
+	"x7:" + typeof x7 + "<br>";
+	</script>
+
+<h2>Beware of Automatic Type Conversions</h2>
+<p>JavaScript is LOOSELY typed</p>
+<pre>
+	JavaScript este tastat slab...(???)
+</pre>
+<p>A variables can CONTAIN all DATA TYPES.<br>
+A variable can change it's data type.</p>
+<pre>
+	< p>A variable can chang its type. In this example x is <mark>first a string</mark> then a <mark>number:</mark>< /p>
+
+	< p id="demo">< /p>
+
+	< script>
+	let x = "Hello";
+	<mark>x = 5;</mark>
+	document.getElementById("demo").innerHTML = typeof x;
+	< /script>
+	//number
+</pre>
+<p><span>BEWARE that NUMBERS can accidentally be CONVERTED to STRINGS or "NaN".</span></p>
+<p>When doing matematical operations, JS can CONVERT numbers TO strings:</p>
+<pre>
+	let x = 5 + 7;       // x.valueOf() is 12,  typeof x is a number
+	let x = 5 + "7";     // x.valueOf() is 57,  typeof x is a string
+	let x = "5" + 7;     // x.valueOf() is 57,  typeof x is a string
+	let x = 5 - 7;       // x.valueOf() is -2,  typeof x is a number
+	let x = 5 - "7";     // x.valueOf() is -2,  typeof x is a number
+	let x = "5" - 7;     // x.valueOf() is -2,  typeof x is a number
+	let x = 5 - "x";     // x.valueOf() is NaN, typeof x is a number
+</pre>
+
+<p>Substrating a STRING from a STRING, does not generate eror - but returns <span>NaN</span></p>
+<pre>
+	< p id="demo42"></p>
+
+	< script>
+		document.getElementById("demo42").innerHTML = "Hello" - "Dolly";
+	< /script>
+	<mark>//NaN</mark>
+</pre>
+<hr>
+
+<h1>JS Mistakes</h1>
+<h2>Breaking a REturn Statement</h2>
+<p>It is a default JS behaviour to close a statement automatically - at the end of the line.</p>
+<p>Because of this, these two examples will return the same result:</p>
+
+<pre>
+	function myFunction(a) {
+  let power = 10 
+  return a * power
+}
+
+function myFunction(a) {
+  let power = 10<mark>;</mark>
+  return a * power<mark>;</mark>
+}
+
+< p id="demo43">< /p>
+
+< script>
+document.getElementById("demo43").innerHTML = myFunction(<mark>55</mark>);
+function myFunction(<mark>a</mark>) {
+  let power = 10;
+  return <mark>a * power;</mark>
+}
+< /script>
+</pre>
+
+<p>JS will also ALLOW you to <mark>break a statement into two lines</mark>.<br>
+Because of this, example "3" -will also return the same result:
+</p>
+<pre>
+	function myFunction(a) {
+  <mark>let</mark>
+  power = 10; 
+  return a * power;
+}
+</pre>
+
+<p>But what happen if you <mark>break the return statement in two lines</mark>:</p>
+<pre>
+	function myFunction(a) {
+  <mark>let</mark>
+  power = 10; 
+  <mark>return</mark>
+  a * power;
+}
+</pre>
+<p><span>The function will return <b>undefined</b>.</span></p>
+<h3>Exaplnation</h3>
+<p>If a STATEMENT is INCOMPLETE:</p>
+<pre>let</pre>
+
+<p>JavaScript will try to complete the STATEMENT by reading the NEXT line:</p>
+<pre>power = 10;</pre>
+
+<p>But since the STATEMENT is COMPLETE:</p>
+<pre>return</pre>
+<p>JS wil automatically close it like this:</p>
+<pre>return<mark>;</mark></pre>
+
+<h2>Accesing arrays with Named Indexes</h2>
+<p>Many programming languages SUPPORT ARRAYS wih NAMED indxes<br>
+Arrays with NAMED indexes are called - <mark>associative arrays (or HASHES).</mark></p>
+<p>JS does not support arrays with named indexes.<br>
+In JS, <b>arrays</b> use <b>numbered indexes</b>:</p>
+<pre>
+	< p id="demo44">< /p>
+
+	< script>
+	const person = [];
+	person[0] = "John";
+	person[1] = "Doe";
+	person[2] = 46; 
+	document.getElementById("demo44").innerHTML =
+	person[0] + " " + person.length;
+	< /script>
+</pre>
+
+<p>In JS <b>objects</b> use <b>named indexes</b>.</p>
+<p><span>If you use a NAMED INDEX, when accesing an ARRAY, JS will redefine the array - to a TSNADARD OBJECT.</span></p>
+<pre>
+	const person = [];
+	person["firstName"] = "John";
+	person["lastName"] = "Doe";	
+	person["age"] = 46;
+	person.length;      // person.length will return 0
+	person[0];          // person[0] will return undefined
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			font-family: Verdana;
+			counter-reset: section;
+			font-size: 15px;
+			padding: 15px;
+		}
+		
+		h1 {counter-reset: subsection;
+			text-decoration: underline;
+		}
+		h1::before {
+			counter-increment: section;
+			content: counter(section) ". ";
+		}
+		h2::before{
+			counter-increment: subsection;
+			content: counter(section) "." counter(subsection)" ";
+		}
+
+		hr{
+			height: 0.5px
+			color: #f0f0f0;
+		}
+
+		p{
+			padding-left: 15px;
+		}
+		
+		span{
+			color: gray;
+		}
+
+		button {
+			background-color: darkgrey;
+			border:none;
+			color: white;
+			padding: 10px;
+			margin-left: 15px;
+			display:inline-block;
+			cursor:pointer;
+			border-radius: 4px;
+		}
+		pre {color: grey;}
+		
+	</style>
+</head>
+<body>
+
+<h1>JavaScript Introduction</h1>
+
+<h2>JavaScript <u>Can Change HTML Content</u></h2>
+<p>One of many JavaSCript HTML <u>methods</u>  <span style="color:red; background:#f1f1f1">getELementById()</span>.</p>
+<p><mark>The example below <u>'finds'</u> an HTML element (with id="demo"), and <u>changes the element content</u> (innerHTML) to <span>"Hello JavaScript"</span>:</mark></p>
+<pre>
+< p id="demo"> JS can change HTML content.< /p>
+< button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Try Me< /button>
+</pre>
+<p id="demo"> JS can change HTML content.</p>
+<button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Try Me</button>
+<hr>
+
+<h2>JavaScript can <u>Change HTML Attribute Values</u></h2>
+<p>In this example JavaScript <u>changes the value of the</u> <b>src</b> <u>(source) attribute</u> of an  <b>&#60img&#62</b> tag.</p>
+
+<h3><u>The Light Bulb</u></h3>
+<p>JavaScript can change HTML <u>attribute values</u>.<br>
+In this case JS <u>changes the value of the src attribute of an image</u>.</p>
+<pre>
+	< button type="button" onclick="document.getElementById('myImage').src='Bulbs/BulbOn.jpg'">Turn on the Light< /button>
+	< img id="myImage" src="Bulbs/BulbOff.jpg" alt="light Bulb" style="width:100px">
+	< button type="button" onclick="document.getElementById('myImage').src='Bulbs/BulbOff.jpg'">Turn off the Light< /button>
+</pre>
+
+<button type="button" onclick="document.getElementById('myImage').src='Bulbs/BulbOn.jpg'">Turn on the Light</button>
+<img id="myImage" src="Bulbs/BulbOff.jpg" alt="light Bulb" style="width:100px">
+<!-- Dhi ce imi trebe "id" aici?-->
+<button type="button" onclick="document.getElementById('myImage').src='Bulbs/BulbOff.jpg'">Turn off the Light</button>
+<hr>
+
+<h2>JavaScript Can <u>Change HTML Styles</u> (CSS)</h2>
+<p>Changing the style of an HTML element, is a <u>variant</u> of changing an HTML attribute.</p>
+<p id="demo1">JS can change <u>the style</u> of an HTML element.</p>
+<pre>
+	< button type="button" onclick="document.getElementById('demo1').style.fontSize='20px'">Click Me!< /button>
+</pre>
+<button type="button" onclick="document.getElementById('demo1').style.fontSize='20px'">Click Me!</button>
+<hr>
+
+<h2>JavaScript can <u>Hide</u> HTML Elements</h2>
+<p>Hiding HTML elements can be DONE by <u>changeing</u> the <span style="color:red">display</span> style:</p>
+<pre>
+	< p id="demo2">JS can HIDE elements.< /p>
+	< button onclick="document.getElementById('demo2').style.display='none'">CLick Me!< /button>
+</pre>
+<p id="demo2">JS can HIDE elements.</p>
+<button onclick="document.getElementById('demo2').style.display='none'">CLick Me!</button>
+<hr>
+
+<h2>JavaScript can <u>Show</u> HTML Elements</h2>
+<p>Showing hidden HTML elements can also be done by <u>changing the</u> <span style="color:red">display</span> style:</p>
+<pre>
+	< p id="demo3" style="display: none">Hello JavaScript!< /p>
+	< button type="button" onclick="document.getElementById('demo3').style.display='block'">Click Me!< /button>
+</pre>
+<p id="demo3" style="display: none">Hello JavaScript!</p>
+<button type="button" onclick="document.getElementById('demo3').style.display='block'">Click Me!</button>
+<hr>
+
+<h1>JavaScript Where To</h1>
+
+<h2>The &#60script&#62 Tag</h2>
+<p>In HTML, JavaScript code is inserted between &#60script&#62 and &#60&#8725script&#62 tag.</p>
+
+<h2>JavaScript Functions and Events</h2>
+<p>A JS <b>function</b> is a <u>block of code</u>, that can be executed when "called" for.<br>
+For example, <u>a function can be called</u> <b>when an event occurs</b> - like when a <b>user clicks</b> a button.</p>
+<hr>
+
+<h2>JavaScript in < head > or < body ></h2>
+<p>You can place <b>any number of scripts</b> in an HTML document.<br>
+Scripts can be placed in the <b>body</b>, or in the <b>head</b> section <u>of an HTML page</u>.</p>
+
+<p><span>*Placing scripts in the <b>bottom of the < body > element</b> can <b>improve the display speed</b>, because <b>script interpretation slows down the display</b>.</span></p>
+<hr>
+
+<h2>External JavaScript</h2>
+<p>Scripts can also be placed in <u>external files</u>.<br>
+<u>External scripts</u> are practical when <b>the same code</b> is used in <b>many different web pages</b>.<br>
+The file extension is <b>.js</b>
+</p>
+<pre>
+	< p id="demo"> A Paragraphs!< /p>
+	< button type="button" onclick="myFunction()">Try It </ button>
+	< (myFunction is stored in an external file called "myScript.js") >
+	< script src="myScript.js"> </ script>
+</pre>
+<hr>
+
+<h2>External JavaScript Advantages</h2>
+<p>Placing scripts in external files has some advatages:</p>
+<ul>
+	<li>It separates HTML and code</li>
+	<li>It makes HTML and JS <u>easier to read</u> and <u>maintain</u></li>
+	<li>CACHED JS files can <u>speed up page loads</u></li>
+</ul>
+<hr>
+
+<h2>External References</h2>
+<p>External scripts can be REFERENCED with a <b>full URL</b> or with a <b>path relative</b> to the current web page.</p>
+<p>Use a ful URL to link a SCRIPT:</p>
+<pre>< script src="https://www.w3schools.com/js/myScript1.js" < /script></pre>
+<p>This example USES a script located in a SPECIFIED FOLDER o the CURRENT web site:</p>
+<pre>< script src="/js/myScript1.js">< /script></pre>
+<p>This example links to a script located in THE SAME FOLDER ast the CURRENT PAGE:</p>
+<pre>< script src="myScript1.js> < /script></pre>
+<hr>
+
+<h1>JavaScript Output</h1>
+
+<h2>JavaScript Display Possibilities</h2>
+<p>JS can "display" data different ways:</p>
+<ul>
+	<li>Writting into an HTML element, using <span style="color:red; background:#f0f0f0">innerHTML</span>.</li>
+	<li>Writting into an HTML output, using <span style="color:red; background:#f0f0f0">document.write()</span>.</li>
+	<li>Writting into an alert box, using <span style="color:red; background:#f0f0f0">window.alert()</span>.</li>
+	<li>Writting into the BROWSER console, using <span style="color:red; background:#f0f0f0">console.log()</span>.</li>
+</ul>
+<hr>
+
+<h2>Using innerHTML</h2>
+<p>To <b>acces</b> an HTML element, JS can use the <span>document.getElementById()</span> method.</p>
+<pre>
+	< p id="demo4">< /p>
+	< script>
+		document.getElementById("demo4").innerHTML = 5 + 6;
+	< /script>
+</pre>
+<p id="demo4"></p>
+	<script>
+		document.getElementById("demo4").innerHTML = 5 + 6;
+	</script>
+<hr>
+
+<h2>Using document.write()</h2>
+<p>For <b>testing</b> purposes, it is convenient to use <span>document.write()</span>:</p>
+<pre>
+	< script>
+		document.write(5 + 6);
+	< /script>
+</pre>
+	<script>
+		document.write(5 + 6);
+	</script>
+<p><span>*Never call <b>document.write</b> after the document has finished loading. The document.write() method <u>should only be used for <b>testing</b></u></span>.</p>
+<hr>
+
+<h2>Using window.alert()</h2>
+<p>You can use an alert box to <b>display</b> data.</p>
+<pre>
+	< script>
+		window.alert(5 + 6);
+	< /script>
+</pre>
+<hr>
+
+<h2>Using console.log()</h2>
+<p>For <b>debugging</b> purposes, you can call the <span>console.log()</span> method in the browser <u>to display data</u>.</p>
+<pre>
+	< script>
+		console.log(5 + 6);
+	< /script>
+</pre>
+<hr>
+
+<h1>JavaScript Statements</h1>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var x, y, z;  // Statement 1
+	x = 5;        // Statement 2
+	y = 6;        // Statement 3
+	z = x + y;    // Statement 4
+
+	document.getElementById("demo").innerHTML =
+	"The value of z is " + z + ".";  
+	< /script>
+</pre>
+<p id="demo5"></p>
+
+<script>
+var x, y, z;  // Statement 1
+x = 5;        // Statement 2
+y = 6;        // Statement 3
+z = x + y;    // Statement 4
+
+document.getElementById("demo5").innerHTML =
+"The value of z is " + z + ".";  
+</script>
+<hr>
+
+<h2>JavaScript Programs</h2>
+<p>A <b>computer program</b> is a <u>list of "instructions"</u> to be <u>executed</u> by a computer.</p>
+<p>In a programming languages <u>these programming instructions</u> are called <b>statements</b>.</p>
+<p>A <b>JS program</b> is <u>a list of programming</u> <b>statements</b>.</p>
+<p><span>*In HTML, <b>JS programs</b> are executed by the WEB BROWSER.</span></p>
+<hr>
+
+<h2>JavaScript Statements</h2>
+<p>JS Statements are composed of:</p>
+	<ul>
+		<li>Values</li>
+		<li>Operators: (+ - * /)</li>
+		<li>Expressions: total=(price1+ price2)</li>
+		<li>Keywords</li>
+		<li>Comments</li>
+	</ul>
+<p><span>The statements - tells the BROWSER  - <u>to write</u> - "Hello Dolly" - inside an HTML element withs id="demo".</span></p>
+<pre>
+	document.getElementById("demo").innerHTML = "Hello Dolly.";
+</pre>
+<hr>
+
+<h2>Semicolons ;</h2>
+<p>Semicolons separate JavaScript statements.<br>
+Add a semicolon at the end of each executable sttatement.</p>
+<pre>
+	< p id="demo">< /p>
+	< script>
+		var a, b, c;     // Declare 3 variables
+		a = 5;           // Assign the value 5 to a
+		b = 6;           // Assign the value 6 to b
+		c = a + b;       // Assign the sum of a and b to c
+		document.getElementById("demo1").innerHTML = c; // <span>'finds' an HTML element (with id="demo"), and changes the element content (innerHTML) to "c"</span>
+	< /script>
+</pre>
+
+<p id="demo"></p>
+<script>
+var a, b, c;
+a = 5;
+b = 6;
+c = a + b;
+document.getElementById("demo6").innerHTML = c;
+</script>
+
+<p>When separated by semicolons, multiple statements on one line are allowed:</p>
+<pre>
+	< p id="demo"> < /p>
+	< script>
+	var a, b, c;
+	var a = 5; var b = 6; var c = a + b;
+	< /script>
+	document.getElementById("demo6").innerHTML = c;
+</pre>
+<hr>
+
+<h2>JavaScript White Space</h2>
+<p>Js ignore multiple spaces. You can add <u>white space</u> to your script to make it more readable.</p>
+<pre>
+	 var person = "Hege"
+	 var person ="Hege"
+</pre>
+<p>Also put SPACES <b>around operators</b>.</p>
+<pre>
+	a = 5; b = 6; c = a + b;
+</pre>
+<hr>
+
+<h2>JS Line Length and Line Breaks</h2>
+<pre>
+	document.getElementById("demo").innerHTML =
+	"Hello Dolly!";
+</pre>
+<hr>
+
+<h2>JavaScript Code Blocks</h2>
+<p>JS statements <u>can be grouped together</u> in <b>code blocks</b>, inside curly brackets {...}.<br>
+The <u>purpose of codeblocks</u> is to define statements to be executed together.</p>
+<hr>
+
+<h2>JavaScript Keyword</h2>
+<p>JS statements often start with a <b>keyword</b> to <u>identify</u> the JS action to be performed.</p>
+<pre>
+	<span style="background-color: grey; color:white;">break_______________<u>Terminates</u> a <b>switch</b> or a <b>loop</b></span>
+	continue____________<u>Jumps out of a loop</u> and <b>starts</b> at the <b>top</b>
+	<span style="background-color: grey; color:white;">debugger____________<u>Stops the execution</u> of JavaScript, and <b>calls</b> (if available )<b>the debugging function</b></span>
+	do ... while________<u>Executes a block of statements</u>, and <b>repeats</b> the block, <b>while</b> a condition is TRUE
+	<span style="background-color: grey; color:white;">for_________________<u>Marks</u> a block of statements <u>to be executed</u>, <b>as long as</b> a condition is <u>true</u></span>
+	function____________<u>Declares</u> a function
+	<span style="background-color: grey; color:white;">if ... else_________<u>Marks</u> a block of statements <u>to be executed</u>, <b>depending</b> on a <u>condition</u></span>
+	return______________<u>Exits</u> a function
+	<span style="background-color: grey; color:white;">switch______________<u>Marks</u> a block of statements <u>to be executed</u>, <b>depending</b> on <u>different cases</u></span>
+	try ... catch_______<u>Implements</u> <b>error handling</b> to <u>a block of statements</u>
+	<span style="background-color: grey; color:white;">var_________________<u>Declares</u> a variable</span>
+</pre>
+<hr>
+
+<h1>JavaScript Comments</h1>
+<pre>
+	var x = 5;      // Declare x, give it the value of 5
+	var y = x + 2;  // Declare y, give it the value of x + 2
+</pre>
+
+<h2>Multi-line Comments</h2>
+<pre>Multi-line comments start with /* and end with */.
+
+Any text between /* and */ will be ignored by JavaScript.
+
+This example uses a multi-line comment (a comment block) to explain the code:
+
+Example
+/*
+The code below will change
+the heading with id = "myH"
+and the paragraph with id = "myP"
+in my web page:
+*/
+</pre>
+<hr>
+
+<h1>JavaScript Variables</h1>
+<p>JS variables are <b>containers</b> for <u>storing data values</u>.</p>
+
+<h2>Much like Algebra</h2>
+<p>In programming, just like algebra, we use variables (like price1) to hold <span style="color:red"><b>values</b></span>.<br>
+In programming, just like algebra, we use variables in <span><b style="color:red;">expressions</b></span> <span>total=(price1+ price2)</span>.</p>
+<pre>
+	< p id="demo7"></p>
+< script>
+	var price1 = 5;
+	var price2 = 6;
+	var total = price1 + price2;
+	document.getElementById('demo7').innerHTML = "The total is" + total;
+< /script>
+</pre>
+<p id="demo7"></p>
+<script>
+	var price1 = 5;
+	var price2 = 6;
+	var total = price1 + price2;
+	document.getElementById('demo7').innerHTML = "The total is " + total;
+</script>
+
+<h2>JavaScript Identifiers</h2>
+<p>All JS <b>variables</b> must be <b>identified</b> with <b>unique names</b>.</p>
+<p>These <u>unique names</u> are called <b>identifiers</b>.</p>
+<p><u>Identifiers</u> can be <b>short names</b> (like"x" and "y") or more <b>descriptive names</b> (age, sum, total/Volume).</p>
+<p>The general rules for constructing names for variables (unique identifiers) are:</p>
+<ul>
+	<li>Names can contain <b>letters, digits, underscores</b> and <b>dollar signs</b>.</li>
+	<li>Names <b>must begin</b> with a <b>letter</b>.</li>
+	<li>Names can also <b>begin</b> with <b>$</b> and <b>_</b></li>
+	<li>Names are <b>case sensitive</b> (<b>y</b> and <b>Y</b> are different variables).</li>
+	<li><b>Reserved words</b> (<u>like JS keywords</u>) cannot be used as names</li>
+</ul>
+<span>*JavaScript identifiers are <b>case-sensitive</b>.</span>
+
+<h2>The Assignment Operator</h2>
+<p>In JS, the equal sign ( = ) is a <b>assignment</b> operator, not an <b>equal to</b> operator.</p>
+<p>This is different from algebra.The following does not make sense in algebra:</p>
+<pre>
+	x = x + 5;
+</pre>
+<span>*The "equal to" operator is written like <span style="color:red;">==</span> in JavaScript.</span>
+
+<h2>JavaScript Data Types</h2>
+<p><b>JavaScript variables</b> can hold <b style="color:red;">numbers</b> like 100 and <b style="color:red;">text values</b> like "John Doe".</p>
+<p>In programming, <b>text values</b> are called <b style="color:red;">text strings</b>.</p>
+<p>Strings are written inside of <u>double</u> or <u>single</u> quotes. <b>Numbers</b> are written <b>without</b> quotes.</p>
+<pre>
+	var pi = 3.14;
+	var person = "John Doe";
+	var answer = 'Yes I am!';
+</pre>
+
+<h2>Declaring (Creating) JS Variables</h2>
+<p>Creating a variable is JS is called <u>"declaring"</u> a variable.<br>
+You declare JS variable with <span>var</span> keyword.<br>
+After the declaration, the variable has no value (tehnically it has the value of <span>undefined</span>).</p>
+<pre>
+	var carName;
+</pre>
+<p>To assign a value to the variable, use the equal sign.</p>
+
+<p>In the example below, we create a variable called <span style="color:red">carName</span> and assign the value "Volvo" to it.<br>
+<mark>Then we "output" the value inside an HTML paragraph with id="demo".</mark></p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var carName = "Volvo";
+	document.getElementById("demo").innerHTML = carName;
+	< /script>
+</pre>
+
+<h2>One Statement, Many Variables</h2>
+<p>You can declare <b>many variables</b> in <b>one statement</b>.</p>
+<p>Start the statement with <span>var</span> and <b>separate variables</b> by <b>comma</b>.</p>
+<pre>
+	var person = "John Doe", carName = "Volvo", price = 200;
+</pre>
+
+<h2>Re-Declaring JS Variables</h2>
+<p>If you re-declare a JS <span>variable</span> it will <b>not lose its value</b>.</p>
+<p>The variable <span style="color:red;">carName</span> will still have the value "Volvo" after the execution of these statements.:</p>
+<pre>
+	var carName = "Volvo";
+	var carName;
+</pre>
+
+<h2>JavaScript Arithmetic</h2>
+<p>As with algebra, you can do arithmetic with JS variables, using operators like <span>=</span> and <span>+</span></p>
+<pre>
+	var x = 5 + 2 + 3;
+</pre>
+<p>You can add <span>strings</span>, but strings will be <span>concatenated</span>:</p>
+<pre>
+	var x = "John" + " " + "Doe";
+</pre>
+
+<p>Also, try this:</p>
+<pre>
+	var x = "5" + 2 + 3;
+</pre>
+<p id="demo8"></p>
+<script>
+	var x = "5" + 2 + 3;
+	document.getElementById('demo8').innerHTML = x;
+</script>
+<p><span>If you put a number in quotes, <b>the rest of the numbers</b> will be treated as a <b>strings</b> and concatenated.</span></p>
+<hr>
+
+<p>Now try this:</p>
+<pre>
+	var x = 2 + 3 + "5";
+</pre>
+<p id="demo9"></p>
+<script>
+	var x = 2 + 3 + "5";
+	document.getElementById('demo9').innerHTML = x;
+</script>
+<hr>
+ <h2>JavaScript Dollar Sign $</h2>
+ <p>JS identifiers <span>(names)</span> must begin with:</p>
+ <ul>
+ 	<li>A letter (A-Z or a-z)</li>
+ 	<li>A dollar sign ($)</li>
+ 	<li>An underscore (_)</li>
+ </ul>
+<pre>
+	var $$$ = "Hello World";
+	var $ = 2;
+	var $myMoney = 5;
+</pre>
+<p>Using the dollar sign is not very common in JavaScript, but professional programmers often use it as an alias for the main function in a JavaScript library.</p>
+
+<h2>JavaScript Underscore (_)</h2>
+<p>Since JS <span>treats</span> underscore as a <b>letter</b>, identifiers containing _ are <span>valid names</span>.</p>
+<pre>
+	var _lastName = "Johnson";
+	var _x = 2;
+	var _100 = 5;
+</pre>
+<hr>
+
+<h1>JavaScript Let</h1>
+<p>IN 2015 JS introduced two new important keyword: <span style="color:red;">let</span> and <span style="color:red;">const</span>.</p>
+<p>These two keywords provides <b>Block Scope</b> variables and constants in JS.</p>
+<p>JS had only two types of scope: <b>Global Scope</b> and <b>Function Scope</b>.</p>
+
+<h2>Global Scope</h2>
+<p>Variables declared <b>Globally</b>(outside any function) have <b>Global Scope</b>.</p>
+<pre>
+	var carName = "Volvo";
+	//code here can use carName
+
+	function myFunction() {...}
+	//code here can also use carName
+</pre>
+<p><span>A GLOBAL variable can be accessed from any script or function.</span></p>
+<pre>
+	< p id='demo10'>< /p>
+< script>
+	var carName = "Volvo"			//variabila e in exteriorul functiei.
+	<spam>myFunction();</spam> //global scope
+
+	function myFunction(){
+	document.getElementById('demo10').innerHTML = "I can display " + carName;
+	}
+< /script>
+</pre>
+<p id='demo10'></p>
+<script>
+	var carName = "Volvo"
+	myFunction();
+
+	function myFunction(){
+		document.getElementById('demo10').innerHTML = "I can display " + carName;
+	}
+</script>
+
+<h2>|Function Scope</h2>
+<p>Variables declares <b>Locally</b> <u>(inside a function)</u> have <b>Function Scope</b>.</p>
+<pre>
+	//code here ca NOT use carName
+	
+	function myFunction(){
+		var carName = "Volvo"
+	//code here CAN use carName	
+	}
+
+	//code here can NOT use carName
+</pre>
+<pre>
+	< p id="demo11">< /p>
+	< p id="demo12">< /p>
+
+	< script>
+	myFunction();
+	function myFunction() {
+	var carName = "Volvo";		//variabila e in interirul functiei
+	document.getElementById("demo11").innerHTML = typeof carName + " " + carName;
+	}
+	document.getElementById("demo12").innerHTML = typeof carName;
+	< /script>
+</pre>
+<p>Outside myFunction() carName is undefined.</p>
+<p id="demo11"></p>
+
+<p id="demo12"></p>
+
+<script>
+myFunction();
+
+function myFunction() {
+  var carName = "Volvo";
+  document.getElementById("demo11").innerHTML = typeof carName + " " + carName;
+}
+document.getElementById("demo12").innerHTML = typeof carName;
+</script>
+
+<h2>JavaScript Block Scope</h2>
+<p>Variables declared with <span>var</span> <b>cannot</b> have <b>Block Scope</b>.</p>
+<p>Variables declared inside a block <b>{}</b> CAN be accesed from outside the block.</p>
+<pre>
+		{
+ 	 var x = 2;
+	}
+	// x CAN be used here
+</pre>
+<p>Before 2015 JS did not have <b>block scope</b>.</p>
+<p>Variables declared with <span style="color:red;">let</span> <b>can</b> have <b>block scope</b>.</p>
+<p>Variables declared inside a block <b>{}</b> CANNOT be accesed from outside the block:</p>
+<pre>
+	{
+	let x = 2; 
+	}
+	//x can NOT be used here
+</pre>
+
+<p>Redeclaring a variable using the <span>var</span> keyword can impose problems.</p>
+<p>Redeclaring a variable inside a <b>block</b> will also redeclare the variable outside the block:</p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	var  x = 10;
+	// Here x is 10
+	{  
+  	var x = 2;
+ 	// Here x is 2
+	}
+	// Here x is 2
+	document.getElementById("demo").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo13"></p>
+
+<script>
+var  x = 10;
+// Here x is 10
+{  
+  var x = 2;
+  // Here x is 2
+}
+// Here x is 2
+document.getElementById("demo13").innerHTML = x;
+</script>
+<p>Redeclaring a variable using the <span>let</span> keyword can solve this problem.</p>
+<p style="color:red";>Redeclaring a variable inside a block will NOT redeclare the var outside the block.</p>
+ <pre>
+ 	< p id="demo14">< /p>
+ 	< script>
+ 		var x = 10; // Here  is 10
+ 		{
+ 		let x = 2; //Here x is 2
+ 		}
+ 		//Here x is 10
+
+ 	< /script>
+ </pre>
+<p id="demo15"></p>
+ 	<script>
+ 		var x = 10; // Here  is 10
+ 		{
+ 			let x = 2; //Here x is 2
+ 		}
+ 		//Here x is 10
+ 		document.getElementById('demo15').innerHTML = x;
+ 	</script>
+
+ 	<h2>Loop Scope</h2>
+ 	<p>Using <span>var</span> in a loop.</p>
+ 	<pre>
+ 		< p id ="demo16">< /p>
+ 		< script>
+ 			var i = 5;
+ 			for (var i = 0; i < 10; i++) {
+ 			//some stetements
+ 			}
+ 		document.getElementById('demo16').innerHTML = i;
+ 		< /script>
+ 	</pre>
+ 	<p id ="demo16"></p>
+ 		<script>
+ 			var i = 5;
+ 			for (var i = 0; i < 10; i++) {
+ 				//some stetements
+ 			}
+ 		document.getElementById('demo16').innerHTML = i;
+ 		</script>	
+
+ <h2>Using <span>let</span> in a loop:</h2>
+ <pre>
+ 	< p id="demo17">< /p>
+
+ 	< script>
+ 		let i = 5;
+ 		for (let i = 0; i < 10; i++) {
+ 		// some statements
+ 		}
+ 	document.getElementById('demo17').innerHTML = i;
+ 	< /script>
+
+ 	5
+</pre>
+	<p id="demo17"></p>
+
+ 	<script>
+ 		let i = 5;
+ 		for (let i = 0; i < 10; i++) {
+ 		// some statements
+ 		}
+ 	document.getElementById('demo17').innerHTML = i;
+ 	</script>
+
+<p>In the first example, using <span>var</span>, the VARIABLE declared in THE LOOP <b>redeclares</b> variable OUTSIDE the loop.</p>
+<pre>
+	var i = 5;
+	for (var i = 0; i < 10; i++) {
+ 	// some statements
+	}
+	// Here i is 10
+</pre>
+<p>In the second example, using <span>let</span>, the VARIABLE declared in the loop <b>does not redeclare</b> the variable outside the loop.</p>
+<pre>
+	var i = 5;
+	for (var i = 0; i < 10; i++) {
+  	// some statements
+	}
+	// Here i is 5
+</pre>
+<p>When <span>let</span> is used to declare the "i" variable in a loop, "i" var will only be visible within the loop.</p>
+
+<h2>Function Scope</h2>
+<p>Variables declared with <span>var</span> and <span>let</span> are quite similar when declared inside a function.</p>
+<pre>
+	function myFunction(){
+	  var carName = "Volvo";
+	}
+
+	function myFunction(){
+	  let carName = "Volvo";
+	}
+</pre>
+
+<h2>Global Scope</h2>
+<p>Variables declared with <span>var</span> and <span>let</span> are quite similar when declared outside a BLOCK.<br>
+They will both have <b>global scope</b>.</p>
+<pre>
+	var x = 2; //global scope
+
+	let x = 2; //global scope
+</pre>
+
+<h2>Global Variables in HTML</h2>
+<p>With JS, <b>the global scope</b> is the <b><span>JS environment</span></b>.<br>
+In HTML, <b>the global scope</b> is <span><b>window.object</b></span>.</p>
+<p>Global variables defined with the <span>var</span> keyword belong to the window object:</p>
+
+<pre>
+	< p id="demo18">< /p>
+
+	< script>
+		var carName = "Volvo";
+		//code can use window.carName
+		document.getElementById('demo18').innerHTML = "I can display " + window.carName;
+	< /script>
+</pre>
+
+<p id="demo18"></p>
+
+	<script>
+		var carName = "Volvo";
+		//code can use window.carName
+		document.getElementById('demo18').innerHTML = "I can display " + window.carName;
+	</script>
+<pre>
+	JS WINDOW | JavaScript Window - The Browser Object
+
+	The Browser Object Model (BOM) allows JS to "Talk to" the BROWSER.
+
+
+	|The Window Object
+	The window object is SUPPORTED by all BROWSERS. It represents the borwser's window.
+	All GLOBAL JS (object, functions and variables) automatically become MEMBERS of the window object.
+	Global VARIABLES are PROPERTIES of the window object.
+	Global FUNCTIONS are METHODS of the window object.
+	Even the DOCUMENT OBJECT (of the HTML DOM) is a PROPERTY of the window object.
+</pre>
+<hr>
+<p>Global variables defined with the <span>let</span> <b>keyword</b> <u>do not belong</u> to the window object:</p>
+<pre>
+	let carName = "Volvo";
+	// code here cannot use window.carName
+</pre>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	let carName = "Volvo";
+
+	// code here can not use window.carName
+	document.getElementById("demo").innerHTML = "I can not display " + window.carName;
+	< /script>
+</pre>
+
+<h2>Redeclaring</h2>
+<p>Redeclaring a JS variable with 
+	<span>var</span> is allowed anywhere in a program:</p>
+<pre>
+	var x = 2;
+	//now x is 2
+
+	var x = 3;
+	//now x is 3
+</pre>
+<p>Redeclaring a <span>var</span> with <span>let</span>, in the same scope, or in the same block, is NOT ALLOWED:</p>
+<pre>
+	let x = 2; //Allowed
+	var x = 3; //Not allowed
+
+	{
+	let x = 4; //Allowed
+	var x = 5; //Not Allowed	
+	}
+</pre>
+
+<p>Redeclaring a variable with <span>let variable</span> with <span>let</span> in the same scope, or in the same block, is NOT ALLOWED:</p>
+<pre>
+	let x = 2;       // Allowed
+	let x = 3;       // Not allowed
+
+	{
+  	let x = 4;   // Allowed
+  	let x = 5;   // Not allowed
+	}
+</pre>
+
+<p>Redeclaring a variable with <span>let variable</span> with <span>var</span> in the same scope, or in the same block, is NOT ALLOWED:</p>
+<pre>
+	let x = 2;       // Allowed
+	var x = 3;       // Not allowed
+
+	{
+  	let x = 4;   // Allowed
+  	var x = 5;   // Not allowed
+	}
+</pre>
+
+<p>Redeclaring a variable with <span>let</span>, in another scope, or in another block, is allowed:</p>
+<pre>
+	< p id="demo19">< /p>
+
+	< script>
+		let x = 2; //allowed
+		{
+			let x = 3; //allowed
+		}
+		{
+			let x  = 4; //allowed
+		}
+		document.getElementById("demo19").innerHTML = x;
+	< /script>
+</pre>
+<p id="demo19"></p>
+
+	<script>
+		let x = 2; //allowed
+		{
+			let x = 3; //allowed
+		}
+		{
+			let x  = 4; //allowed
+		}
+		document.getElementById("demo19").innerHTML = x;
+	</script>
+
+	<h2>Hoisting</h2>
+	<p>Variables defined with <span style="color:red;">var</span> are <b>hoisted</b> (ridicate) to the top and can be initialized at any time.<br>
+	Meaning: You can use the variable before it is declared:</p>
+	<pre>
+		With var you can use a variable before it is declared.
+		< p id="demo20">< /p>		
+		< script>
+			carName = "Volvo";
+			document.getElementById('demo20').innerHTML = carName;
+			var carName;
+		< /script>
+	</pre>
+	<p id="demo20"></p>		
+		<script>
+			carName = "Volvo";
+			document.getElementById('demo20').innerHTML = carName;
+			var carName;
+		</script>
+
+	<p>Variables defines with <span>let</span> are hoisted to the top of the block but not initialized.<br>
+	Meaning: The block of code is aware (constient) of the variable, but it cannot be used until it has been declared.<br>
+	Using a <span>let</span> variable before it's declared will result in a <span>RefereceError</span>.
+	The variable is in a "temporal dead zone" from the start of the block until is declared.
+	</p>
+	<pre>
+		carName = "Volvo";
+		let carName;
+	</pre>
+	<hr>
+	<pre>
+	|JavaScript Hoisting
+	Hoisting is JS defaul behaviour of moving declaratios to the top.
+
+	|JavaScript Declarations are Hoisted
+	In JS, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared.
+	Hoisted is JS's DEFAULT BEHAVIOUR of moving all declarations to the TOP of the current scope. (to the top of the current script of the current function).
+
+	|The let and const Keywords
+	Variables defines with LET and CONST are hoisted to the top of the block, but not INITIALIZED.
+	Meaning - the block of code is aware (constient) of the variable, but it cannot be used - until it has been declared.
+	</pre>
+	<hr>
+
+	<h1>JavaScript Const</h1>
+	<p>Variables <u>defined</u> with <span>const</span> behave like <SPAN>let</SPAN>, except they CANNOT be <b>reasigned</b>.</p>
+	<pre>
+		< p id="demo21">< /p>
+
+		< script>
+			try{
+				const PI = 3.141592653589793;
+				PI = 3.14; //this will give error
+			}
+			catch (err){
+				document.getElementById('demo21').innerHTML = err;
+			}
+		< /script>
+	</pre>
+
+	<p id="demo21"></p>
+
+		<script>
+			try{
+				const PI = 3.141592653589793;
+				PI = 3.14;
+			}
+			catch (err){
+				document.getElementById('demo21').innerHTML = err;
+			}
+		</script>
+
+<h2>Block Scope</h2>
+<p>Declaring variable with <span>const</span> is similar to <span>let</span> when it comes to <b>Block Scope</b>.<br>
+The x declared in the block, in this example, is not the same as the "x" declared outside the block:</p>
+<pre>
+	< p id="demo22">< /p>
+	< script>
+		var x = 10;
+		//Here x is 10
+		{
+			const x = 2;
+			//here x is 2
+		}
+		//here x is 10
+		document.getElementById('demo21').innerHTML = x;
+	< /script>
+</pre>
+
+<p id="demo22"></p>
+	<script>
+		var x = 10;
+		//Here x is 10
+		{
+			const x = 2;
+			//here x is 2
+		}
+		//here x is 10
+		document.getElementById('demo21').innerHTML = x;
+	</script>
+
+	<h2>Not Real Constants</h2>
+	<p>The keyword <span>const</span> is a litle misleading. (derutant) <br>
+	<span style="color:red;">It does NOT define a constant value. It defines a <b>constant reference</b>  to a <b>value</b>.</span> <br>
+	Because of this, we CANNOT change <b>constant primitive values</b>, but we can change the properties of constant objects.</p>
+
+	<h2>Primitive Values</h2>
+	<p>If we assign a primitive value to a constant, we cannot change the primitive value:</p>
+	<pre>
+		const PI = 3.141592653589793;
+		PI = 3.14 // This will give an error
+		PI = PI + 10; // This will also give an error
+	</pre>
+	<p><span>*In Javascript a <b>primitive</b> (data type or value) is DATA that is not an OBJECT - and has no <b>methods</b>.<br>
+	There are 7 primitive data types:
+	<ul>
+		<li>string</li>
+		<li>number</li>
+		<li>BIGNIT</li>
+		<li>Boolean</li>
+		<li>undefined</li>
+		<li>symbol</li>
+		<li>null</li>
+	</ul> 
+	</span></p>
+
+	<h2>Constant Objects can Change</h2>
+	<p>You can change the properties of a constant object:</p>
+	<pre>
+		< p id ="demo22">< /p>
+	< script>
+		//create an object
+		const car = {type: "Fiat", model: "500", color: "white"}
+
+		//you can change property:
+		car.color = "red";
+
+		//you can add a property:
+		car.owner = "Johnson";
+
+		//display the property:
+		document.getElementById('demo22').innerHTML = "Car owner is " + car.owner;
+
+		Car owner is Johnson.
+	</script>
+	< /script>
+	</pre>
+	
+	<p id ="demo22"></p>
+	<script>
+		//create an object
+		const car = {type: "Fiat", model: "500", color: "white"}
+
+		//you can change property:
+		car.color = "red";
+
+		//you can add a property:
+		car.owner = "Johnson";
+
+		//display the property:
+		document.getElementById('demo22').innerHTML = "Car owner is " + car.owner;
+	</script>
+	<p>But you can NOT <b>reassign</b> a constant object:</p>
+	<pre>
+		< p id="demo23"></p>
+		< script>
+			try {
+				const car = {type:"Fiat", model:"500", color:"white"};
+				car = {type: "Volvo", model:"600", color:"red"};
+			}
+			catch (err) {
+				document.getElementById('demo23').innerHTML = err;
+			}
+		< /script>
+	</pre>
+		<p id="demo23"></p>
+		<script>
+			try {
+				const car = {type:"Fiat", model:"500", color:"white"};
+				car = {type: "Volvo", model:"600", color:"red"};
+			}
+			catch (err) {
+				document.getElementById('demo23').innerHTML = err;
+			}
+		</script>
+
+		<h2>Constant Arrays can Change</h2>
+		<p>You can change <b>the elements of a constant array:</b></p>
+		<pre>
+			< p id="demo24">< /p>
+			< script>
+				//create an array
+				const car = ["Saab", "Volvo", "BMW"]
+
+				//change an element
+				cars[0] = "Toyota";
+
+				//add an element
+				car.push("Audi")
+
+				//display the Array
+				document.getElementById("demo23"),innerHTML = cars;
+			< /script>
+		</pre>
+
+			<p id="demo24"></p>
+			<script>
+				//create an array
+				const car = ["Saab", "Volvo", "BMW"]
+
+				//change an element
+				cars[0] = "Toyota";
+
+				//add an element
+				car.push("Audi")
+
+				//display the Array
+				document.getElementById("demo23"),innerHTML = cars;
+			</script>
+
+		<p>But you can NOT reassign a constant array:</p>
+		<pre>
+			< p id="demo 24">< /p>
+
+			< script>
+				try{
+					const car = ["Saab", "Volvo", "BMW"];
+					cars = ["Toyota", "Volvo", "Audi"];
+				}
+				catch(err) {
+					document.getElementById("demo25").innerHTML = err;
+				}
+			< /script>
+
+			You can NOT reassign a constant array:
+			TypeError: Assignment to constant variable.		
+		</pre>
+		<p id="demo 24"></p>
+
+			<script>
+				try{
+					const cars = ["Saab", "Volvo", "BMW"];
+					cars = ["Toyota", "Volvo", "Audi"];
+				}
+				catch(err) {
+					document.getElementById("demo24").innerHTML = err;
+				}
+			</script>	
+		
+<h2>Redeclaring</h2>
+<p>Redeclaring a JS <span>var</span>, variable is allowed anywhere in a program:</p>
+<pre>
+	var x = 2;    //  Allowed
+	var x = 3;    //  Allowed
+	x = 4;        //  Allowed
+</pre>
+
+<p>Redecalring or REASSIGNING an existing <span>var</span> or <span>let</span> variable to <span>const</span> in the same scope, or in the SAME BLOCK - is NOT allowed.</p>
+<pre>
+	var x = 2;       //allowed
+	const x = 2;     //not allowed
+	{
+		let x = 2;   //Allowed
+		const x = 2; //not allowed
+	}
+</pre>
+<p>Redeclaring or REASSIGNING an existing <span>const</span> variable, in the same scope - or in the SAME BLOCK - is NOT allowed:</p>
+<pre>
+	const x = 2; // Allowed
+	const x = 3; //Not Allowed
+	x = 3 		 //Not Allowed
+	var x = 3; 	 //Not Allowed
+	let x = 3; 	 //Not Allowed
+
+	{
+		const x = 2; //Aloweed
+		const x = 3; //Not Allowed
+		x = 3; 		 //Not Allowed
+		var x = 3;   //Not Allowed
+		let x = 3;   //Not Allowed
+
+	}
+</pre>
+<p>Redeclaring a <span>variable</span> with <span>const</span>, in another SCOPE, or in another BLOCK, is ALLOWED: </p>
+<pre>
+	const x = 2;	//Allowed
+	
+	{
+		const x = 3;//Allowed
+	}
+
+	{
+		const x = 4;//Allowed
+	}
+</pre>
+
+<pre>|VAR vs CONST vs LET
+VAR
+Can be REASSIGNED whenever.
+INITIALIZING (assigning) - value is optional. 
+Can be REDECLARED - at any point
+GLOBAL variables - are ADDED to Window.
+
+|How variables are SCOPED when we declare them with the VAR keyword?
+So there's scope to the current execution context - which basically means their scopes to their enclosing function {...} - if they're in FUNCTION and if they're NOT - then they're part of the global scope.
+
+function greet() {
+	for(var i = 0; i < 3; i++){
+		console.log("Hello")
+	}
+	console.log(i);
+}
+greet()
+
+FOR EXAMPLE: 
+Here is a variable "var i" - AS A PART OF THIS LOOP. It's inside of a function.
+It is scopes - not to this loop - but TO THE ENTIRE FUNCTION.
+So I can acces it = in the function - "gret()" - we PRINT OUT: "Hello" 3 times - from this LOOP - [and still have acces to "i" after - the fact].
+
+Of course - I don't have acces to "i" anymore - because [we're outside of that function].
+When to use the VAR keyword - IT IS NOT A BLOCK SCOPE. If you use the VAR keyword - are scoped to an entire function - OR to the GLOBAL SCOPE.
+</pre>
+<hr>
+<pre>
+|LET and CONST
+function greet() {
+	for(LET i = 0; i < 3; i++){
+		console.log("Hello")
+	}
+	console.log(i);
+}
+greet()
+
+After that Block ENDS "{for(LET i = 0; i < 3; i++) {console.log("Hello")}" we-re going to print "i".
+greet() - Run It. - But We Have a problem. "i" is not defined. [it's only a part of this block].
+
+Another Example:
+if(true) and I declare a "const color = purple" - If I try to acces color outside of this: "console.log(color)" - I don't HAVE ACCES to IT. [color is not defined]. It's only part of this block.
+
+if(true){
+	var(color) = "purple";	
+}
+console.log(color);
+
+If I change that to a "var" - it is SCOPED - in this case THE GLOBAL SCOPE is not part of a FUNCTION.
+Conclusion 1: "let" and "const" are BLOCK SCOPE - "var" is NOT.
+</pre>
+<hr>
+
+<pre>
+	|The Difference betwen "let" and "const"
+	They're both block SCOPED.
+	|LET
+	Does not create property on GLOBAL window object.
+	Initializing value is OPTIONAL.
+	Can be reassigned (let x = 2; // Allowed| let x = 3; //Allowed)
+	Cannot be redeclared (in the same scope) (let x = 3; //Allowed| let y = 2; //Not Allowed)
+
+	|CONST
+	Does not create proeprty on GLOBAL window object
+	MUST be initialized with VALUE.
+	Cannot be REASSIGNED.
+	Cannot be redeclared (in the same scope)
+---------------------------------------------------------------------------------------------------
+	The Browser Object Model (BOM) allows JS to "Talk to" the BROWSER.
+	It represents the borwser's window.
+	
+	All global JS (object, functions and variables) automatically become members of the window object.
+	Global variables are properties of the window object.
+	Global functions are methods of the window object.
+	Even the document object (of the HTML DOM) is a property of the window object.
+----------------------------------------------------------------------------------------------------
+	
+	They're both block SCOPED. And the main ideea behind it is that it's not supposed to CHANGE. That Doesn't mean it's immutable - it can change at all. It means that the reference 
+	[that the variable is pointing to sort of like the link in memory, that can't change].
+	For example - if we make a "const" called "pet" and set "pet" to "pig" => I can't say pet is now "dog". that's the problem.
+	const pet = "pig" //undefined
+	pet = "dog" //uncaught TypeError:...
+	But What I can do for example - is make a "constant people SET it equal to an ARRAY.
+	I can't reassign that entirely and set "people = [something else]... 12" - but I CAN UPDATE VALUES INSIDE of "people", or I can "people.push('Kevin')". I'm still CHANGEING "PEOPLE"
+	but I'M NOT UPDATING THE REFFERENCE - this is pointing to the exact same array /the same object in memory.
+	For the ARRAYS I could also do an object LITERAL and change the PROPERTIES. I just can't chnge that reference.
+
+	With LET on the other hand  - (we use LET in a for loop) - you can UPDATE it - AT ANY POINT.
+	Essentially - LET is the VAR keyword - but A BLOCK SCOPES.
+	Const is DIFFERENT because also ADDS THIS "NEW RESTRICTION" - it's not supposed to be REASSIGNED other than that's a couple of quick things to discuss:
+	1.When you declare a VAR in the GLOBAL SCOPE - is added to the WINDOW OBJECT: [var x  = 1; if you look at the window.object - will find X there...]
+	2.If I try that with LET [let dog="rusty"| save | apoi in consola tastezt "window.dog"| =>Undefined]. It's a GLOBAL VAR declared in the GLOBAL SCOPE - it is not added to the WINDOW.OBJECT.
+	3.The same apllies for CONST.
+
+----------------------------------------------------------------------------------------------------------
+	|CAN WE DECLARE A var WITH A value WHEN WE ACTUALLY DECLARE THE VARIABLE or we can DECALRE IT and not initialize it?
+	(Deschizi consola - F12)
+	var color; | undefined
+	- we can declare it and NOT INITIALIZE IT - not given a VALUE - and the LATER give it a VALUE.
+
+	Same thing on LET
+	let pig; | undefined... i cannot do this...
+
+	const chicken; | Uncaught SyntaxError: 
+	-that's the problem - because "constant" is supposed to be constant - it's not suppose to REALLY CHANGE  - meaning that - you need to know ahead of time what the value will be.
+	So, you can't initialize of you can't declare it - WITHOUT A VALUE
+-----------------------------------------------------------------------------------------------------------------------------------
+
+	A Variable createdwith "var" - we can REDECALARE the ENTIRE VARIABLE - whenever we want:
+	I can say
+	var x = 10;
+	and then say, actually, var is...
+	var x = "asdf" - something else...
+	I'M NOT JUST UPDATING THE VALUE - I'M NOT REASSIGNING "X" - I'M COMPLETR;Y - REDECLARE IT.
+
+	If i try that with "let" - an error saying - "Identier 'x' has already been declared".
+	let x = 10;
+	let x = "asdf"
+
+	Same thing with "const".
+
+	RECAP:
+	"LET" and "CONST" - are BLOCKED SCOPE.
+	"VAR" is  - SCOPED to the current execution contenxt.
+	
+	"LET" and "CONST" do not create properties - on the GLOBAL window.object.
+	If the're declared in the GLOBAL SCOPE - you can INITIALIZE "LET" with or without VALUE.
+
+	"CONST" -  you have to have a value.
+	"LET" - can be REASIGNED (whenever/ it's like a VAR - except it is BLOCKED SCOPED).
+	 - but it cannot be redeclared in the SAME SCOPE.
+	 "CONST" - on the other hand has this additional RESTRICION it cannot be REASIGNED - it doesn't mean it's IMMUTABLE(imutabil - care nu se schimbă; permanent, constant, imuabil).
+	 and it can never change - but the reference that variable pointing to - cannot change.
+	 It's block scoped.
+</pre>
+<pre>
+	Youtube 2:  - CONST
+	 ..I could use "let/const" - but this is something thea ALLOWS the code - perhaps to run a bit faster; they use a little bit less memory -..maybe to protectyourself against some errors.
+	 Const - is a variable that can never be ASSIGNED.
+	 CONST - ...there is n reason - you have to use ever use CONST ever.. for the things that you make it - you can use "let"  but my code may be little less efficient, the way it runs and uses memory.
+	 Const is ONLY an OPTION to help with the efficiency of how your program RUNS and MANAGE your MEMORY on the COMPUTER.
+	 3. If you have a VARIABLE in your ptogram that you know - IT'S VALUE - is never going to CHANGE (the computer can be smart about how it STOREES that INFORMATION - it doesn't have to leave EXTRA-SPACE for... extra "stuff")
+</pre>
+
+<h1>JavaScript Operators</h1>
+<p>Assign values to variables and add them together:</p>
+<p> x = 5, y = 2, calculate z = x + y, and DISPLAY "z"</p>
+<pre>
+	< p id="demo25">< /p>
+
+< script>
+	var x = 5;
+	var y = 2;
+	var z = x + y;
+	document.getElementById('demo25').innerHTML = z;
+< /script>
+</pre>
+<p id="demo25"></p>
+
+<script>
+	var x = 5;
+	var y = 2;
+	var z = x + y;
+	document.getElementById('demo25').innerHTML = z;
+</script>
+
+<p>The <b>assignment</b> operator (<span> = </span>) ASSIGNS a VALUE to a VARIABLE.</p>
+<pre>
+	var x = 5;
+</pre>
+<p>The <b>addition</b> operator (<span> + </span>) ADSS numbers: </p>
+<pre>
+	var x = 5;
+	var y = 2;
+	var z = x + y;
+	document.getElementById('demo25').innerHTML = z;
+</pre>
+<p>The <b>multiplication</b> operator (<span> * </span>) MULTIPLIES numbers: </p>
+<pre>
+	var x = 5;
+	var y = 2;
+	var z = x * y;
+	document.getElementById('demo25').innerHTML = z;
+</pre>
+
+<h2>JavaScript ARITHMETIC Operators</h2>
+<p>Arithmetic operators are used to perform ARITHMETIC on NUMBERS:</p>
+<pre>
+	+		Addition
+	-		Substraction
+	*		Multiplication
+	**		Exponentiation
+	/		Division
+	%		Modulus (Division Reminder)
+	++		Increment
+	--		Decrement
+</pre>
+<pre>
+	| % Modulus (Division Reminder)
+
+	19 % 5
+	(de cate ori intra 5 in 1) - There is no 5's in 1. So:
+	How many 5's in 19?
+	( 3 * 5 = 15) => de 3X. (put up the "3")
+	If we count on - from 15 to 19 - WE CAN QUICLKY - find the REMINDER.
+	4 - Reminder of 4;
+	So 19 %(divided by) 5 = 3[r4]
+	--------------------------------------------------------------------
+
+	197 % 3
+	There is no 3 in 1.
+	How many 3 in 19? (3 * 6 = 18) => 6X (put up the "6")
+	Count on from 18 to 19 - to FIND the REMINDER. 
+	1 - Reminder of 1;
+	____________________________________________________________________
+	How many 3's in 17? (3 * 5 = 15) => 5x (put up the "5")
+	Then COUNT from 15 to 17 - to FIND the REMINDER.
+	2 - Reminder of 2.
+	So 197 % 3 = 65r2
+	--------------------------------------------------------------------
+
+	2781 % 6
+	There is no 6's in 2.
+	6 in 27? - (6 * 4 = 24) => 3x (put up the "3")
+	6 in 28? - (6 * 4 = 24) => 4x (put up the "4")
+	6 in 21? - (6 * 3 = 18) => 3x (put up the "3")
+	So 2781 % 6 = 34r3
+
+</pre>
+
+<h2>JavaScript ASSIGNMENT Operators</h2>
+<p>Assignment operators - assign VALUES to JS VARIABLES.</p>
+<pre>
+		OPERATOR 				EXAMPLE 			Same AS
+		=					x = y 				x = y
+		+=					x += y 				x = x + y
+		-=					x -= y 				x = x - y
+		*=					x *= y 				x = x * y
+		/=					x /= y 				x = x / y
+		%=					x %= y 				x = x % y
+		**= 					x **= y 			x = x ** y
+</pre>
+
+<h2>JavaScript STRING Operator</h2>
+<p>The <span>+</span> OPERATOR can aso be used to ADD (concatenate) STRINGS:</p>
+<pre>
+	< p id="demo26">< /p>
+	< script>
+		var txt1 = "John";
+		var txt2 = "Doe"
+		var txt3 = txt1 + " " + txt2;
+		document.getElementById('demo26').innerHTML = txt3;
+	< /script>
+</pre>
+<p id="demo26"></p>
+	<script>
+		var txt1 = "John";
+		var txt2 = "Doe";
+		var txt3 = txt1 + " " + txt2;
+		document.getElementById('demo26').innerHTML = txt3;
+	</script>
+
+<p>The <span>+=</span> ASSIGNMENT OPERATOR can be used to ADD (concatenate) strings:</p>
+<pre>
+	< p id="demo27">< /p>
+	< script>
+		var txt1 = "What a very";
+		txt1 += "nice day";
+		document.getElementById('demo27').innerHTML = txt1;
+	< /script>
+</pre>
+<p id="demo27"></p>
+	<script>
+		var txt1 = "What a very";
+		txt1 += "nice day";
+		document.getElementById('demo27').innerHTML = txt1;
+	</script>
+
+<h2>Add STRINGS and NUMBERS</h2>
+<p>Adding two numbers, will return the SUM, but ADDING a NUMBER and a STRING - will return a STRING:</p>
+<pre>
+	< p id="demo28">< /p>
+	< script>
+		var x = 5 + 5;
+		var y = "5" + 5;
+		var z = "Hello" + 5;
+		document.getElementById('demo28').innerHTML = 
+		x + "< br>" + y + "< br>" + z;
+	< /script>
+</pre>
+<p id="demo28"></p>
+	<script>
+		var x = 5 + 5;
+		var y = "5" + 5;
+		var z = "Hello" + 5;
+		document.getElementById('demo28').innerHTML = 
+		x + "<br>" + y + "<br>" + z;
+	</script>
+
+<h2>JavaSCript COMPARISON Operators</h2>
+<pre>
+	OPERATOR 			DESCRIPTION
+	
+	==				equal to
+	
+	===				equal VALUE and equal TYPE
+	
+	!=				not equal
+	
+	!==				not equal VALUE or not equal TYPE
+	
+	>				GREATER than
+	
+	< 				LESS than
+	
+	>=				GREATER than or EQUAL TO
+	
+	<=				LESS than or EQUAL TO
+	
+	?				TENARRY operator
+</pre>
+
+<h2>JavaScript LOGICAL Operators</h2>
+<pre>
+	OPERATOR 			DESCRIPTION
+	&&				logical AND
+	||				logical OR
+	!				logical NOT
+</pre>
+ 
+ <h2>JavaScript TYPE Operators</h2>
+ <pre>
+ 	OPERATOR 			DESCRIPTION
+ 	typeof				Returns the TYPE of a VARIABLE
+ 	instanceof			Returns TRUE if an OBJECT is "AN INSTANCE of OBJECT TYPE"
+ </pre>
+
+ <h2>JavaScript BITWISE Operators</h2>
+ <p>Bit operators WORK on 32 BITS numbers.<br>
+ Any numeric OPERAND in the OPERATION is CONVERTED into a 32 BIT number. The result is converted BACK to a JavaScript NUMBER.</p>
+ <pre>
+ 	OPERATOR 		DESCRIPTION				EXAMPLE 		SAME AS 		RESULT 		DECIMAL
+ 	&			AND 					5 & 1			0101 & 0001		0001		1
+ 	|			OR 					5 | 1			0101 | 0001		0101		5
+ 	~			NOT 					~ 5			0101 ~ 0001		1010		10
+ 	^			XOR					5 ^ 1			0101 ^ 0001		0100		4
+ 	<<			Zero FILL left Shift			5 << 1			0101 << 1		1010		10
+ 	>>			SIGNED right Shift			5 >> 1			0101 >>	1		0010		2
+ 	>>>			Zero FILL right Shift			5 >>> 1			0101 >>> 1		0010		2
+ </pre>
+ <hr>
+
+ <h1>JavaScript Arithmetic</h1>
+ <h2>Java Script ARITHMETIC OPERATORS</h2>
+ <p>A typical arithmetic opeartion OPERATES on TWO NUMBERS.</p>
+ <pre>
+ 	var x = 100 + 50;
+ 	document.getElementById('demo').innerHTML = x;
+ </pre>
+<p>Or VARIABLES:</p>
+<pre>
+	< p id="demo29">< /p>
+	< script>
+		var a = 100;
+		var b = 50;
+		var z = a + b;
+		document.getElementById('demo29').innerHTML = z;
+	< /script>
+</pre>
+<p id="demo29"></p>
+	<script>
+		var a = 100;
+		var b = 50;
+		var z = a + b;
+		document.getElementById('demo29').innerHTML = z;
+	</script>
+
+<p>Or EXPRESSIONS:</p>
+<pre>
+	< p id="demo30">< /p>
+	< script>
+		var a = 3;
+		var x = (100 + 50) * a;
+		document.getElementById('demo30').innerHTML = x;
+	< /script>
+</pre>
+<p id="demo30"></p>
+	<script>
+		var a = 3;
+		var x = (100 + 50) * a;
+		document.getElementById('demo30').innerHTML = x;
+	</script>
+
+	<h2>Operators and OPERANDS</h2>
+	<p>The NUMBERS (in arithmetic operation) are called <b>operands</b>.<br>
+	The OPERATION (to be performed between the TWO OPERANDS) is DEFINED by an <b>operator</b>.</p>
+	<pre>
+		OPERAND 			OPERATOR 			OPERAND
+		100				+				50
+	</pre>
+
+	<h2>Adding</h2>
+	<p>The <b>addition</b> operator ( <span>+</span> ) ADDS numbers:</p>
+	<pre>
+		var x = 5;
+		var y = 2;
+		var z = x + y;
+		document.getElementById("demo").innerHTML = z;
+	</pre>
+
+	<h2>Substracting</h2>
+	<p>The <b>substracion</b> operator ( <span>-</span> ) SUBSTRACTS numbers:</p>
+	<pre>
+		< p id="demo">< /p>
+
+		< script>
+			var x = 5;
+			var y = 2;
+			var z = x - y;
+			document.getElementById("demo").innerHTML = z;
+		< /script>
+	</pre>
+	<p id="demo31"></p>
+
+		<script>
+			var x = 5;
+			var y = 2;
+			var z = x - y;
+			document.getElementById("demo31").innerHTML = z;
+		</script>
+
+<h2>Multiplying</h2>
+<p>The <b>multiplication</b> operator ( <span>*</span> ) MULTIPLIES numbers:</p>
+	<pre>
+	< p id="demo">< /p>
+		< script>
+			var x = 5;
+			var y = 2;
+			var z = x * y;
+			document.getElementById("demo").innerHTML = z;
+		</ script>
+	</pre>
+<p id="demo32"></p>
+
+		<script>
+			var x = 5;
+			var y = 2;
+			var z = x * y;
+			document.getElementById("demo32").innerHTML = z;
+		</script>
+
+<h2>Dividing</h2>
+<p>The <b>division</b> operator ( <span>/</span> ) DIVIDES numbers:</p>
+<pre>
+	< p id="demo">< /p>
+
+		< script>
+			var x = 5;
+			var y = 2;
+			var z = x / y;
+			document.getElementById("demo").innerHTML = z;
+		< /script>
+</pre>
+<p id="demo33"></p>
+
+		<script>
+			var x = 5;
+			var y = 2;
+			var z = x / y;
+			document.getElementById("demo33").innerHTML = z;
+		</script>
+
+<h2>Remainder</h2>
+<p>The <b>modulus</b> operator ( <span>%</span> ) RETURNS the DIVISION remainder:</p>
+<pre>
+	< p id="demo34">< /p>
+		< script>
+			var x = 5;
+			var y = 2;
+			var z = x % y;
+			document.getElementById("demo34").innerHTML = z;
+		< /script>
+</pre>
+<p id="demo34"></p>
+
+		<script>
+			var x = 5;
+			var y = 2;
+			var z = x % y;
+			document.getElementById("demo34").innerHTML = z;
+		</script>
+<p>In <b>arithmetic</b> THE DIVISION of two <u>INTEGERS</u> produces a <b>quotient</b> and a <b>reminder</b>.<br>
+In <b>mathematics</b>, THE RESULTS of a <b>modulo operation</b> is the <b>reminder</b> of an arithmetic division.</p>
+
+<h2>Incrementing</h2>
+<p>The <b>increment</b> operator ( <span>++</span> ) INCREMENTS numbers:</p>
+<pre>
+	< p id="demo35">< /p>
+	< script>
+		var x = 5;
+		x++;
+		var z = x;
+		document.getElementById('demo35').innerHTML = z;
+	< /script>
+</pre>
+<p id="demo35"></p>
+	<script>
+		var x = 5;
+		x++;
+		var z = x;
+		document.getElementById('demo35').innerHTML = z;
+	</script>
+
+	<h2>Decrementing</h2>
+<p>The <b>decrement</b> operator ( <span>--</span> ) DECREMENTS numbers:</p>
+<pre>
+	< p id="demo35">< /p>
+	< script>
+		var x = 5;
+		x--;
+		var z = x;
+		document.getElementById('demo35').innerHTML = z;
+	< /script>
+</pre>
+<p id="demo35"></p>
+	<script>
+		var x = 5;
+		x--;
+		var z = x;
+		document.getElementById('demo35').innerHTML = z;
+	</script>
+
+
+	<h2>Exponentiation</h2>
+	<p>The <b>exponentiation</b> operator ( <span>**</span> ) RAISES the FIRST OPERAND to the power of the SECOND OPERAND:</p>
+	<pre>
+		< p id="demo36">< /p>
+		< script>
+			var x = 5;
+			document.getElementById('demo36').innerHTML = x ** 2;  //(125 - if x ** 3)
+		< /script>
+	</pre>
+	<p id="demo36"></p>
+		<script>
+			var x = 5;
+			document.getElementById('demo36').innerHTML = x ** 2;  //(125 - if x ** 3)
+		</script>
+
+<h2>Operator Precedence</h2>
+<p>Operator precedence <b>describes</b> the ORDER in <u>which operations are performed</u> in an arithmetic expression.</p>
+<pre>
+	< p id="demo37">< /p>
+	< script>
+		document.getElementById("demo37").innerHTML = 100 + 50 * 3;
+	< /script>
+</pre>
+<p id="demo37"></p>
+	<script>
+		document.getElementById("demo37").innerHTML = 100 + 50 * 3;
+	</script>
+
+	<p>Is teh result of example above the same as 150 * 3, or is it the same as 100 + 150?<br>
+	Is the ADDITION or the MULTIPLICATION done first?<br>
+	As in TRADITIONAL school mathematics, the MULTIPLICATION is done FIRST.<br>
+	Multiplication ( * ) and division ( / ) have HIGHER <b>precedence</b> than addition ( + ) and substraction ( - ).</p>
+	<p>And (as in school mathematics) the PRECEDENCE can be changed by using parantheses:</p>
+	<pre>
+		var x = (100 + 50) * 3;
+	</pre>
+	<p>When using parantheses, the operations inside the parantheses are COMPUTED first.<br>
+	When many operations have THE SAME PRECEDENCE (like +  and  - ), they are COMPUED from LEFT to RIGHT:</p>
+	<pre>
+		var x = 100 + 50 - 3;
+	</pre>
+</body>
+</html>
+
+
+

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author"content = "Sergiu Chis">
+	
+	<!--Intro-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+	<!--<meta http-equiv="X-UA-Compatible" content ="ie=edge"-->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+		<!--Boostrap-->
+	  <!--Icons-->
+  <script src="https://kit.fontawesome.com/9c1f6d7e82.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="style2.css">
+
+	<!--Slideshow-->
+	<!--link rel="stylesheet" type="text/css" href="styleSlideShow.css">-->
+	
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	
+	<title>Portofolio</title>
+</head>
+<body>
+
+	<!--I-->
+	<!--Intro Spash Screen-->
+	<div class = "intro">
+		<h1 class="logo-header", style="text-align:center; font-family: 'Poppins', sans-serif;">
+			<!-- here we're just going to do two "span element" with a class of "intrologo"-->
+			<span class="introLogo">Hi!</span><br><span class="introLogo">I'm Sergiu.</span><br><span class="introLogo">Hire Me!</span>
+			<!--We splitting this up in two elements because WE WANT TO PERFORM - "SEPARATE ANIMATION" - on thsese two spawns-->
+			<!--There is going to be a TIME DELAY between them-->
+		</h1>		
+	</div>	
+	
+	<!--II-->
+	<!--DISPLAY: flex-->
+  <nav>
+  	<div class="logo">
+  		<h4>SERGIU CHIȘ</h4>
+  	</div>
+  	
+  	<ul class="nav-links">
+  		<li><a href="index.html">Home</a></li>
+  		<li><a href="AboutMe/AboutMe.html" target="_self">About Me</a></li>
+  		<li><a href="Work/Work.html">Work</a></li>
+  		<li><a href="#">Projects</a></li>
+  	</ul>
+  	
+  	<a class="navbar-brand" href="index.html">
+      <div class="logo-image">
+            <img src="Me_Pictures/rsz_11_n1.jpg" class="img-fluid">
+      </div>
+	  </a>
+  	
+  	<div class="burger">
+  		<div class="line1"></div>
+  		<div class="line2"></div>
+  		<div class="line3"></div>
+  	</div>
+  </nav>
+
+<!--III-->
+	<!--Image Slide Start
+	<div class = "slider">
+		<div class="slides">
+			 radio buttons start
+			<input type="radio" name="radio-btn" id="radio1">
+			<input type="radio" name="radio-btn" id="radio2">
+			<input type="radio" name="radio-btn" id="radio3">
+			<input type="radio" name="radio-btn" id="radio4">
+			<input type="radio" name="radio-btn" id="radio5">
+			<input type="radio" name="radio-btn" id="radio6">
+			<input type="radio" name="radio-btn" id="radio7">
+			<input type="radio" name="radio-btn" id="radio8">
+			<input type="radio" name="radio-btn" id="radio9">
+			<input type="radio" name="radio-btn" id="radio10">
+			 radio buttons end
+			 slide images start
+			<div class = "slide first">
+				<img src="Me_Pictures/lighthouse_c1920x1080.jpg" alt="1">				
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/2-1920x1080.jpg" alt="2">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/3-1920x1080.jpg" alt="3">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/4-1920x1080.jpg" alt="4">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/5-1920x1080.jpg" alt="5">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/6-1920x1080.jpg" alt="6">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/7-1920x1080.jpg" alt="7">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/8-1920x1080.jpg" alt="8">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/9-1920x1080.jpg" alt="9">
+			</div>
+			<div class="slide">
+				<img src="SlideShow_Pictures/10-1920x1080.jpg" alt="10">
+			</div>
+			slide images end
+		</div>
+	</div>
+	Image Slider End
+	
+	Automatic Navigation Start
+	<div class="naviagation-auto">
+		<div class = auto-btn1></div>
+		<div class = auto-btn2></div>
+		<div class = auto-btn3></div>
+		<div class = auto-btn4></div>
+		<div class = auto-btn5></div>
+		<div class = auto-btn6></div>
+		<div class = auto-btn7></div>
+		<div class = auto-btn8></div>
+		<div class = auto-btn9></div>
+		<div class = auto-btn10></div>
+	</div>
+	Automatic Navigation End
+	Manual Navigation Start
+	<div class="navigation-manual">
+		<label for="radio1"	class="manual-btn"></label>
+		<label for="radio2"	class="manual-btn"></label>	
+		<label for="radio3"	class="manual-btn"></label>	
+		<label for="radio4"	class="manual-btn"></label>	
+		<label for="radio5"	class="manual-btn"></label>	
+		<label for="radio6"	class="manual-btn"></label>	
+		<label for="radio7"	class="manual-btn"></label>	
+		<label for="radio8"	class="manual-btn"></label>	
+		<label for="radio9"	class="manual-btn"></label>	
+		<label for="radio10"	class="manual-btn"></label>	
+	</div>
+	Manual Navigation End-->
+
+<script src="app.js"></script>
+
+<script type="text/javascript">
+	var i = 0; // starting point/ start index - we're gonna have an array of images and we LOOP through THOSE (imgaes).
+	var images = []; //Images Array
+	var time = 5000; //the time in miliseconds BETWEEN each image switch
+
+	//Image list  - this will be ARRAY VALUES - with image paths
+	images[0] ='Me_Pictures/lighthouse_c1920x1080.jpg';
+	images[1] ='SlideShow_Pictures/2-1920x1080.jpg';
+	images[2] ='SlideShow_Pictures/3-1920x1080.jpg';
+	images[3] ='SlideShow_Pictures/4-1920x1080.jpg';
+	images[4] ='SlideShow_Pictures/5-1920x1080.jpg';
+	images[5] ='SlideShow_Pictures/6-1920x1080.jpg';
+	images[6] ='SlideShow_Pictures/7-1920x1080.jpg';
+	images[7] ='SlideShow_Pictures/8-1920x1080.jpg';
+	images[8] ='SlideShow_Pictures/9-1920x1080.jpg';
+	images[9] ='SlideShow_Pictures/10-1920x1080.jpg';
+	//Function Chnage Image
+	function changeImg(){
+		document.slide.src = images[i]; //we "create" this because we put the "name attribute of the slide" /the name ATTRIBUTE of "slide" - for our image, then we wanna grab the source (src) and "set  = images[i]"
+
+		if(i < images.length - 1){
+			i++;
+		}else{
+			i = 0;
+		}
+
+		setTimeout("changeImg()", time);
+	}
+	window.onload = changeImg;
+
+	//images.length (in this case) it's gonna be "3" because there's "3" different indexes - but indexes are 0-Based. So basicaly - we want to CHECK IF it's the last index of "2". This is "3" so we-re just going o TAKE AWAY one from that: "images.length - 1".
+	//If that is TRUE we just want to INCREMENT (i++) by "1".
+	//If it's at the last INDEX - WE WANNA TO RESET TO "0".
+	//{} - then we want to RUN this function however many seconds we have up here. For that we can use "setTimeout"(). Inside we put "the function" -"changeImg()" - and we want to run that EVERY "3" seconds. "time)".
+
+	//We wanna go - OUTSIDE the function() - and we want this "CHANGE IMAGE" to run initially - when the PAGE LOADS.
+
+	//https://www.youtube.com/watch?v=4YQ4svkETS0
+</script>
+<img name="slide" width="auto" height="auto"> <!-- same slide from"document.slide.src-->
+
+<!--Icons-->
+<div class="section">
+<div class = "icons">
+	<a href="https://www.facebook.com/sergiu.chis.3" style="color:#e6dbd0 "><i class="fab fa-facebook-square"></i></a>
+	<a href="https://www.instagram.com/dysf.nction/" style="color:#e6dbd0 "><i class="fab fa-instagram"></i>
+</div>
+</div>
+<!--Bubbles-->
+<div class="section">
+<div class = "dotsBottom">
+<i class="fas fa-ellipsis-h" style="color:#7d6d76"></i>
+</div>
+</div> 
+
+</body> 
+</html>

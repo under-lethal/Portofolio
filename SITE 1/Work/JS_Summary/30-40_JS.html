@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			font-family: Verdana;
+			counter-reset: section;
+			font-size: 15px;
+			padding: 15px;
+		}
+		
+		h1 {counter-reset: subsection;
+			text-decoration: underline;
+		}
+		h1::before {
+			counter-increment: section;
+			content: counter(section) ". ";
+		}
+		h2::before{
+			counter-increment: subsection;
+			content: counter(section) "." counter(subsection)" ";
+		}
+
+		hr{
+			height: 0.5px
+			color: #f0f0f0;
+		}
+
+		p{
+			padding-left: 15px;
+		}
+		
+		span{
+			color: gray;
+		}
+
+		button {
+			background-color: darkgrey;
+			border:none;
+			color: white;
+			padding: 10px;
+			margin-left: 15px;
+			display:inline-block;
+			cursor:pointer;
+			border-radius: 4px;
+		}
+		pre {color: grey;}
+		
+	</style>
+</head>
+<body>
+	<h1>JavaScript Comparison and Logical Operators</h1>
+<p>Comparison and Logical Operators are used to <b>test</b> fot <span>true</span> or <span>false</span>.</p>
+
+<h2>Comparison Operators</h2>
+<p>Comparison operators are used in logical statements to determine EQUALITY or DIFFERENCE between variables or values.</p>
+<pre>
+	< p id="demo60">< /p>
+	< script>
+		var x = 5;
+		document.getElementById('demo60').innerHTML = (x == 8);
+	< /script>
+</pre>
+<p id="demo69"></p>
+	<script>
+		var x = 5;
+		document.getElementById('demo69').innerHTML = (x == 8);
+	</script>
+<pre>
+	x == 5 // true
+	x == "5"// true
+
+	x === 5 //true
+	x === "5" //<mark>false</mark> [equal VALUE and equal TYPE]
+</pre>
+<pre>
+	!= -  not equal - x != 8 //true
+	!== - not equal TYPE <mark>or</mark> not equal TYPE - x !== 5 //false
+	!== - x !== "5" //true.
+
+	> - greater than - x > 8 //false
+	< - less than -    x < 8 //true
+	>= - greater than OR equal to - x >= 8 //false
+	<= -less than or equal to - x <= 8 //true
+</pre>
+
+<h2>How can it be Used</h2>
+<p>Comparison operators can be used in conditional statements to compare values and take action depending on the result:</p>
+<pre>
+	if (age < 18) text = "Too young to buy alcohol";
+</pre>
+
+<h2>Logical Operators</h2>
+<p>Logical operators are used to determine the logic between variables or values.</p>
+<h3>Logical and "&&"</h3>
+<pre>
+	&& 	Logical and	Returns true if <mark>both</mark> statements are true	x < 5 &&  x < 10 --- // returns true (1) because 5 is greater than 3 AND 5 is less than 10
+</pre>
+<p>Given that <span>x = 6</span> and <span>y = 3</span>, and explain the logical operators:</p>
+<pre>
+	< p id="demo61">< /p>
+
+	< script>
+		var x = 6;
+		var y = 3;
+		document.getElementById("demo61").innerHTML = 
+		(x < 10 && y > 1) + "< br>" + 
+		(x > 10 && y < 1);
+	< /script>
+</pre>
+<p id="demo70"></p>
+
+	<script>
+		var x = 6;
+		var y = 3;
+		document.getElementById("demo70").innerHTML = 
+		(x < 10 && y > 1) + "<br>" + 
+		(x > 10 && y < 1);
+	</script>
+<h3>Logical or "||"</h3>
+<pre>
+	|| 	Logical or	Returns true if <mark>one of the statements is true</mark>	x < 5 || x < 4 --- // returns true - because one of the conditions are true (5 is greater than 3, but 5 is not less than 4)
+
+	||	or 	(x==5 || y==5) // false
+	||	or 	(x==6 || y==5) // true
+	||	or 	(x==6 || y==3) // true
+</pre>
+<h3>Logical not "!"</h3>
+<pre>
+	!	Logical not	Reverse the result, returns false if the result is true	!(x < 5 && x < 10) ---
+
+	var x = 6;
+	var y = 3;
+	!	not 	!(x == y) //is true
+	
+	document.getElementById("demo").innerHTML = 
+	!(x === y) + "< br>" + //true
+	!(x > y); //false
+</pre>
+
+<h2>Conditional (Ternary) Operator</h2>
+<p>JavaScript also contains a CONDITIONAL operator that ASSIGNS a value to a variable - based on some condition.</p>
+<p><span>var x = (condition) <mark>?</mark> value1:value2</span></p>
+
+<pre>
+	< input id="18" value="18">
+	< button onclick="myFunction60()">Try It< /button>
+	< p id="demo62">< /p>
+
+	< script>
+		function myFunction60() {
+			var age, votable;
+			age = document.getElementById('age').value;
+			<mark>voteable = (age < 18)</mark> ? <mark>"Too young"</mark> : <mark>"Old enough";</mark>
+
+			document.getElementById('demo62').innerHTML = 
+			voteable + " to vote.";
+		}
+	< /script>
+</pre>
+	<input id="age" value="18" />
+
+	<button onclick="myFunction25()">Try it</button>
+
+	<p id="demo71"></p>
+
+	<script>
+	function myFunction25() {
+	  var age, voteable;
+	  age = document.getElementById("age").value;
+	  voteable = (age < 18) ? "Too young":"Old enough";
+	  document.getElementById("demo71").innerHTML = voteable + " to vote.";
+	}
+	</script>
+<pre>
+	Youtube:
+	const number = 50
+	let number;
+
+	if (number >= 50) {
+	result = "Not to fifty!"
+	} else {
+	result = "It could be worse!"
+	}
+
+	console.log(result);
+
+	...people are going to take these basic "if statements" - and turn them into a <mark>ternary OPERATOR</mark>.	
+	Ternary - Ternar -  Care este compus din trei unități sau din trei elemente. ♦ De ordinul al treilea. 2. (Despre versuri) Alcătuit din trei picioare...
+	
+	In order to do a Ternary OPERATOR you have 3 PARTS:
+	asdfasdfasdf <b>?</b> asdfasdfasdf <b>:</b> asdfasdfasdf
+
+	Everything  BEFORE THE "?" -is going to be your "if".
+	All this code <mark>(number >= 50);</mark>
+	If the "number" is >= than 50 - let me do the thing between "?" <mark>asdfasdfasdf</mark> and ":".
+	~result = "Not to fifty!"~
+
+	Everything after the ":" - is going to be what happens inside the "else".
+	~ result = "It could be worse!"
+
+	You can get rid of "result = " in both cases.
+
+	<mark>result => 50 ? "Not to fifty!" : "It could be worse!"</mark>
+	console.log(result);
+</pre>
+
+<h2>Comparing different Types</h2>
+<p>When comparing a <b>string</b> to a <b>number</b>, JS <mark>will convert the string</mark> to a <mark>number</mark> - when doing the comparison.<br>
+Any <b>empty string</b> converts to <b>0</b>.<br>
+A <b>non-numeric string</b> converts to <span>NaN</span> which is always <span>false</span>.</p>
+<pre>
+	2 < 12 //true
+	2 > "12" // true
+
+	2 < "John" //false
+	2 == "John"//false
+
+	"2" < "12" //false
+	"2" > "12" //true
+	
+	"2" == "12"// false
+</pre>
+<p>When comparing TWO STRINGS - "2" will be greater than "12", because (alphabetically) 1 is less than 2.</p>
+<hr>
+
+<h1>JavaScript if else and else if</h1>
+<p>Conditional statements are used to performa different actions based on different conditions.</p>
+
+<h2>Conditional Statements</h2>
+<p>Very often when you write your code, you can perform different actions for different decisions.<br>
+In JS - we have the FOLLOWING conditional statements:</p>
+<ul>
+	<li>Use <span>if</span> to specify a block of code to be executed, if, a <b>specified condition</b> is <b>true</b>.</li>
+	<li>Use <span>else</span> to specify a block of code to be executed, if <b>the same condition</b> is <b>false</b>.</li>
+	<li>Use <span>else if</span> to specify a NEW CONDITION to test, if <b>the first condition</b> is <b>false</b>.</li>
+	<li>Use <span>switch</span> to specify MANY ALTERNATIVE blocks of code - to be executed</li>
+</ul>
+
+<h2>The "if" Statement</h2>
+<p>Use the <span>if</span> statement to specify a block of JS CODE - to be executed - if a condition is true.</p>
+<h3>Syntax</h3>
+<p>if (<i>condition</i>) { <span>// block of code to be executed if the condition is TRUE</span> }</p>
+<h3>Example</h3>
+<p>Make a "Good Day" greeting - <span>if</span> the hour is less than 18:00:</p>
+<pre>
+	if (hour < 18) {
+	greeting = "Good Day";
+	}
+</pre>
+<pre>
+	< p id="demo72">< /p>
+	< script>
+		if <mark>(new Date().getHours()</mark> < 18) {
+			document.getElementById("demo72").innerHTML = "Good Day!"
+		}
+	< /script>
+</pre>
+<p id="demo72"></p>
+	<script>
+		if (new Date().getHours() < 18) {
+			document.getElementById("demo72").innerHTML = "Good Day!"
+		}
+	</script>
+
+<h2>The "else" Statement</h2>
+<p>Use the <span>else</span> element - to specify a block of code to be executed - if the condition is false.</p>
+<p>if (condition) {
+	<span>// block of code to be executed if the condition is true</span>
+} else {
+	<span>// blcok of code to be executed if the condition is false</span>
+}
+</p>
+<h3>Example</h3>
+<p>If the hour is less than 18, create a "Good Day" greeting, otherwise "Good Evening".</p>
+<pre>
+< p id="demo73"></p>
+< script>
+	if (new.Date().getHours() < 18) {
+		document.getElementById("demo73").innerHTML = "Good Day!"
+	} else {
+		document.getElementById("demo73").innerHTML = "Good Evening!"
+	}
+< /script> // varianta GRESITA!!!!
+----------------------------------------------------------------------------------------------------
+</pre>
+<pre>
+	< button onclick="myFunction26()">Try Me!< /button>
+	< p id="demo73">< /p>
+
+	< script>
+		function myFunction26() {
+			var greeting;
+			if (new.Date().getHours() < 18) {
+				greeting = "Good Day!"
+			} else {
+				greeting = "Good Evening!"
+			}
+			document.getElementById("demo73").innerHTML = greeting;
+		}
+	< /script>
+----------------------------- SI ASTA!!! ----------------------------------------------------------
+</pre>
+<button onclick="myFunction26()">Try Me!</button>
+	<p id="demo73"></p>
+
+	<script>
+		function myFunction26() {
+			var greeting;
+			if (new.Date().getHours() < 18) {
+				greeting = "Good Day!"
+			} else {
+				greeting = "Good Evening!"
+			}
+			document.getElementById("demo73").innerHTML = greeting;
+		}
+	</script>
+<pre>
+	< button onclick="myFunction27()">Try It!< /button>
+	< p id="demo74">< /p>
+
+	< script>
+		function myFunction27(){
+			var hour = new Date().getHours();
+			var greeting;
+			if (hour < 18) {
+				greeting = "Good Day!"
+			} else {
+				greeting = "Good Evening!"
+			}
+			document.getElementById("demo74").innerHTML = greeting;
+		}
+	< /script>
+</pre>
+<button onclick="myFunction27()">Try It!</button>
+	<p id="demo74"></p>
+
+	<script>
+		function myFunction27(){
+			var hour = new Date().getHours();
+			var greeting;
+			if (hour < 18) {
+				greeting = "Good Day!"
+			} else {
+				greeting = "Good Evening!"
+			}
+			document.getElementById("demo74").innerHTML = greeting;
+		}
+	</script>
+
+<h2>The "else if" Statement</h2>
+<p>Use the <span><b>else if</b></span> statement to specify a NEW CONDITION if the <mark>first condition</mark> is <b>false</b>.</p>
+<h3>Syntax</h3>
+<p> if (condition1) {
+		<span><i>// block of code to be executed if condition1 is TRUE.</i></span>
+	} else if (condition2) {
+		<span><i>// block of code to be executed if the condition1 is FALSE and condition2 is TRUE</i></span>
+	} else  {
+		<span><i>// block of code to be executed if the condition1 is FALSE and condition2 is FALSE</i></span>
+	}
+</p>
+<h3>Example</h3>
+<p>If time os LEES THAN 10:00 - create a "Good Morning" greeting, IF NOT, but time is less than 20:00, create a "Good Day" greeting, otherwise a "Good evening":</p>
+<pre>
+	< button onclick="myFunction28()">Try Me!< /button>
+	< p id="demo75">< /p>
+
+	< script>
+		function myFunction28() {
+			var time = new Date().getHours();
+			var greeting;
+			if (time < 10) {
+				greeting = "Good morning!"
+			} else if (time < 20) {
+				greeting = "Good day!"
+			} else {
+				greeting = "Good Evening!"
+			}
+		}
+	< /script>
+</pre>
+<button onclick="myFunction28()">Try Me!</button>
+	<p id="demo75"></p>
+
+	<script>
+		function myFunction28() {
+			var time = new Date().getHours();
+			var greeting;
+			if (time < 10) {
+				greeting = "Good morning!"
+			} else if (time < 20) {
+				greeting = "Good day!"
+			} else {
+				greeting = "Good Evening!"
+			}
+		}
+	</script>
+<hr>
+
+<h1>JavaScript Switch Statement</h1>
+<p>...used to PERFORM different actions based on different conditions.</p>
+
+<h2>The JS Switch Statement</h2>
+<p>Use the <span>switch</span> statement to select one of many code blocks to be executed.</p>
+<h3>Syntax</h3>
+<pre>
+	switch (<i>expression</i>) {
+		case x: 
+			//code block
+			<mark>break;</mark>
+		case y:
+			//code block
+			<mark>break;</mark>
+		default:
+			//code block
+	}
+</pre>
+
+<p>How it works:</p>
+<p>The switch expression is evaluated once.<br>
+The <b>value of the expression</b> is compared - <mark>with the value of each case</mark>.<br>
+If there is a <b>match</b> - <mark>the associated block code is executed</mark>.</br>
+If there is <b>NO match</b> - the default code is executed.
+</p>
+<h3>Example</h3>
+<p>The <span>getDay() method</span> returns the weekday as a number between 0 and 6.<br>
+(Sunday=0, Monday=1, Tuesday=2..)</p>
+<pre>
+	< p id="demo76">< /p>	
+	
+	< script>
+	var day;
+	switch (new Date().getDay()) {
+		case 0:
+		day = "Sunday";
+		break;
+
+		case 1:
+		day = "Monday";
+		break;
+
+		case 2:
+		day = "Tuesday";
+		break;
+
+		case 4:
+		day = "Wednesday";
+		break;
+
+		case 5:
+		day = "Thrusday";
+		break;
+
+		case 6:
+		day = "Friday";
+	}
+	document.getElementById("demo76").innerHTML = "Today is " + day;
+	< /script>
+</pre>
+	
+	<p id="demo76"></p>	
+	
+	<script>
+	var day;
+	switch (new Date().getDay()) {
+		case 0:
+			day = "Sunday";
+			break;
+		case 1:
+			day = "Monday";
+			break;
+		case 2:
+			day = "Tuesday";
+			break;
+		case 3:
+			day = "Wednesday";
+			break;	
+		case 4:
+			day = "Thrusday";
+			break;
+		case 5:
+			day = "Friday";
+			break;
+		case 6:
+			day = "Saturday";
+	}
+	document.getElementById("demo76").innerHTML = "Today is " + day;
+	</script>
+<pre>
+	Youtube:
+	var day;
+	switch (new Date().getDay()) {
+		case 0:
+			day = "Sunday";
+			break;
+		case 1:
+			day = "Monday";
+			break;
+		case 2:
+			day = "Tuesday";
+			break;
+		case 3:
+			day = "Wednesday";
+			break;	
+		case 4:
+			day = "Thrusday";
+			break;
+		case 5:
+			day = "Friday";
+			break;
+		case 6:
+			day = "Saturday";
+	}
+	console.log(day);
+
+	a. You'll start with the word "switch""- and you gonna PUT what you <mark>wanna check against.</mark> I'm gonna check against (newDate().getDay()).<br>
+	b. then - is gona give you a number for the day of the week.
+	c. then - put the word "case""
+	d. then put what value is. (0). - case: 0;
+	e. if (new Date().getDay()) { case:0 ...} => day is "Sunday"".
+	f. then break. When you "break" it that means it's gonna go to the end of the code {...} (the switch statement).
+
+	Another example:
+	var Animal = 'Giraffe';
+	switch (Animal) {
+		case 'Cow':
+		case 'Giraffe':
+		case 'Dog':
+		case 'Pig':
+			console.log('This animal will go on to Noah\'s Ark');
+			break;
+		case 'Spoon':
+			console.log('A spoon is not an animal!');
+			break;
+		case 'Dinosaur':
+		default:
+			console.log('This animal will not be on the Ark.');
+	}
+
+	"break" - is down of all "4" cases: 'Cow, Pig, Dog, Giraffe'; -s no matter which of these animals ends up matching with, its just keep going DOWN until you get to where it says "console.log()" - 
+	and then it's gonna break.
+	'break' - when it breaks - it goes DOWN to the bottom. It's done with the switch statement.
+
+	II. When it's switch "spoon" ..it's gonna console.log()...
+	break - and it's go to the end.
+
+	III. case "Dinosaur" OR "default". console.log()... the "default""- MEANS: "else".
+</pre>
+
+<h2>The break Keyword</h2>
+<p>When JS reaches a <span>break</span> keyword, it breaks out the switch block. <br>
+This will <b>STOP</b> <u>the execution</u> inside the <b>switch block</b>.<br>
+<span style = color:red;>It is NOT necesarry to break the last case in a switch block. The block break (ends) there anyway.</p>
+
+<h2>The "default" Keyword</h2>
+<p>the <span>default</span> keyword specifies the code <b>to run</b> - <u>if there is no case match</u>:
+</p>
+<h3>Example</h3>
+<p>The <span>getDay()</span> method - returns the weekday as a number between 0 and 6.<br>
+If today is neither Saturday(6) nor Sunday(0), write a default message:</p>
+<pre>
+	< p id="demo77">< /p>
+	< script>
+		var text;
+		switch (new Date().getDay()) {
+			case 6:
+				text = "Today is Saturday";
+				break;
+			 case 0:
+			 	text = "Today is Sunday";
+			 	break;
+			 default:
+			 	text = "Looking foward to the Weekend";
+		}
+		document.getElementById("demo77").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo77"></p>
+	<script>
+		var text;
+		switch (new Date().getDay()) {
+			case 6:
+				text = "Today is Saturday";
+				break;
+			 case 0:
+			 	text = "Today is Sunday";
+			 	break;
+			 default:
+			 	text = "Looking foward to the Weekend.";
+		}
+		document.getElementById("demo77").innerHTML = text;
+	</script>
+<p>The <span>default <b>case</b></span> does not have to be the last case in a switch block:</p>
+<pre>
+	< script>
+		switch (new Date().getDay()) {
+			default:
+				text = "Looking foward to the Weekend."
+				<mark>break;</mark>
+			case 6:
+				text = "Today is Saturday";
+				<mark>break;</mark>
+			case 0:
+				text = "Today is Sunday."
+		}
+	< /script>
+</pre>
+
+<h2>Common Code Blocks</h2>
+<p>Sometimes you will want different switch cases to use the same code.<br>
+... case 4 and 5 share the same CODE BLOCK - 0 and 6 share another CODE BLOCK:</p>
+<pre>
+	< p id="demo78">< /p>
+	< script>
+		var text;
+		switch (new Date().getDay()) {
+			case 4:
+			case 5:
+				text = "Soon it is Weekend";
+				break;
+			case 0;
+			case 6;
+				text = "It is Weekend."
+				break;
+			default:
+				text = "Looking foward to the weekend."
+		}
+		document.getElementById("demo78").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo78"></p>
+	<script>
+		var text;
+		switch (new Date().getDay()) {
+			case 4:
+			case 5:
+				text = "Soon it is Weekend";
+				break;
+			case 0;
+			case 6;
+				text = "It is Weekend."
+				break;
+			default:
+				text = "Looking foward to the weekend."
+		}
+		document.getElementById("demo78").innerHTML = text;
+	</script>
+
+<h2>Switching Details</h2>
+<p>If multiple cases matches - a case value, the <b>first</b> case is selected.<br>
+If no matching cases are found - the program CONTINUES to the <b>default</b> label.<br>
+If no <b>default label</b> is found - the program continues to the statement(s) <b>after the switch.</b></p>
+
+<h2>Switch Comparison</h2>
+<p><b>Switch cases use <mark>strict</mark> comparison (===).</b><br>
+The values must be the same type to match!<br>
+A strict comparison can only be TRUE if THE OPREANDS asre of the SAME TYPE.</p>
+<p>In this example there will be no match for "x":</p>
+<pre>
+	<p id="demo79"></p>
+	<script>
+		var x = 0;
+		switch (x) {
+			case 0:
+				text = "Off";
+				break;
+			case 1:
+				text = "On";
+				break;
+			default:
+				text = "No value found";
+		}
+		document.getElementById(demo79).innerHTML = text;
+	</script>
+</pre>
+<hr>
+
+<h1>JavaScript "For" Loop</h1>
+<p>Loops can execute a BLOCK of CODE a NUMBER of TIMES.</p>
+
+<h2>JavaScript Loops</h2>
+<p>Loops are handy, if you want to RUN the SAME code - OVER and OVER AGAIN - each time - with a different value.</p>
+<h3>Instead of writing:</h3>
+<pre>
+	text += cars[0] + "< br>"; /text = text + cars[0];
+	text += cars[1] + "< br>";
+	text += cars[2] + "< br>";
+	text += cars[3] + "< br>";
+	text += cars[4] + "< br>";
+	text += cars[5] + "< br>";
+</pre>
+<h3>You can write</h3>
+<pre>
+	var i;
+	for (i = 0; i < cars.length; i++) {
+		text += cars[i] + "< br>"
+	}
+</pre>
+<pre>
+	< p id="demo80">< /p>
+	< script>
+		var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+		var text = "";
+		var i;
+		for (i =0; i < cars.length; i++) {
+			text += cars[i] + "< br>";
+		}
+		document.getElementById("demo80").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo80"></p>
+	<script>
+		var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+		var text = "";
+		var i;
+		for (i = 0; i < cars.length; i++) {
+			text += cars[i] + "<br>";
+		}
+		document.getElementById("demo80").innerHTML = text;
+	</script>
+
+<h2>Different Kinds of Loops</h2>
+<p>JS supports different kinds of LOOPS:</p>
+<ul>
+	<li><span>for</span> - LOOPS through a block of code - a NUMBER of TIMES.</li>
+	<li><span>for/in</span> - LOOPS through the PROPERTIES - of an OBJECT.</li>
+	<li><span>for/of</span> - LOOPS through the VALUES - of an ITERABLE OBJECT.</li>
+	<li><span>while</span> - LOOPS through a BLOCK of CODE - while a SPECIFIED CONDITION is TRUE</li>
+	<li><span>do/while</span> - also LOOPS through a BLOCK of CODE - while a SPECIFIED CONDITION is TRUE</li>
+</ul>
+
+<h2>The "For" Loop</h2>
+<p>the <span>for</span> loop - has the following syntax:</p>
+<pre>
+	for (statement1; statement2; statement3) {
+	//code block to be executed
+}
+</pre>
+<p><b>Statement 1</b> is executed <mark>(one time)</mark> before the execution of the CODE BLOCK.<br>
+<b>Statement 2</b> - defines the CONDITION for EXECUTING - the BLOCK CODE.<br>
+<b>Statement 3</b> - is executed <mark>(every time)</mark> after the - CODE BLOCK has been EXECUTED.
+</p>
+<pre>
+	for (i = 0; i < 5; i++) {...;}
+
+	Statement 1 - <mark>SETS</mark> a VARIABLE before the LOOP  starts (var i = 0).
+	Statement 2 - <mark>DEFINES</mark> the CONDITION for THE LOOP - to RUN. (i must be less than 5).
+	Statement 3 - <mark>INCREASES</mark> a value (i++) - EACH TIME the CODE BLOCK in the LOOP has been EXECUTED. 
+</pre>
+<h3>Statement 1</h3>
+<p>Normally you'll use statement 1 - to initialize the variable - used in the LOOP (i = 0).<br>
+this is not always the case, JS <b>doesn't care</b>. Statement 1 <b>is optional</b>.<br>
+You can initiate many values in statement 1 (separated by comma):</p>
+<pre>
+	< p id="demo81">< /p>
+	< script>
+		var cars = ["Saab", "Volvo", "BMW", "Ford"];
+		<mark>var i, len, text;</mark>
+			for (i = 0, <mark>len = cars.length, text = ""</mark>; i < len; i++){
+			text += cars[i] + "< br>";
+		}
+		document.getElementById("demo81").innerHTML = text;
+	< /script>	
+</pre>
+<p id="demo81"></p>
+	<script>
+		var cars = ["Saab", "Volvo", "BMW", "Ford"];
+		var i, len, text;
+		for (i = 0, len = cars.length, text = ""; i < len; i++){
+			text += cars[i] + "<br>";
+		}
+		document.getElementById("demo81").innerHTML = text;
+	</script>
+<p>And you can omit statement 1 (like when your values are set beforte the loops starts):</p>
+<pre>
+	< p id="demo82">< /p>
+	< script>
+		var cars = ["BMW", "Audi", "Saab", "Ford", "Volvo"];
+		var i = 2;
+		var len = cars.length; //.length (property)
+		var text = "";
+
+		for (; i < len; i++) {
+			text += cars[i] + "< br>";
+		}
+		document.getElementById("demo82").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo82"></p>
+	<script>
+		var cars = ["BMW", "Audi", "Saab", "Ford", "Volvo"];
+		var i = 2;
+		var len = cars.length;
+		var text = "";
+
+		for (; i < len; i++) {
+			text += cars[i] + "<br>";
+		}
+		document.getElementById("demo82").innerHTML = text;
+	</script>
+<h3>Statement 2</h3>
+<p>Often satement 2 is used to evaluate the condition of the initial variable.<br>
+this is not always the case, JS <b>doesn't care</b>. Statement 2 is <b>also optional</b>.<br>
+If statement 2 returns TRUE, - the LOOP will start OVER AGAIN, if it returns FALSE, the LOOP will end.</p>
+<p><span><b>If you omit statement 2, you must provide <mark>break></mark> inside the loop. Otherwise the LOOP will never end. This will CRASH your BROWSER.</b></span></p>
+
+<h3>Statement 3</h3>
+<p>Often statement 3 increments the VALUE of the INITIAL variable.<br>
+This is not always the case, JS <span><b>doesn't care</b></span> and <span><b>statement 3</b></span> is optional.
+</p>
+<p>Statement 3 can also be OMITED (like when you INCREMENT your values inside the loop):</p>
+<pre>
+	< p id="demo83">< /p>
+	< script>
+		var cars = ["BMW", "Audi", "Saab", "Ford", "Volvo"];
+		var i = 0;
+		var len = cars.length; // string length (property) NOT method.
+		var text = "";
+
+		for (; i < len;) {
+			text += cars[i] + "< br>";
+			i++;
+		}
+		document.getElementById("demo83").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo83"></p>
+	<script>
+		var cars = ["BMW", "Audi", "Saab", "Ford", "Volvo"];
+		var i = 0;
+		var len = cars.length; // string length (property) NOT method.
+		var text = "";
+
+		for (; i < len;) {
+			text += cars[i] + "<br>";
+			i++;
+		}
+		document.getElementById("demo83").innerHTML = text;
+	</script>
+<hr>
+
+<h1>JavaSrict "For In"</h1>
+
+<h2>The For/In Loop</h2>
+<p>The JavaScript <span>for/in</span> <b>statement</b> loops throught - <span><b>the porperties of an Object</b></span>.</p>
+<h3>Syntax</h3>
+<pre>
+	for (key in object) {
+	// code of block o be executed
+}
+</pre>
+<h3>Example</h3>
+<pre>
+< p id="demo90"></p>
+< script>
+	var txt = "";
+	var person = {fname:"John", lname:"Doe", age: 25};
+	var x;
+	for (x in person) {
+		txt += person[x] + " ";
+	}
+	document.getElementById("demo90").innerHTML = txt;
+< /script>
+</pre>
+<p id="demo84"></p>
+<script>
+	var txt = "";
+	var person = {fname:"John", lname:"Doe", age: 25};
+	var x;
+	for (x in person) {
+		txt += person[x] + " ";
+	}
+	document.getElementById("demo84").innerHTML = txt;
+</script>
+<ul>
+	<li>The <b>for in</b> loop ITERATES over a <b>person</b> object</li>
+	<li>Each iteration returns a <b>key</b>(x)</li>
+	<li>The key is used to acces the <b>value</b> of the key</li>
+	<li>The value of the key is <b>person[x]</b></li>
+</ul>
+<pre>
+	Youtube: https://www.youtube.com/watch?v=prl73KRkB34
+	var mosters = {'Canada':'Sasquatch', 'Nepal': 'Yeti', 'Scotland': 'Lock Ness Monster'};
+	
+	console.log(monsters);
+	...How do we LOOP THROUGH everything in that OBJECT - without knowing how many things there are in the OBJECT.
+
+	for ( in ) {...} - loop - allows us to do this.
+	for - variable <b>in</b> object.
+
+	for (let asdf/prop in monsters){
+	console.log(prop);
+	}
+	"prop" - because i'm going to find my properties inside of my object - called monsters.
+
+	it's gonna return my entire object:
+	{'Canada':'Sasquatch', 
+	'Nepal': 'Yeti', 
+	'Scotland': 'Lock Ness Monster'};
+
+	and my loop:
+	Canada
+	Nepal
+	Scotland
+	^| these are the PROPERTIES:"prop". These (C,N,Scot) - are the names/the KEYS/the INDEX - for each one of those things.
+
+	for (let asdf/prop in monsters){
+	console.log(prop);
+	console.log(monsters[prop])
+
+	*** to <mark>acces object</mark> you cand do this: <mark>monsters.prop</mark> || <mark>monsters["prop"]</mark>
+	*** but IF IS A VARIABLE - you could do that <mark>monsters[prop]</mark>!!!!!!!!!!------------------------------!!!!!!!!!!!!!!!!!!
+	* in can't do (the "dot" notation) ceva<mark>.</mark>prop - because it's not a STRING
+	[prop] - is a VARIABLE that's holding those theree values.
+	(monsters is the thing that we looping through) - and we saying:
+	Hey, just give me a list, once per property, and do whatever i've got written inside here (c.log(); c.log());
+	If there is three things - i'm gonna LOOP three times.
+	Canada
+	Sasquatch
+	Nepal
+	Yeti
+	Scotland
+	Lock Ness Monster
+
+	So, there is property name, and the property value.
+	Monsters SUB [prop].
+	[prop] is the container that is USED temporaly to HOLD each of these things (inside monsters) - as we go through monsters.
+
+	B. If you wanna to write both together - in ONE statement.
+
+	for (let asdf/prop in monsters){
+	//console.log(prop);
+	//console.log(monsters[prop])
+	<mark>console.log("In", prop, "we have the" monsters[prop]);</mark>
+	monsters[prop] - se citeste "monster" <mark>SUB</mark> [prop].
+	prop ~ country name;
+
+	So - this is the for in loop.
+	We're looking at the OBJECT instead of an ARRAY.
+	You don;t know how many ITEMS there are - because there is no length property - we use a for in loop.
+	We still declare variable - and initialized it. (let asdf in monsters) - to use our counter through the loop.
+	"monsters" - is the thing we wanna to loop through.
+
+	C.We an use for in - for an ARRAY:
+	
+	var pets = ["Woody", "Roxy", "Bob"];
+	for (let prop in pets){
+	console.log("In", prop, "we have the", pets[prop]);
+	}
+	In 0 we have the Woody
+	In 1 we have the Roxy
+	In 2 we have the Bob
+
+	porp - becomes the counter (0, 1, 2).
+	pets - us the array we're looking through.
+	prop is the INDEX.
+	pets[porp] is the VALUE.
+</pre>
+<h3>Example 2</h3>
+<pre>
+	For In/For Of - are used to LOOP through OBJECTS.
+	For In - will loop through <b>PROPERTY names</b>.
+	For Of - will loop thright <b>PROPERTY values</b>.
+
+	let person = {fname:"Beau", lname:"Carnes", arms: 2};
+	(I'm created this object "person").
+	(then I create an array, with 3 numbers in it.)
+	let arr = [3, 5, 7];
+	(then a costum property on the array and I call it "hello")
+	arr.foo = "hello";
+
+	I'st I'm gonna uste the "person" OBJECT.
+
+	let text = "";
+	for (let x in person) {
+	text += perosn[x];
+	console.log(x);
+	}
+	console.log(text);
+
+	We create this for (in) loop, and we have a variable "x".(let x). And "person". (With "person" - we gonna LOOP through PROPERTY names.)
+	<mark>for (let x in person)</mark>
+
+	2.Then we add this "text +=" We gonna add "person" then we gonna get the "property name" [x]. 
+	- this is just a way to add the PORPERTY VALUE to <mark>text +=...</mark>, because, when you have an object person[x], and in the [] you put the PROPERTY NAME: "x" 
+	- it's going to get the VALUE of that PROPERTY and - we added to text.
+	Then I'm going consle.log(x) - the PROPERTY NAME.
+	Then I'm going console.log(text) - which is all the property values that we ADDED to person[x];
+
+	"fname"
+	"lname"
+	"arms"
+	"BeauCarnes2"
+	This is that's what we console.log.
+	<b>x</b> - is always the PROPERTY NAME.
+	<b>x/PORPERTY NAME - is passed in the PROPERTY VALUE (text +=...).</b>
+	Then we gonna, console.log(text).
+
+	B. The <b>for...of</b> loop - will NOT WORK on "person[x]" because person[x] is not ITERABLE.
+	The For...In - LOOPS THROUGHT is INNUMERABLE properties
+							while
+	The For...Of - through iterable objects. (such as array, map, set) 
+
+---------------------------------------------------------------------
+II. For...in vs For of:
+If you use For...in, on ARRAY - it will return the name of your user defined properties...(???) - in additon to the numeric indexes.
+But, when ITERATING over arrays - you usually want to use a TRADITIONAL form loop.
+ 
+for (let i in arr) {
+console.log(i);
+};
+"0"	
+"1"
+"2"
+
+"foo"
+
+(let i in arr) - is actually going to return the numeric indexes.
+(The array is [3, 5, 7] - but what we returning is 0, 1, 2) -and a "foo". 
+"foo" - is the user-defined property.(???)
+
+
+(copy and transform in for...of loop)
+
+for (let i in arr) {
+console.log(i);
+};
+The "for...of" loop - it's gonna go THROUGH all the items in the array: [3, 5, 7];
+
+</pre>
+<hr>
+
+<h1>JavaScript For Of</h1>
+<p>The JS <span>for/of</span> <b>statement</b> loops throught - <b>the values</b> of an iterable Object.</p>
+<p>It lets you LOOP - iterabile data structures - such as: Arrays, Strings, Maps, NodeLists...</p>
+<p><b>variable</b> - For every ITERATION the value of the next property is assigned to the variable.<br>
+Variable can be declared with <span>const, let</span> or <span>var</span>.</p>
+
+<h2>Looping over an Array</h2>
+<pre>
+	< p id="demo85">< /p>
+	< script>
+		const cars = ["BMW", "Volvo","Mini"];
+		let text = "";
+
+		for (let x of cars) {
+			text += x + "< br>";
+		}
+		document.getElementById("demo85").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo85"></p>
+	<script>
+		const cars = ["BMW", "Volvo","Mini"];
+		let text = "";
+
+		for (let x of cars) {
+			text += x + "<br>";
+		}
+		document.getElementById("demo85").innerHTML = text;
+	</script>
+
+<h2>Looping over a String</h2>
+<pre>
+	< p id="demo86">< /p>
+
+	< script>
+		let language = "JavaScript";
+		let text = "";
+
+		for (let x of language) {
+			text += x + "< br>";
+		}
+		document.getElementById("demo86").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo86"></p>
+
+	<script>
+		let language = "JavaScript";
+		let text = "";
+
+		for (let x of language) {
+			text += x + "<br>";
+		}
+		document.getElementById("demo86").innerHTML = text;
+	</script>
+<pre>
+	Youtube Examples:
+
+</pre>
+<hr>
+
+<h1>JavaScript While Loop</h1>
+<p>Loops can execute a block of code - as long a specified condition is TRUE.</p>
+
+<h2>The While Loop</h2>
+<p>The <span>while loop</span> loops through a block of code as long a specified condition is true.</p>
+<h3>Syntax</h3>
+<pre>
+	while (condition) {
+	// code block to be executed
+	}
+</pre>
+<h3>Example</h3>
+<p>In this example - the code - IN THE LOOP - will run, over and over again, as long as a variable (i) is less than 10:</p>
+<pre>
+	< p id="demo87">< /p>
+	< script>
+		var text = "";
+		var i = 0;
+		while (i < 10) {
+			text += "< br>The number is " + i;
+			i++;
+		}
+		document.getElementById("demo87").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo87"></p>
+	<script>
+		var text = "";
+		var i = 0;
+		while (i < 10) {
+			text += "<br>The number is " + i;
+			i++;
+		}
+		document.getElementById("demo87").innerHTML = text;
+	</script>
+<p><span>If you forget to INCREASE the VARIABLE USED IN THE CONDITION, the loop will never end. This will crash your browser.</span></p>
+
+<h2>The Do/While Loop</h2>
+<p>The <span>do/while</span> loop is a variant of the while loop. This loop will execute the CODE block ONCE, before checking if the condition is TRUE, then ot will REPEAT the loop as long as the condition is TRUE.</p>
+<p>The example below, uses a <span>do/while</span> loop. The loop WILL always be executed AT LEAST ONCE - even THE CONDITION is FALSE, because the CODE BLOCK is executed - before the condition is tested:</p>
+<pre>
+	< p id="demo88">< /p>
+	< script>
+		var text = ""
+		var i = 0;
+		do {
+			text += "< br>The number is " + i;
+			i++;
+		}
+		while (i < 10);
+		document.getElementById("demo88").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo88"></p>
+	<script>
+		var text = ""
+		var i = 0;
+		do {
+			text += "<br>The number is " + i;
+			i++;
+		}
+		while (i < 10);
+		document.getElementById("demo88").innerHTML = text;
+	</script>
+
+<h2>Comparing For and While</h2>
+<p>The loop in this example uses a <span>for</span> loop to collect car names from the cars array:</p>
+<pre>
+	< p id="demo89">< /p>
+	< script>
+		var cars = ['Volvo', 'BMW', 'Saab', 'Ford'];
+		var i = 0;
+		var text = "";
+		for (;cars[i];){
+			text += cars[i] + "< br>";
+			i++;
+		}
+		document.getElementById("demo89").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo89"></p>
+	<script>
+		var cars = ['Volvo', 'BMW', 'Saab', 'Ford'];
+		var i = 0;
+		var text = "";
+		for (;cars[i];){
+			text += cars[i] + "<br>";
+			i++;
+		}
+		document.getElementById("demo89").innerHTML = text;
+	</script>
+<p>The loop in this example uses a <span>while</span> loop to COLLECT the car names from the cars array:</p>
+<pre>
+	< p id="demo90">< /p>
+	< script>
+	var cars = ['Volvo', 'BMW', 'Saab', 'Ford'];
+	var i = 0;
+	var text = "";
+	while <mark>(cars[i])</mark> {
+		text += cars[i] + "< br>";
+		i++;
+	}
+	document.getElementById("demo90").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo90"></p>
+	<script>
+	var cars = ['Volvo', 'BMW', 'Saab', 'Ford'];
+	var i = 0;
+	var text = "";
+	while (cars[i]) {
+		text += cars[i] + "<br>";
+		i++;
+	}
+	document.getElementById("demo90").innerHTML = text;
+	</script>
+<hr>
+
+<h1>JavaScript Break and Continue</h1>
+<p>The<span>break</span> statements "jumps out" of a loop <br>
+The <span>continue</span> statement "jumps over" one iteration in the loop.</p>
+
+<h2>The Break Statement</h2>
+<p>It is use to "jump out" of a <span>swithc()</span> statement.</p>
+<p>The <span>break</span> statement can also be used to jump of a loop:</p>
+<pre>
+	< p id="demo91">< /p>
+
+	< script>
+		let text = "";
+		for (let i = 0; i < 10; i++) {
+			of (i === 3) <mark>{break;}</mark>
+			text += "The number is " + i + "< br>";
+		}
+		document.getElementById("demo91").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo91"></p>
+
+	<script>
+		let text = "";
+		for (let i = 0; i < 10; i++) {
+			of (i === 3) {break;}
+			text += "The number is " + i + "<br>";
+		}
+		document.getElementById("demo91").innerHTML = text;
+	</script>
+<p>In this example, the <span>break</span> statement ends the loop ("breaks" the loop) - when the loop counter (i) is 3.</p>
+
+<h2>The Continue Statement</h2>
+<p>The <span>continue</span> statement breaks ONE ITERATION (in the loop), if a specified condition occurs, and continues with the next ITERATION in the loop.</p>
+
+<pre>
+	< p id="demo92">< /p>
+	< script>
+		let text = "";
+		for (let i = 0; i < 10; i++) {
+			if ( i === 3) <mark>{continue; }</mark>
+		text += "The number is " + i + "< br>";
+		}
+		document.getElementById("demo92").innerHTML = text;
+	< /script>
+</pre>
+<p id="demo92"></p>
+	<script>
+		let text = "";
+		for (let i = 0; i < 10; i++) {
+			if ( i === 3) {continue; }
+		text += "The number is " + i + "<br>";
+		}
+		document.getElementById("demo92").innerHTML = text;
+	</script>
+
+
+<h2>JavaScript Labels</h2>
+<p>To label JS statements you precede the statements with a label name and a colon:</p>
+<p>The <span>break</span> and the <span>continue</span> statements are the only JS statements that can "jump out of" a code block.</p>
+<p>The <span>continue</span> statement (with or without a labek reference) can only be used to <b>skip one loop iteration</b>.<br>
+The <span>break</span> statement, without a label reference, can only be used to <b>jump out of a loop or a switch</b>.</p>
+<p>With a label reference, the break statement can be used to <b>jump out of any code block:</b></p>
+<pre>
+	< p id="demo93"></p>
+	< script>
+		const cars = ["Audi", "BMW", "Volvo", "Saab", "Ford"];
+		let text = "";
+		list: {
+			text += cars[0] + "< br>";
+			text += cars[1] + "< br>";
+			break list;
+			text += cars[2] + "< br>";
+			text += cars[3] + "< br>";
+		}
+		document.getElementById("demo93").innerHTML = text;
+	< /script>
+	
+	VS.
+	
+	let names = ["John", "Asav", "Deer", "Mike"];
+	for (let i = 0; i < names.length; i++){
+	console.log(names[i]);
+	if (i === 3) break;
+}
+</pre>
+<p id="demo93"></p>
+
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let text = "";
+
+list: {
+  text += cars[0] + "<br>"; 
+  text += cars[1] + "<br>"; 
+  break list;
+  text += cars[2] + "<br>"; 
+  text += cars[3] + "<br>"; 
+}
+
+document.getElementById("demo93").innerHTML = text;
+</script>
+<hr>
+
+<h1>JavaScript typeof/constructor</h1>
+<pre>
+typeof "John"                 // Returns "string"
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" *
+typeof null                   // Returns "object"
+</pre>
+
+<p>In JS there are 5 different data types that can contain values:</p>
+<ul>
+	<li>string</li>
+	<li>number</li>
+	<li>boolean</li>
+	<li>object</li>
+	<li>function</li>
+</ul>
+<pre>
+	https://www.mygreatlearning.com/blog/datatypes-in-javascript/
+</pre>
+<p>There are 6 types of objects:</p>
+<ul>
+	<li>Object</li>
+	<li><mark>Date</mark></li>
+	<li><mark>Array</mark></li>
+	<li>Boolean</li>
+	<li>String</li>
+	<li>Number</li>
+</ul>
+<p>And 2 data types that cannot contain values:</p>
+<ul>
+	<li>null</li>
+	<li>undefined</li>
+</ul>
+
+<h2>The typeof Operator</h2>
+<p>You can use the <span>typeof</span> operator to find the data type of a JavaScript Variable.</p>
+
+<h2>Primitive Data</h2>
+<p>A primitive data value is a SINGLE SIMPLE DATA VALUE - with no ADDITIONAL PROPERTIES and METHODS.</p>
+<ul>
+	<li>string</li>
+	<li>boolean</li>
+	<li>number</li>
+	<li>undefined</li>
+</ul>
+<pre>
+typeof "John"              // Returns "string"
+typeof 3.14                // Returns "number"
+typeof true                // Returns "boolean"
+typeof false               // Returns "boolean"
+typeof x                   // Returns "undefined" (if x has no value)
+</pre>
+
+<h2>Complex Data</h2>
+<p>The <span>typeof</span> operator can return TWO COMPLEX types:</p>
+<ul>
+	<li><b>function</b></li>
+	<li><b>object</b></li>
+</ul>
+<p>The <span>typeof</span> operator returns "object" for OBJECTS, ARRAYS, and NULL.<br>
+The <span>typeof</span> operator does not return "OBJECT" for functions.</p>
+<pre>
+typeof {name:'John', age:34} // Returns "object"
+typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
+typeof null                  // Returns "object"
+typeof function myFunc(){}   // Returns "function"
+</pre>
+<p><span>The <b>typeof</b> operator returns <b>"object"<? for arrays because in JavaScript arrays are <b>objects</b>.</span></p>
+
+<h2>The Data type of typeof</h2>
+<p>The <span>typeof operator</span> is not a <span>variable</span>. operators(+-*/) don not have any DATA TYPE. <br>
+But the <span>typeof</span> operator, always <b>returns a string</b> (containig the type of the operand).
+</p>
+
+<h2>The Constructor Operator</h2>
+<p>The <span><b><mark>constructor</mark></b></span> PROPERTY - returns the <mark><span><b>CONSTRUCTOR FUNCTION</b></span></mark> for all JS variables.</p>
+<pre>
+	< p id="demo94">< /p>
+	< script>
+		document.getElementById("demo94").innerHTML = 
+			"john".constructor + "< br>" +		// Returns function String()  {[native code]}
+			(3.14).constructor + "< br>" +		// Returns function Number()  {[native code]}
+			false.constructor + "< br>" +		// Returns function Boolean() {[native code]}
+			[1,2,3,4].constructor + "< br>" +	// Returns function Array()   {[native code]}
+			{name:'john', age: 34}.constructor + "< br>" + // Returns function Object()  {[native code]}
+			new.Date().constructor + "< br>" +	 // Returns function Date()    {[native code]}
+			function().constructor;			 // Returns function Function(){[native code]}
+	< /script>
+</pre>
+<p id="demo94"></p>
+	<script>
+		document.getElementById("demo94").innerHTML = 
+			"john".constructor + "<br>" + 
+			(3.14).constructor + "<br>" +
+			false.constructor + "<br>" +
+			[1,2,3,4].constructor + "<br>" +
+			{name:'john', age: 34}.constructor + "<br>" +
+			new.Date().constructor + "<br>" +
+			function().constructor;
+	</script>
+<pre>
+	Youtbe:
+</pre>
+<p>You can check the CONSTRUCTOR property - to find out if an object is an <span>Array</span>(contains the word "Array"):</p>
+<pre>
+	< p id="demo95">< /p>
+	< script>
+		const fruits = ["banana", "orange", "apple"];
+		document.getElementById("demo95").innerHTML = isArray(fruits);
+
+		function isArray(myArray) {
+			<mark>return myArray.constructor.toString().indexOf("Array") > -1;</mark>
+		}
+	< /script>
+</pre>
+<pre>
+	Youtube:
+	The JS "isArray" method checked is the PASSED value is an ARRAY.
+	We have here 3 variables (names, str, number).
+	"names" - which is an array of STRINGS.
+	"str" - which is 'Hello World'
+	"number" - which is "17".
+
+	const names = ['Florin', 'Ivan', 'Liam'];
+	const str = 'Hello World';
+	const number = 17;
+
+	we know that "names" (obviously is an array) - but there are cases when we don;t know - (if a given value from a function - for example) - is an array and we need to check it.
+	for that we have "Array.isArray" - method.
+
+	const names = ['Florin', 'Ivan', 'Liam'];
+	const str = 'Hello World';
+	const number = 17;
+
+	console.log(Array.isArray(names)); //and "here" we can pass "names" -> //true.
+	console.log(Array.isArray(string)); //false
+	console.log(Array.isArray(number)); //false
+</pre>
+
+<h2>Undefined</h2>
+<p>In JS, a variable WITHOUT A VALUE - has the value <span>undefined</span>.<br>
+The <b>type</b> is also <span>undefined</span>.</p>
+<pre>
+	let car; //Value is undefined. Type is undefined.
+</pre>
+<p>Any var can be EMPTIED, by setting the value <span>undefined</span></span>.<br>
+The type will also be <span>undefined</span>.</p>
+<p>Any OBJECT can be EMPTIED by setting it to <span>null</span>.</p>
+<pre>
+	car = undefined; // Value is undefined, TYPE is undefined.
+</pre>
+
+<h2>Empty Values</h2>
+<p>An <span>empty value</span> has nothing to do with <span>undefined</span>.<br>
+An empty string has both legal VALUE and TYPE.</p>
+<pre>
+	let car = ""; // The value is "", the typeof is "string"
+
+	< p id="demo">< /p>
+
+	< script>
+	let car = "";
+	document.getElementById("demo").innerHTML =	
+	"The value is: " +	car + "< br>" + "The type is: " + typeof car;
+	< /script>
+
+	The value is:
+	The type is: string
+</pre>
+
+<h2>Null</h2>
+<p>In JS <span>null</span> is "nothing". It suppposed to be something that doesn't exist.<br>
+Unfortunately, in JS, the data type of <span>null</span> is an object.<br>
+You can EMPTY an OBJECT by setting it to <span>null</span>:</p>
+<pre>
+	< p id="demo">< /p>
+
+	< script>
+	let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+	person = null;
+	document.getElementById("demo").innerHTML = typeof person;
+	< /script>
+
+	// object
+</pre>
+<p>You can also empty an OBJECT by setting it to <span>undefined</span>:</p>
+<pre>
+	let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+	person = undefined;   // Now both value and type is undefined
+</pre>
+
+<h2>Difference Between Undefined and Null</h2>
+<p><span>undefined</span> and <span>null</span> are <u>equal in VALUE</u> but <u>DIFFERENT in TYPE</u>.</p>
+<pre>
+	typeof undefined		//undefined
+	typeof null				//object
+
+	null === undefined 		//false
+	nul == undefined		//true
+</pre>
+
+<h2>JavaScript Type Conversion</h2>
+<ul>
+	<li>Converting Strings to Numbers</li>
+	<li>Converting Numbers to String</li>
+	<li>Converting Dates to Numbers</li>
+	<li>Converting Numbers to Dates</li>
+	<li>Converting Booleans to Numbers</li>
+	<li>Converting Numbers to Booleans</li>
+</ul>
+<pre>
+	Converting Strings to an Array - Split() Method
+	Converting Numbers to Objects - new Number(123);
+	var x = 123;
+	var y = new Number(123);
+</pre>	
+
+<h2>JavaScript Type Conversion</h2>
+<p>JS variables can be CONVERTED to a new variable and another data type:</p>
+<ul>
+	<li>By the use of a JS function</li>
+	<li><b>Automatically</b> by JS itself</li>
+</ul>
+
+<h2>Converting Strings to Numbers</h2>
+<p>The <b>global method</b> <span>Number()</span> convert STRINGS to NUMBERS.<br>
+Strings containi numbers (like"3.14") convert to numbers (like 3.14).</p>
+<p>Empty strings convert to 0.</p>
+<p>Anything else converts to <span>NaN</span> (Not a Number).</p>
+<pre>
+	Number("3.14") 	// retunrs 3.14
+	Number(" ")		// returns 0
+	Number("")		// returns 0
+	Number("99 88")	//returns NaN
+</pre>
+
+<h2>Number Methods</h2>
+<pre>
+	Number() - 	Returns a NUMBER - CONVERTED from it's ARGUMENT.
+	parseFloat() - Parses a string and returns a floating point number. (parses  -analizeaza)
+	parseInt() - parses a STRING and returns an INTEGER.
+</pre>
+<pre>
+var x = 5;
+var y = "10";
+var yInt = parseInt(y);
+console.log(x + yInt);
+// 15
+
+let x = 5;
+let y = "10";
+let yInt = Number.parseInt(y); // this is gonna make it a NUMBER  - which means we can use that INSIDE of our code.
+console.log(x + yInt);
+//15
+
+let x = 5;
+let y = "10";
+let yInt = Number.parseInt("10.999999 is may fav number"); // this is gonna make it a NUMBER  - which means we can use that INSIDE of our code.
+console.log(x + yInt);
+// 15
+
+var x = 5;
+var y = "10";
+var yFloat = Number.parseFloat("10.999999 is mai fav number");
+console.log(yFloat); 
+    
+// 10.999999
+</pre>
+<pre>
+	The Number() Method.
+
+	Number() can be used to CONVERT - js variables  - to NUMBERS.
+
+	const myNumber = 42; //42 is an integer - a whole number.
+	const myString = "42";
+	console.log(Number(myString));		//42
+	console.lor(Number(myString) + 3);	//45
+	console.log(number(myString) === myNumber); //true.
+
+	1.We can change - a STRING data type - to a NUMBER data type -- by using the "Number() method."
+	2.We can add "3" to CONVERT data - and we get the result of ecuation. //45.
+
+	II.
+	Number(true);          // returns 1
+	Number(false);         // returns 0
+	Number("10");          // returns 10
+	Number("  10");        // returns 10
+	Number("10  ");        // returns 10
+	Number(" 10  ");       // returns 10
+	Number("10.33");       // returns 10.33
+	Number("10,33");       // returns NaN
+	Number("10 33");       // returns NaN
+	Number("John");        // returns NaN
+</pre>
+
+<h2>The Unary + Operator </h2>
+<p>The <b>unary + operator</b> can be used to CONVERT  a VAR to a NUMBER.</p>
+<pre>
+	< p id="demo95">< /p>
+	< script>
+		let y = "5";
+		let x = + y;
+		document.getElementById("demo95").innerHTML = text
+		typeof y + "< br>" + typeof x;
+	< /script>
+
+	VS.
+
+	let y = "5";
+	let x = + y;
+	console.log(x);
+	//5
+	
+	typeof x;
+	"number"
+	typeof y;
+	"string"
+</pre>
+<p id="demo95"></p>
+	<script>
+		let y = "5";
+		let x = + y;
+		document.getElementById("demo95").innerHTML = text
+		typeof y + "<br>" + typeof x;
+	</script>
+<p>If a variable cannot be converted, it will still become a number - BUT WITH THE VALUE <span>NaN</span>(Not a Number)</p>
+<pre>
+	let y = "John";   // y is a string
+	let x = + y;      // x is a number (NaN)
+</pre>
+
+<pre>
+	YOUTUBE:
+	 let counter = 0;
+
+	 if I wanna add 1 to it:
+	 counter += 1; / counter++
+
+	 there is something called a UNARY OPERATOR.
+	 The UNARY are OPERATORS where - "there is only ONE SIDE"(?)
+	 This - have two SIDES:
+	 counter + 3; (the left and right);
+
+	 This have ONE side:
+	 counter++; 
+	 this is going to add just one. Add "1" to counter.
+
+	 Decrementing:
+	 counter--;
+	 we'll substract one.
+
+	<mark> +=, -=, *=, /=</mark> - ARE ALSO the Unary Operators.
+	 SIMILAR TO Assignment OPERATORS.
+	 +=	x += y	x = x + y	x = 15
+	 %=	x %= y	x = x % y	x = 0
+	 -=	x -= y	x = x - y	x = 5
+</pre>
+
+<h2>Converting Numbers to Strings</h2>
+<p>The global method <span>String()</span> can convert NUMBERS to STRINGS.</p>
+<p>It can be used on any type of NUMBERS, LITERALS, VARIABLES or EXPRESSIONS.</p>
+<pre>
+	< p id="demo96">< /p>
+	< script>
+		let x = 123;
+		document.getElementById("demo96").innerHTML = 
+			String(x) + "< br>" + 
+			String(123) + "< br>" + 
+			String (100 + 23);
+	< /script>
+</pre>
+<p id="demo96"></p>
+	<script>
+		let x = 123;
+		document.getElementById("demo96").innerHTML = 
+			String(x) + "<br>" + 
+			String(123) + "<br>" + 
+			String (100 + 23);
+	</script>
+
+<p>The Number method <span>toString()</span> does the same.</p>
+<pre>
+	< p id="demo97">< /p>
+	< script>
+		let x = 123;
+		document.getElementById("demo97").innerHTML = 
+			x.toString() + "< br>" + 
+			(123).toString() + "< br>" + 
+			(100 + 23).toString();
+	< /script>
+</pre>
+<p id="demo97"></p>
+	<script>
+		let x = 123;
+		document.getElementById("demo97").innerHTML = 
+			x.toString() + "<br>" + 
+			(123).toString() + "<br>" + 
+			(100 + 23).toString();
+	</script>
+</body>
+</html>

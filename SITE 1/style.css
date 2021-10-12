@@ -1,0 +1,234 @@
+*{
+	margin: 0px;
+	padding:  0px;
+	box-sizing: border-box;
+	/*font-family:  'Popins', sans-serif;*/
+
+}
+
+/*I*/
+
+/*Style the SPLASH SCREEN*/
+.intro{
+	position: fixed; /* because we don't to use the scroll the SPLASH */
+	z-index: 1;
+	left: 0;
+	top:  0;
+	width:  100%;
+	height: 100vh;
+	background-color: #5d4954;
+	transition: 1s;
+}
+/*now - we gonna SELECT our "header-section" - this "logo-header"*/
+.logo-header{
+	position: absolute; /*position absolute - to HIS PARENT element*/
+	top: 40%;
+	Left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+/*next -we're going to select our two <spans>*/
+.introLogo{
+	position: relative; /*to the parent - which is this/the "logo header"*/
+	display: inline-block; /*this will just allow us to move [THE SPAN elements] UP and DOWN - TO THE PARENT DIV - "logo-header", in our case */
+	bottom: -20px;	
+	opacity: 0;/*'cause we START of opacity 0 at the "text"*/
+}
+
+/*What we going to do with JS - is we're going to apply an "active-class" - ".introLogo.active/
+/*.active is a selector that -can be used on all elements, not only links.*/
+
+.introLogo.active{
+	bottom: 0;/*we're going to adjust the "bottom position"*/
+	opacity: 1; /* 1 ->'cause we want it viewable */
+	transition: ease-in-out 0.5s;
+}
+
+/*finally - we're just going to ADD A fade CLASS*/
+.introLogo.fade{
+	bottom: 150px; /*this - will move UPWARDS. [when is "ative" its at "0"] - and then we're moving it from the bottom 150px up - the animation will make to go UP */
+	opacity: 0;
+	transition: ease-in-out 0.5s;
+}	
+/*https://www.youtube.com/watch?v=2ak37WrbSDg*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*II*/
+/*NavBAR*/
+nav{
+	display:  flex;
+	justify-content:  space-around;
+	align-items: center;
+	min-height:  8vh;		 /* 8% of the height of viewport */
+	background-color: #5d4954;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.logo{
+	color: rgb(226, 226, 226);
+	text-transoform: uppercase;
+	letter-spacing: 5px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.logo-image img{
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	overflow: hidden;
+	margin-top: 10px;
+	object-fit: cover;	 	
+	}
+
+.nav-links{
+	display: flex;
+	background-color:;
+	justify-content:  space-around; /* nothing happen - cause it doesn't have any space. */
+	/*you can add display: flex - to JUSTIFY -content SPACE-AROUND, and you can just PLAY around with the "WIDTH"*/
+	width: 30%;
+}
+.nav-links li{
+	list-style: none;
+}
+
+.nav-links a{
+	color: rgb(226, 226, 226);
+	text-decoration:  none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.burger{
+	display: none;
+	cursor:  pointer;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: rgb(226, 226, 226);
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+
+/*III*/
+/*Body*/
+body{
+ 	background-image: url('');
+	background-repeat: no-repeat;
+	background-attachment: fixed;  
+	background-size: cover;
+	overflow: hidden;		
+}
+
+.section{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+} 
+
+.icons{
+ 	text-align: center;
+ 	width: 100%;
+ 	font-size: 35px;
+ 	align-self: flex-end;
+ 	/*position: relative;
+ 	bottom: -800px;*/ 	 	
+}
+
+.icons a {
+ 	display: inline-block;
+ 	position: relative;
+ 	bottom: 300px;
+}
+
+.dotsBottom{
+	display: inline-block;
+ 	position: relative;
+ 	bottom: 300px;
+ 	text-align: center;
+ 	width: 100%;
+ 	font-size: 35px;
+ 	align-self: flex-end;
+}
+ 	
+ /*@Media Screens*/
+/*INCREASE the "width"(!!!in"%"!!!) of the ".nav-links at "this breakpoint" (around 1000-something pixels) - ca sa dea bine atunci cand dai strech la window-browser*/
+@media screen and (max-width:1024px) {
+	.nav-links {
+		width: 60%;
+
+	}
+}
+
+@media screen and (max-width:768px) {
+	body { 
+		overflow-x: hidden; /* |^ | <- | ->*/
+	}
+	
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		height: 92vh;/*because I have "8vh" UP-HERE + 92vh = that's gonna give us ~FULL-SCREEN~*/
+		top: 8vh;/*...it's gonna be right UNDER our NAV bar*/
+		background-color: #5d4954;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width:  50%;
+		/*we don't want "this (w: 50%) to e here - we use: */
+		transform:  translateX(100%); /*the nav links "dissapear (transform + body{overlof-x: hidden};*/
+		transition: transform 0.5s ease-in;/*because - we don't wanna POP-UP like that*/
+		z-index: 1;
+	}
+	/*we want to - click on the BURGER - and 
+	FADE-IN nicely.*/
+	.nav-links li {
+		/*opacity: 0;*/
+	}
+	.burger{
+		display: block; /*||| - the burger is displayed*/
+	}
+/*When we click on this "BURGER" we want the navigation to SHOW. (think in CSS for a moment)*/
+/* the only way to do that is to take the "transform" and - put it back to "0" */
+/*when we clikc on the BURGER - the nav should get to "0" transform*/
+
+	section.icons {
+		color: #e6dbd0;
+	}	
+}
+
+	.nav-active{
+		transform:  translateX(0%);
+	}
+
+/* Now - let's animate these (nav-slides) - ONE by ONE.*/
+@keyframes navLinkFade {
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opcity: 1;
+		transform: translateX(0px);
+	}
+}
+ /*Change the BURGER: we add "line1", "line2", "line3" */
+ /*Add a "Toggle Class"*/
+
+	 .toggle .line1{
+	 	transform: rotate(-45deg) translate(-5px,6px);
+	 }
+
+	.toggle .line2{
+	 	opacity: 0;
+	 }
+	.toggle .line3{
+	 	transform: rotate(45deg) translate(-5px,-6px);
+	 }  
+
+/*Now- go to js file - Burger Animation in nav.classList*/
