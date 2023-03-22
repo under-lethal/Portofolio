@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      padding:25px; 
+      position:relative;
+    }
+    mark {background-color:aquamarine;}
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<div class="container-fluid">
+  <h1>Lighter, Secondary Text</h1>
+  <p>The small element is used to create a lighter, secondary text in any heading:</p>       
+  <h1>h1 heading <small>secondary text</small></h1>
+  <h2>h2 heading <small>secondary text</small></h2>
+  <h3>h3 heading <small>secondary text</small></h3>
+  <h4>h4 heading <small>secondary text</small></h4>
+  <h5>h5 heading <small>secondary text</small></h5>
+  <h6>h6 heading <small>secondary text</small></h6>
+</div>
+
+<pre>
+  *<u>Bootstrap</u> - is a free front-end <b>framework.</b>
+  Bootstrap includes HTML and CSS based design <b>templates for typography, forms, buttons, tables, navigation, modals, image carousels</b> and many other, as well as optional JavaScript plugins.
+  Bootstrap also gives you the ability to <b>easily create responsive designs.</b>
+  Bootstrap 5 is designed to be responsive to mobile devices.
+
+  <b>Modal:</b>
+  Use Bootstrap's JavaScript modal plugin to <i>add dialogs to your site for lightboxes</i>, <i>user notifications</i>, or <i>completely custom content.</i>
+
+  There are two ways to start using Bootstrap 5 on your own web site.
+  You can:
+  <b>Include Bootstrap 5 from a CDN.</b> <mark>Content Delivery Network.</mark>
+  <b>Download Bootstrap 5 from getbootstrap.com.</b>
+  < !-- Latest compiled and minified CSS -->
+link href="https://<mark>cdn</mark>.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+</pre>
+
+<h2><u>2.Bootstrap Containers</u></h2>
+<p>  Bootstrap 5 also requires a <b>containing element to wrap site contents.</b><br>
+There are two container classes to choose from:<br>
+The <mark>.container class</mark> provides a <b>responsive fixed width container.</b><br>
+The <mark>.container-fluid class</mark> provides a <b>full width container</b>, <b>spanning the entire width of the viewport.</b>
+</p>
+
+<h3>Fixed Container</h3>
+<p>Use the <mark><b>.container</b> class</mark> to create a RESPONSIVE, fixed-width container.</p>
+<pre>
+  < div <b>class="container"</b>>
+    < h1>My First Bootstrap Page< /h1>
+    < p>This part is inside a .container class.< /p>
+    < p>The .container class provides a responsive fixed width container.< /p>
+    < p>Resize the browser window to see that the container width will change at different breakpoints.< /p>
+  < /div>
+</pre>
+
+<h3>Fluid Container</h3>
+<p>Use <mark><b>.container-fluid</b> class</mark> - to create a FULL-WIDTH CONTAINER - that will always <b>span the entire width of the screen.</b> <mark>(width is always 100%)</mark></p>
+<pre>
+  < div <b>class="container-fluid"</b>>
+    < h1>My First Bootstrap Page< /h1>
+    < p>This part is inside a .container-fluid class.< /p>
+    < p>The .container-fluid class provides a full width container, spanning the entire width of the viewport.< /p>     
+  < /div>
+</pre>
+
+<h3>Container Padding</h3>
+<p>By default, containers have <b>left and right padding</b> <b><i>with NO top or bottom padding.</i></b><br>
+<mark><b>.pt-5</b></mark> means - add a large <b>top padding</b>.</p>
+<pre>
+  < div <b>class="container pt-5"</b>> <b>pt-5 - padding-top</b>
+    < h1>My First Bootstrap Page< /h1>
+    < p>This container has an extra top padding.< /p>
+    < p>Try to remove the .pt-5 class to see the difference.< /p>
+  < /div>
+</pre>
+
+<pre>
+  <b>< div class="container p-5 my-5 border"></b>
+    < h1>My First Bootstrap Page< /h1>
+    < p>This container has a border and some extra padding and margins.< /p>
+  < /div>
+  
+  <b>< div class="container p-5 my-5 bg-dark text-white"></b>
+    < h1>My First Bootstrap Page< /h1>
+    < p>This container has a dark background color and a white text, and some extra padding and margins.< /p>
+  < /div>
+  
+  <b>< div class="container p-5 my-5 bg-primary text-white"></b>
+    < h1>My First Bootstrap Page< /h1>
+    < p>This container has a blue background color and a white text, and some extra padding and margins.< /p>
+  < /div>
+</pre>
+  <div class="container p-5 my-5 border">
+    <h1>My First Bootstrap Page</h1>
+    <p>This container has a border and some extra padding and margins.</p>
+  </div>
+
+  <div class="container p-5 my-5 bg-dark text-white">
+    <h1>My First Bootstrap Page</h1>
+    <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+  </div>
+
+  <div class="container p-5 my-5 bg-primary text-white">
+    <h1>My First Bootstrap Page</h1>
+    <p>This container has a blue background color and a white text, and some extra padding and margins.</p>
+  </div>
+
+  <h2><u>3.Responsive Containers</u></h2>
+  <p>Use the <b><mark>.container-sm|md|lg|xl classes</mark></b> - to determine when the CONTAINER should be RESPONSIVE.</p>
+<pre>
+  <b>.conatainer-sm</b> - <mark> < 576px(100%)(XS) | >= 576px/540px(S) | >= 768px/720px(M) | >= 992px/960px(L) | >= 1200px/1140px(XL) | >= 1400px/1320px(XXL)</mark>
+  <b>.conatainer-m</b> - <mark> < 576px(100%)(XS) | >= 576px/(100%)(S) | >= 768px/720px(M) | >= 992px/960px(L) | >= 1200px/1140px(XL) | >= 1400px/1320px(XXL)</mark>
+  <b>.conatainer-l</b> - <mark> < 576px(100%)(XS) | >= 576px/(100%)(S) | >= 768px/(100%)(M) | >= 992px/960px(L) | >= 1200px/1140px(XL) | >= 1400px/1320px(XXL)</mark>
+  <b>.conatainer-xl</b> - <mark> < 576px(100%)(XS) | >= 576px/(100%)(S) | >= 768px/(100%)(M) | >= 992px/(100%)(L) | >= 1200px/1140px(XL) | >= 1400px/1320px(XXL)</mark>
+  <b>.conatainer-xxl</b> - <mark> < 576px(100%)(XS) | >= 576px/(100%)(S) | >= 768px/(100%)(M) | >= 992px/(100%)L) | >= 1200px/(100%)(XL) | >= 1400px/1320px(XXL)</mark>
+</pre>
+<pre>
+  < div class="container pt-3">
+    < h1>Responsive Containers< /h1>
+    < p>Resize the browser window to see the effect.< /p>
+  < /div>
+  
+  < div class="container-sm border">.container-sm< /div>
+  < div class="container-md <mark><b>mt-3</b></mark> border">.container-md< /div> - <b>mt - margin-top</b> | <b>border</b> - border.
+  < div class="container-lg mt-3 border">.container-lg< /div>
+  < div class="container-xl mt-3 border">.container-xl< /div>
+  < div class="container-xxl mt-3 border">.container-xxl< /div>
+</pre>
+
+<div class="container pt-3">
+  <h1>Responsive Containers</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="container-sm border">.container-sm</div>
+<div class="container-md mt-3 border">.container-md</div>
+<div class="container-lg mt-3 border">.container-lg</div>
+<div class="container-xl mt-3 border">.container-xl</div>
+<div class="container-xxl mt-3 border">.container-xxl</div>
+<br><hr><br>
+
+<h2><u>4.Bootstrap 5 Grid (Basic) System</u></h2>
+<p><b>Bootstrap's grid system</b> is built <b><i>with flexbox</i></b> and <b><mark>allows up to 12 columns</mark> across the page.</b><br>
+<i>If you do not want to use all 12 columns individually,</i> you can group the columns together to create wider columns.<br>
+The grid system is responsive, and the columns will re-arrange automatically depending on the screen size.<br>
+Make sure that the sum adds up to 12 <i>or fewer</i> (it is not required that you use all 12 available columns).
+</p>
+
+<h3>Grid Clasees</h3>
+<pre>
+  The Bootstrap 5 grid system has six classes:
+
+  .col- (extra small devices - screen width less than 576px)
+  .col-sm- (small devices - screen width equal to or greater than 576px)
+  .col-md- (medium devices - screen width equal to or greater than 768px)
+  .col-lg- (large devices - screen width equal to or greater than 992px)
+  .col-xl- (xlarge devices - screen width equal to or greater than 1200px)
+  .col-xxl- (xxlarge devices - screen width equal to or greater than 1400px)
+</pre>
+
+<h3>Basic Structure of a Bootstrap 5 Grid</h3>
+<pre>
+  <mark>< !-- Control the column width, and how they should appear on different devices --></mark>
+< div class="row">
+  < div class="col-*-*">< /div>
+  < div class="col-*-*">< /div>
+< /div>
+< div class="row">
+  < div class="col-<mark>*-*</mark>">< /div>
+  < div class="col-*-*">< /div>
+  < div class="col-*-*">< /div>
+< /div>
+
+<mark>< !-- Or let Bootstrap automatically handle the layout --></mark>
+< div class="row">
+  < div class=<mark>"col"</mark>>< /div>
+  < div class="col">< /div>
+  < div class="col">< /div>
+< /div>
+</pre>
+<p>1.Create a row: <mark>(< div class = "row" >< /div>)</mark><br>
+2. Add a DESIRED <b>number of columns:</b> <mark>.col*-*</mark><br>
+3. The <u>first star</u> <b>*</b> - represents <mark>the responsiveness: <b>sm, md, lg, xl, xxl.</b></mark><br>
+4. The <u>second star</u> <b>*</b> - represents <mark>a number.</mark> <b>add up to 12 for each row.</b>
+</p>
+<h4>Second Example:</h4>
+<p>
+  1. <b>Instead</b> of adding a number - to each <mark>col</mark> - let <b>bootstrap</b> handle the layout, to create equal columns:<br>
+  2. Two <mark>"col" elements = 50% width</mark> to each col, white <b>three cols = 33.33% width</b> - to each col.<br>
+  3. <mark>Four cols = 25% width</mark>
+</p>
+
+<h3>Three Equal Columns</h3>
+<pre>
+  < div class="row">
+    < div class=<mark>"col</mark> p-3 bg-primary text-white">.col< /div>
+    < div class="col p-3 bg-dark text-white">.col< /div>
+    < div class="col p-3 bg-primary text-white">.col< /div>
+  < /div>
+< /div>
+</pre>
+<div class="row">
+<div class="col p-3 bg-primary text-white">.col</div>
+<div class="col p-3 bg-dark text-white">.col</div>
+<div class="col p-3 bg-primary text-white">.col</div>
+</div>
+<br>
+
+<h3>Responsive Columns (4 Columns)</h3>
+<pre style="font-size:16px;">
+  < div class="container-fluid mt-3">
+   
+    < p>Resize the browser window to see the effect.< /p>
+    < p>The columns will automatically stack on top of each other when the screen is less than 576px wide.< /p>
+    < div class="row">
+      < div class=<mark>"col-sm-3 p-3</mark> bg-primary text-white">.col< /div> - <b>p-3 - padding</b>
+      < div class="col-sm-3 p-3 bg-dark text-white">.col< /div>
+      < div class="col-sm-3 p-3 bg-primary text-white">.col< /div>
+      < div class="col-sm-3 p-3 bg-dark text-white">.col< /div>
+    < /div>
+  < /div>
+</pre>
+<div class="row">
+  <div class="col-sm-3 p-3 bg-primary text-white">.col</div>
+  <div class="col-sm-3 p-3 bg-dark text-white">.col</div>
+  <div class="col-sm-3 p-3 bg-primary text-white">.col</div>
+  <div class="col-sm-3 p-3 bg-dark text-white">.col</div>
+</div>
+<br>
+
+<h3>Two Unequal Responsive Columns</h3>
+<pre>
+  < div class="container-fluid mt-3">   
+    < div class="row">
+      < div class=<mark>"col-sm-4</mark> p-3 bg-primary text-white">.col< /div>
+      < div class=<mark>"col-sm-8</mark> p-3 bg-dark text-white">.col< /div>
+    < /div>
+  < /div>
+</pre>
+<div class="container-fluid mt-3">   
+<p>Resize the browser window to see the effect.</p>
+<p>The columns will automatically stack on top of each other when the screen is less than 576px wide.< /p>
+<div class="row">
+  <div class="col-sm-4 p-3 bg-primary text-white">.col</div>
+  <div class="col-sm-8 p-3 bg-dark text-white">.col</div>
+</div>
+</div>
+
+<hr>
+
+<h2>5.Bootstrap 5 Text/Typography</h2>
+
+<h3>Bootstrap 5 Default Settings</h3>
+<p>Bootstrap 5 uses a <b>default font-size</b> of <mark>1rem (16px by default)</mark>, and its <mark>line-height is 1.5.</mark><br>
+In addition, all <mark>< p > elements</mark> have <b>margin-top: 0</b> and <b>margin-bottom: 1rem.</b></p>
+
+<h3>< h1 > - < h6 ></h3>
+<p></p>
+<pre>
+  <mark>< div class="container mt-3"></mark>
+    <mark>The font-size of each Bootstrap heading depends on the screen size. Try to resize the browser window to see the effect.</mark>
+    < h1>h1 Bootstrap heading< /h1>
+    < h2>h2 Bootstrap heading< /h2>
+    < h3>h3 Bootstrap heading< /h3>
+    < h4>h4 Bootstrap heading< /h4>
+    < h5>h5 Bootstrap heading< /h5>
+    < h6>h6 Bootstrap heading< /h6>
+  <mark>< /div></mark>
+
+  <b>You can also use .h1 to .h6 classes on other elements to make them behave as headings if you want:</b>
+  <mark>< div class="container mt-3"></mark>
+    < p class="h1">h1 Bootstrap heading< /p>
+    < p class="h2">h2 Bootstrap heading< /p>
+    < p class="h3">h3 Bootstrap heading< /p>
+    < p class="h4">h4 Bootstrap heading< /p>
+    < p class="h5">h5 Bootstrap heading< /p>
+    < p class="h6">h6 Bootstrap heading< /p>
+  <mark>< /div></mark>
+</pre>
+
+<h3>Display Headings</h3>
+<p>Display headings are used to <u>stand out more than normal headings</u> <mark>(larger font-size and lighter font-weight),</mark> and there are six classes to choose from: <mark>.display-1</mark> to <mark>.display-6</mark>:</p>
+<pre>
+  < div class="container mt-3">
+    < h1>Display Headings</ h1>
+    
+    <mark>< h1 class="display-1"></mark>Display 1< /h1>
+    < h1 class="display-2">Display 2< /h1>
+    <mark>< h1 class="display-3"></mark>Display 3< /h1>
+    < h1 class="display-4">Display 4< /h1>
+    < h1 class="display-5">Display 5< /h1>
+    < h1 class="display-6">Display 6< /h1>
+  </div>
+</pre>
+<hr>
+
+<h2><u>6.Bootstrap 5 Colors</u></h2>
+<p>Bootstrap 5 has /use some <b>contextual classes</b> - that can be used to PROVIDE "meaning through colors".</p>
+<pre>
+  < div class="container mt-3">
+    < h2>Contextual Colors< /h2>
+    < p>Use the contextual classes to provide "meaning through colors":< /p>
+    < p class="text-muted">This text is muted.< /p>
+    < p class="text-primary">This text is important.< /p>
+    < p class="text-success">This text indicates success.< /p>
+    < p class="text-info">This text represents some information.< /p>
+    < p class="text-warning">This text represents a warning.< /p>
+    < p class="text-danger">This text represents danger.< /p>
+    < p class="text-secondary">Secondary text.< /p>
+    < p class="text-dark">This text is dark grey.< /p>
+    < p class="text-body">Default body color (often black).< /p>
+    < p class="text-light">This text is light grey (on white background).< /p>
+    < p class="text-white">This text is white (on white background).< /p>
+  </div>
+  </pre>
+  <div class="container mt-3">
+    <h3>Contextual Colors</h3>
+    <p>Use the contextual classes to provide "meaning through colors":</p>
+    <p class="text-muted">This text is muted.</p>
+    <p class="text-primary">This text is important.</p>
+    <p class="text-success">This text indicates success.</p>
+    <p class="text-info">This text represents some information.</p>
+    <p class="text-warning">This text represents a warning.</p>
+    <p class="text-danger">This text represents danger.</p>
+    <p class="text-secondary">Secondary text.</p>
+    <p class="text-dark">This text is dark grey.</p>
+    <p class="text-body">Default body color (often black).</p>
+    <p class="text-light">This text is light grey (on white background).</p>
+    <p class="text-white">This text is white (on white background).</p>
+  </div>
+
+  <p>You can also add <b>50% opacity</b> for black or white text with the <mark>.text-black-50</mark> or <mark>.text-white-50</mark> classes:</p>
+  <pre>
+    < div class="container mt-3">
+      < h2>Opacity Text Colors< /h2>
+      < p>Add 50% opacity for black or white text with the .text-black-50 or .text-white-50 classes:< /p>
+      < p <mark>class="text-black-50"</mark>>Black text with 50% opacity on white background< /p>
+      < p <mark>class="text-white-50 bg-dark"</mark>>White text with 50% opacity on black background< /p>
+    < /div>
+  </pre>
+
+  <h3>Background Colors</h3>
+  <p></p>
+  <pre>
+    < div class="container mt-3">
+      < p>Use the contextual background classes to provide "meaning through colors".< /p>
+      < div class=<mark>"bg-primary</mark> p-3">< /div>
+      < div class="bg-success p-3">< /div>
+      < div class=<mark>"bg-info</mark> p-3">< /div>
+      < div class="bg-warning p-3">< /div>
+      < div class="bg-danger p-3">< /div>
+      < div class="bg-secondary p-3">< /div>
+      < div class="bg-dark p-3">< /div>
+      < div class="bg-light p-3">< /div>
+    < /div>
+  </pre>
+  <p>you can use the <mark>.text-bg-color</mark> classes and Bootstrap will automatically handle the appropriate text color for each background color:</p>
+  <pre>
+    < div class="container mt-3">
+      < h2>Background Color with Contrasting Text Color< /h2>
+      < p class=<mark>"text-bg-primary"</mark>>This text is important.< /p>
+      < p class="text-bg-success">This text indicates success.< /p>
+      < p class=<mark>"text-bg-info"</mark>>This text represents some information.< /p>
+      < p class="text-bg-warning">This text represents a warning.< /p>
+    < /div>
+  </pre>
+<hr>
+
+<h2><u>7. Bootstrap 5 Images</u></h2>
+<h2>Imgaes Shapes</h2>
+
+<h3>Rounded Corners</h3>
+<p>The <mark>.rounded class</mark> adds rounded corners to an image:</p>
+<pre>
+  < img src="cinqueterre.jpg" <mark>class="rounded"</mark> alt="Cinque Terre" width="304" height="236"> 
+</pre>
+
+<h3>Circle</h3>
+<p>The <mark>.rounded-circle class</mark> <b>shapes</b> the image to an circle:</p>
+<pre>
+  < img src="cinqueterre.jpg" <mark>class="rounded-circle"</mark> alt="Cinque Terre" width="304" height="236"> 
+</pre>
+
+<h3>Thumbnail</h3>
+<p>The <mark>.img-thumbnail class</mark> <b>shapes</b> the image to a thumbnail:</p>
+<pre>
+  < img src="cinqueterre.jpg" <mark>class="rounded-circle"</mark> alt="Cinque Terre" width="304" height="236"> 
+</pre>
+
+<h3>Aligning Images</h3>
+
+<p>Float an image to the <b>left</b> with the <mark>.float-start class</mark> or to the <b>right</b> with <mark>.float-end</mark></p>
+<pre>
+  < div class="container mt-3">
+    < img src="paris.jpg" <mark>class="float-start"</mark> alt="Paris" width="304" height="236">
+    < img src="paris.jpg" <mark>class="float-end"</mark> alt="Paris" width="304" height="236">
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <img src="images/paris.jpg" class="float-start" alt="Paris" width="304" height="236">
+  <img src="images/paris.jpg" class="float-end" alt="Paris" width="304" height="236">
+</div>
+<br>
+
+<h3>Centered Image</h3>
+<p>Center an image by adding the utility <b>classes</b> <mark>.mx-auto</mark> <b>(margin:auto)</b> and <mark>.d-block</mark> <b>(display:block)</b> to the image:</p>
+<pre>
+  < div class="container mt-3">
+    < img src="paris.jpg" <mark>class="mx-auto d-block"</mark> style="width:50%">
+  < /div>
+</pre>
+<div class="container mt-3">
+  <img src="images/paris.jpg" class="mx-auto d-block" style="width:50%">
+</div>
+<br><br>
+
+<h3>Responsive Images</h3>
+<p>Create <b>responsive images</b> by adding an <mark>.img-fluid class</mark> to the <b><mark>< img ></mark> tag.</b><br>
+The <mark>.img-fluid class</mark> applies <mark><b>max-width: 100%</b></mark> and <b><mark>height: auto;</mark></b> to the image:</p>
+<pre>
+  < div class="container mt-3">
+    < img <mark>class="img-fluid"</mark> src="images/ny.jpg" alt="New York" width="1100" height="500">
+  < /div>
+</pre>
+<div class="container mt-3">
+<img class="img-fluid" src="images/ny.jpg" alt="New York" width="1100" height="500">
+</div>
+<hr>
+
+<h2><u>8.Bootstrap 5 Jumbotron</u></h2>
+<p>A jumbotron was introduced in Bootstrap 3 <mark>as a big padded box</mark> for calling <b>extra attention to some special content or information.</b><br>
+  Jumbotrons are no longer supported in Bootstrap 5. However, you can use a <mark>< div > element</mark> and add special helper classes together with a color class to achieve the same effect:
+</p>
+
+<div class="container mt-3">
+  <div class="mt-4 p-5 bg-primary text-white">
+    <h1>Jumbotron Example</h1> 
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p> 
+  </div>
+</div>
+<br>
+<pre>
+  Un jumbotron, denumit uneori jumbovision, este un afișaj video care utilizează tehnologia de televiziune cu ecran mare. 
+  Tehnologia originală a fost dezvoltată la începutul anilor 1980 de Mitsubishi Electric și Sony, care au inventat JumboTron ca nume de marcă în 1985.
+</pre>
+<hr>
+
+<h2><u>9.Bootstrap 5 Alerts</u></h2>
+<p>Alerts are created with the <mark><b>.alert class</b></mark>, followed by one of the <b><u>contextual classes</u></b> <mark>.alert-success, .alert-info, .alert-warning, .alert-danger, .alert-primary, .alert-secondary, .alert-light or .alert-dark:</mark></p>
+<pre>
+  < div class="container mt-3">
+    < h4>Alerts< /h4>
+    < p>alerts are created with the < b>.alert class< /b> - followed by a < mark>contextual color classes:< /mark>< /p>
+    < div class="alert alert-success">
+      < strong>Success!< /strong> This alert box could indicate a successful or positive action.
+    < /div>
+    < div class="alert alert-info">
+      < strong>Info!< /strong> This alert box could indicate a neutral informative change or action.
+    < /div>
+    < div class="alert alert-warning">
+      < strong>Warning!< /strong> This alert box could indicate a warning that might need attention.
+    < /div>
+    < div class="alert alert-primary">
+      < strong>Primary!< /strong> Indicates an important action.
+    < /div>
+    < div class="alert alert-secondary">
+      < strong>Secondary!< /strong> Indicates a slightly less important action.
+    < /div>
+    < div class="alert alert-dark">
+      < strong>Dark!< /strong> Dark grey alert.
+    < /div>
+    < div class="alert alert-light">
+      < strong>Light!< /strong> Light grey alert.
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <h4>Alerts</h4>
+  <p>alerts are created with the <b>.alert class</b> - followed by a <mark>contextual color classes:</mark></p>
+  <div class="alert alert-success">
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+  <div class="alert alert-info">
+    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+  <div class="alert alert-primary">
+    <strong>Primary!</strong> Indicates an important action.
+  </div>
+  <div class="alert alert-secondary">
+    <strong>Secondary!</strong> Indicates a slightly less important action.
+  </div>
+  <div class="alert alert-dark">
+    <strong>Dark!</strong> Dark grey alert.
+  </div>
+  <div class="alert alert-light">
+    <strong>Light!</strong> Light grey alert.
+  </div>
+</div>
+
+<h3>Alert Links</h3>
+<p>Add the <b><mark>.alert-link</mark> class</b> - to any links inside the alert-box to create "matching colored links":</p>
+<pre>
+  < div class="container mt-3">
+    < div class=<mark>"alert alert-success"</mark>>
+      < strong>Success!< /strong> You should <mark><b>< a href="#" class="alert-link"></b></mark>read this message< /a>.
+    < /div>
+    < div class="alert alert-info">
+      < strong>Info!< /strong> You should < a href="#" class=<b>"alert-link"</b>>read this message< /a>.
+    < /div>
+    < div class="alert alert">
+      < strong>Warning!< /strong> You shoul < a href="#" class=<b>"alert-link"</b>> read this message< /a>.
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="alert alert-success">
+    <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-info">
+    <strong>Info!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> You shoul <a href="#" class="alert-link"> read this message</a>.
+  </div>
+</div>
+
+<h3>Closing Alerts</h3>
+<p>The CLOSE Alert Message, add a <mark>.alert-dismissible class</mark> to the alert container.<br>
+Then <b>add</b> <mark>class="btn-close"</mark> and <mark>data-bs-dismiss="alert"</mark> - to a <b>link or a button element.</b><br>
+(When you click on this - the ALERT BOX will dissapear).</p>
+<pre>
+  < div class="container mt-3">
+  
+    <mark>< div class="alert alert-success alert-dismissible"></mark>
+      <mark>< button type="button" class="btn-close" data-bs-dismiss="alert"></mark>< /button>
+      < strong>Success!< /strong> This alert box could indicate a successful or positive action.
+    < /div>
+  
+    < div <b>class="alert alert-info alert-dismissible"</b>>
+      <b>< button type="button" class="btn-close" data-bs-dismiss="alert"></b>< /button>
+      < strong>Info!< /strong> This alert box could indicate a neutral informative change or action.
+    < /div>
+  
+    < div class="alert alert-warning alert-dismissible">
+      < button type="button" class="btn-close" data-bs-dismiss="alert">< /button>
+      < strong>Warning!< /strong> This alert box could indicate a warning that might need attention.
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <p>The button <mark>with class="btn-close"</mark> and <mark>data-bs-dismiss="alert"</mark> - is <b>used</b> to close the Alert-Box.<br>
+  The <mark>alert-dismissible class</mark> <b>aligns the button to the right.</b></p>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+
+  <div class="alert alert-info alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+
+  <div class="alert alert-warning alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+</div>
+
+<h3>Animated Alerts</h3>
+<p>The <b><mark>.fade</mark></b> and <b><mark>.show</mark> classes</b> - adss <u>fading effect</u> <b>when</b> closing the alert message:</p>
+<pre>
+  <mark>< div class="alert alert-succes alert dismissible <b>fade show"</b></mark> >
+    < button type="button" class="btn-close" data-bs-dismiss="alert">< /button>
+    < strong>Success!< /strong> This alert box could indicate a successful or positive action.
+  < /div>
+</pre>
+<div class="alert alert-success alert dismissible fade show">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Success!</strong> This alert box could indicate a successful or positive action.
+</div>
+<br>
+<hr>
+
+<h2><u>10.Bootstrap 5 Buttons</u></h2>
+<p>Bootstrap 5 provides different styles of buttons:</p>
+<pre>
+  < div class="container mt-3">
+    < button type="button" class="btn">Basic< /button>
+    < button type="button" class="btn btn-primary">Primary< /button>
+    < button type="button" class="btn btn-success">Success< /button>
+    < button type="button" class="btn btn-warning">Warning< /button>
+    < button type="button" class="btn btn-link">Link< /button>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <button type="button" class="btn">Basic</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-link">Link</button>
+</div>
+<br>
+
+<p>The button classes can be used on a <mark>< a></mark>, <mark>< button ></mark>, or <mark>< input ></mark> elements:</p>
+<pre>
+  < div class="container mt-3">
+    < a href="#" class="btn btn-success">Link Button< /a>
+    < button type="button" class="btn btn-success">Button< /button>
+    < input type="button" class="btn btn-success" value="Input Button">
+    < input type="submit" class="btn btn-success" value="Submit Button">
+    < input type="reset" class="btn btn-success" value="Reset Button">  
+  < /div>
+
+<b>Why do we put a # in the href attribute of the link?</b>
+Since we do not have any page to link it to, and we do not want to get a "404" message, we put # as the link.
+</pre>
+<div class="container mt-3">
+  <a href="#" class="btn btn-success">Link Button</a>
+  <button type="button" class="btn btn-success">Button</button>
+  <input type="button" class="btn btn-success" value="Input Button">
+  <input type="submit" class="btn btn-success" value="Submit Button">
+  <input type="reset" class="btn btn-success" value="Reset Button">  
+</div>
+
+<h3>Button Outline</h3>
+<pre>
+  < div class="container mt-3">   
+    < button type="button" class="btn <b>btn-outline</b>-primary">Primary< /button>
+    < button type="button" class="btn btn-outline-secondary">Secondary< /button>
+    < button type="button" class="btn <b>btn-outline</b>-success">Success< /button>
+    < button type="button" class="btn btn-outline-info">Info< /button>   
+  < /div>
+</pre>
+
+<h3>Button Sizes</h3>
+<pre>
+  < div class="container mt-3">
+   
+    < button type="button" class="btn btn-primary <b>btn-lg"</b>>Large< /button>
+    < button type="button" class="btn btn-primary <b>btn-md"</b>>Default< /button>    
+    < button type="button" class="btn btn-primary <b>btn-sm"</b>>Small< /button>
+  </div>
+</pre>
+
+<h3>Block Level Buttons</h3>
+<p>To create a BLOCK LEVEL BUTTON  - that <b>spans the entire WIDTH - of the parent element</b> - use the <mark>.d-grid</mark> <b>"helper" class</b> - on the parent element.</p>
+<pre>
+  < div class="containe mt-3">
+    < div class=<mark><b>"d-grid"</b></mark>>
+      < button type="button" class="btn btn-primary <b>btn-block"</b>>Full Width Button</button>
+    < /div>
+  < /div>
+</pre>
+<div class="containe mt-3">
+  <div class="d-grid">
+    <button type="button" class="btn btn-primary btn-block">Full Width Button</button>
+  </div>
+</div>
+
+<h3>Spinner Buttons</h3>
+<pre>
+  < div class="container mt-3">
+    < button class="btn btn-primary">
+      <mark>< span class="spinner-border spinner-border-sm">< /span></mark>
+    < /button>
+  
+    < button class="btn btn-primary">
+      < span class="spinner-border spinner-border-sm">< /span>
+      Loading...
+    < /button>
+  
+    < button class="btn btn-primary" <b>disabled</b>>
+      <mark>< span class="spinner-grow spinner-grow-sm">< /span></mark>
+      Loading..
+    < /button>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <button class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm"></span>
+  </button>
+
+  <button class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm"></span>
+    Loading...
+  </button>
+
+  <button class="btn btn-primary" disabled>
+    <span class="spinner-grow spinner-grow-sm"></span>
+    Loading..
+  </button>
+</div>
+
+<h3>Bootstrap 5 Button Groups</h3>
+<p>Group a series of buttons together (on a single line) in a button group:</p>
+<pre>
+  < div class="container mt-3">
+    < div <b>class="btn-group"</b>>< /div>
+    < button trype="button" <b>class="btn btn-primary"</b>>Apple< /button>
+    < button trype="button" class="btn btn-primary">Samsung< /button>
+    < button trype="button" class="btn btn-primary">Sony< /button>
+  < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="btn-group">
+  <button trype="button" class="btn btn-primary">Apple</button>
+  <button trype="button" class="btn btn-primary">Samsung</button>
+  <button trype="button" class="btn btn-primary">Sony</button>
+</div>
+</div>
+
+<h3>Vertical Button Group</h3>
+<pre>
+  < div class="container mt-3">
+    < p>Use the <b>.btn-group-vertical class</b> to create a vertical button group:< /p>
+    < div class=<mark>"btn-group-vertical"</mark>>
+      < button type="button" class="btn btn-primary">Apple< /button>
+      < button type="button" class="btn btn-primary">Samsung< /button>
+      < button type="button" class="btn btn-primary">Sony< /button>
+    < /div>
+  < /div>
+</pre>
+
+<h3>Button Groups Side by Side</h3>
+<pre>
+  < div class="container mt-3">
+    < p>Button groups are "inline" by default, which makes them appear side by side when you have multiple groups:< /p>
+    < div class="btn-group">
+      < button type="button" class="btn btn-primary">Apple< /button>
+      < button type="button" class="btn btn-primary">Samsung< /button>
+      < button type="button" class="btn btn-primary">Sony< /button>
+    < /div>
+    < div class="btn-group">
+      < button type="button" class="btn btn-primary">BMW< /button>
+      < button type="button" class="btn btn-primary">Mercedes< /button>
+      < button type="button" class="btn btn-primary">Volvo< /button>
+    < /div>
+  < /div>
+</pre>
+
+<h3>Nesting Button Groups & Dropdown Menus</h3>
+<pre>
+  < div class="container mt-3">
+    < div class="btn-group">
+      < button type="button" class="btn btn-primary">Apple< /button>
+      < button type="button" class="btn btn-primary">Samsung< /button>
+      < div class="btn-group">
+        <mark>< button type="button" class="btn btn-primary <b>dropdown-toggle"</b> <b>data-bs-toggle="dropdown"</b>>Sony< /button></mark>
+        <b>< ul class="dropdown-menu"></b>
+          < li>< a class="dropdown-item" href="#">Tablet< /a>< /li>
+          < li>< a class="dropdown-item" href="#">Smartphone< /a>< /li>
+        </ ul>
+      </ div>
+    </ div>
+  </ div>
+</pre>
+<br>
+
+<div class="container mt-3">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Tablet</a></li>
+        <li><a class="dropdown-item" href="#">Smartphone</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr> <br>
+
+<h2><u>11.Bootstrap 5 Progress BARS</u></h2>
+<p>A progress bar - can be used to show - <b>how far a user is in a process.</b><br>
+To create a default progress bar - add a <mark>.pregress class</mark> - to a container element and add the <mark>.progress-bar</mark> - <b>to it's child element.</b><br>
+Use the CSS <mark>width property</mark> to set the width of the progress bar:</p>
+<pre>
+  < div class="progress" style="height:10px">
+    < div class="progress-bar" style="width:40%;height:10px">< /div>
+  < /div>
+  < br>
+  < div class="progress" style="height:20px">
+    < div class="progress-bar" style="width:50%;height:20px">< /div>
+  < /div>
+  < br>
+  < div class="progress" style="height:20px">
+    < div class="progress-bar" style="width:60%">60%< /div>
+  < /div>
+  < br>
+  < div class="progress" style="height:20px">
+    < div class="progress-bar bg-warning progress-bar striped" style="width:70%;height:20px"><strong>70%</strong></div>
+  </ div>
+  < br>
+  < div class="progress">
+    < div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"><b>40%</b>< /div>
+  < /div>
+  < /div>
+</pre>
+
+<div class="progress" style="height:10px">
+  <div class="progress-bar" style="width:40%;height:10px"></div>
+</div>
+<br>
+<div class="progress" style="height:20px">
+  <div class="progress-bar" style="width:50%;height:20px"></div>
+</div>
+<br>
+<div class="progress" style="height:20px">
+  <div class="progress-bar" style="width:60%">60%</div>
+</div>
+<br>
+<div class="progress" style="height:20px">
+  <div class="progress-bar bg-warning progress-bar striped" style="width:70%;height:20px"><strong>70%</strong></div>
+</div>
+<br>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"><b>40%</b></div>
+</div>
+</div>
+
+<h3>Multiple Progress Bars</h3>
+<pre>
+  < div class="container mt-3">
+    < div class="progress">
+      < div class="progress-bar bg-success" style="width:40%">Free Space< /div>
+      < div class="progress-bar bg-warning" style="width:20%">Free Warning< /div>
+      < div class="progress-bar bg-danger" style="width:10%">Free Danger< /div>
+    </ div>
+</pre>
+<div class="container mt-3">
+  <div class="progress">
+    <div class="progress-bar bg-success" style="width:40%">Free Space</div>
+    <div class="progress-bar bg-warning" style="width:20%">Free Warning</div>
+    <div class="progress-bar bg-danger" style="width:10%">Free Danger</div>
+  </div>
+</div>
+<hr><br>
+
+<h2><u>12.Bootstrap 5 Spinners</u></h2>
+<h3>Spinners/Loaders</h3>
+<p>To create a spinner/loader, use the <mark>.spinner-border class</mark>:<br>
+Use any <b>text color utilities</b> to add a color to the spinner:</p>
+<pre>
+  < div class="container mt-3">
+    < div class="<mark>spinner-border</mark> <b>text-muted</b>">< /div>
+    < div class="spinner-border text-info">< /div>
+    < div class="spinner-border text-warning">< /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="spinner-border text-muted"></div>
+  <div class="spinner-border text-info"></div>
+  <div class="spinner-border text-warning"></div>
+</div>
+
+<h3>Growing Spinners</h3>
+<p>Use the <mark>.spinner-grow class</mark> if you want the <b>spinner/loader to grow</b> instead of <b>"spin"</b>:</p>
+<pre>
+  < div class="container mt-3">
+    < div class=<b>"spinner-grow</b> text-muted">< /div>
+    < div class="spinner-grow text-info">< /div>
+    < div class=<b>"spinner-grow</b> text-warning">< /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="spinner-grow text-muted"></div>
+  <div class="spinner-grow text-info"></div>
+  <div class="spinner-grow text-warning"></div>
+</div>
+
+<h3>Spinner Size</h3>
+<p>Use <mark>.spinner-border-sm</mark> or <mark>.spinner-grow-sm</mark> to create a smaller spinner:</p>
+<pre>
+  < div class="spinner-border spinner-border-sm">< /div>
+  < div class="spinner-grow spinner-grow-sm">< /div>
+</pre>
+<hr><br>
+
+<h2><u>13.Bootstrap 5 Pagination</u></h2>
+<p>To CREATE a basic pagination, add the <mark>.pagination class</mark> to an <mark>< ul > element.</mark><br>
+Then <b>add</b> the <mark>.page-item</mark> to each <mark>< li ></mark> element and <b>add</b> a <mark>.page-link <b>class</b></mark> to each link inside the <mark>li</mark></p>
+<pre>
+  < div class="container mt-3">
+    < ul class=<mark>"pagination"</mark>>
+      < li class="page-item">< a class="page-link" href="#"">Previous< /a>< /li>
+      < li class=<mark>"page-item"</mark>>< a class=<mark>"page-link</mark>" href="#">1< /a>< /li>
+      < li class="page-item">< a class="page-link" href="#">2< /a>< /li>
+      < li class="page-item">< a class="page-link" href="#">3< /a>< /li>
+      < li class="page-item">< a class="page-link" href="#">Next< /a>< /li>
+    < /ul>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#"">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</div>
+
+<h3>Active State</h3>
+<p>The <mark>.active class</mark> is used to <b>"highlight"</b> the CURRENT PAGE:</p>
+<pre>
+  < div class="container mt-3">
+    < ul class="pagination">
+    < li class="page-item" <mark>active</mark>< a class="page-link" href="#">2< /a>< /li>      
+    < /ul>
+  < /div>
+</pre>
+
+<h3>Disable State</h3>
+<p>The <mark>.disable class</mark> is used for <b>unclickable</b> links:</p>
+<pre>
+  < div class="container mt-3">
+    < ul class="pagination">
+    < li class="page-item" <mark>disabled</mark>< a class="page-link" href="#">2< /a>< /li>      
+    < /ul>
+  < /div>
+</pre>
+
+<h3>Pagination Sizing </h3>
+<p>Add class<mark>.pagination-lg</mark> for larger blocks or <mark>.pagination-sm</mark> for smaller blocks.</p>
+<pre>
+  < div class="container mt-3">
+    < ul class="pagination <b><mark>pagination-lg</mark></b>">
+    < li class="page-item">< a class="page-link" href="#">2< /a>< /li> 
+    ...     
+    < /ul>
+  < /div>
+
+  < div class="container mt-3">
+  < ul class="pagination <b><mark>pagination-sm</mark></b>">
+  < li class="page-item">< a class="page-link" href="#">2< /a>< /li> 
+  ...     
+  < /ul>
+< /div>
+</pre>
+
+<h3>Pagination Alignment</h3>
+<pre>
+  < div class="container mt-3">
+    < p>Use utilitiy classes to change the alignment of the pagination:< /p>                  
+    < ul class=<b>"pagination"</b>>
+      < li class="page-item">< a class="page-link" href="javascript:void(0);">Previous< /a>< /li>
+      ...
+    < /ul>
+    < div class="container mt-3">
+    < p>Use utilitiy classes to change the alignment of the pagination:< /p>                  
+    < ul class=<b>"pagination <mark>justify-content-center</mark>"</b>>
+      < li class="page-item">< a class="page-link" href="javascript:void(0);">Previous< /a>< /li>
+      ...
+    < /ul>
+    < div class="container mt-3">
+    < p>Use utilitiy classes to change the alignment of the pagination:< /p>                  
+    < ul class=<b>"pagination <mark>justify-content-end</mark>"</b>>
+      < li class="page-item">< a class="page-link" href="javascript:void(0);">Previous< /a>< /li>
+      ...
+    < /ul>
+< /div>
+</pre>
+
+<h3>Breadcrumbs</h3>
+<p>Another form for <b>pagination.</b> - is breadcrumbs:<br>
+The <mark>.breadcrumb</mark> and <mark>.breadcrumb-item classes</mark> - indicates <b>the current page's location</b> within a <u>navigational hierarchy:</u></p>
+<pre>
+  < div class="container mt-3">
+    < ul class="breadcrumb">
+      < li class=<b><mark>"breadcrumb-item"</mark></b>>< a href="#">Photos< /a>< /li>
+      < li class="breadcrumb-item">< a href="#">Summer 2017< /a>< /li>
+      < li class="breadcrumb-item">< a href="#">Italy< /a>< /li>
+      < li class="breadcrumb-item <mark>active</mark>">Rome< /a>< /li>
+    </ul>
+  </div>
+</pre>
+
+<div class="container mt-3">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Photos</a></li>
+    <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+    <li class="breadcrumb-item"><a href="#">Italy</a></li>
+    <li class="breadcrumb-item active">Rome</a></li>
+  </ul>
+</div>
+<br>
+<hr>
+<br>
+
+<h2><u>14.Bootstrap 5 Cards</u></h2>
+<p>A card in Bootstrap 5 - is a BORDERED Box - with <b>some padding around it's content</b>.<br>
+It includes options for (headers, footers, content, colors) etc.</p>
+
+<h3>Basic Card</h3>
+<p>A <u>basic</u> card is created with the <mark><b>.card</b> class</mark>, and <b>content</b> inside the card has a <mark>.cadr-body class</mark>: </p>
+<pre>
+  < div class="container mt-3">
+    < div <mark>class="card"</mark>>
+      < div class=<mark>"card-body"</mark>>Basic Card< /div>
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body">Basic Card</div>
+  </div>
+</div>
+
+<h3>Header and Footer</h3>
+<p>Add <b>header</b> with <mark>.card-header class</mark> and <b>footer</b> with the <mark>.card-footer class</mark>.</p>
+<pre>
+  < div class="container mt-3">
+    < div class="card">
+      < div class=<mark>"card-header"</mark>>Header< /div>
+      < div class=<mark>"card-body"</mark>>Content< /div>
+      < div class=<mark>"card-footer"</mark>>Footer< /div>
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div>
+    <div class="card-footer">Footer</div>
+  </div>
+</div>
+
+<h3>Titles, text and links</h3>
+<p>Use <mark>.card-title</mark> <b>to add</b> card titles to any <b>heading element.</b><br>
+The <mark>.card-text class</mark> - is used to <b>remove bottom margins</b> for a < p> element - if it is <u>the last child (or not the only one)</u> inside <mark>.card-body</mark>.<br>
+The <mark>.card-link class</mark> <b>adds</b> <u>a blue color</u> - to any link, and a hover effect.</p>
+<pre>
+  < div class="container mt-3">
+    < div class=<b>"card"</b>>
+      < div class=<b>"card-body"</b>>
+        < h4 class=<b>"card-title"</b>>Card Title< /h4>
+        < p class=<b>"card-text"</b>>Some example text. Som,e example text.< /p>
+        < a href="#" class=<b>"card-link"</b>>Card Link< /a>
+        < a href="#" class=<b>"card-link"</b>>Another Link< /a>
+      < /div>
+    < /div>
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-text">Some example text. Som,e example text.</p>
+      <a href="#" class="card-link">Card Link</a>
+      <a href="#" class="card-link">Another Link</a>
+    </div>
+  </div>
+</div>
+
+<h3>Card Images</h3>
+<p>Add <mark>.card-img-top</mark> or <mark>.card-img.bottom</mark> to an <b>< img ></b> to place the image at the TOP or at the BOTTOM inside the card.<br>
+Note that - I have added the image <b>outside</b> of the <mark>.card-body</mark> to - <i>span the entire width:</i></p>
+<pre>
+  < div class="container mt-3">
+    < div class="card" style="width:400px">
+      < img class="card-img-top" src="images/img_avatar1.png" alt="Card image" style="width:100%">
+      < div class="card-body">
+        < h4 class="card-title">John Doe< /h4>
+        < p class="card-text">Some example text some example text. John Doe is an architect and engineer< /p>
+        < a href="#" class="btn btn-primary">See Profile< /a>
+      < /div>
+    < /div>
+    < br>
+  
+    < p>Image at the bottom (card-img-bottom):< /p>
+    < div class="card" style="width:400px">
+      < div class="card-body">
+        < h4 class="card-title">Jane Doe< /h4>
+        < p class="card-text">Some example text some example text. Jane Doe is an architect and engineer< /p>
+        < a href="#" class="btn btn-primary">See Profile< /a>
+      < /div>
+      < img class="card-img-bottom" src="images/img_avatar6.png" alt="Card image" style="width:100%">
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="images/img_avatar1.png" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+  </div>
+  <br>
+
+  <p>Image at the bottom (card-img-bottom):</p>
+  <div class="card" style="width:400px">
+    <div class="card-body">
+      <h4 class="card-title">Jane Doe</h4>
+      <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+    <img class="card-img-bottom" src="images/img_avatar6.png" alt="Card image" style="width:100%">
+  </div>
+</div>
+<hr><br>
+
+<h2><u>15.Bootstrap 5 Dropdowns</u></h2>
+<p>A dropdown menu is a <b>toggleable menu</b> - <u>that allows the user to choose</u> - one value from a predefined list:</p>
+<pre>
+  The <mark><b>.dropdown</b> class</mark> is used to <b><i>indicate</i></b> a <b>dropdown menu.</b>
+  Use the <mark><b>.dropdown-menu</b> class</mark> to actually <b><i>build</i></b> the <b>dropdown menu.</b>
+  Then add the <mark><b>.dropdown-item class</b></mark> to each element (links or buttons) inside the dropdown menu.
+  To <b>open</b> the dropdown menu - use a button or a link with a class of <mark><b>.dropdown-toggle</b></mark> and the <mark>data-bs-toggle="dropdown"</mark>
+</pre>
+<pre>
+  < div class="container mt-3">
+    <mark>< div class="dropdown"></mark>
+      <mark>< button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Dropdown button< /button></button>
+      <mark>< ul class="dropdown-menu"></mark>
+        < li>< a class="dropdown-item" href="#">Link 1< /a>< /li>
+        < li>< a class="dropdown-item" href="#">Link 2< /a>< /li>
+        < li>< a class="dropdown-item" href="#">Link 3< /a>< /li>
+      < /ul>
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Dropdown button</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Link 1</a></li>
+      <li><a class="dropdown-item" href="#">Link 2</a></li>
+      <li><a class="dropdown-item" href="#">Link 3</a></li>
+    </ul>
+  </div>
+</div>
+<br>
+
+<h3>Dropdown Divider</h3>
+<p>The <mark>.dropdown-divider class</mark> - is used to <u>separate links</u> inside the <b>dropdown menu</b> - with a <b>horizontal border</b>:</p>
+<pre>
+  < div class="dropdown">
+    < button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+      Dropdown button
+    < /button>
+    < ul class="dropdown-menu">
+      < li>< a class="dropdown-item" href="#">Link 1< /a>< /li>
+      < li>< a class="dropdown-item" href="#">Link 2< /a>< /li>
+      < li>< a class="dropdown-item" href="#">Link 3< /a>< /li>
+      <mark>< li>< <b>hr</b> class="dropdown-divider">< /li></mark>
+      < li>< a class="dropdown-item" href="#">Another link< /a>< /li>
+    < /ul>
+  < /div>
+< /div>
+</pre>
+
+<h3>Disable and Active items</h3>
+<p><b>Highlight</b> a specific dropdown item with the <mark>.active class</mark> (adds a blue background color).<br>
+To <b>disable</b> an item in the dropdown menu, use the <mark>.disabled class</mark> (gets a light-grey text color and a "no-parking-sign" icon on hover):</p>
+
+<pre>
+  < li>< a class="dropdown-item" href="#">Normal< /a>< /li>
+  < li>< a class="dropdown-item <mark>active</mark>" href="#">Active< /a>< /li>
+  < li>< a class="dropdown-item <mark>disabled"</mark> href="#">Disabled< /a>< /li>
+</pre>
+
+<h3>Grouped Buttons with a Dropdown</h3>
+<pre>
+  < div class="container mt-3">
+    <mark>< div class="btn-group"></mark>
+      < button type="button" class="btn btn-primary">Apple< /button>
+      < button type="button" class="btn btn-primary">Samsung< /button>
+      <mark>< div class="btn-group"></mark>
+        < button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony< /button>
+        < ul>
+          < li>< a class="dropdown-item" href="#">Tablet< /a>< /li>
+          < li>< a class="dropdown-item" href="#">Smartphone< /a>< /li>
+        < /ul>
+      < /div>
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Tablet</a></li>
+        <li><a class="dropdown-item" href="#">Smartphone</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr><br>
+
+<h2><u>16.Bootstrap 5 Collapse</u></h2>
+<p>Collapsibles are useful when you want to <b>hide</b> and <b>show</b> <mark>large amount of content:</mark></p>
+<pre>
+  < div class="container mt-3">
+    < h2>Simple Collapsible< /h2>
+    < p>Click on the button to toggle between showing and hiding content.</p>
+    < button type="button" class="btn btn-primary" <mark>data-bs-toggle="collapse" data-bs-target="#demo"</mark>>Simple Collapsible</button>
+    < div id="demo" <mark>class="collapse"</mark>>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <h2>Simple Collapsible</h2>
+  <p>Click on the button to toggle between showing and hiding content.</p>
+  <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#demo">Simple Collapsible</button>
+  <div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+</div>
+<br>
+<p>The <mark>.collapse class</mark> indicates a collapsible element (a < div> in our example); this is the content that will be shown or hidden with a click of a button.<br>
+  To <b>control (show/hide)</b> the collapsible content, add the <mark>data-bs-toggle="collapse" <b>attribute</b></mark> to an < a> or a < button> element.<br>
+  Then add the <mark>data-bs-target="#id" <b>attribute</b></mark> to connect the button with the collapsible content (< div id="demo">).
+</p>
+<p><b>Note:</b> For < a> elements, you can use the <mark>href attribute</mark> instead of the <mark>data-bs-target attribute</mark>:</p>
+<pre>
+  <mark>< a href="#demo"</mark> class="btn btn-primary" data-bs-toggle="collapse">Simple collapsible< /a>
+</pre>
+
+<h3>Accordion</h3>
+<p>Use the <mark>data-bs-parent <b>attribute</b></mark> to make sure that <u>all collapsible elements under the specified parent</u> - <u>will be closed</u> - when one of the collapsible item is shown.</p>
+<pre>
+
+</pre>
+<div class="container mt-3">
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+          Collasible Group Item #1
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseTwo">
+          Collasible Group Item #2
+        </a>
+      </div>
+      <div id="collapseTwo" class="collapse show" data-bs-parent="#accordion">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="btn" data-bs-toggle="collapse" href="#collapseThree">
+          Collasible Group Item #3
+        </a>
+      </div>
+      <div id="collapseThree" class="collapse show" data-bs-parent="#accordion">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr><br>
+
+<h2><u>17.Bootstrap 5 Navs</u></h2>
+<h3>Nav Menus</h3>
+<p>If you want to create a simple horizontal menu, add the <mark>.nav class</mark> to a <b>< ul> element</b>, followed by <mark>.nav-item</mark> for each <b>< li></b> and add the <mark>.nav-link class</mark> to their links:</p>
+<pre>
+  < div class="container mt-3">
+    < ul class=<mark>"nav"</mark>>
+      < li class=<mark>"nav-item"</mark>>
+        < a class=<mark>"nav-link"</mark> href="#">Link< /a>
+      < /li>
+      < li class="nav-item">
+        < a class="nav-link" href="#">Link< /a>
+      < /li>
+      < li class="nav-item">
+        < a class="nav-link" href="#">Link< /a>
+      < /li>
+    < /ul>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+  </ul>
+</div>
+<br>
+
+<h3>Tabs with Dropdown</h3>
+<p>Turn the nav menu into navigation TABS with the <mark>.nav-tabs class</mark>.<br>
+Add the <mark>.active class</mark> to the active/current link.</p>
+<pre>
+
+</pre>
+
+<div class="container mt-3">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Dropdown</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Link 1</a></li>
+        <li><a class="dropdown-item" href="#">Link 2</a></li>
+        <li><a class="dropdown-item" href="#">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+</div>
+<br>
+
+<h3>Toggleable / Dynamic Tabs</h3>
+<p>To make tabs TOGGLEABLE - add the <mark>data-toggle="tab" attribute</mark> to each link.<br>
+Then - add a <mark>.tab-pane class</mark> with unique ID for every TAB and wrap them inside a < div > element - <b>with class</b> <mark>.tab-content</mark>
+</p>
+<pre>
+  <!--Nav tabs-->
+< div class="container mt-3">
+  < ul class="nav nav-tabs" <mark>role="tablist"</mark>>
+    < li class="nav-item">
+      < a class="nav-link active" data-bs-toggle="tab" href="#home">Home< /a>
+    < /li>
+    < li class="nav-item">
+      < a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1< /a>
+    < /li>
+    < li class="nav-item">
+      < a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2< /a>
+    < /li>
+  < /ul>
+
+  <!--Tab panes-->
+  < div class="tab-content">
+    < div id="home" class="container tab-pane active">< br>
+      < h3>HOME< /h3>
+      < p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    < /div>
+    < div id="menu1" class="container <mark>tab-pane fade</mark>">< br>
+      < h3>Menu 1< /h3>
+      < p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    < /div>
+    < div id="menu2" class="container tab-pane fade">< br>
+      < h3>Menu 2< /h3>
+      < p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    < /div>
+  < /div>
+< /div>
+</pre>
+<!--Nav tabs-->
+<div class="container mt-3">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+    </li>
+  </ul>
+
+  <!--Tab panes-->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Manu 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Menu 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</div>
+<hr><br>
+
+<h2><u>18.Bootstrap 5 Navbars</u></h2>
+<h3>Navigation Bars</h3>
+<pre>
+  A navigation bar is a navigation header that is placed at the top of the page:
+  A standard navigation bar is created with the <mark>.navbar class</mark>, followed by a responsive collapsing class: <mark>.navbar-expand-xxl|xl|lg|md|sm</mark> (stacks the navbar vertically on xxlarge, extra large, large, medium or small screens).
+  To add links inside the navbar, use either an <mark>< ul > element</mark> (or a <mark>< div></mark>) with <b>class="navbar-nav"</b>. 
+  Then add <mark>< li ></mark> elements with a <mark>.nav-item class</mark> followed by an <mark>< a ></mark> element with a <mark>.nav-link class</mark>:
+</pre>
+
+<h3>Colored Navbar</h3>
+<pre>
+  Use any of the .bg-color classes to change the background color of the navbar (.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light)
+
+  < div class="container mt-3">
+    < nav class="navbar navbar-expand-sm bg-danger navbar-light">
+      <b>< div class="container-fluid"></b>
+        <mark>< ul class="navbar-nav"></mark>
+          <mark>< li class="nav-item"></mark>
+            < a class="nav-link active" href="#">Active< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link" href="#">Link< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link" href="#">Link< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link disabled" href="#">Disabled< /a>
+          < /li>
+        < /ul>
+      < /div>
+    < /nav>
+  < /div>
+</pre>
+<div class="container-fluid mt-3">
+  <nav class="navbar navbar-expand-sm bg-danger navbar-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<br>
+
+<h3>Navbar Text</h3>
+<p>Use the <mark>.navbar-text class</mark> <b>to vertical align any elements inside the navbar that are not links</b> (ensures proper padding and text color).</p>
+<pre>
+  Very often, especially on small screens, you want to hide the navigation links and replace them with a button that should reveal them when clicked on.
+  <b>To create a collapsible navigation bar, use a button with <mark>class="navbar-toggler", data-bs-toggle="collapse"</mark> and <mark>data-bs-target="#thetarget"</mark>.</b> 
+  Then <b>wrap the navbar content (links, etc) inside a < div > element</b> with <mark>class="collapse navbar-collapse"</mark>, followed by an id that matches the <mark>data-bs-target</mark> of the button: "thetarget"
+</pre>
+<pre>
+  < nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    < div class="container-fluid">
+      < a class="navbar-brand" href="#">Logo< /a>
+      <b>< button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"></b>
+        <mark>< span class="navbar-toggler-icon">< /span></mark>
+      < /button>
+      <b>< div class="collapse navbar-collapse" id="collapsibleNavbar">
+        < ul class="navbar-nav">
+          < li class="nav-item">
+            < a class="nav-link" href="#">Link< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link" href="#">Link< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link" href="#">Link< /a>
+          < /li>    
+        < /ul>
+      < /div></b>
+    < /div>
+  < /nav>
+  
+  < div class="container-fluid mt-3">
+    < h3>Collapsible Navbar< /h3>
+    < p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).< /p>
+    < p>Only when the button is clicked, the navigation bar will be displayed.< /p>
+    < p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.< /p>
+  < /div>
+</pre>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid mt-3">
+  <h3>Collapsible Navbar</h3>
+  <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right corner (try to re-size this window).</p>
+  <p>Only when the button is clicked, the navigation bar will be displayed.</p>
+  <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
+</div>
+<hr> <br>
+
+<h2><u>19.Bootstrap 5 Carousel</u></h2>
+<h3>Carousel / Slideshow</h3>
+<p>The Carousel is a slideshow for <b>cycling through elements</b>:</p>
+<pre>
+  <!--Carousel-->
+< div id="demoC" class="carousel slide" data-bs-ride="carousel">
+  
+  <!--Indicators/dots-->
+  < div class="carousel-indicators">
+    < button type="button" data-bs-target="#demoC" data-bs-slide-to="0" class="active">< /button>
+    < button type="button" data-bs-target="#demoC" data-bs-slide-to="1">< /button>
+    < button type="button" data-bs-target="#demoC" data-bs-slide-to="2">< /button>
+  < /div>
+
+  <!--The slideshow/carousel-->
+  < div class="carousel-inner">
+    < div class="carousel-item active">
+      < img src="images/Carousel/la.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+    < /div>
+    < div class="carousel-item">
+      < img src="images/Carousel/chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
+    < /div>
+    < div class="carousel-item">
+      < img src="images/Carousel/ny.jpg" alt="New York" class="d-block" style="width:100%">
+    < /div>
+  < /div>
+
+  <!--Left and Right controls/icons-->
+  < button class="carousel-control-prev" type-="button" data-bs-target="#demoC" data-bs-slide="prev">
+    < span class="carousel-control-prev-icon">< /span>
+  < /button>
+  < button class="carousel-control-next" type-="button" data-bs-target="#demoC" data-bs-slide="next">
+    < span class="carousel-control-next-icon">< /span>
+  < /button>
+< /div>
+</pre>
+<div class="container mt-3">
+  <!--Carousel-->
+  <div id="demoC" class="carousel slide" data-bs-ride="carousel">
+    
+    <!--Indicators/dots-->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demoC" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demoC" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demoC" data-bs-slide-to="2"></button>
+    </div>
+
+    <!--The slideshow/carousel-->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/Carousel/la.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Carousel/chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Carousel/ny.jpg" alt="New York" class="d-block" style="width:100%">
+      </div>
+    </div>
+
+    <!--Left and Right controls/icons-->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demoC" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demoC" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<br>
+<pre>
+  <b>.carousel</b> - Creates a CAROUSEL.
+  <b>.carousel-indicators</b> - Adds indicators for the carousel. 
+                        These are the little dots at the bottom of each slide (which indicates how many slides there are in the carousel, and which slide the user are currently viewing).
+  <b>data-bs-target / data-bs-slide-to</b>
+  <b>.carousel-inner</b> - Adds <b>slides</b> to the carousel.
+  <b>.carousel-item</b> - Specifies <b>the content(no.)</b> of each slide.
+  <b>.carousel-control-prev</b> - Adds a left (previous) button to the carousel - which allos the user to go between the slides.
+  <b>.carousel-control-next</b> - Adds a right (next) button to the carousel, which allows the user to go forward between the slides.
+  <b>.carousel-control-prev-icon</b> - Used together with .carousel-control-prev to create a "previous" button. 
+  <b>.carousel-control-next-icon</b> - Used together with .carousel-control-next to create a "next" button. 
+  <b>.slide</b> - 	Adds a CSS transition and animation effect when sliding from one item to the next. Remove this class if you do not want this effect.
+</pre>
+<hr><br>
+
+<h2><u>20.Bootstrap 5 Modal</u></h2>
+<p>The Modal component is a <b>dialog box/popup window</b> that is displayed on top of the current page:</p>
+<pre>
+
+</pre>
+<div class="caontainer mt-3">
+  <h3>Modal Example</h3>
+  <p>Click on the button to open the modal.</p>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Open Modal</button>
+</div>
+  <!--The Modal-->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!--Modal Header-->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!--Modal body-->
+      <div class="modal-body">
+        Modal body...
+      </div>
+
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<hr><br>
+
+<h2><u>21.Bootstrap 5 Popover</u></h2>
+<p>the <b>Popover component</b> is similar to TOOLTIPS; it's a pop-up box that appears when the user clicks on an element.<br>
+The <b>popover</b> contains much more CONTENT.</p>
+
+<h3>Create a Popover</h3>
+<p>To create a popover, add the <mark>data-bs-toggle="popover" <b>atr</b></mark> to an element.<br>
+Use the <mark>title <b>atr</b></mark> to specify the HEADER of the popover.<br>
+Use the <mark>data-bs-content <b>atr</b></mark> to SPECIFY the text that should be  displayed <b>inside the popover's body.</b></p>
+<pre>
+  < button type="button" class="btn btn-primary" <mark>data-bs-toggle="popover" title="Popover Header" data-bs-content="Some content inside the popover"</mark>>Toggle popover< /button>
+</pre>
+<p>Popover must be initialized with <b>javascript - to work</b>.<br>
+Enable all popovers in the document:</p>
+<pre>
+  script
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  /script  
+</pre>
+
+<div class="container mt-3">
+  <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Popover Header" data-bs-content="Some content inside the popover">Toggle popover</button>
+</div>
+
+<script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+</script>
+<hr> <br>
+
+<h2><u>22.Boostrap 5 Scrollspy</u></h2>
+<p>Scrollspy is used to <b>automatically update links - in a Navigation list</b> based on <b>scroll position.</b></p>
+<pre>
+  < body <b>data-bs-spy="scroll"</b> <b>data-bs-target=".navbar"</b> data-bs-offset="50">
+
+    < nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+      < div class="container-fluid">
+        < ul class="navbar-nav">
+          < li class="nav-item">
+            < a class="nav-link" href="#section1">Section 1< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link" href="#section2">Section 2< /a>
+          < /li>
+          < li class="nav-item">
+            < a class="nav-link" href="#section3">Section 3< /a>
+          < /li>
+        < /ul>
+      < /div>
+    < /nav>
+    
+    < div id="section1" class="container-fluid bg-success text-white" style="padding:100px 20px;">
+      < h1>Section 1< /h1>
+      < p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      < p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    < /div>
+    
+    < div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
+      < h1>Section 2< /h1>
+      < p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      < p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    < /div>
+    
+    < div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
+      < h1>Section 3< /h1>
+      < p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      < p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    < /div>
+</pre>
+  <div class="container mt-3">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#section1">Section 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2">Section 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3">Section 3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div id="section1" class="container-fluid bg-success text-white" style="padding:100px 20px;">
+    <h1>Section 1</h1>
+    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  </div>
+  
+  <div id="section2" class="container-fluid bg-warning" style="padding:100px 20px;">
+    <h1>Section 2</h1>
+    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  </div>
+  
+  <div id="section3" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
+    <h1>Section 3</h1>
+    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  </div>
+  </div>
+  <br>
+  
+  <p>Add <b>data-bs-spy="scroll"</b> to the element that should be used as the <mark>scrollable area</mark> <b>(often this is the < body> element)</b>.<br>
+  Then <b>add</b> the <b><mark>data-bs-target attribute</mark></b> with a value of the #ID or the CLASS NAME of the navigation bar <mark>(.navbar)</mark><br>
+  This is to make sure that the navbar is connected with the scrollable area.<br>
+  Note that scrollable elements must <b>match</b> the ID - of the links inside the navbar's list items.<br>
+  <mark>< div id="section1">< /div></mark> matches <mark>< a href = "#section1"</mark>.<br><br>
+
+  The optional <mark><b>data-bs-offset attribute</b></mark> specifies the number of pixels to offset from top when calculating the position of scroll. Default is 10 pixels.
+  </p>
+<hr><br>
+
+<h2><u>23.Bootstrap 5 Utilities</u></h2>
+<h2>Center Align</h2>
+<p><b>Center an element</b> with the <mark><b>.mx-auto class</b></mark>. (Adds margin-left and margin-right: <b>auto</b>):</p>
+<pre>
+
+</pre>
+<div class="container mt-3">
+  <p>Center an element with the .mx-auto class:</p>
+  <div class="mx-auto bg-warning" style="width:150px">Centered</div>
+</div>
+
+<h3>Shadows</h3>
+<p>Use the <mark>shadow- classes</mark> - <i>to add shadows to an element:</i></p>
+<pre>
+  < div class="container mt-3">
+    < div class=<mark>"shadow-none</mark> p-4 mb-4 bg-light">No shadow< /div>
+    < div class="shadow-sm p-4 mb-4 bg-white">Small Shadow< /div>
+    < div class=<mark>"shadow</mark> p-4 mb-4 bg-white">Default Shadow< /div>
+    < div class="shadow-lg p-4 mb-4 bg-white">Large Shadow< /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="shadow-none p-4 mb-4 bg-light">No shadow</div>
+  <div class="shadow-sm p-4 mb-4 bg-white">Small Shadow</div>
+  <div class="shadow p-4 mb-4 bg-white">Default Shadow</div>
+  <div class="shadow-lg p-4 mb-4 bg-white">Large Shadow</div>
+</div>
+
+<h3>Aspect Ratio</h3>
+<p>Create responsive video or slideshows based on the width of the parent.<br>
+Add the <mark>.ratio class</mark> <b>together with an aspect ratio of your choice</b> <mark>(1x1, 4x3,16x9, 21x9)</mark> to a parent element, and add the embed (video or iframe) inside of it:</p>
+<pre>
+  < div class="container mt-3">
+    
+    < h2>Aspect ratio 1:1< /h2>
+    < div class="ratio ratio-1x1">
+      < iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">< /iframe>
+    < /div>
+    < br>
+    
+    < h2>Aspect ratio 4:3< /h2>
+    < div class="ratio ratio-4x3">
+      < iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">< /iframe>
+    < /div> 
+    < br>
+    
+    < h2>Aspect ratio 16:9< /h2>
+    < div <mark>class="ratio ratio-16x9"></mark>
+      < iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">< /iframe>
+    < /div>
+    < br>
+      
+    < h2>Aspect ratio 21:9< /h2>
+    < div class="ratio ratio-21x9">
+      < iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">< /iframe>
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <h2>Aspect Ratio</h2>
+  <p>Create a responsive video and scale it nicely to the parent element.</p>
+  
+  <h2>Aspect ratio 1:1</h2>
+  <div class="ratio ratio-1x1">
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+  <br>
+  
+  <h2>Aspect ratio 4:3</h2>
+  <div class="ratio ratio-4x3">
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div> 
+  <br>
+  
+  <h2>Aspect ratio 16:9</h2>
+  <div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+  <br>
+    
+  <h2>Aspect ratio 21:9</h2>
+  <div class="ratio ratio-21x9">
+    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  </div>
+</div>
+<hr> <br>
+
+<h2><u>24.BS5 Flex</u></h2>
+<p>...use <b>flexbox</b> instead of <b>float.</b><br>
+To create a FLEXBOX CONTAINER - <b>and to transform direct children into flex items</b> - use <mark>d-flex class:</mark></p>
+
+<pre>
+  < div class="container mt-3">
+    < <mark>div class="d-flex</mark> p-3 bg-secondary text-white">
+      < div class="p-2 bg-info">Flex Item 1< /div>
+      < div class="p-2 bg-warning">Flex Item 2< /div>
+      < div class="p-2 bg-primary">Flex Item 3< /div>
+    < /div>
+  < /div>
+</pre>
+<br>
+<div class="container mt-3">
+  <div class="d-flex p-3 bg-secondary text-white">
+    <div class="p-2 bg-info">Flex Item 1</div>
+    <div class="p-2 bg-warning">Flex Item 2</div>
+    <div class="p-2 bg-primary">Flex Item 3</div>
+  </div>
+</div>
+<br>
+
+<p>To create an inline flexbox container, use the <mark>d-inline-flex class</mark>:</p>
+<pre>
+  < div <mark>class="d-inline-flex</mark> p-3 bg-secondary text-white">< /div>
+</pre>
+<br>
+
+<h3>1. Horizontal Direction</h3>
+<p>Use <mark>.flex-row</mark> to display the flex items horizontally (side by side). This is default.<br>
+  Tip: Use <mark>.flex-row-reverse</mark> to right-align the horizontal direction:</p>
+<pre>
+  < div class="container mt-3">
+    < div <mark>class="d-flex <b>flex-row</b></mark> bg-secondary mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+ 
+    < div <mark>class="d-flex <b>flex-row-reverse</b></mark> bg-secondary">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <div class="d-flex flex-row bg-secondary mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+
+  <div class="d-flex flex-row-reverse bg-secondary">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+</div>
+<br>
+
+<h3>2. Vertical Direction</h3>
+<p>Use <mark>.flex-column</mark> to DISPLAY the flex-items vertically (on top of each other), or <mark>.flex-column reverse</mark> to reverse the vertical direction:</p>
+
+<pre>
+  < div class="container mt-3">
+    <mark>< div class="d-flex <b>flex-column</b> mb-3"></mark>
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+  
+    < div class="d-flex <b>flex-column-reverse</b>">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+  < /div>
+</pre>
+<br>
+<div class="container mt-3">
+  <div class="d-flex flex-column mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+
+  <div class="d-flex flex-column-reverse">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+</div>
+<br>
+
+<h3>3. Justify Content</h3>
+<p>Use the <mark>.justify-content-* classes</mark> to <b>change the alignment of flex items</b>. Valid classes are <i>start (default), end, center, between or around</i>:</p>
+<pre>
+  < div class="container mt-3">    
+    < div class="d-flex justify-content-start bg-secondary mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+    < div class="d-flex justify-content-end bg-secondary mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+    < div class="d-flex justify-content-center bg-secondary mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+    < div class="d-flex justify-content-between bg-secondary mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+    < div class="d-flex justify-content-around bg-secondary mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+  < /div>
+</pre>
+
+<div class="container mt-3">  
+  <div class="d-flex justify-content-start bg-secondary mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+  <div class="d-flex justify-content-end bg-secondary mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+  <div class="d-flex justify-content-center bg-secondary mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+  <div class="d-flex justify-content-between bg-secondary mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+  <div class="d-flex justify-content-around bg-secondary mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+</div>
+<br>
+
+<h3>4. Fill / Equal Widths</h3>
+<p>Use <mark>.flex-fill</mark> <b>on flex items</b> to force them into equal widths:</p>
+<pre>
+  < div class="container mt-3">
+    <mark>< div class="d-flex mb-3"></mark>
+      < div class="p-2 <mark><b>flex-fill</b></mark> bg-info">Flex item 1< /div>
+      < div class="p-2 flex-fill bg-warning">Flex item 2< /div>
+      < div class="p-2 flex-fill bg-primary">Flex item 3< /div>
+    < /div>
+    < p>Example without .flex-fill:< /p>
+    < div class="d-flex mb-3 bg-secondary">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <div class="d-flex mb-3">
+    <div class="p-2 flex-fill bg-info">Flex item 1</div>
+    <div class="p-2 flex-fill bg-warning">Flex item 2</div>
+    <div class="p-2 flex-fill bg-primary">Flex item 3</div>
+  </div>
+  <p>Example without .flex-fill:</p>
+  <div class="d-flex mb-3 bg-secondary">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+</div>
+
+<h3>4. Grow</h3>
+<p>Use <mark>.flex-grow-1</mark> on a <b>flex item</b> to take up the rest of the space.</p>
+<pre>
+  < div class="container mt-3">
+    < div class="d-flex mb-3">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      <mark>< div class="p-2 <b>flex-grow-1</b> bg-primary"></mark>Flex item 3< /div>
+    < /div>
+    < p>Example without .flex-grow-1:< /p>
+    < div class="d-flex mb-3 bg-secondary">
+      < div class="p-2 bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <div class="d-flex mb-3">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 flex-grow-1 bg-primary">Flex item 3</div>
+  </div>
+  <p>Example without .flex-grow-1:</p>
+  <div class="d-flex mb-3 bg-secondary">
+    <div class="p-2 bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+</div>
+
+<h3>5. Auto Margins</h3>
+<p>Add <b>auto Margins - to flex items</b> with <mark>.ms-auto</mark> (push ITEMS to the right), or by using <mark>.me-auto</mark> (push ITEMS to the left).</p>
+<pre>
+  < div class="container mt-3">
+    < div class="d-flex mb-3 bg-secondary">
+      < div class="p-2 <mark><b>ms-auto</b></mark> bg-info">Flex item 1</ div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 bg-primary">Flex item 3< /div>
+    < /div>
+    < div class="d-flex mb-3 bg-secondary">
+      < div class="p-2  bg-info">Flex item 1< /div>
+      < div class="p-2 bg-warning">Flex item 2< /div>
+      < div class="p-2 <mark><b>me-auto</b></mark> bg-primary">Flex item 3< /div>
+    < /div>
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <div class="d-flex mb-3 bg-secondary">
+    <div class="p-2 ms-auto bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 bg-primary">Flex item 3</div>
+  </div>
+  <div class="d-flex mb-3 bg-secondary">
+    <div class="p-2  bg-info">Flex item 1</div>
+    <div class="p-2 bg-warning">Flex item 2</div>
+    <div class="p-2 me-auto bg-primary">Flex item 3</div>
+  </div>
+</div>
+
+<h3>6. Wrap</h3>
+<p>Control how <b>flex items wrap</b> in a flex container with <mark>.flex-nowrap</mark> (default), <mark>.flex-wrap</mark> or <mark>.flex-wrap-reverse.</mark></p>
+<pre>
+  < div class="container mt-3">
+    < p>< code>.flex-wrap:< /code>< /p>
+    <mark>< div class="d-flex <b>flex-wrap</b> bg-light"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+    < p>< code>.flex-wrap-reverse:< /code>< /p>
+    <mark>< div class="d-flex <b>flex-wrap-reverse</b> bg-light"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+    < p>< code>.flex-nowrap:< /code>< /p>
+    <mark>< div class="d-flex <b>flex-nowrap</b> bg-light"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+      < div class="p-2 border">Flex item 11< /div>
+      < div class="p-2 border">Flex item 12< /div>
+      < div class="p-2 border">Flex item 13< /div>
+      < div class="p-2 border">Flex item 14< /div>
+      < div class="p-2 border">Flex item 15< /div>
+    < /div>
+    < br>
+  < /div>
+</pre>
+
+  <div class="container mt-3">
+    <p><code>.flex-wrap:</code></p>
+    <div class="d-flex flex-wrap bg-light">
+      <div class="p-2 border">Flex item 1</div>
+      <div class="p-2 border">Flex item 2</div>
+      <div class="p-2 border">Flex item 3</div>
+      <div class="p-2 border">Flex item 4</div>
+      <div class="p-2 border">Flex item 5</div>
+      <div class="p-2 border">Flex item 6</div>
+      <div class="p-2 border">Flex item 7</div>
+      <div class="p-2 border">Flex item 8</div>
+      <div class="p-2 border">Flex item 9</div>
+      <div class="p-2 border">Flex item 10</div>
+      <div class="p-2 border">Flex item 11</div>
+      <div class="p-2 border">Flex item 12</div>
+      <div class="p-2 border">Flex item 13 </div>
+      <div class="p-2 border">Flex item 14</div>
+      <div class="p-2 border">Flex item 15</div>
+      <div class="p-2 border">Flex item 16</div>
+      <div class="p-2 border">Flex item 17</div>
+      <div class="p-2 border">Flex item 18</div>
+      <div class="p-2 border">Flex item 19</div>
+      <div class="p-2 border">Flex item 20</div>
+      <div class="p-2 border">Flex item 21</div>
+      <div class="p-2 border">Flex item 22</div>
+      <div class="p-2 border">Flex item 23</div>
+      <div class="p-2 border">Flex item 24</div>
+      <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p><code>.flex-wrap-reverse:</code></p>
+    <div class="d-flex flex-wrap-reverse bg-light">
+      <div class="p-2 border">Flex item 1</div>
+      <div class="p-2 border">Flex item 2</div>
+      <div class="p-2 border">Flex item 3</div>
+      <div class="p-2 border">Flex item 4</div>
+      <div class="p-2 border">Flex item 5</div>
+      <div class="p-2 border">Flex item 6</div>
+      <div class="p-2 border">Flex item 7</div>
+      <div class="p-2 border">Flex item 8</div>
+      <div class="p-2 border">Flex item 9</div>
+      <div class="p-2 border">Flex item 10</div>
+      <div class="p-2 border">Flex item 11</div>
+      <div class="p-2 border">Flex item 12</div>
+      <div class="p-2 border">Flex item 13 </div>
+      <div class="p-2 border">Flex item 14</div>
+      <div class="p-2 border">Flex item 15</div>
+      <div class="p-2 border">Flex item 16</div>
+      <div class="p-2 border">Flex item 17</div>
+      <div class="p-2 border">Flex item 18</div>
+      <div class="p-2 border">Flex item 19</div>
+      <div class="p-2 border">Flex item 20</div>
+      <div class="p-2 border">Flex item 21</div>
+      <div class="p-2 border">Flex item 22</div>
+      <div class="p-2 border">Flex item 23</div>
+      <div class="p-2 border">Flex item 24</div>
+      <div class="p-2 border">Flex item 25</div>
+    </div>
+    <br>
+    <p><code>.flex-nowrap:</code></p>
+    <div class="d-flex flex-nowrap bg-light">
+      <div class="p-2 border">Flex item 1</div>
+      <div class="p-2 border">Flex item 2</div>
+      <div class="p-2 border">Flex item 3</div>
+      <div class="p-2 border">Flex item 4</div>
+      <div class="p-2 border">Flex item 5</div>
+      <div class="p-2 border">Flex item 6</div>
+      <div class="p-2 border">Flex item 7</div>
+      <div class="p-2 border">Flex item 8</div>
+      <div class="p-2 border">Flex item 9</div>
+      <div class="p-2 border">Flex item 10</div>
+      <div class="p-2 border">Flex item 11</div>
+      <div class="p-2 border">Flex item 12</div>
+      <div class="p-2 border">Flex item 13 </div>
+      <div class="p-2 border">Flex item 14</div>
+      <div class="p-2 border">Flex item 15</div>
+      <div class="p-2 border">Flex item 16</div>
+      <div class="p-2 border">Flex item 17</div>
+      <div class="p-2 border">Flex item 18</div>
+      <div class="p-2 border">Flex item 19</div>
+      <div class="p-2 border">Flex item 20</div>
+      <div class="p-2 border">Flex item 21</div>
+      <div class="p-2 border">Flex item 22</div>
+      <div class="p-2 border">Flex item 23</div>
+      <div class="p-2 border">Flex item 24</div>
+      <div class="p-2 border">Flex item 25</div>
+      <div class="p-2 border">Flex item 26</div>
+      <div class="p-2 border">Flex item 27</div>
+      <div class="p-2 border">Flex item 28</div>
+      <div class="p-2 border">Flex item 29</div>
+      <div class="p-2 border">Flex item 30</div>
+      <div class="p-2 border">Flex item 31</div>
+      <div class="p-2 border">Flex item 32</div>
+      <div class="p-2 border">Flex item 33</div>
+      <div class="p-2 border">Flex item 34</div>
+      <div class="p-2 border">Flex item 35</div>
+    </div>
+    <br>
+  </div>
+<br>
+
+<h2>7. Align Content</h2>
+<p>Control the <b>vertical alignment</b> of gathered flex items with the <mark>.align-content-* classes</mark>.<br>
+Valid classes are <i>.align-content-start (default), .align-content-end, .align-content-center, .align-content-between, .align-content-around and .align-content-stretch.</i></p>
+<p>Note: These classes have no effect on <b>single rows of flex items.</b></p>
+<pre>
+  < div class="container mt-3">
+    < p>< strong>Note:< /strong> This example does not look good on a small devices. Also note that these classes have no effect on single rows of flex items.</p>
+    < p>.align-content-start (default):< /p>
+    <mark>< div class="d-flex flex-wrap <b>align-content-start</b> bg-light" style="height:300px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+    < p>.align-content-end:< /p>
+    <mark>< div class="d-flex flex-wrap <b>align-content-end</b> bg-light" style="height:300px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+    < p>.align-content-center:< /p>
+    <mark>< div class="d-flex flex-wrap <b>align-content-center</b> bg-light" style="height:300px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+    < p>.align-content-around:< /p>
+    <mark>< div class="d-flex flex-wrap <b>align-content-around</b> bg-light" style="height:300px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+    < p>.align-content-stretch:< /p>
+    <mark>< div class="d-flex flex-wrap <b>align-content-stretch</b> bg-light" style="height:300px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+      < div class="p-2 border">Flex item 4< /div>
+      < div class="p-2 border">Flex item 5< /div>
+      < div class="p-2 border">Flex item 6< /div>
+      < div class="p-2 border">Flex item 7< /div>
+      < div class="p-2 border">Flex item 8< /div>
+      < div class="p-2 border">Flex item 9< /div>
+      < div class="p-2 border">Flex item 10< /div>
+    < /div>
+    < br>
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <p><strong>Note:</strong> This example does not look good on a small devices. Also note that these classes have no effect on single rows of flex items.</p>
+  <p>.align-content-start (default):</p>
+  <div class="d-flex flex-wrap align-content-start bg-light" style="height:300px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+    <div class="p-2 border">Flex item 4</div>
+    <div class="p-2 border">Flex item 5</div>
+    <div class="p-2 border">Flex item 6</div>
+    <div class="p-2 border">Flex item 7</div>
+    <div class="p-2 border">Flex item 8</div>
+    <div class="p-2 border">Flex item 9</div>
+    <div class="p-2 border">Flex item 10</div>
+    <div class="p-2 border">Flex item 11</div>
+    <div class="p-2 border">Flex item 12</div>
+    <div class="p-2 border">Flex item 13 </div>
+    <div class="p-2 border">Flex item 14</div>
+    <div class="p-2 border">Flex item 15</div>
+    <div class="p-2 border">Flex item 16</div>
+    <div class="p-2 border">Flex item 17</div>
+    <div class="p-2 border">Flex item 18</div>
+    <div class="p-2 border">Flex item 19</div>
+    <div class="p-2 border">Flex item 20</div>
+    <div class="p-2 border">Flex item 21</div>
+    <div class="p-2 border">Flex item 22</div>
+    <div class="p-2 border">Flex item 23</div>
+    <div class="p-2 border">Flex item 24</div>
+    <div class="p-2 border">Flex item 25</div>
+  </div>
+  <br>
+  <p>.align-content-end:</p>
+  <div class="d-flex flex-wrap align-content-end bg-light" style="height:300px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+    <div class="p-2 border">Flex item 4</div>
+    <div class="p-2 border">Flex item 5</div>
+    <div class="p-2 border">Flex item 6</div>
+    <div class="p-2 border">Flex item 7</div>
+    <div class="p-2 border">Flex item 8</div>
+    <div class="p-2 border">Flex item 9</div>
+    <div class="p-2 border">Flex item 10</div>
+    <div class="p-2 border">Flex item 11</div>
+    <div class="p-2 border">Flex item 12</div>
+    <div class="p-2 border">Flex item 13 </div>
+    <div class="p-2 border">Flex item 14</div>
+    <div class="p-2 border">Flex item 15</div>
+    <div class="p-2 border">Flex item 16</div>
+    <div class="p-2 border">Flex item 17</div>
+    <div class="p-2 border">Flex item 18</div>
+    <div class="p-2 border">Flex item 19</div>
+    <div class="p-2 border">Flex item 20</div>
+    <div class="p-2 border">Flex item 21</div>
+    <div class="p-2 border">Flex item 22</div>
+    <div class="p-2 border">Flex item 23</div>
+    <div class="p-2 border">Flex item 24</div>
+    <div class="p-2 border">Flex item 25</div>
+  </div>
+  <br>
+  <p>.align-content-center:</p>
+  <div class="d-flex flex-wrap align-content-center bg-light" style="height:300px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+    <div class="p-2 border">Flex item 4</div>
+    <div class="p-2 border">Flex item 5</div>
+    <div class="p-2 border">Flex item 6</div>
+    <div class="p-2 border">Flex item 7</div>
+    <div class="p-2 border">Flex item 8</div>
+    <div class="p-2 border">Flex item 9</div>
+    <div class="p-2 border">Flex item 10</div>
+    <div class="p-2 border">Flex item 11</div>
+    <div class="p-2 border">Flex item 12</div>
+    <div class="p-2 border">Flex item 13 </div>
+    <div class="p-2 border">Flex item 14</div>
+    <div class="p-2 border">Flex item 15</div>
+    <div class="p-2 border">Flex item 16</div>
+    <div class="p-2 border">Flex item 17</div>
+    <div class="p-2 border">Flex item 18</div>
+    <div class="p-2 border">Flex item 19</div>
+    <div class="p-2 border">Flex item 20</div>
+    <div class="p-2 border">Flex item 21</div>
+    <div class="p-2 border">Flex item 22</div>
+    <div class="p-2 border">Flex item 23</div>
+    <div class="p-2 border">Flex item 24</div>
+    <div class="p-2 border">Flex item 25</div>
+  </div>
+  <br>
+  <p>.align-content-around:</p>
+  <div class="d-flex flex-wrap align-content-around bg-light" style="height:300px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+    <div class="p-2 border">Flex item 4</div>
+    <div class="p-2 border">Flex item 5</div>
+    <div class="p-2 border">Flex item 6</div>
+    <div class="p-2 border">Flex item 7</div>
+    <div class="p-2 border">Flex item 8</div>
+    <div class="p-2 border">Flex item 9</div>
+    <div class="p-2 border">Flex item 10</div>
+    <div class="p-2 border">Flex item 11</div>
+    <div class="p-2 border">Flex item 12</div>
+    <div class="p-2 border">Flex item 13 </div>
+    <div class="p-2 border">Flex item 14</div>
+    <div class="p-2 border">Flex item 15</div>
+    <div class="p-2 border">Flex item 16</div>
+    <div class="p-2 border">Flex item 17</div>
+    <div class="p-2 border">Flex item 18</div>
+    <div class="p-2 border">Flex item 19</div>
+    <div class="p-2 border">Flex item 20</div>
+    <div class="p-2 border">Flex item 21</div>
+    <div class="p-2 border">Flex item 22</div>
+    <div class="p-2 border">Flex item 23</div>
+    <div class="p-2 border">Flex item 24</div>
+    <div class="p-2 border">Flex item 25</div>
+  </div>
+  <br>
+  <p>.align-content-stretch:</p>
+  <div class="d-flex flex-wrap align-content-stretch bg-light" style="height:300px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+    <div class="p-2 border">Flex item 4</div>
+    <div class="p-2 border">Flex item 5</div>
+    <div class="p-2 border">Flex item 6</div>
+    <div class="p-2 border">Flex item 7</div>
+    <div class="p-2 border">Flex item 8</div>
+    <div class="p-2 border">Flex item 9</div>
+    <div class="p-2 border">Flex item 10</div>
+    <div class="p-2 border">Flex item 11</div>
+    <div class="p-2 border">Flex item 12</div>
+    <div class="p-2 border">Flex item 13 </div>
+    <div class="p-2 border">Flex item 14</div>
+    <div class="p-2 border">Flex item 15</div>
+    <div class="p-2 border">Flex item 16</div>
+    <div class="p-2 border">Flex item 17</div>
+    <div class="p-2 border">Flex item 18</div>
+    <div class="p-2 border">Flex item 19</div>
+    <div class="p-2 border">Flex item 20</div>
+    <div class="p-2 border">Flex item 21</div>
+    <div class="p-2 border">Flex item 22</div>
+    <div class="p-2 border">Flex item 23</div>
+    <div class="p-2 border">Flex item 24</div>
+    <div class="p-2 border">Flex item 25</div>
+  </div>
+  <br>
+</div>
+
+<h3>8. Align Items</h3>
+<p>Control the <b>vertical alignment</b> of single rows of flex items with the <mark>.align-items-* classes</mark>.<br>
+Valid classes are <i>.align-items-start, .align-items-end, .align-items-center, .align-items-baseline, and .align-items-stretch (default)</i></p>
+<pre>
+  < div class="container mt-3">
+    < p>.align-items-start:< /p>
+    <mark>< div class="d-flex <b>align-items-start</b> bg-light" style="height:150px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-items-end:< /p>
+    <mark>< div class="d-flex <b>align-items-end</b> bg-light" style="height:150px"></mark>
+      < div class="p-2 border">Flex item 1< div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-items-center:< /p>
+    <mark>< div class="d-flex <b>align-items-center</b> bg-light" style="height:150px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-items-baseline:< /p>
+    <mark>< div class="d-flex <b>align-items-baseline</b> bg-light" style="height:150px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-items-stretch (default):< /p>
+    <mark>< div class="d-flex <b>align-items-stretch</b> bg-light" style="height:150px"></mark>
+      < div class="p-2 border">Flex item 1< /div>
+      < div class="p-2 border">Flex item 2< /div>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+  < /div>
+</pre>
+
+<h3>9. Align Self</h3>
+<p>Control the <u>vertical alignment</u> of a <b>specified flex item</b> with the <mark>.align-self-* classes</mark>.<br>
+Valid classes are <i>.align-self-start, .align-self-end, .align-self-center, .align-self-baseline, and .align-self-stretch (default).</i></p>
+<pre>
+  < div class="container mt-3">
+    < p>.align-self-start:< /p>
+    < div class="d-flex bg-light" style="height:150px">
+      < div class="p-2 border">Flex item 1< /div>
+      <mark>< div class="p-2 border <b>align-self-start</b>">Flex item 2< /div></mark>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-self-end:< /p>
+    < div class="d-flex bg-light" style="height:150px">
+      < div class="p-2 border">Flex item 1< /div>
+      <mark>< div class="p-2 border <b>align-self-end</b>">Flex item 2< /div></mark>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-self-center:< /p>
+    < div class="d-flex bg-light" style="height:150px">
+      < div class="p-2 border">Flex item 1< /div>
+      <mark>< div class="p-2 border <b>align-self-center</b>">Flex item 2< /div></mark>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-self-baseline:< /p>
+    < div class="d-flex bg-light" style="height:150px">
+      < div class="p-2 border">Flex item 1< /div>
+      <mark>< div class="p-2 border <b>align-self-baseline</b>">Flex item 2< /div></mark>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+    < p>.align-self-stretch (default):< /p>
+    < div class="d-flex bg-light" style="height:150px">
+      < div class="p-2 border">Flex item 1< /div>
+      <mark>< div class="p-2 border <b>align-self-stretch</b>">Flex item 2< /div></mark>
+      < div class="p-2 border">Flex item 3< /div>
+    < /div>
+    < br>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <p>.align-self-start:</p>
+  <div class="d-flex bg-light" style="height:150px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border align-self-start">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+  </div>
+  <br>
+  <p>.align-self-end:</p>
+  <div class="d-flex bg-light" style="height:150px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border align-self-end">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+  </div>
+  <br>
+  <p>.align-self-center:</p>
+  <div class="d-flex bg-light" style="height:150px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border align-self-center">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+  </div>
+  <br>
+  <p>.align-self-baseline:</p>
+  <div class="d-flex bg-light" style="height:150px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border align-self-baseline">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+  </div>
+  <br>
+  <p>.align-self-stretch (default):</p>
+  <div class="d-flex bg-light" style="height:150px">
+    <div class="p-2 border">Flex item 1</div>
+    <div class="p-2 border align-self-stretch">Flex item 2</div>
+    <div class="p-2 border">Flex item 3</div>
+  </div>
+  <br>
+</div>
+<hr> <br>
+
+<h2><u>25.Bootstrap 5 Forms</u></h2>
+<h3>1.Stacked Form</h3>
+<p>< input > and < textarea > get proper styling with <mark>.form-control</mark></p>
+<pre>
+  < div class="container mt-3">
+    < form action="/action_page.php">
+      < div class="mb-3 mt-3">
+        < label for="email">Email:< /label>
+        <mark>< input type="email" <b>class="form-control"</b> id="email" placeholder="Enter email" name="email"></mark>
+      < /div>
+      < div class="mb-3">
+        < label for="pwd">Password:< /label>
+        <mark>< input type="password" <b>class="form-control"</b> id="pwd" placeholder="Enter password" name="pswd"></mark>
+      < /div>
+      <i>< div class="form-check mb-3">
+        < label class="form-check-label">
+          < input class="form-check-input" type="checkbox" name="remember"> Remember Me
+        < /label></i>
+      < /div>
+      < button type="submit" class="btn btn-primary">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <form action="/action_page.php">
+    <div class="mb-3 mt-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember Me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<br>
+<pre>
+Also note that we add a <mark>.form-label class</mark> to each label element to ensure correct padding.
+<b>Checkboxes</b> have different markup. 
+They are wrapped around a <mark>container element with .form-check</mark>, and <b>labels</b> have a class of <mark>.form-check-label</mark>, while checkboxes and radio buttons use <mark>.form-check-input.</mark>
+</pre>
+
+<h3>2.Textarea</h3>
+<pre>
+  < div class="container">
+    < form action="/action_page.php">
+      < div class="mb-3 mt-3">
+        <i>< label for="comment">Comments:< /label></i>
+        <mark>< textarea class="form-control" name="text" id="comment" rows="5">< /textarea></mark>
+      < /div>
+      < button type="submit" class="btn btn-primary">Submit< /button>    
+    < /form>
+  < /div>
+</pre>
+
+<div class="container">
+  <form action="/action_page.php">
+    <div class="mb-3 mt-3">
+      <label for="comment">Comments:</label>
+      <textarea class="form-control" name="text" id="comment" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>    
+  </form>
+</div>
+<br>
+
+<h3>3.From "row" to "inline"</h3>
+<p>If you want <b>your form elements</b> to appear <i>side by side</i> - use <mark>.row</mark> and <mark>.col</mark>.</p>
+<pre>
+  < div class="conatainer">
+    <b>< div class="row"></b>
+      <b>< div class="col"></b>
+        <mark>< input type="text" <b>class="form-control"</b> placeholder="Enter email" name="email"></mark>
+      < /div>
+      < div class="col">
+        <mark>< input type="text" <b>class="form-control"</b> placeholder="Enter password" name="pswd"></mark>
+      < /div>
+    < /div>
+  < /div>
+</pre>
+
+<div class="conatainer">
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Enter email" name="email">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Enter password" name="pswd">
+    </div>
+  </div>
+</div>
+<br>
+
+<h3>4.Disabled and Readonly</h3>
+<p>Use the <mark>disabled</mark> and/or <mark>readonly</mark> <b>attributes</b> to disable the input field:</p>
+<pre>
+  < div class="container">
+    < form action="#">
+      < input type="text" class="form-control" placeholder="Normal Input">
+      < input type="text" class="form-control mt-3" placeholder="Disabled Input" <b>disabled</b>>
+      < input type="text" class="form-control mt-3" placeholder="Readonly Input" <b>readonly</b>>
+    < /form>
+  < /div>
+</pre>
+<div class="container">
+  <form action="#">
+    <input type="text" class="form-control" placeholder="Normal Input">
+    <input type="text" class="form-control mt-3" placeholder="Disabled Input" disabled>
+    <input type="text" class="form-control mt-3" placeholder="Readonly Input" readonly>
+  </form>
+</div>
+<br>
+
+<h3>5.Plaintext</h3>
+<p>Use the <mark>.form-control-plaintext <b>class</b></mark> to style an <i>input field without borders</i>, but keep proper marigins and padding:</p>
+<pre>
+  < div class="container">
+    < form action="#">
+      < input type="text" <mark>class="form-control-plaintext"</mark> placeholder="Plaintext input">
+      < input type="text" <mark>class="form-control mt-3"</mark> placeholder="Normal input">
+    < /form>
+  < /div>
+</pre>
+<div class="container">
+  <form action="#">
+    <input type="text" class="form-control-plaintext" placeholder="Plaintext input">
+    <input type="text" class="form-control mt-3" placeholder="Normal input">
+  </form>
+</div>
+<br>
+
+<h3>6.Color Picker</h3>
+<p>To <b>style an input with <mark>type="color"</mark> properly</b>, use the <mark>.form-control-color <b>class</b></mark>:</p>
+<pre>
+  < div class="container mt-3">
+    < form action="#">
+      <i>< label for="myColor" class="form-label">Color picker< /label></i>
+      <mark>< <b>input type="color"</b> <i><b>class="form-control form-control-color"</b></i> id="myColor" value="#cccccc" title="Choose a color"></mark>
+    < /form>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <form action="#">
+    <label for="myColor" class="form-label">Color picker</label>
+    <input type="color" class="form-control form-control-color" id="myColor" value="#cccccc" title="Choose a color">
+  </form>
+</div>
+<br>
+
+<h3>7.Bootstrap 5 Select</h3>
+<h3>Select Menu</h3>
+<p>Allow the user to PICK from multiple OPTIONS.<br>
+To STYLE a <b>select menu</b> - add the <mark>.form-select <b>class</b></mark> to the <i>< select > element.</i></p>
+<pre>
+  < div class="container">
+    < form action="#">
+      < label for="sel1" class="form-label">Select list (select one)< /label>
+      < select name="sellist1" id="sel1" <mark>class="form-select"</mark>>
+        < option>1< /option>
+        < option>2< /option>
+        < option>3< /option>
+        < option>4< /option>
+      < /select>
+      < br>
+  
+      < label for="sel2" class="form-label">Multiple select list (hold shift to select more than one):< /label>
+      < select name="sellist2" id="sel2" <mark>multiple class="form-select"</mark>>
+        < option>1< /option>
+        < option>2< /option>
+        < option>3< /option>
+        < option>4< /option>
+        < option>5< /option>
+      < /select>
+      < button type="submit" class="btn btn-primary mt-3">Submit< /button>
+    </ form>
+  < /div>
+</pre>
+
+<div class="container">
+  <form action="#">
+    <label for="sel1" class="form-label">Select list (select one)</label>
+    <select name="sellist1" id="sel1" class="form-select">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+    <br>
+
+    <label for="sel2" class="form-label">Multiple select list (hold shift to select more than one):</label>
+    <select name="sellist2" id="sel2" multiple class="form-select">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>
+<br>
+
+<h3>8.Data List</h3>
+<p>A list of PRED-EFINED options for an < input > element:</p>
+<pre>
+  < div class="container">
+    < form action="#">
+      < label for="browser" class="form-label">Choose your browser from the list:< /label>
+      < input class="form-control" list="browsers" name="browser" id="browser">
+      < datalist id="browsers">
+        < option value="Edge">< /option>
+        < option value="Firefox">< /option>
+        < option value="Chrome">< /option>
+        < option value="Opera">< /option>
+        < option value="Safari">< /option>
+      < /datalist>
+      < button type="submit" class="btn btn-primary mt-3">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+
+<div class="container">
+  <form action="#">
+    <label for="browser" class="form-label">Choose your browser from the list:</label>
+    <input class="form-control" list="browsers" name="browser" id="browser">
+    <datalist id="browsers">
+      <option value="Edge"></option>
+      <option value="Firefox"></option>
+      <option value="Chrome"></option>
+      <option value="Opera"></option>
+      <option value="Safari"></option>
+    </datalist>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+</div>
+<br>
+
+<h2><u>25.BS5 Checks and Radios</u></h2>
+<h3>Toggle Switches</h3>
+<p>If you want <b>your checkbox</b> to be styled as a <b>toggle switch</b>, use the <mark>.form-switch class</mark> together with the <mark>.form-check <b>container</b></mark>.</p>
+<pre>
+  < div class="container">
+    < form action="#">
+      <mark>< div class="form-check <b>form-switch</b>"></mark>
+        <i>< input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked></i>
+        < label for="mySwitch" class="form-check-label">Dark Mode< /label>
+        < button type="submit" class="btn btn-primary mt-3">Submit< /button>
+      < /div>
+    < /form>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <form action="#">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+      <label for="mySwitch" class="form-check-label">Dark Mode</label><br>
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </div>
+  </form>
+</div>
+<br>
+
+<h2><u>26.BS5 Input Groups</u></h2>
+<h3>1.Input Groups</h3>
+<p>The <mark>.input-group class</mark> is a CONTAINER to enhance an input by ADDING an ICON, TEXT or a BUTTON in <b>front</b> or <b>behind</b> the input field. As a "help text".</p>
+<pre>
+  < div class="container mt-3">
+    < form action="#">
+      <mark>< div <b>class="input-group</b> mb-3"></mark>
+        <i>< span class="input-group-text">@< /span></i>
+        <mark>< input type="text" class="form-control" placeholder="Username" name="username"></mark>
+      < /div>
+  
+      < div class=<b>"input-group</b> mb-3">
+        <mark>< input type="text" class="form-control" placeholder="Your Email" name="email"></mark>
+        <i>< span class="input-group-text">@example.com< /span></i>
+      < /div>
+  
+      < button type="submit" class="btn btn-primary">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <form action="">
+    <div class="input-group mb-3">
+      <span class="input-group-text">@</span>
+      <input type="text" class="form-control" placeholder="Username" name="username">
+    </div>
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Your Email" name="email">
+      <span class="input-group-text">@example.com</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<br>
+
+<h3>2.Multiple Inputs and Helpers</h3>
+<pre>
+  < div class="container mt-3">
+    <!-- Multiple inputs -->
+    < div class=<b>"input-group</b> mb-3">
+      <i>< span class="input-group-text">Person< /span></i>
+      < input type="text" class="form-control" placeholder="First Name">
+      < input type="text" class="form-control" placeholder="Last Name">
+    < /div>
+    <!-- Multiple addons / help text -->
+    < div class=<b>"input-group</b> mb-3">
+      <i>< span class="input-group-text">One< /span>
+      < span class="input-group-text">Two< /span>
+      < span class="input-group-text">Three< /span></i>
+      < input type="text" class="form-control">
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <!-- Multiple inputs -->
+  <div class="input-group mb-3">
+    <span class="input-group-text">Person</span>
+    <input type="text" class="form-control" placeholder="First Name">
+    <input type="text" class="form-control" placeholder="Last Name">
+  </div>
+
+  <!-- Multiple addons / help text -->
+  <div class="input-group mb-3">
+    <span class="input-group-text">One</span>
+    <span class="input-group-text">Two</span>
+    <span class="input-group-text">Three</span>
+    <input type="text" class="form-control">
+  </div>
+</div>
+<br>
+
+<h3>3.Input Group with Checkboxes and Radios</h3>
+<pre>
+  < div class="container mt-3">
+    <!--Multiple inputs-->
+    < div class=<mark>"input-group</mark> mb-3">
+      < div class=<mark><i>"input-group-text"</i></mark>>
+        < input type="checkbox">
+      < /div>
+      < input type="text" class=<b>"form-control"</b> placeholder="Some text">
+    < /div>
+  
+    < div class="input-group mb-3">
+      < div class="input-group-text">
+        < input type="radio">
+      < /div>
+      < input type="text" class=<b>"form-control"</b> placeholder="Some text">
+    < /div>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <!--Multiple inputs-->
+  <div class="input-group mb-3">
+    <div class="input-group-text">
+      <input type="checkbox">
+    </div>
+    <input type="text" class="form-control" placeholder="Some text">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-text">
+      <input type="radio">
+    </div>
+    <input type="text" class="form-control" placeholder="Some text">
+  </div>
+</div>
+
+<h2><u>27.BS5 Form FLOATING Labels</u></h2>
+<h3>1.Floating Labels / Animated Labels</h3>
+<p>With <b>floating labels</b> you can INSERT the LABEL inside the INPUT field; and make them <b>FLOAT/ANIMATE</b> when you <b><i>click</i></b> on the <b>input field</b>.</p>
+<pre>
+  < div class="container mt-3">
+    < form action="#">
+      <mark>< div class=<b>"form-floating</b> mb-3 mt3"></mark>
+        < input type="text" class="form-control" id="email" placeholder="Enter Email" name="email">
+        < label for="email">Email< /label>
+      < /div>
+      <mark>< div class=<b>"form-floating</b> mt-3 mb-3"></mark>
+        < input type="text" class="form-control" id="pwd" placeholder="Enter Password" name="pswd">
+        < label for="pwd">Password< /label>
+      < /div>
+      < button type="submit" class="btn btn-primary">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+
+<div class="container mt-3">
+  <form action="#">
+    <div class="form-floating mb-3 mt3">
+      <input type="text" class="form-control" id="email" placeholder="Enter Email" name="email">
+      <label for="email">Email</label>
+    </div>
+    <div class="form-floating mt-3 mb-3">
+      <input type="text" class="form-control" id="pwd" placeholder="Enter Password" name="pswd">
+      <label for="pwd">Password</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<h3>2.Textarea</h3>
+<p>It also works for textareas:</p>
+<pre>
+  < div class="container mt-3">
+    < form action="/action_page.php">
+      <mark>< div class=<i>"form-floating</i> mb-3 mt-3"></mark>
+        <mark>< textarea <b>class="form-control"</b> id="comment" name="text" placeholder="Comment goes here">< /textarea></mark>
+        < label for="comment">Comments< /label>
+      < /div>
+      < button type="submit" class="btn btn-primary">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+
+<h3>3.Select Menus</h3>
+<p>You can also use "floating-labels"- on <i>Select Menus.</i><br>
+<b>They</b> will not <b>float/get animated</b>. The <b>label</b> will always appear in the TOP of the LEFT corner.</p>
+<pre>
+  < div class="container">
+    < form action="#">
+      <mark>< div class=<b>"form-floating</b> mt-3 mb-3"></mark>
+        < select name="sellist" id="sel1" class="form-select">
+          < option>1< /option>
+          < option>2< /option>
+          < option>3< /option>
+          < option>4< /option>
+        < /select>
+        < label for="sel1" class="form-label">Select list (select one):< /label>
+      < /div>
+      < button type="submit" class="btn btn-secondary">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+
+<div class="container">
+  <form action="#">
+    <div class="form-floating mt-3 mb-3">
+      <select name="sellist" id="sel1" class="form-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+      <label for="sel1" class="form-label">Select list (select one):</label>
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>
+<br>
+
+<h2><u>28.Form Validation</u></h2>
+<p><b>Add</b> either: <mark><i>.was-validated</i></mark> or<mark><i>.needs-validation</i></mark> to the < form > element, depending on whther you want to provide validation feedback - before or after submitting the form.<br>
+The input fields will have a green (valid) or red (innvalid) border to INDICATE (what's missing in the form).<br>
+<b>Add</b> <mark><i>.valid-feedback</i></mark> or <mark><i>.invalid-feedback</i></mark> <b>message</b> to tell the user explicity - what's missing, or needs to be done before submitting the form.</p>
+<pre>
+  < div class="container mt-3">
+    <mark>< form action="#" class=<b>"was-validated"</b>></mark>
+      < div class="mt-3 mb-3">
+        < label for="uname" class="form-label">Username:< /label>
+        < input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+        < div class=<mark>"valid-feedback"</mark>>Valid.< /div>
+        < div class=<mark>"invalid-feedback"</mark>>Please fill out this field.< /div>
+      < /div>
+  
+      < div class="mb-3">
+        < label for="pwd" class="form-label">Password:< /label>
+        < input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd" required>
+        < div class=<mark>"valid-feedback"</mark>>Valid.< /div>
+        < div class=<mark>"invalid-feedback"</mark>>Please fill out this field.< /div>
+      < /div>
+  
+      < div class="form-check mb-3">
+        < input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+        < label for="myCheck" class="form-check-label">I agree on blablabla.< /label>
+        < div class=<mark>"valid-feedback"</mark>>Valid.< /div>
+        < div class=<mark>"invalid-feedback"</mark>>Check this checkbox to continue.< /div>
+      < /div>
+      < button type="submit" class="btn btn-primary">Submit< /button>
+    < /form>
+  < /div>
+</pre>
+<div class="container mt-3">
+  <form action="#" class="was-validated">
+    <div class="mt-3 mb-3">
+      <label for="uname" class="form-label">Username:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+      <label for="myCheck" class="form-check-label">I agree on blablabla.</label>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Check this checkbox to continue.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

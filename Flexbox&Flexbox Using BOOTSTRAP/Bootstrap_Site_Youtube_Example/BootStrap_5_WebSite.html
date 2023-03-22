@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link	href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="style.css">
+  <title>Frontend Bootcamp</title>
+</head>
+<body>
+    <!--<h3>What we built?</h3>
+    <p>1.Add a NAVBAR at the TOP.(some SMOOOTH SCROLLING)<br>
+    2.The <b>SHOWCASE area</b> with the img. (We're using Fexbox for this) / (or flexClasses that Bootstrap Offers).
+    3.<b>Newsletter</b> - same Thing.
+    4.Then <b>CSS Grid</b> and <b>Bootstrap Grid System</b>. (Those 3 Boxes - and Bootstrap Icons).
+    5.<b>Images</b> and some content.
+    6.<b>Accordeon</b> - as well.
+    7.<b>Instructor cards.</b>
+    8.The bottom with the  <b>contact Info</b> and a <b>MAP</b> using <b>mapBox</b>.
+    9.A <b>Modal</b> (in SHOWCASE Area). If we click (on that button) - that'll open up MODAL. 
+    10.It's <b>completely responsive.</b>    
+    </p>-->
+
+    <!--An easy way to use Bootstrap - is by using an "cdn".  A link with a default Bootstrap CSS file.-->
+    <!--Also - we wanna include the "JS-Bundle" for "MODALS" and "ACCORDIONS"-->
+    <!---->
+    
+    <!--NAvbar-->
+  <nav class="nav navbar navbar-expand-lg bg-dark navbar-dark fixed-top"> <!--fixed-top - the "head"(from the picture) is under the nav bar-->
+    <!--navbar-expand-lg - to make it RESPONSIVE. lg - hit this breakpoint. Everything under "lg" - it will be HAMBURGER Menu-->
+    <!--navbar-dark - will make THE TEXT LIGHT(SINCE THE NAVBAR IS DARK)-->
+
+    <!--Lets add the LOGO/Branding-->
+    <!--for the LOGO I could add a "padding" - but I also can USE a CONTAINER-->
+    <div class="container">
+      <a href="#" class="navbar-brand">Frontend Bootcamp</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+				<!--data-bs-target - we need to TARGET a SPECIFIC item to TOGGLE. AND set IT TO an ID ="navmenu"-->
+				<!--Put that ID into "that div - with the "collapse" ID-->
+				<!--put something into the button. A "span".-->
+
+				<!--Let's DO the Menu (still within a CAONTAINER)-->
+			<div class="collapse navbar-collapse" id="navmenu">
+				<!--navbar-collapse - because of navbar menu...-->
+				<ul class="navbar-nav ms-auto">
+					<!--ms-auto - MARGIN START - that will align the ul/li's to the RIGHT.-->
+					<li class="nav-item">
+						<a href="#learn" class="nav-link">What You Will Learn</a>
+					</li>
+					<li class="nav-item">
+						<a href="#questions" class="nav-link">Questions</a>
+					</li>					
+					<li class="nav-item">
+						<a href="#instructors" class="nav-link">Instructors</a>
+					</li>
+				</ul>
+				<!--push link to the LEFT side. In the "ul" add: "ms-auto"-->
+			</div>
+			<!--Make that (button). HAMBURGER MENU Button-->
+    </div>
+	</nav>
+
+		<!--The SHOWCASE-->
+		<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+			<div class="container">
+				<div class="d-sm-flex align-item-center justify-content-between">
+					<!--Here we PUT two Felx Items: An IMG/svg and a TEXT-->
+					<!--d-sm-flex - to SHRINK the pic/svg - for mobile-->
+						<div>
+							<h1>Become a <span class="text-warning">Web Developer</span></h1>
+							<p class="lead my-4">We focus on teaching our students the fundamentals of the latest
+							and greatest technologies to prepare them for their first dev role</p>
+							<!--class="lead" - MAKE TXT Bigger-->
+							<!--"my" instead OF "mt"-->
+							<!--ALIGN the text (to the CENTER) - on TABLETS and MONITORS. For MOBILE ("text-sm-start")-->
+							<button class="btn btn-primary btn-bigger" data-bs-toggle="modal" data-bs-target="#enroll">Start the Enrollment</button>
+						</div>
+					<img class="img-fluid w-50 d-none d-sm-block" src="imgs/showcase.svg" alt="Showcase">
+					<!--img class = to not break out of ITS Container | w-50 - 50% of the SIZE-->
+					<!--On the SMALL Screen/Mobile - I don't wanna show/see the IMG. (d-none) (d-Display)-->
+					<!--d-sm-block - SHOW IMG - on anything BIGGER than MOBILE (show the picture)-->
+				</div>
+			</div>			
+		</section>
+
+		<!--Newsletter-->
+		<section class="bg-primary text-light p-5">
+			<div class="container">
+				<div class="d-md-flex justify-content-between align-items-center">
+					<!--d-dm - I don't want FLEXBOX to KICK IN until - MEDIUM Breakpoint.-->
+					<h3 class="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
+					<!-- mb-3 - margin bottm-3-->
+					<!-- mb-md-0 ON Medium Screens(md-)  - I don't want any - MARGIN BOTTOM (mb-0) -->
+				
+					<div class="input-group news-input">
+						<!--news-input(class in CSS) - ON MEDIUM Screens - the INPUT should be HALF the SIZE (in width)-->
+						<input type="text" class="form-control" placeholder="Enter Email">
+						<button class="btn btn-dark" type="button">Button</button>
+					</div>
+				</div>	
+			</div>
+		</section>
+
+		<!--Boxes - Bootstrap Grid-->
+		<section class="p-5">
+			<div class="container">
+				<div class="row text-center g-4">
+					 <!--To use THE GRID - use the CLASS of "row". "row" - SURROUND or COLLUMNS-->
+					 <!--g-4 - Gap - 4. A gap BETWEEN CARDS. (ON  MOBILE PHONE)-->
+					<div class="col-md">
+						<div class="card bg-dark text-light">
+							<!--Add an Icon. (bi - Bootstrap Icon). Make it Larger-->
+							<div class="card-body text-center">
+								<div class="h1 mb-3">
+									<i class="bi bi-laptop"></i>
+								</div>	
+								<!--Under this div (that WRAPS the ICON)-->
+								<h3 class="card-title mb-3">
+									Virtual
+								</h3>	
+								<p class="card-text">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tempore ipsam nisi odio quaerat voluptate!
+								</p>	
+								<a href="#" class="btn btn-primary">Read more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="card bg-secondary text-light">
+							<!--Add an Icon. (bi - Bootstrap Icon). Make it Larger-->
+							<div class="card-body text-center">
+								<div class="h1 mb-3">
+									<i class="bi bi-person-square"></i>
+								</div>	
+								<!--Under this div (that WRAPS the ICON)-->
+									<h3 class="card-title mb-3">
+										Hybrid
+									</h3>	
+									<p class="card-text">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tempore ipsam nisi odio quaerat voluptate!
+									</p>	
+									<a href="#" class="btn btn-dark">Read more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md">
+						<div class="card bg-primary text-light">
+							<!--Add an Icon. (bi - Bootstrap Icon). Make it Larger-->
+							<div class="card-body text-center">
+								<div class="h1 mb-3">
+									<i class="bi bi-people"></i>
+								</div>	
+								<!--Under this div (that WRAPS the ICON)-->
+									<h3 class="card-title mb-3">
+										In Person
+									</h3>	
+									<p class="card-text">
+										Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tempore ipsam nisi odio quaerat voluptate!
+									</p>	
+									<a href="#" class="btn btn-dark">Read more</a>
+							</div>
+						</div>
+					</div>
+					<!--If we USE "col" -it's gonna be 3 COL on the SMALL SCREENS.(we don't want that)-->
+					<!--We want to STACK on top of EACH other(Mobile Screen)-->
+					<!--col-md - Add the COLUMNS on Medium screens and UP-->
+					<!--Inside these COLumns - we have THESE CARDS-->
+				</div>
+			</div>
+		</section>
+
+		<section id="learn" class="p-5 bg-light text-dark">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-md">
+						<img src="imgs/fundamentals.svg" class="img-fluid" alt="Fundamentals">
+					</div>
+					<div class="col-md p-5">
+						<h2>Learn The Fundamentals</h2>
+						<p class="lead">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quidem ab, quis quam magnam incidunt placeat voluptate aspernatur deleniti iste magni consequatur omnis doloribus voluptatum cum dignissimos odio totam corporis.
+						</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam rem possimus quidem saepe voluptate delectus. Porro illo dicta laboriosam dolore voluptates neque velit quia atque, ipsa distinctio fugit perferendis sed.
+						</p>
+						<a href="#" class="btn btn-primary mt-3">
+							<i class="bi bi-chevron-right">Read More</i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+			
+		<section id="learn" class="p-5 bg-dark text-light">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-md p-5">
+						<h2>Learn React</h2>
+						<p class="lead">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quidem ab, quis quam magnam incidunt placeat voluptate aspernatur deleniti iste magni consequatur omnis doloribus voluptatum cum dignissimos odio totam corporis.
+						</p>
+						<p>
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam rem possimus quidem saepe voluptate delectus. Porro illo dicta laboriosam dolore voluptates neque velit quia atque, ipsa distinctio fugit perferendis sed.
+						</p>
+						<a href="#" class="btn btn-light mt-3">
+							<i class="bi bi-chevron-right">Read More</i>
+						</a>
+					</div>
+					<!--I want the IMG (React) - to be the OTHER Side-->
+					<div class="col-md">
+						<img src="imgs/react-1-logo.svg" class="img-fluid" alt="Fundamentals">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--Question Accordion-->
+		<section id="questions" class="p-5">
+			<div class="container">
+				<h2 class="text-center mb-4">Frequently Asked Questions</h2>
+					<div class="accordion accordion-flush" id="questions">
+						<!--Item 1-->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">
+									Where exaclty are you located?
+								</button>
+							</h2>
+							<div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+								<div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur laboriosam excepturi. Sunt, laboriosam unde veniam consequatur optio magnam quae similique sit, laudantium eos quisquam quia? Sunt totam similique vel!.</div>
+							</div>
+						</div>
+						<!--Item 2-->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">
+									How much does it cost to attent?
+								</button>
+							</h2>
+							<div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+								<div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor minima cupiditate, harum unde provident laudantium rerum recusandae consectetur placeat, perspiciatis odit illo. Totam, quibusdam! Modi, consequatur labore. Delectus, quisquam blanditiis..</div>
+							</div>
+						</div>
+						<!--Item 3-->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">
+									What do I need to know?
+								</button>
+							</h2>
+							<div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+								<div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur laboriosam excepturi. Sunt, laboriosam unde veniam consequatur optio magnam quae similique sit, laudantium eos quisquam quia? Sunt totam similique vel!.</div>
+							</div>
+						</div>
+						<!--Item 4-->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">
+									How do I sign up?
+								</button>
+							</h2>
+							<div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+								<div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur laboriosam excepturi. Sunt, laboriosam unde veniam consequatur optio magnam quae similique sit, laudantium eos quisquam quia? Sunt totam similique vel!.</div>
+							</div>
+						</div>
+						<!--Item 5-->
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">
+									What do I need to know?
+								</button>
+							</h2>
+							<div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions">
+								<div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tenetur laboriosam excepturi. Sunt, laboriosam unde veniam consequatur optio magnam quae similique sit, laudantium eos quisquam quia? Sunt totam similique vel!.</div>
+							</div>
+						</div>
+					</div>
+				</h2>
+			</div>
+		</section>
+	
+		<!--Our INSTRUCTORS-->
+		<section id="instructors" class="p-5 bg-primary">
+			<div class="container">
+				<h2 class="text-center text-white">Our Instructors</h2>
+				<p class="lead text-center text-white mb-5">
+					Our instructors all have 5+ years of working as a web developer in the industry
+				</p>
+				<!--Make GRID and COLUMNS-->
+				<div class="row g-4">
+					<div class="col-md-6 col-lg-3">
+					<!--.col-md-6 - on Medium Screens (I want to be SPLIT into 2 COLUMNS [BECAUSE 12 - COLUMN total])-->
+					<!--On LARGE Screens - we TAKE up 3 of the 12 COLUMNS-->
+						<div class="card bg-light text-dark">
+							<div class="card-body text-center">
+								<!--Use a SPECIFIC API - to get PICTURES of RANDOM people-->
+								<img src="https://randomuser.me/api/portraits/men/11.jpg" alt="RandomUser" class="rounded-circle mb-3">
+								<h3 class="card-title mb-3">John Doe</h3>
+								<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla amet animi maxime sunt suscipit at.</p>
+								<a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="card bg-light text-dark">
+							<div class="card-body text-center">
+								<img src="https://randomuser.me/api/portraits/women/11.jpg" alt="RandomUser" class="rounded-circle mb-3">
+								<h3 class="card-title mb-3">Jane Doe</h3>
+								<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla amet animi maxime sunt suscipit at.</p>
+								<a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="card bg-light text-dark">
+							<div class="card-body text-center">
+								<img src="https://randomuser.me/api/portraits/men/12.jpg" alt="RandomUser" class="rounded-circle mb-3">
+								<h3 class="card-title mb-3">Steve Smith</h3>
+								<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla amet animi maxime sunt suscipit at.</p>
+								<a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3">
+						<div class="card bg-light text-dark">
+							<div class="card-body text-center">
+								<img src="https://randomuser.me/api/portraits/women/12.jpg" alt="RandomUser" class="rounded-circle mb-3">
+								<h3 class="card-title mb-3">Sarah Smith</h3>
+								<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla amet animi maxime sunt suscipit at.</p>
+								<a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+								<a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</section>
+
+		<!--Contact & Map BOX-->
+		<section class="p-5">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-md">
+						<h2 class="text-center mb-4">Contact Info</h2>
+						<ul class="list-group list-group-flush lead"><!-- -flush - remove borders and rounded corners-->
+							<li class="list-group-item">
+								<span class="fw-bold">Main Location:</span> 50 Main Street Boston MA
+								<!--fw- FONT WEIGHT-->
+							</li>
+							<li class="list-group-item">
+								<span class="fw-bold">Enrlloment Phone:</span> (333)333-3333
+							</li>
+							<li class="list-group-item">
+								<span class="fw-bold">Student Phone:</span> ennroll@frontendbc.test
+							</li>
+							<li class="list-group-item">
+								<span class="fw-bold">Enrollment Email:</span> student@frontendbc.test
+							</li>
+						</ul>
+					</div>
+					<!--Map  - mapbox.com-->
+					<div class="col-md">
+						<!--ID of map (#map) - because we have a "container: map" [inside of SCRIPT tag]-->
+						<div id="map"></div> <!--That's it-->
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--Footer-->
+		<footer class="p-5 bg-dark text-white text-center position-relative">
+		<!--position-relative - cause I wanna have a GO BACK UP Button (that has a POSITION ABSOLUTE [within THE footer])-->
+			<div class="container">
+				<p class="lead">Copyright &copy; 2022 Frontend Bootcamp</p>
+				<!--GO BACK Up - Link (With an ICON)-->
+				<a href="#" class="position-absolute bottom-0 end-0 p-5">
+					<!--bottom-0 end-0 - position of the ICON/LINK in the right BOTTOM of the PAGE-->
+					<i class="bi bi-arrow-up-circle h1"></i>
+				</a>
+			</div>
+		</footer>
+
+		<!--The MODAL-->
+		<!--Put int the  FIRST button tag (THe Showcase) - [data-bs-toggle="modal" data-bs-target="#enroll"]-->
+		<!--To "use" the MODAL - go to (Documentation) getbootstrap.com  - add ..."Live demo"-->
+		<!--We have THE TRIGGER/Button - Just grab the REST of the CODE-->
+	
+		<!-- Modal -->
+<div class="modal fade" id="enroll" tabindex="-1" aria-labelledby="enroll" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="enroll">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="lead">Fill out this form and we will back to you</p>
+				<!--Here - create a form-->
+				<form>
+					<!--Here - each link will be in a div-->
+					<div class="mb-3">
+						<label for="first-name" class="col-form-label">First Name:</label>
+						<input type="text" class="form-control" id="first-name">
+					</div>
+					<div class="mb-3">
+						<label for="last-name" class="col-form-label">Last Name:</label>
+						<input type="text" class="form-control" id="last-name">
+					</div>					
+					<div class="mb-3">
+						<label for="email" class="col-form-label">Email:</label>
+						<input type="text" class="form-control" id="email">
+					</div>					
+					<div class="mb-3">
+						<label for="phone" class="col-form-label">Phone:</label>
+						<input type="text" class="form-control" id="phone">
+					</div>	
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Sass -for change the primary colors-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+
+	<script>
+		mapboxgl.accessToken =
+        'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-71.060982, 42.35725], //when you WANT to FOCUS on a certain AREA
+        zoom: 18, //ZOOM lvl
+      })
+	</script>
+
+	<!--wE DON'T SEE ANYTHING yet. Because <div> doesn't have h & w.-->
+	<!--GO to CSS. Take that ID of "#map"-->
+    
+</body>
+</html>

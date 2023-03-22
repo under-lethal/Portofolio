@@ -1,0 +1,160 @@
+/*Using a POPPONS Font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size:16px;
+    line-height: 1.5;
+    color:#333;
+    background: #a1c3ff;
+}
+
+img{
+    max-width: 100%;
+    max-height: 300px;
+    margin-top:50px;
+    padding-left: 50px;
+}
+h1, h2{
+    margin-bottom :15px;
+}
+
+p{
+    padding-right: 25px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.container{
+    max-width: 1100px; /**/
+    margin: 0 auto; /*We wanna be inthe middle?????*/
+    padding: 0 30px;  
+}
+
+/*Style the NavBar*/
+.navbar{
+    background: #3474e6;
+    color: #fff;
+    height: 60px;
+}
+
+/*Make Logo BIGGER*/
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/*Use Flexbox to - Move the ul MENU on the RITGH SIDE. Keep "Logo" on the LEFT Side*/
+/*Make "div class=container* (OUR Flexbox)- NOT nav class="navbar"*/
+/*So - <div class ="logo"> AND <ul class="nav">  - ARE TWO Flex Items.*/
+/*I'm gonna PREFIX that: 
+.navbar .logo {
+    font-size: x-large;
+    font-weight: bold;
+}*/
+
+/*Make those LINKS White*/
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+} 
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/*For now - the LOGO, and the <ul> are next to each other... in A ROW. I want the <ul> on the RIGHT side. (instead of have BOTH them on the RIGHT side) (justify-content: space-between).*/
+/*The use "align-items: CENTER" to make sure the're CENTERED.*/
+/*The <ul> it's still VERTICAL. So we wann add a "FLEXBOX" into this <ul> - (<ul class="nav" - so that the <list item> inside - GOES to A ROW/Horizontally.)*/
+
+.navbar ul{
+    display: flex; /*ul's in a Row*/
+}
+
+/*FLEXBOX and HomeAboutContact - are not aligned in the middle. We just put (align-items: center - which is A VERTICAL ALIGNMENT)*/
+/*Because we have a "height" on a (.navbar 60px). And we don't have ALSO a "height" in OUR FLEXBOX CONTAINER.*/
+/*height: 100% - make height to TAKE UP a 100% of the navbar*/
+
+/*Let's work on the <li> now*/
+.navbar ul li {
+    margin-left: 20px; /*add some SPACE between (Home, About, Contact)*/
+}
+
+/*Then a HOVER Color*/
+.navbar a:hover {
+    color:lightblue;
+}
+
+/*Let's work on the Header*/
+.header {
+    background-color: #0151cc;
+    color:white;
+    min-height: 400px;
+    
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.2; /*on mobile width the space between title is pretty big*/
+}
+
+.header img {
+    max-width: 400px;
+    margin-left: -50px;   
+}
+
+/*we have <header> and <container> (inside of it).*/
+/*The container - have <divs> - there are two Flex Items*/
+.header .container{
+	display: flex;
+    align-items: center; /*the img and the txt - ARE NOT VERTICALLY ALIGNED; align-items: center*/
+	justify-content: space-between; 
+}
+/*Now, they're aligned side by side.*/
+
+/*The Boxes Section */
+.boxes .container {
+	display: flex;
+	justify-content: space-between;  
+}
+
+.box {
+	flex: 1;
+	background: #0151cc;
+	color: #fff;
+	border-radius: 10px;
+	margin: 20px 10px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px; 
+}
+
+@media(max-width: 768px){
+	.header .container {
+		flex-direction: column;
+		padding-bottom: 50px;
+		text-align: center;
+	}
+	.boxes .container {
+		/*flex-direction: column;*/
+		display: block;
+		text-align: center;
+	}
+}
+/*Anything that is under 768 / If the SCREEN is UNDER 768. Grab .header and. container */
+
+/*We could use (flex-direction: column;) - but sometimes you'll CHANGE the DISPLAY porperty - from (flex) to (block)*/
